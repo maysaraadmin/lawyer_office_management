@@ -21,8 +21,14 @@ schema_view = get_schema_view(
    permission_classes=(permissions.AllowAny,),
 )
 
+# Import health check view
+from apps.core.views.health import HealthCheckView
+
 # API URL Configuration
 api_patterns = [
+    # Health check
+    path('health/', HealthCheckView.as_view(), name='health-check'),
+    
     # Authentication
     path('auth/', include('apps.users.urls')),  # Authentication endpoints
     

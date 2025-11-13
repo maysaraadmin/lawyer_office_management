@@ -1,34 +1,13 @@
 import flet as ft
-from flet import (
-    Page, View, AppBar, Text, ElevatedButton, Row, 
-    Column, Container, Icon, padding,
-    ThemeMode, Theme, margin, alignment
-)
-# Icons are used directly as strings in this version of Flet
-# Using direct color values instead of flet.colors
-# Common colors for the application
-import asyncio
-import logging
-from typing import Optional, Dict, Any, List, Callable, Type
 import sys
 import os
+import logging
 
-# Add parent directory to path to enable shared imports
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add the project root to the Python path
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
-# Import shared components
-from shared.config import Config
-from shared.auth import auth_service
-from shared.api_client import api_client
-
-# Import views
-from views.login_view import LoginView
-from views.dashboard_view import DashboardView
-from views.cases_view import CasesView
-from views.clients_view import ClientsView
-from views.appointments_view import AppointmentsView
-from views.billing_view import BillingView
-from views.profile_view import ProfileView
+# Import the main app class
+from src.app import LawyerOfficeApp
 
 # Configure logging
 logging.basicConfig(
@@ -36,23 +15,6 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
-
-# App configuration
-class AppConfig:
-    APP_NAME = "Lawyer Office Management"
-    APP_THEME = "light"
-    COLORS = {
-        'primary': '#2196F3',  # Blue
-        'secondary': '#3F51B5',  # Indigo
-        'accent': '#FFC107',  # Amber
-        'error': '#F44336',  # Red
-        'success': '#4CAF50',  # Green
-        'background': '#FAFAFA',  # Grey 50
-        'surface': '#FFFFFF',  # White
-        'on_primary': '#FFFFFF',  # White
-        'on_secondary': '#FFFFFF',  # White
-        'on_surface': '#212121',  # Black 87%
-    }
 
 class LawyerOfficeApp:
     """Main application class for Lawyer Office Management"""
@@ -464,27 +426,23 @@ async def main(page: ft.Page):
             page.go('/dashboard')
         else:
             page.go('/login')
-            
-        # Update the page
-        await page.update_async()
-        
     except Exception as e:
-        logger.error(f"Application error: {str(e)}", exc_info=True)
-        await page.show_snack_bar_async(
-            ft.SnackBar(
-                content=ft.Text(f"An error occurred: {str(e)}"),
-                bgcolor=colors.RED,
-            )
-        )
-
+        print(f"An error occurred: {e}")
+        # If the page is already initialized, show an error message
+        if hasattr(page, 'show_snackbar'):
+            await page.show_snackbar(f"An error occurred: {str(e)}")
+        else:
+            # If we can't show a snackbar, print to console
+            print("Failed to initialize the application:", str(e))
 
 if __name__ == "__main__":
-    # Enable hot reload for development
+    # Start the application
     ft.app(
         target=main,
-        view=ft.AppView.WEB_BROWSER,  # Open in default web browser
-        port=8501,  # Default port for Flet web
-        web_renderer="html",  # Use HTML renderer for better performance
-        use_color_emoji=True,  # Enable emoji support
-        assets_dir="assets"  # Directory for static assets
+        view=ft.AppView.WEB_BROWSER,
+        port=8503,
+        host="127.0.0.1",
+        assets_dir="assets",
+        upload_dir="uploads",
+        web_renderer="html",
     )

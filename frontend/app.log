@@ -1,0 +1,45 @@
+2025-11-13 22:07:57,797 - app - INFO - ==================================================
+2025-11-13 22:07:57,797 - app - INFO - Starting Lawyer Office Management System - 2025-11-13 22:07:57
+2025-11-13 22:07:57,799 - app - INFO - Starting Django Backend Server...
+2025-11-13 22:07:57,800 - app - INFO - Starting backend from: D:\lawyer_office_management\backend
+2025-11-13 22:07:59,488 - app - INFO - [Backend Error] Watching for file changes with StatReloader
+2025-11-13 22:07:59,800 - app - INFO - 
+Starting Frontend Application...
+2025-11-13 22:07:59,813 - app - INFO - 
+Waiting for backend to initialize...
+2025-11-13 22:07:59,816 - app - INFO - 🔍 Checking backend health...
+2025-11-13 22:08:01,068 - app - INFO - [Backend Error] "GET /admin/ HTTP/1.1" 302 0
+2025-11-13 22:08:01,069 - httpx - INFO - HTTP Request: GET http://localhost:8000/admin/ "HTTP/1.1 302 Found"
+2025-11-13 22:08:01,121 - app - INFO - [Backend Error] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4178
+2025-11-13 22:08:01,122 - httpx - INFO - HTTP Request: GET http://localhost:8000/admin/login/?next=/admin/ "HTTP/1.1 200 OK"
+2025-11-13 22:08:01,125 - app - INFO - ✅ Backend is running!
+2025-11-13 22:08:01,281 - app - INFO - Launching Flet application...
+2025-11-13 22:08:01,404 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-13 22:08:02,244 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-13 22:08:02,246 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-13 22:08:02,247 - flet_web.fastapi - INFO - Use color emoji: False
+2025-11-13 22:08:02,247 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-13 22:08:02,314 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-13 22:08:02,315 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-13 22:08:03,475 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmpgvz8vbnh
+2025-11-13 22:08:03,481 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-13 22:08:03,484 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-13 22:08:03,485 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-13 22:08:04,442 - flet_web.fastapi - INFO - New FletApp: kQ1Ja79n
+2025-11-13 22:08:04,659 - flet_web.fastapi - INFO - New session created (1 total): _d4O1o6cHMKnvWbdn_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 22:08:04,663 - flet_web.fastapi - INFO - Start session: d4O1o6cHMKnvWbdn
+2025-11-13 22:08:10,837 - app - INFO - [Backend] Performing system checks...
+2025-11-13 22:08:10,840 - flet_web.fastapi - INFO - Session disconnected: _d4O1o6cHMKnvWbdn_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 22:08:10,841 - app - INFO - [Backend]
+2025-11-13 22:08:10,853 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-13 22:08:10,853 - app - INFO - [Backend] November 13, 2025 - 22:08:00
+2025-11-13 22:08:10,858 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-13 22:08:10,860 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-13 22:08:10,860 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-13 22:08:10,861 - app - INFO - [Backend]
+2025-11-13 22:08:10,870 - app - WARNING - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-13 22:08:10,872 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-13 22:08:10,961 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-13 22:08:10,963 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmpgvz8vbnh
+2025-11-13 22:08:11,003 - flet - INFO - Flet app has started...
+2025-11-13 22:08:11,004 - flet_web.fastapi - INFO - Closing Flet web server...
