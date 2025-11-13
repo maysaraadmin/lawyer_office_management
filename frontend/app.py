@@ -1,5 +1,5 @@
 import flet as ft
-from flet import Page, ThemeMode, colors, MainAxisAlignment, CrossAxisAlignment
+from flet import Page, ThemeMode, MainAxisAlignment, CrossAxisAlignment
 import logging
 
 # Configure logging
@@ -15,16 +15,15 @@ def main(page: Page):
         # Configure page
         page.title = "Lawyer Office Management"
         page.theme_mode = ThemeMode.LIGHT
-        page.window_width = 1280
+        page.window_width = 1200
         page.window_height = 800
         page.window_resizable = True
-        page.window_maximized = True
         
         # Add a simple UI to verify it's working
         page.add(
             ft.AppBar(
                 title=ft.Text("Lawyer Office Management"),
-                bgcolor=colors.BLUE_700,
+                bgcolor=ft.colors.BLUE_700,
             ),
             ft.Container(
                 content=ft.Column(
@@ -46,7 +45,7 @@ def main(page: Page):
                 margin=20,
                 padding=20,
                 border_radius=10,
-                bgcolor=colors.GREY_100,
+                bgcolor=ft.colors.GREY_100,
                 width=float("inf"),
                 height=float("inf")
             )
@@ -59,7 +58,7 @@ def main(page: Page):
         page.add(ft.Text(f"An error occurred: {str(e)}", color="red"))
 
 if __name__ == "__main__":
-    # Run the app
+    # Run the app on 127.0.0.1:8501
     ft.app(
         target=main,
         view=ft.WEB_BROWSER,

@@ -1765,3 +1765,139 @@ AttributeError: 'Page' object has no attribute 'update_async'
 2025-11-13 23:39:49,555 - app - INFO - 
 🧹 Cleaning up resources...
 2025-11-13 23:39:49,558 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-13 23:50:10,167 - app - INFO - ================================================================================
+2025-11-13 23:50:10,169 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-13 23:50:10
+2025-11-13 23:50:10,170 - app - INFO - 
+🔄 Starting backend server...
+2025-11-13 23:50:10,171 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-13 23:50:11,791 - app - INFO - [Backend] Performing system checks...
+2025-11-13 23:50:11,792 - app - INFO - [Backend] 
+2025-11-13 23:50:12,222 - app - INFO - Backend server started successfully
+2025-11-13 23:50:13,029 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-13 23:50:13,555 - app - INFO - [Backend] November 13, 2025 - 23:50:13
+2025-11-13 23:50:13,556 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-13 23:50:13,556 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-13 23:50:13,557 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-13 23:50:13,558 - app - INFO - [Backend] 
+2025-11-13 23:50:13,559 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-13 23:50:13,559 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-13 23:50:14,272 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-13 23:50:24,120 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-13 23:50:28,877 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-13 23:50:28,888 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-13 23:50:28,891 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-13 23:50:28,892 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-13 23:50:29,126 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-13 23:50:29,127 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-13 23:50:34,360 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmp_hu2hdmv
+2025-11-13 23:50:34,368 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-13 23:50:34,373 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-13 23:50:34,381 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-13 23:50:35,941 - flet_web.fastapi - INFO - New FletApp: lZaEpgbY
+2025-11-13 23:50:36,167 - flet_web.fastapi - INFO - New session created (1 total): _pymRxztWyV3nGybd_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:50:36,176 - flet_web.fastapi - INFO - Start session: pymRxztWyV3nGybd
+2025-11-13 23:50:36,176 - src.app - INFO - Initializing application...
+2025-11-13 23:50:36,190 - src.app - INFO - App initialized. Authenticated: False
+2025-11-13 23:50:36,221 - src.app - INFO - Starting with initial route: /
+2025-11-13 23:50:36,230 - src.app - INFO - Route changed to: /
+2025-11-13 23:50:36,232 - src.app - INFO - Showing login form
+2025-11-13 23:50:36,235 - src.app - ERROR - Error creating login form: module 'flet' has no attribute 'colors'
+2025-11-13 23:50:36,246 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 241, in show_login
+    bgcolor=ft.colors.WHITE,
+            ^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'colors'
+
+2025-11-13 23:50:36,251 - src.app - ERROR - Error showing error dialog: 'Page' object has no attribute 'update_async'
+2025-11-13 23:50:36,255 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 241, in show_login
+    bgcolor=ft.colors.WHITE,
+            ^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'colors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 210, in show_error
+    await self.page.update_async()
+          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Page' object has no attribute 'update_async'
+
+2025-11-13 23:50:36,268 - src.app - ERROR - Error in route_change: object NoneType can't be used in 'await' expression
+2025-11-13 23:50:36,274 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 392, in route_change
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+2025-11-13 23:50:36,284 - src.app - ERROR - Application initialization error: object NoneType can't be used in 'await' expression
+2025-11-13 23:50:36,300 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 392, in route_change
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 429, in main
+    await route_change(initial_route)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 401, in route_change
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+2025-11-13 23:50:36,314 - src.app - ERROR - Failed to update page with error: object NoneType can't be used in 'await' expression
+2025-11-13 23:50:36,338 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 392, in route_change
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 429, in main
+    await route_change(initial_route)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 401, in route_change
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 442, in main
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+2025-11-13 23:50:36,352 - src.app - INFO - App initialized. Authenticated: False
+2025-11-13 23:50:36,361 - src.app - INFO - Showing login form
+2025-11-13 23:50:36,365 - src.app - ERROR - Error creating login form: module 'flet' has no attribute 'colors'
+2025-11-13 23:50:36,371 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 241, in show_login
+    bgcolor=ft.colors.WHITE,
+            ^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'colors'
+
+2025-11-13 23:50:36,382 - src.app - ERROR - Error showing error dialog: 'Page' object has no attribute 'update_async'
+2025-11-13 23:50:36,386 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 241, in show_login
+    bgcolor=ft.colors.WHITE,
+            ^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'colors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 210, in show_error
+    await self.page.update_async()
+          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Page' object has no attribute 'update_async'
+
+2025-11-13 23:52:58,334 - flet_web.fastapi - INFO - Session disconnected: _pymRxztWyV3nGybd_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:53:06,228 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-13 23:53:06,229 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmp_hu2hdmv
+2025-11-13 23:53:06,243 - flet - INFO - Flet app has started...
+2025-11-13 23:53:06,243 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-13 23:53:06,350 - app - INFO - 
+✅ Application started successfully!
+2025-11-13 23:53:06,351 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-13 23:53:06,354 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
