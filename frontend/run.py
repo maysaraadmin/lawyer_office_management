@@ -7,183 +7,106 @@ import logging
 import traceback
 import subprocess
 import threading
+import httpx
+import uvicorn
 from pathlib import Path
 from datetime import datetime
+from typing import Optional, List, Callable, Any
 
-# Set console output to UTF-8
-if sys.platform == 'win32':
-    import sys
-    import io
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+# Enable tracemalloc for better error tracking
+import tracemalloc
+tracemalloc.start()
 
-# Configure logging
-LOG_FILE = "app.log"
-
-# Clear the log file at the start of each run
-with open(LOG_FILE, 'w'):
-    pass
-
-# Set up logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler(LOG_FILE, encoding='utf-8', mode='a'),  # Use 'a' mode to append to existing file
-        logging.StreamHandler(sys.stdout)
-    ]
-)
-logger = logging.getLogger("app")
-
-def log_stream(stream, prefix):
-    """Log output from a subprocess stream"""
-    for line in iter(stream.readline, ''):
-        log_line = f"{prefix} {line}".strip()
-        if "ERROR" in log_line or "Exception" in log_line:
-            logger.error(log_line)
-        elif "WARNING" in log_line:
-            logger.warning(log_line)
-        else:
-            logger.info(log_line)
-        print(log_line)
-
-async def check_backend_health():
-    """Check if backend is running and healthy"""
-    health_url = "http://localhost:8000/admin/"  # Using Django admin as health check
-    max_retries = 10
-    retry_delay = 2  # seconds
-    
-    logger.info("🔍 Checking backend health...")
-    logger.debug(f"Backend health check URL: {health_url}")
-    
-    for attempt in range(max_retries):
+class EmojiSafeHandler(logging.StreamHandler):
+    """Custom handler to safely log emoji characters to Windows console"""
+    def emit(self, record):
         try:
-            async with httpx.AsyncClient() as client:
-                response = await client.get(
-                    health_url,
-                    timeout=5.0,
-                    follow_redirects=True
-                )
-                if response.status_code in [200, 302]:  # 302 for login redirect
-                    logger.info("✅ Backend is running!")
-                    return True
-                error_msg = f"Backend returned status {response.status_code}"
-                logger.warning(error_msg)
-                print(f"⚠️  {error_msg}")
+            msg = self.format(record)
+            # Replace emoji with text equivalents for Windows console
+            emoji_map = {
+                '✅': '[OK]',
+                '❌': '[ERROR]',
+                '🔄': '[REFRESH]',
+                '🖥️': '[FRONTEND]',
+                '🧹': '[CLEANUP]',
+                '👋': ''
+            }
+            for emoji, text in emoji_map.items():
+                msg = msg.replace(emoji, text)
+            stream = self.stream
+            stream.write(msg + self.terminator)
+            self.flush()
+        except Exception:
+            self.handleError(record)
+
+def setup_logging():
+    """Configure application logging"""
+    # Clear any existing handlers
+    for handler in logging.root.handlers[:]:
+        logging.root.removeHandler(handler)
+    
+    # Create formatter
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    
+    # Create console handler with emoji-safe formatter
+    console_handler = EmojiSafeHandler()
+    console_handler.setFormatter(formatter)
+    
+    # Create file handler
+    file_handler = logging.FileHandler('app.log', encoding='utf-8')
+    file_handler.setFormatter(formatter)
+    
+    # Configure root logger
+    logging.basicConfig(
+        level=logging.INFO,
+        handlers=[console_handler, file_handler]
+    )
+    
+    return logging.getLogger("app")
+
+# Initialize logging
+logger = setup_logging()
+
+class ProcessLogger:
+    """Handle logging for subprocess output"""
+    
+    def __init__(self, stream, prefix: str, log_level: int = logging.INFO):
+        self.stream = stream
+        self.prefix = prefix
+        self.log_level = log_level
+        self._stop_event = threading.Event()
+    
+    def log_line(self, line: str) -> None:
+        """Log a single line with appropriate log level"""
+        line = line.strip()
+        if not line:
+            return
+            
+        log_line = f"{self.prefix} {line}"
+        
+        # Determine log level
+        if any(err in line.upper() for err in ['ERROR', 'EXCEPTION', 'CRITICAL']):
+            logger.error(log_line)
+        elif 'WARNING' in line.upper():
+            logger.warning(log_line)
+        elif 'DEBUG' in line.upper():
+            logger.debug(log_line)
+        else:
+            logger.log(self.log_level, log_line)
+    
+    def run(self) -> None:
+        """Run the logger in a loop"""
+        try:
+            for line in iter(self.stream.readline, ''):
+                if self._stop_event.is_set():
+                    break
+                self.log_line(line)
         except Exception as e:
-            error_msg = f"Backend not available (attempt {attempt + 1}/{max_retries}): {str(e)}"
-            logger.error(error_msg)
-            logger.debug(traceback.format_exc())
-            print(f"❌ {error_msg}")
-        
-        if attempt < max_retries - 1:
-            retry_msg = f"Retrying in {retry_delay} seconds..."
-            logger.info(retry_msg)
-            print(f"⏳ {retry_msg}")
-            time.sleep(retry_delay)
+            logger.error(f"Error in process logger: {e}")
     
-    error_msg = "Failed to connect to the backend at http://localhost:8000"
-    logger.error(error_msg)
-    print(f"\n❌ {error_msg}. Please ensure the backend server is running.")
-    return False
-
-def start_backend():
-    """Start the Django backend server"""
-    logger.info("Starting Django Backend Server...")
-    
-    try:
-        # Set up the environment
-        env = os.environ.copy()
-        # Go up one level from frontend to project root, then into backend
-        backend_dir = Path(__file__).parent.parent.absolute() / 'backend'
-        
-        # Verify backend directory exists
-        if not backend_dir.exists() or not (backend_dir / 'manage.py').exists():
-            logger.error(f"Backend directory not found at: {backend_dir}")
-            return None
-            
-        logger.info(f"Starting backend from: {backend_dir}")
-        
-        # Start the Django development server
-        backend_process = subprocess.Popen(
-            [sys.executable, "manage.py", "runserver", "0.0.0.0:8000"],
-            cwd=str(backend_dir),
-            env=env,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            text=True,
-            bufsize=1,
-            universal_newlines=True,
-            encoding='utf-8',
-            errors='replace'
-        )
-        
-        # Start logging threads
-        threading.Thread(
-            target=log_stream, 
-            args=(backend_process.stdout, "[Backend]"), 
-            daemon=True
-        ).start()
-        
-        threading.Thread(
-            target=log_stream, 
-            args=(backend_process.stderr, "[Backend Error]"), 
-            daemon=True
-        ).start()
-        
-        # Give backend some time to start
-        time.sleep(2)
-        return backend_process
-        
-    except Exception as e:
-        logger.error(f"❌ Failed to start backend: {str(e)}")
-        logger.error(traceback.format_exc())
-        return None
-
-def run_flet():
-    """Run the Flet application"""
-    try:
-        # Set the FLET_DEFAULT_VIEW environment variable
-        os.environ["FLET_DEFAULT_VIEW"] = "web_browser"
-        
-        # Add frontend to Python path
-        frontend_dir = Path(__file__).parent.absolute()
-        sys.path.insert(0, str(frontend_dir))
-        
-        # Import and start the Flet app
-        from src.app import main
-        import flet as ft
-        
-        logger.info("Launching Flet application...")
-        
-        # Run the Flet app in the main thread
-        ft.app(
-            target=main,
-            view=ft.WEB_BROWSER,
-            port=8503,
-            host="127.0.0.1",
-            route_url_strategy="path"
-        )
-        
-        # Keep the application running
-        while True:
-            time.sleep(1)
-            
-    except Exception as e:
-        logger.error(f"Fatal error in Flet application: {str(e)}")
-        logger.error(traceback.format_exc())
-        raise
-
-def start_frontend():
-    """Start the Flet frontend application"""
-    try:
-        logger.info("\nStarting Frontend Application...")
-        # Run the Flet app in the main thread
-        run_flet()
-    except Exception as e:
-        logger.error(f"Failed to start frontend: {str(e)}")
-        logger.error(traceback.format_exc())
-        raise
+    def stop(self) -> None:
+        """Stop the logger"""
+        self._stop_event.set()
 
 def cleanup(backend_process):
     """Cleanup function to stop the backend process"""
@@ -191,65 +114,193 @@ def cleanup(backend_process):
         logger.info("\nStopping backend server...")
         try:
             # Try to terminate gracefully
-            backend_process.terminate()
-            try:
-                # Wait for process to terminate
-                backend_process.wait(timeout=5)
-                logger.info("Backend server stopped")
-            except subprocess.TimeoutExpired:
-                # If it doesn't terminate, force kill it
-                logger.warning("Backend server did not stop gracefully, forcing kill...")
-                backend_process.kill()
+            if sys.platform == 'win32':
+                subprocess.run(['taskkill', '/F', '/T', '/PID', str(backend_process.pid)], 
+                             stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            else:
+                backend_process.terminate()
+                try:
+                    backend_process.wait(timeout=5)
+                except subprocess.TimeoutExpired:
+                    backend_process.kill()
+            logger.info("Backend server stopped")
         except Exception as e:
-            logger.error(f"Error stopping backend server: {e}")
-            logger.error(traceback.format_exc())
+            logger.error(f"Error stopping backend: {e}")
 
-def run_backend():
-    """Run the backend server in a separate thread"""
+def run_backend_in_thread():
+    """Run the backend server in a separate process"""
     try:
-        # Start the backend server
-        backend_process = start_backend()
-        if not backend_process:
-            logger.error("Failed to start backend server")
-            return None
+        # Get the backend directory
+        backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'backend'))
         
-        # Wait for backend to be ready
-        logger.info("\nWaiting for backend to initialize...")
-        if not asyncio.run(check_backend_health()):
-            logger.error("Backend health check failed")
-            return None
+        # Set up environment variables
+        env = os.environ.copy()
+        env['PYTHONUNBUFFERED'] = '1'
+        
+        # Start the Django development server
+        cmd = [sys.executable, 'manage.py', 'runserver', '0.0.0.0:8000', '--noreload']
+        
+        logger.info(f"Starting backend server in {backend_dir}")
+        
+        # Start the process
+        process = subprocess.Popen(
+            cmd,
+            cwd=backend_dir,
+            env=env,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            encoding='utf-8',
+            errors='replace',
+            bufsize=1,
+            universal_newlines=True
+        )
+        
+        # Log output in a separate thread
+        def log_output():
+            try:
+                while True:
+                    output = process.stdout.readline()
+                    if output == '' and process.poll() is not None:
+                        break
+                    if output:
+                        logger.info(f"[Backend] {output.strip()}")
+            except Exception as e:
+                logger.error(f"Error in log output: {e}")
+        
+        log_thread = threading.Thread(target=log_output, daemon=True)
+        log_thread.start()
+        
+        # Give the server time to start
+        time.sleep(2)
+        
+        # Check if the process is still running
+        if process.poll() is not None:
+            raise RuntimeError("Backend server failed to start")
             
-        return backend_process
+        logger.info("Backend server started successfully")
+        return process
+        
     except Exception as e:
-        logger.error(f"Error in backend: {str(e)}")
+        logger.error(f"Error starting backend server: {e}")
+        if 'process' in locals() and process.poll() is None:
+            process.terminate()
+        raise
+
+def run_flet_app():
+    """Run the Flet application with hot reload"""
+    import flet as ft
+    from src.app import main as flet_main
+    
+    async def on_page_init(page: ft.Page):
+        try:
+            # Ensure page is properly initialized
+            if not hasattr(page, 'views'):
+                page.views = []
+            
+            # Set page properties
+            page.title = "Lawyer Office Management"
+            page.theme_mode = ft.ThemeMode.LIGHT
+            page.padding = 0
+            page.window_width = 1280
+            page.window_height = 800
+            page.window_resizable = True
+            
+            # Initialize the app with the page
+            try:
+                await flet_main(page)
+                
+                # Ensure app is properly initialized
+                if not hasattr(page, 'app'):
+                    from src.app import LawyerOfficeApp
+                    page.app = LawyerOfficeApp(page)
+                
+                # Show login if not authenticated
+                if not getattr(page.app, 'is_authenticated', True):
+                    await page.app.show_login()
+                    
+            except Exception as e:
+                logger.error(f"❌ Error in flet_main: {str(e)}")
+                logger.error(traceback.format_exc())
+                
+                # Show error to user
+                error_dialog = ft.AlertDialog(
+                    title=ft.Text("Error"),
+                    content=ft.Text("An error occurred while initializing the application."),
+                    actions=[
+                        ft.TextButton("OK", on_click=lambda _: page.close_dialog())
+                    ]
+                )
+                page.dialog = error_dialog
+                await page.update_async()
+                
+        except Exception as e:
+            logger.error(f"❌ Error initializing page: {str(e)}")
+            logger.error(traceback.format_exc())
+            raise
+    
+    # Enable hot reload
+    ft.app(
+        target=on_page_init,
+        view=ft.WEB_BROWSER,
+        port=8503,
+        host="127.0.0.1",
+        use_color_emoji=True,
+        assets_dir="assets"
+    )
+
+def main():
+    """Main entry point for the application"""
+    backend_process = None
+    
+    try:
+        # Set up logging
+        logger = setup_logging()
+        
+        logger.info("=" * 80)
+        logger.info(f"🚀 Starting Lawyer Office Management System - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        
+        # Get the directory of the current script
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        os.chdir(script_dir)
+        
+        try:
+            # Start backend server
+            logger.info("\n🔄 Starting backend server...")
+            backend_process = run_backend_in_thread()
+            
+            # Give the backend some time to start
+            time.sleep(2)
+            
+            # Check if backend is running
+            if backend_process.poll() is not None:
+                raise RuntimeError("Backend server failed to start")
+            
+            # Start frontend
+            logger.info("\n🖥️  Starting frontend application...")
+            run_flet_app()
+            
+            logger.info("\n✅ Application started successfully!")
+            return 0
+            
+            
+        except KeyboardInterrupt:
+            logger.info("\n🛑 Shutdown signal received...")
+            return 0
+        except Exception as e:
+            logger.error(f"❌ Error in main: {str(e)}")
+            logger.error(traceback.format_exc())
+            return 1
+        finally:
+            logger.info("\n🧹 Cleaning up resources...")
+            if backend_process and backend_process.poll() is None:
+                backend_process.terminate()
+            logger.info("✅ Cleanup complete. Goodbye! 👋")
+            
+    except Exception as e:
+        logger.error(f"❌ Fatal error: {str(e)}")
         logger.error(traceback.format_exc())
-        return None
+        return 1
 
 if __name__ == "__main__":
-    import httpx
-    
-    logger.info("=" * 50)
-    logger.info(f"Starting Lawyer Office Management System - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    
-    # Set working directory to the script's directory
-    os.chdir(os.path.dirname(os.path.abspath(__file__)))
-    
-    # Start the backend in a separate thread
-    import threading
-    backend_thread = threading.Thread(target=run_backend, daemon=True)
-    backend_thread.start()
-    
-    # Give the backend a moment to start
-    time.sleep(2)
-    
-    try:
-        # Start the frontend in the main thread
-        start_frontend()
-    except KeyboardInterrupt:
-        logger.info("\nShutting down...")
-    except Exception as e:
-        logger.error(f"\nAn error occurred: {str(e)}")
-        logger.error(traceback.format_exc())
-    finally:
-        # Cleanup will be handled by the daemon thread
-        logger.info("Application shutdown complete")
+    sys.exit(main())

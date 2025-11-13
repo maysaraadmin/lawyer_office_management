@@ -43,3 +43,1725 @@ Waiting for backend to initialize...
 2025-11-13 22:08:10,963 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmpgvz8vbnh
 2025-11-13 22:08:11,003 - flet - INFO - Flet app has started...
 2025-11-13 22:08:11,004 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-13 22:46:55,569 - app - INFO - ==================================================
+2025-11-13 22:46:57,332 - app - INFO - [Backend] Watching for file changes with StatReloader
+2025-11-13 22:47:01,899 - flet - INFO - Assets path configured: D:\lawyer_office_management\backend\assets
+2025-11-13 22:47:02,769 - flet - INFO - Starting Flet web server on port 50176...
+2025-11-13 22:47:02,771 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-13 22:47:02,771 - flet_web.fastapi - INFO - Use color emoji: False
+2025-11-13 22:47:02,772 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-13 22:47:02,861 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-13 22:47:02,862 - flet - INFO - App URL: http://localhost:50176
+2025-11-13 22:47:04,031 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmp0bwsxpo_
+2025-11-13 22:47:04,037 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-13 22:47:04,039 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\backend\assets
+2025-11-13 22:47:04,044 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-13 22:47:09,947 - flet_web.fastapi - INFO - New FletApp: UUCT5Wiy
+2025-11-13 22:47:11,072 - flet_web.fastapi - INFO - New session created (1 total): _loeZNCYWUakpzKQR_b65d4251c8e62c95f917e0265d9e1c49a08ee7c5
+2025-11-13 22:47:11,073 - flet_web.fastapi - INFO - Start session: loeZNCYWUakpzKQR
+2025-11-13 22:47:11,075 - src.app - INFO - Initializing application...
+2025-11-13 22:47:11,077 - src.app - INFO - App initialized. Authenticated: False
+2025-11-13 22:47:11,101 - src.app - INFO - Showing login form
+2025-11-13 22:47:11,106 - src.app - ERROR - Failed to show login form: object NoneType can't be used in 'await' expression
+2025-11-13 22:47:11,108 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-37' coro=<LawyerOfficeApp.show_login() done, defined at D:\lawyer_office_management\frontend\src\app.py:196> exception=TypeError("object NoneType can't be used in 'await' expression")>
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 223, in show_login
+    await self.page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 230, in show_login
+    await self.page.update()
+TypeError: object NoneType can't be used in 'await' expression
+2025-11-13 22:47:11,114 - flet_web.fastapi - WARNING - Receive loop error: WebSocket is not connected. Need to call "accept" first.
+2025-11-13 22:47:11,118 - flet_web.fastapi - INFO - Session disconnected: _loeZNCYWUakpzKQR_b65d4251c8e62c95f917e0265d9e1c49a08ee7c5
+2025-11-13 22:47:45,759 - app - INFO - [Backend] Performing system checks...
+2025-11-13 22:47:45,759 - app - INFO - [Backend] 
+2025-11-13 22:47:45,765 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-13 22:47:45,766 - app - INFO - [Backend] November 13, 2025 - 22:46:58
+2025-11-13 22:47:45,767 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-13 22:47:45,767 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-13 22:47:45,768 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-13 22:47:45,768 - app - INFO - [Backend] 
+2025-11-13 22:47:45,769 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-13 22:47:45,770 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-13 22:47:45,940 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-13 22:47:45,941 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmp0bwsxpo_
+2025-11-13 22:47:45,958 - flet - INFO - Flet app has started...
+2025-11-13 22:47:45,959 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-13 22:49:22,329 - app - INFO - ==================================================
+2025-11-13 22:49:24,410 - app - INFO - [Backend] Watching for file changes with StatReloader
+2025-11-13 22:49:28,655 - flet - INFO - Assets path configured: D:\lawyer_office_management\backend\assets
+2025-11-13 22:49:29,458 - flet - INFO - Starting Flet web server on port 50440...
+2025-11-13 22:49:29,469 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-13 22:49:29,472 - flet_web.fastapi - INFO - Use color emoji: False
+2025-11-13 22:49:29,473 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-13 22:49:29,567 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-13 22:49:29,568 - flet - INFO - App URL: http://localhost:50440
+2025-11-13 22:49:30,602 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmpf665_pdw
+2025-11-13 22:49:30,659 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-13 22:49:30,679 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\backend\assets
+2025-11-13 22:49:30,694 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-13 22:50:14,054 - app - INFO - [Backend] Performing system checks...
+2025-11-13 22:50:14,055 - app - INFO - [Backend] 
+2025-11-13 22:50:14,056 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-13 22:50:14,057 - app - INFO - [Backend] November 13, 2025 - 22:49:25
+2025-11-13 22:50:14,058 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-13 22:50:14,058 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-13 22:50:14,059 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-13 22:50:14,060 - app - INFO - [Backend] 
+2025-11-13 22:50:14,061 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-13 22:50:14,063 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-13 22:50:14,227 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-13 22:50:14,227 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmpf665_pdw
+2025-11-13 22:50:14,233 - flet - INFO - Flet app has started...
+2025-11-13 22:50:14,233 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-13 22:51:21,191 - app - INFO - ==================================================
+2025-11-13 22:51:21,192 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-13 22:51:21
+2025-11-13 22:51:21,193 - app - INFO - 
+🔄 Starting backend server...
+2025-11-13 22:51:24,894 - app - INFO - [Backend] Watching for file changes with StatReloader
+2025-11-13 22:51:26,195 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-13 22:51:27,939 - flet - INFO - Assets path configured: D:\lawyer_office_management\backend\assets
+2025-11-13 22:51:28,823 - flet - INFO - Starting Flet web server on port 50670...
+2025-11-13 22:51:28,824 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-13 22:51:28,825 - flet_web.fastapi - INFO - Use color emoji: False
+2025-11-13 22:51:28,825 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-13 22:51:28,879 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-13 22:51:28,884 - flet - INFO - App URL: http://localhost:50670
+2025-11-13 22:51:29,825 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmpdmf3eg62
+2025-11-13 22:51:29,830 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-13 22:51:29,831 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\backend\assets
+2025-11-13 22:51:29,832 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-13 22:51:38,767 - app - INFO - [Backend] Performing system checks...
+2025-11-13 22:51:38,768 - app - INFO - [Backend] 
+2025-11-13 22:51:38,768 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-13 22:51:38,769 - app - INFO - [Backend] November 13, 2025 - 22:51:25
+2025-11-13 22:51:38,769 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-13 22:51:38,770 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-13 22:51:38,770 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-13 22:51:38,771 - app - INFO - [Backend] 
+2025-11-13 22:51:38,771 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-13 22:51:38,772 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-13 22:51:38,920 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-13 22:51:38,920 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmpdmf3eg62
+2025-11-13 22:51:38,925 - flet - INFO - Flet app has started...
+2025-11-13 22:51:38,926 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-13 22:51:39,039 - app - INFO - 
+✅ Application started successfully!
+2025-11-13 22:51:39,040 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-13 22:51:39,040 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-13 22:53:32,361 - app - INFO - ==================================================
+2025-11-13 22:53:32,361 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-13 22:53:32
+2025-11-13 22:53:32,361 - app - INFO - 
+🔄 Starting backend server...
+2025-11-13 22:53:34,314 - app - INFO - [Backend] Watching for file changes with StatReloader
+2025-11-13 22:53:37,366 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-13 22:53:38,632 - flet - INFO - Assets path configured: D:\lawyer_office_management\backend\assets
+2025-11-13 22:53:39,233 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-13 22:53:39,235 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-13 22:53:39,236 - flet_web.fastapi - INFO - Use color emoji: False
+2025-11-13 22:53:39,236 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-13 22:53:39,294 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-13 22:53:39,295 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-13 22:53:40,244 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmpkb3uwthk
+2025-11-13 22:53:40,256 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-13 22:53:40,261 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\backend\assets
+2025-11-13 22:53:40,261 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-13 22:53:41,220 - flet_web.fastapi - INFO - New FletApp: CIUh6DQ6
+2025-11-13 22:53:41,436 - flet_web.fastapi - INFO - New session created (1 total): _YTB36TIUlIBqLn1H_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 22:53:41,438 - flet_web.fastapi - INFO - Start session: YTB36TIUlIBqLn1H
+2025-11-13 22:53:41,438 - src.app - INFO - Initializing application...
+2025-11-13 22:53:41,440 - src.app - INFO - App initialized. Authenticated: False
+2025-11-13 22:53:41,455 - src.app - INFO - Route changed to: /login
+2025-11-13 22:53:41,456 - src.app - INFO - User not authenticated, showing login form
+2025-11-13 22:53:41,460 - src.app - INFO - Showing login form
+2025-11-13 22:53:41,468 - src.app - ERROR - Failed to show login form: object NoneType can't be used in 'await' expression
+2025-11-13 22:53:41,470 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-18' coro=<LawyerOfficeApp.show_login() done, defined at D:\lawyer_office_management\frontend\src\app.py:196> exception=TypeError("object NoneType can't be used in 'await' expression")>
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 223, in show_login
+    await self.page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 230, in show_login
+    await self.page.update()
+TypeError: object NoneType can't be used in 'await' expression
+2025-11-13 22:53:41,521 - src.app - INFO - Route changed to: /login
+2025-11-13 22:53:41,522 - src.app - INFO - User not authenticated, showing login form
+2025-11-13 22:53:47,261 - flet_web.fastapi - INFO - Session disconnected: _YTB36TIUlIBqLn1H_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 22:53:57,877 - app - INFO - [Backend] Performing system checks...
+2025-11-13 22:53:57,877 - app - INFO - [Backend] 
+2025-11-13 22:53:57,878 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-13 22:53:57,879 - app - INFO - [Backend] November 13, 2025 - 22:53:35
+2025-11-13 22:53:57,879 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-13 22:53:57,879 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-13 22:53:57,879 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-13 22:53:57,879 - app - INFO - [Backend] 
+2025-11-13 22:53:57,879 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-13 22:53:57,879 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-13 22:53:58,065 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-13 22:53:58,066 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmpkb3uwthk
+2025-11-13 22:53:58,071 - flet - INFO - Flet app has started...
+2025-11-13 22:53:58,072 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-13 22:53:58,175 - app - INFO - 
+✅ Application started successfully!
+2025-11-13 22:53:58,176 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-13 22:53:58,177 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-13 22:56:25,243 - app - INFO - ==================================================
+2025-11-13 22:56:25,245 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-13 22:56:25
+2025-11-13 22:56:25,245 - app - INFO - 
+🔄 Starting backend server...
+2025-11-13 22:56:27,580 - app - INFO - [Backend] Watching for file changes with StatReloader
+2025-11-13 22:56:30,274 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-13 22:56:32,618 - flet - INFO - Assets path configured: D:\lawyer_office_management\backend\assets
+2025-11-13 22:56:33,485 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-13 22:56:33,489 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-13 22:56:33,491 - flet_web.fastapi - INFO - Use color emoji: False
+2025-11-13 22:56:33,491 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-13 22:56:33,586 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-13 22:56:33,588 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-13 22:56:38,070 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmpq6s6d5u_
+2025-11-13 22:56:38,084 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-13 22:56:38,103 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\backend\assets
+2025-11-13 22:56:38,110 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-13 22:56:39,695 - flet_web.fastapi - INFO - New FletApp: rVxexAoX
+2025-11-13 22:56:39,916 - flet_web.fastapi - INFO - New session created (1 total): _iJE3gU4Udh6QrKZi_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 22:56:39,918 - flet_web.fastapi - INFO - Start session: iJE3gU4Udh6QrKZi
+2025-11-13 22:56:39,918 - src.app - INFO - Initializing application...
+2025-11-13 22:56:39,918 - src.app - INFO - App initialized. Authenticated: False
+2025-11-13 22:56:39,932 - src.app - INFO - Showing login form
+2025-11-13 22:56:39,936 - src.app - ERROR - Failed to show login form: 'Page' object has no attribute 'update_async'
+2025-11-13 22:56:39,976 - src.app - INFO - Showing login form
+2025-11-13 22:56:39,978 - src.app - ERROR - Failed to show login form: 'Page' object has no attribute 'update_async'
+2025-11-13 22:56:39,979 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-18' coro=<LawyerOfficeApp.show_login() done, defined at D:\lawyer_office_management\frontend\src\app.py:207> exception=NameError("name 'traceback' is not defined")>
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 241, in show_login
+    await self.page.update_async()
+          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Page' object has no attribute 'update_async'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 247, in show_login
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: name 'traceback' is not defined
+2025-11-13 22:56:40,000 - src.app - INFO - Route changed to: /login
+2025-11-13 22:56:40,002 - src.app - INFO - User not authenticated, showing login form
+2025-11-13 22:56:42,889 - flet_web.fastapi - INFO - Session disconnected: _iJE3gU4Udh6QrKZi_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 22:58:43,477 - app - INFO - [Backend] Performing system checks...
+2025-11-13 22:58:43,477 - app - INFO - [Backend] 
+2025-11-13 22:58:43,477 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-13 22:58:43,479 - app - INFO - [Backend] November 13, 2025 - 22:56:28
+2025-11-13 22:58:43,479 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-13 22:58:43,479 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-13 22:58:43,483 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-13 22:58:43,483 - app - INFO - [Backend] 
+2025-11-13 22:58:43,483 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-13 22:58:43,487 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-13 22:58:43,584 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-13 22:58:43,584 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmpq6s6d5u_
+2025-11-13 22:58:43,592 - flet - INFO - Flet app has started...
+2025-11-13 22:58:43,593 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-13 22:58:43,700 - app - INFO - 
+✅ Application started successfully!
+2025-11-13 22:58:43,700 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-13 22:58:43,700 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-13 23:07:16,980 - app - INFO - ================================================================================
+2025-11-13 23:07:16,980 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-13 23:07:16
+2025-11-13 23:07:16,980 - app - INFO - 
+🔄 Starting backend server...
+2025-11-13 23:07:18,504 - app - INFO - [Backend] Watching for file changes with StatReloader
+2025-11-13 23:07:21,984 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-13 23:07:23,274 - flet - INFO - Assets path configured: D:\lawyer_office_management\backend\assets
+2025-11-13 23:07:23,831 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-13 23:07:23,833 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-13 23:07:23,833 - flet_web.fastapi - INFO - Use color emoji: False
+2025-11-13 23:07:23,833 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-13 23:07:23,893 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-13 23:07:23,895 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-13 23:07:26,666 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmpwa4ede6m
+2025-11-13 23:07:26,677 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-13 23:07:26,684 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\backend\assets
+2025-11-13 23:07:26,715 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-13 23:07:27,881 - flet_web.fastapi - INFO - New FletApp: 9iKli8rv
+2025-11-13 23:07:28,092 - flet_web.fastapi - INFO - New session created (1 total): _IHMs6Tb7TCtCvxEI_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:07:28,095 - flet_web.fastapi - INFO - Start session: IHMs6Tb7TCtCvxEI
+2025-11-13 23:12:10,947 - flet_web.fastapi - INFO - Session disconnected: _IHMs6Tb7TCtCvxEI_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:12:11,926 - flet_web.fastapi - INFO - New FletApp: mom6ag5X
+2025-11-13 23:12:12,081 - flet_web.fastapi - INFO - Existing session requested: IHMs6Tb7TCtCvxEI
+2025-11-13 23:12:12,084 - flet_web.fastapi - INFO - Session reconnected: _IHMs6Tb7TCtCvxEI_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:12:12,084 - flet_web.fastapi - INFO - Disposing FletApp: 9iKli8rv
+2025-11-13 23:12:14,066 - flet_web.fastapi - INFO - Session disconnected: _IHMs6Tb7TCtCvxEI_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:12:14,464 - flet_web.fastapi - INFO - New FletApp: fqvOKgA5
+2025-11-13 23:12:14,588 - flet_web.fastapi - INFO - Existing session requested: IHMs6Tb7TCtCvxEI
+2025-11-13 23:12:14,589 - flet_web.fastapi - INFO - Session reconnected: _IHMs6Tb7TCtCvxEI_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:12:14,589 - flet_web.fastapi - INFO - Disposing FletApp: mom6ag5X
+2025-11-13 23:12:20,250 - flet_web.fastapi - INFO - Session disconnected: _IHMs6Tb7TCtCvxEI_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:12:20,250 - app - INFO - [Backend] Performing system checks...
+2025-11-13 23:12:20,255 - app - INFO - [Backend] 
+2025-11-13 23:12:20,255 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-13 23:12:20,258 - app - INFO - [Backend] November 13, 2025 - 23:07:19
+2025-11-13 23:12:20,259 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-13 23:12:20,260 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-13 23:12:20,261 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-13 23:12:20,264 - app - INFO - [Backend] 
+2025-11-13 23:12:20,266 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-13 23:12:20,269 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-13 23:12:20,343 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-13 23:12:20,344 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmpwa4ede6m
+2025-11-13 23:12:20,355 - flet - INFO - Flet app has started...
+2025-11-13 23:12:20,355 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-13 23:12:20,474 - app - INFO - 
+✅ Application started successfully!
+2025-11-13 23:12:20,475 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-13 23:12:20,477 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-13 23:12:25,471 - app - INFO - ================================================================================
+2025-11-13 23:12:25,472 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-13 23:12:25
+2025-11-13 23:12:25,472 - app - INFO - 
+🔄 Starting backend server...
+2025-11-13 23:12:28,187 - app - INFO - [Backend] Watching for file changes with StatReloader
+2025-11-13 23:12:30,475 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-13 23:12:33,795 - flet - INFO - Assets path configured: D:\lawyer_office_management\backend\assets
+2025-11-13 23:12:34,858 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-13 23:12:34,858 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-13 23:12:34,858 - flet_web.fastapi - INFO - Use color emoji: False
+2025-11-13 23:12:34,858 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-13 23:12:34,984 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-13 23:12:34,984 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-13 23:12:36,407 - flet_web.fastapi - INFO - New FletApp: xHg4WHyv
+2025-11-13 23:12:36,416 - flet_web.fastapi - INFO - New session created (1 total): _IWCjPajqtk4Pj6HG_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:12:36,418 - flet_web.fastapi - INFO - Start session: IWCjPajqtk4Pj6HG
+2025-11-13 23:12:37,452 - flet_web.fastapi - INFO - New FletApp: 5wbP7h83
+2025-11-13 23:12:37,746 - flet_web.fastapi - INFO - New session created (2 total): _apwFsHDYs5H9rfus_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:12:37,750 - flet_web.fastapi - INFO - Start session: apwFsHDYs5H9rfus
+2025-11-13 23:12:39,542 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmpj2zev4l7
+2025-11-13 23:12:39,543 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-13 23:12:39,544 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\backend\assets
+2025-11-13 23:12:39,545 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-13 23:13:51,502 - app - INFO - [Backend] Performing system checks...
+2025-11-13 23:13:51,503 - app - INFO - [Backend] 
+2025-11-13 23:13:51,503 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-13 23:13:51,504 - app - INFO - [Backend] November 13, 2025 - 23:12:29
+2025-11-13 23:13:51,504 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-13 23:13:51,505 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-13 23:13:51,505 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-13 23:13:51,506 - app - INFO - [Backend] 
+2025-11-13 23:13:51,506 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-13 23:13:51,507 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-13 23:13:51,615 - flet_web.fastapi - INFO - Session disconnected: _IWCjPajqtk4Pj6HG_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:13:51,616 - flet_web.fastapi - INFO - Session disconnected: _apwFsHDYs5H9rfus_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:13:51,729 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-13 23:13:51,730 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmpj2zev4l7
+2025-11-13 23:13:51,734 - flet - INFO - Flet app has started...
+2025-11-13 23:13:51,734 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-13 23:13:51,832 - app - INFO - 
+✅ Application started successfully!
+2025-11-13 23:13:51,833 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-13 23:13:51,834 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-13 23:13:54,345 - app - INFO - ================================================================================
+2025-11-13 23:13:54,345 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-13 23:13:54
+2025-11-13 23:13:54,346 - app - INFO - 
+🔄 Starting backend server...
+2025-11-13 23:13:56,543 - app - INFO - [Backend] Watching for file changes with StatReloader
+2025-11-13 23:13:59,348 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-13 23:14:01,296 - flet - INFO - Assets path configured: D:\lawyer_office_management\backend\assets
+2025-11-13 23:14:02,034 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-13 23:14:02,034 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-13 23:14:02,034 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-13 23:14:02,037 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-13 23:14:02,119 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-13 23:14:02,120 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-13 23:14:03,160 - flet_web.fastapi - INFO - New FletApp: xqvBc2nn
+2025-11-13 23:14:03,214 - flet_web.fastapi - INFO - New session created (1 total): _GTi0PzNUpqgvRn2o_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:14:03,216 - flet_web.fastapi - INFO - Start session: GTi0PzNUpqgvRn2o
+2025-11-13 23:14:03,216 - src.app - INFO - Initializing application...
+2025-11-13 23:14:03,218 - src.app - INFO - App initialized. Authenticated: False
+2025-11-13 23:14:03,227 - src.app - INFO - Showing login form
+2025-11-13 23:14:03,268 - src.app - ERROR - Error in show_login: module 'flet' has no attribute 'UserControl'
+2025-11-13 23:14:03,298 - app - ERROR - ❌ Error initializing page: object NoneType can't be used in 'await' expression
+2025-11-13 23:14:03,301 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 221, in show_login
+    from .views.auth.login import LoginForm  # Import here to avoid circular imports
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\auth\login.py", line 18, in <module>
+    class LoginForm(ft.UserControl):
+                    ^^^^^^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'UserControl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 303, in main
+    await app.show_login()
+  File "D:\lawyer_office_management\frontend\src\app.py", line 273, in show_login
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: name 'traceback' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 210, in on_page_init
+    await flet_main(page)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 463, in main
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+2025-11-13 23:14:03,344 - src.app - INFO - Showing login form
+2025-11-13 23:14:03,359 - src.app - ERROR - Error in show_login: module 'flet' has no attribute 'UserControl'
+2025-11-13 23:14:03,360 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-17' coro=<LawyerOfficeApp.show_login() done, defined at D:\lawyer_office_management\frontend\src\app.py:211> exception=NameError("name 'traceback' is not defined")>
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 221, in show_login
+    from .views.auth.login import LoginForm  # Import here to avoid circular imports
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\auth\login.py", line 18, in <module>
+    class LoginForm(ft.UserControl):
+                    ^^^^^^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'UserControl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 273, in show_login
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: name 'traceback' is not defined
+2025-11-13 23:14:03,408 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmp_5ugqa9c
+2025-11-13 23:14:03,410 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-13 23:14:03,411 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\backend\assets
+2025-11-13 23:14:03,412 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-13 23:14:03,445 - flet_web.fastapi - INFO - New FletApp: JFmWViUQ
+2025-11-13 23:14:03,449 - flet_web.fastapi - INFO - New session created (2 total): _F2oc961fXeOnz7kl_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:14:03,450 - flet_web.fastapi - INFO - Start session: F2oc961fXeOnz7kl
+2025-11-13 23:14:03,451 - src.app - INFO - Initializing application...
+2025-11-13 23:14:03,454 - src.app - INFO - App initialized. Authenticated: False
+2025-11-13 23:14:03,459 - src.app - INFO - Showing login form
+2025-11-13 23:14:03,461 - src.app - ERROR - Error in show_login: module 'flet' has no attribute 'UserControl'
+2025-11-13 23:14:03,466 - app - ERROR - ❌ Error initializing page: object NoneType can't be used in 'await' expression
+2025-11-13 23:14:03,467 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 221, in show_login
+    from .views.auth.login import LoginForm  # Import here to avoid circular imports
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\auth\login.py", line 18, in <module>
+    class LoginForm(ft.UserControl):
+                    ^^^^^^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'UserControl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 303, in main
+    await app.show_login()
+  File "D:\lawyer_office_management\frontend\src\app.py", line 273, in show_login
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: name 'traceback' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 210, in on_page_init
+    await flet_main(page)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 463, in main
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+2025-11-13 23:14:03,483 - src.app - INFO - Showing login form
+2025-11-13 23:14:03,486 - src.app - ERROR - Error in show_login: module 'flet' has no attribute 'UserControl'
+2025-11-13 23:14:03,486 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-27' coro=<LawyerOfficeApp.show_login() done, defined at D:\lawyer_office_management\frontend\src\app.py:211> exception=NameError("name 'traceback' is not defined")>
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 221, in show_login
+    from .views.auth.login import LoginForm  # Import here to avoid circular imports
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\auth\login.py", line 18, in <module>
+    class LoginForm(ft.UserControl):
+                    ^^^^^^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'UserControl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 273, in show_login
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: name 'traceback' is not defined
+2025-11-13 23:14:04,465 - flet_web.fastapi - INFO - New FletApp: 8E6qPNmA
+2025-11-13 23:14:04,705 - flet_web.fastapi - INFO - New session created (3 total): _lEuKsPbnx8A0SlAz_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:14:04,710 - flet_web.fastapi - INFO - Start session: lEuKsPbnx8A0SlAz
+2025-11-13 23:14:04,710 - src.app - INFO - Initializing application...
+2025-11-13 23:14:04,713 - src.app - INFO - App initialized. Authenticated: False
+2025-11-13 23:14:04,716 - src.app - INFO - Showing login form
+2025-11-13 23:14:04,723 - src.app - ERROR - Error in show_login: module 'flet' has no attribute 'UserControl'
+2025-11-13 23:14:04,746 - app - ERROR - ❌ Error initializing page: object NoneType can't be used in 'await' expression
+2025-11-13 23:14:04,752 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 221, in show_login
+    from .views.auth.login import LoginForm  # Import here to avoid circular imports
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\auth\login.py", line 18, in <module>
+    class LoginForm(ft.UserControl):
+                    ^^^^^^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'UserControl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 303, in main
+    await app.show_login()
+  File "D:\lawyer_office_management\frontend\src\app.py", line 273, in show_login
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: name 'traceback' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 210, in on_page_init
+    await flet_main(page)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 463, in main
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+2025-11-13 23:14:04,776 - src.app - INFO - Showing login form
+2025-11-13 23:14:04,779 - src.app - ERROR - Error in show_login: module 'flet' has no attribute 'UserControl'
+2025-11-13 23:14:04,780 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-36' coro=<LawyerOfficeApp.show_login() done, defined at D:\lawyer_office_management\frontend\src\app.py:211> exception=NameError("name 'traceback' is not defined")>
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 221, in show_login
+    from .views.auth.login import LoginForm  # Import here to avoid circular imports
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\auth\login.py", line 18, in <module>
+    class LoginForm(ft.UserControl):
+                    ^^^^^^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'UserControl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 273, in show_login
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: name 'traceback' is not defined
+2025-11-13 23:17:10,059 - app - INFO - [Backend] Performing system checks...
+2025-11-13 23:17:10,060 - app - INFO - [Backend] 
+2025-11-13 23:17:10,061 - flet_web.fastapi - INFO - Session disconnected: _GTi0PzNUpqgvRn2o_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:17:10,061 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-13 23:17:10,063 - flet_web.fastapi - INFO - Session disconnected: _lEuKsPbnx8A0SlAz_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:17:10,063 - app - INFO - [Backend] November 13, 2025 - 23:13:57
+2025-11-13 23:17:10,067 - flet_web.fastapi - INFO - Session disconnected: _F2oc961fXeOnz7kl_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:17:10,067 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-13 23:17:10,068 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-13 23:17:10,073 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-13 23:17:10,076 - app - INFO - [Backend] 
+2025-11-13 23:17:10,077 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-13 23:17:10,078 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-13 23:17:10,163 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-13 23:17:10,164 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmp_5ugqa9c
+2025-11-13 23:17:10,173 - flet - INFO - Flet app has started...
+2025-11-13 23:17:10,173 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-13 23:17:10,288 - app - INFO - 
+✅ Application started successfully!
+2025-11-13 23:17:10,288 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-13 23:17:10,289 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-13 23:17:17,408 - app - INFO - ================================================================================
+2025-11-13 23:17:17,411 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-13 23:17:17
+2025-11-13 23:17:17,414 - app - INFO - 
+🔄 Starting backend server...
+2025-11-13 23:17:17,424 - app - ERROR - ❌ Error in backend: signal only works in main thread of the main interpreter
+2025-11-13 23:17:17,437 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 221, in run_backend
+    uvicorn.run(
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\uvicorn\main.py", line 588, in run
+    ChangeReload(config, target=server.run, sockets=[sock]).run()
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\uvicorn\supervisors\basereload.py", line 52, in run
+    self.startup()
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\uvicorn\supervisors\basereload.py", line 83, in startup
+    signal.signal(sig, self.signal_handler)
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\signal.py", line 56, in signal
+    handler = _signal.signal(_enum_to_int(signalnum), _enum_to_int(handler))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: signal only works in main thread of the main interpreter
+
+2025-11-13 23:17:19,433 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-13 23:17:27,488 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-13 23:17:29,892 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-13 23:17:29,900 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-13 23:17:29,900 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-13 23:17:29,902 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-13 23:17:30,055 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-13 23:17:30,057 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-13 23:17:30,888 - flet_web.fastapi - INFO - New FletApp: fjqAkqdK
+2025-11-13 23:17:30,897 - flet_web.fastapi - INFO - New session created (1 total): _zTEQAGIqXBAsb40o_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:17:30,899 - flet_web.fastapi - INFO - Start session: zTEQAGIqXBAsb40o
+2025-11-13 23:17:30,901 - src.app - INFO - Initializing application...
+2025-11-13 23:17:30,906 - src.app - INFO - App initialized. Authenticated: False
+2025-11-13 23:17:30,923 - src.app - INFO - Showing login form
+2025-11-13 23:17:30,931 - src.app - ERROR - Error in show_login: module 'flet' has no attribute 'UserControl'
+2025-11-13 23:17:30,955 - app - ERROR - ❌ Error initializing page: object NoneType can't be used in 'await' expression
+2025-11-13 23:17:30,961 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 221, in show_login
+    from .views.auth.login import LoginForm  # Import here to avoid circular imports
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\auth\login.py", line 18, in <module>
+    class LoginForm(ft.UserControl):
+                    ^^^^^^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'UserControl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 303, in main
+    await app.show_login()
+  File "D:\lawyer_office_management\frontend\src\app.py", line 273, in show_login
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: name 'traceback' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 189, in on_page_init
+    await flet_main(page)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 463, in main
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+2025-11-13 23:17:30,993 - src.app - INFO - Showing login form
+2025-11-13 23:17:31,000 - src.app - ERROR - Error in show_login: module 'flet' has no attribute 'UserControl'
+2025-11-13 23:17:31,004 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-15' coro=<LawyerOfficeApp.show_login() done, defined at D:\lawyer_office_management\frontend\src\app.py:211> exception=NameError("name 'traceback' is not defined")>
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 221, in show_login
+    from .views.auth.login import LoginForm  # Import here to avoid circular imports
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\auth\login.py", line 18, in <module>
+    class LoginForm(ft.UserControl):
+                    ^^^^^^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'UserControl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 273, in show_login
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: name 'traceback' is not defined
+2025-11-13 23:17:31,129 - flet_web.fastapi - INFO - New FletApp: kBVw3ZDv
+2025-11-13 23:17:31,222 - flet_web.fastapi - INFO - New FletApp: VvidR34b
+2025-11-13 23:17:31,255 - flet_web.fastapi - INFO - New session created (2 total): _pzE0JcIF8THB1dGM_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:17:31,257 - flet_web.fastapi - INFO - Start session: pzE0JcIF8THB1dGM
+2025-11-13 23:17:31,259 - src.app - INFO - Initializing application...
+2025-11-13 23:17:31,267 - src.app - INFO - App initialized. Authenticated: False
+2025-11-13 23:17:31,292 - src.app - INFO - Showing login form
+2025-11-13 23:17:31,298 - src.app - ERROR - Error in show_login: module 'flet' has no attribute 'UserControl'
+2025-11-13 23:17:31,317 - app - ERROR - ❌ Error initializing page: object NoneType can't be used in 'await' expression
+2025-11-13 23:17:31,326 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 221, in show_login
+    from .views.auth.login import LoginForm  # Import here to avoid circular imports
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\auth\login.py", line 18, in <module>
+    class LoginForm(ft.UserControl):
+                    ^^^^^^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'UserControl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 303, in main
+    await app.show_login()
+  File "D:\lawyer_office_management\frontend\src\app.py", line 273, in show_login
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: name 'traceback' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 189, in on_page_init
+    await flet_main(page)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 463, in main
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+2025-11-13 23:17:31,370 - src.app - INFO - Showing login form
+2025-11-13 23:17:31,376 - src.app - ERROR - Error in show_login: module 'flet' has no attribute 'UserControl'
+2025-11-13 23:17:31,386 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-33' coro=<LawyerOfficeApp.show_login() done, defined at D:\lawyer_office_management\frontend\src\app.py:211> exception=NameError("name 'traceback' is not defined")>
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 221, in show_login
+    from .views.auth.login import LoginForm  # Import here to avoid circular imports
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\auth\login.py", line 18, in <module>
+    class LoginForm(ft.UserControl):
+                    ^^^^^^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'UserControl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 273, in show_login
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: name 'traceback' is not defined
+2025-11-13 23:17:31,434 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmpql9pf497
+2025-11-13 23:17:31,435 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-13 23:17:31,437 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-13 23:17:31,437 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-13 23:17:31,486 - flet_web.fastapi - INFO - New session created (3 total): _y0eZl9QI7nvieWmA_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:17:31,487 - flet_web.fastapi - INFO - Start session: y0eZl9QI7nvieWmA
+2025-11-13 23:17:31,488 - src.app - INFO - Initializing application...
+2025-11-13 23:17:31,492 - src.app - INFO - App initialized. Authenticated: False
+2025-11-13 23:17:31,502 - src.app - INFO - Showing login form
+2025-11-13 23:17:31,505 - src.app - ERROR - Error in show_login: module 'flet' has no attribute 'UserControl'
+2025-11-13 23:17:31,519 - app - ERROR - ❌ Error initializing page: object NoneType can't be used in 'await' expression
+2025-11-13 23:17:31,533 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 221, in show_login
+    from .views.auth.login import LoginForm  # Import here to avoid circular imports
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\auth\login.py", line 18, in <module>
+    class LoginForm(ft.UserControl):
+                    ^^^^^^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'UserControl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 303, in main
+    await app.show_login()
+  File "D:\lawyer_office_management\frontend\src\app.py", line 273, in show_login
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: name 'traceback' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 189, in on_page_init
+    await flet_main(page)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 463, in main
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+2025-11-13 23:17:31,744 - src.app - INFO - Showing login form
+2025-11-13 23:17:31,760 - src.app - ERROR - Error in show_login: module 'flet' has no attribute 'UserControl'
+2025-11-13 23:17:31,782 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-36' coro=<LawyerOfficeApp.show_login() done, defined at D:\lawyer_office_management\frontend\src\app.py:211> exception=NameError("name 'traceback' is not defined")>
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 221, in show_login
+    from .views.auth.login import LoginForm  # Import here to avoid circular imports
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\auth\login.py", line 18, in <module>
+    class LoginForm(ft.UserControl):
+                    ^^^^^^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'UserControl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 273, in show_login
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: name 'traceback' is not defined
+2025-11-13 23:17:32,747 - flet_web.fastapi - INFO - New FletApp: a2BffjiN
+2025-11-13 23:17:32,979 - flet_web.fastapi - INFO - New session created (4 total): _waDRNrxOt5Iyp1SQ_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:17:32,980 - flet_web.fastapi - INFO - Start session: waDRNrxOt5Iyp1SQ
+2025-11-13 23:17:32,983 - src.app - INFO - Initializing application...
+2025-11-13 23:17:32,997 - src.app - INFO - App initialized. Authenticated: False
+2025-11-13 23:17:33,020 - src.app - INFO - Showing login form
+2025-11-13 23:17:33,027 - src.app - ERROR - Error in show_login: module 'flet' has no attribute 'UserControl'
+2025-11-13 23:17:33,070 - app - ERROR - ❌ Error initializing page: object NoneType can't be used in 'await' expression
+2025-11-13 23:17:33,078 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 221, in show_login
+    from .views.auth.login import LoginForm  # Import here to avoid circular imports
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\auth\login.py", line 18, in <module>
+    class LoginForm(ft.UserControl):
+                    ^^^^^^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'UserControl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 303, in main
+    await app.show_login()
+  File "D:\lawyer_office_management\frontend\src\app.py", line 273, in show_login
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: name 'traceback' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 189, in on_page_init
+    await flet_main(page)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 463, in main
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+2025-11-13 23:17:33,105 - src.app - INFO - Showing login form
+2025-11-13 23:17:33,118 - src.app - ERROR - Error in show_login: module 'flet' has no attribute 'UserControl'
+2025-11-13 23:17:33,119 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-45' coro=<LawyerOfficeApp.show_login() done, defined at D:\lawyer_office_management\frontend\src\app.py:211> exception=NameError("name 'traceback' is not defined")>
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 221, in show_login
+    from .views.auth.login import LoginForm  # Import here to avoid circular imports
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\auth\login.py", line 18, in <module>
+    class LoginForm(ft.UserControl):
+                    ^^^^^^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'UserControl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 273, in show_login
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: name 'traceback' is not defined
+2025-11-13 23:18:56,479 - flet_web.fastapi - INFO - Session disconnected: _waDRNrxOt5Iyp1SQ_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:18:57,169 - flet_web.fastapi - INFO - New FletApp: eYYeCN3i
+2025-11-13 23:18:57,362 - flet_web.fastapi - INFO - Existing session requested: waDRNrxOt5Iyp1SQ
+2025-11-13 23:18:57,368 - flet_web.fastapi - INFO - Session reconnected: _waDRNrxOt5Iyp1SQ_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:18:57,370 - flet_web.fastapi - INFO - Disposing FletApp: a2BffjiN
+2025-11-13 23:19:02,470 - flet_web.fastapi - INFO - Session disconnected: _waDRNrxOt5Iyp1SQ_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:19:04,475 - flet_web.fastapi - INFO - Session disconnected: _zTEQAGIqXBAsb40o_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:19:09,097 - flet_web.fastapi - INFO - Session disconnected: _y0eZl9QI7nvieWmA_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:19:22,111 - flet_web.fastapi - INFO - Session disconnected: _pzE0JcIF8THB1dGM_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:19:28,075 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-13 23:19:28,076 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmpql9pf497
+2025-11-13 23:19:28,088 - flet - INFO - Flet app has started...
+2025-11-13 23:19:28,090 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-13 23:19:28,202 - app - INFO - 
+✅ Application started successfully!
+2025-11-13 23:19:28,203 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-13 23:19:28,204 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-13 23:23:10,551 - app - INFO - ================================================================================
+2025-11-13 23:23:10,552 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-13 23:23:10
+2025-11-13 23:23:10,555 - app - INFO - 
+🔄 Starting backend server...
+2025-11-13 23:23:10,565 - app - ERROR - ❌ Error in backend: signal only works in main thread of the main interpreter
+2025-11-13 23:23:10,576 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 238, in run_backend
+    uvicorn.run(
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\uvicorn\main.py", line 588, in run
+    ChangeReload(config, target=server.run, sockets=[sock]).run()
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\uvicorn\supervisors\basereload.py", line 52, in run
+    self.startup()
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\uvicorn\supervisors\basereload.py", line 83, in startup
+    signal.signal(sig, self.signal_handler)
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\signal.py", line 56, in signal
+    handler = _signal.signal(_enum_to_int(signalnum), _enum_to_int(handler))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: signal only works in main thread of the main interpreter
+
+2025-11-13 23:23:12,572 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-13 23:23:19,488 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-13 23:23:21,893 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-13 23:23:21,902 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-13 23:23:21,903 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-13 23:23:21,904 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-13 23:23:22,291 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-13 23:23:22,292 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-13 23:23:23,743 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmpxkfiya9u
+2025-11-13 23:23:23,748 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-13 23:23:23,751 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-13 23:23:23,753 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-13 23:23:24,902 - flet_web.fastapi - INFO - New FletApp: EWWMbhsW
+2025-11-13 23:23:24,945 - flet_web.fastapi - INFO - New session created (1 total): _362VCMvN1UwVLjNH_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:23:24,947 - flet_web.fastapi - INFO - Start session: 362VCMvN1UwVLjNH
+2025-11-13 23:23:24,947 - src.app - INFO - Initializing application...
+2025-11-13 23:23:24,952 - src.app - INFO - App initialized. Authenticated: False
+2025-11-13 23:23:24,958 - src.app - INFO - Showing login form
+2025-11-13 23:23:25,077 - src.app - ERROR - Error in show_login: module 'flet' has no attribute 'icons'
+2025-11-13 23:23:25,119 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 222, in show_login
+    login_form = LoginForm(self.on_login_success)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\auth\login.py", line 28, in __init__
+    prefix_icon=ft.icons.EMAIL_OUTLINED,
+                ^^^^^^^^
+AttributeError: module 'flet' has no attribute 'icons'
+
+2025-11-13 23:23:25,123 - src.app - ERROR - Showing error: Failed to load login form. Please try again.
+2025-11-13 23:23:25,140 - src.app - ERROR - Error showing error dialog: object NoneType can't be used in 'await' expression
+2025-11-13 23:23:25,152 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 222, in show_login
+    login_form = LoginForm(self.on_login_success)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\auth\login.py", line 28, in __init__
+    prefix_icon=ft.icons.EMAIL_OUTLINED,
+                ^^^^^^^^
+AttributeError: module 'flet' has no attribute 'icons'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 202, in show_error
+    await self.page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+2025-11-13 23:23:25,159 - src.app - INFO - Initial route: /
+2025-11-13 23:23:25,166 - src.app - INFO - User not authenticated, redirecting to login
+2025-11-13 23:23:25,172 - src.app - INFO - Showing login form
+2025-11-13 23:23:25,175 - src.app - ERROR - Error in show_login: module 'flet' has no attribute 'icons'
+2025-11-13 23:23:25,179 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 222, in show_login
+    login_form = LoginForm(self.on_login_success)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\auth\login.py", line 28, in __init__
+    prefix_icon=ft.icons.EMAIL_OUTLINED,
+                ^^^^^^^^
+AttributeError: module 'flet' has no attribute 'icons'
+
+2025-11-13 23:23:25,193 - src.app - ERROR - Showing error: Failed to load login form. Please try again.
+2025-11-13 23:23:25,203 - src.app - ERROR - Error showing error dialog: object NoneType can't be used in 'await' expression
+2025-11-13 23:23:25,207 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 222, in show_login
+    login_form = LoginForm(self.on_login_success)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\auth\login.py", line 28, in __init__
+    prefix_icon=ft.icons.EMAIL_OUTLINED,
+                ^^^^^^^^
+AttributeError: module 'flet' has no attribute 'icons'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 202, in show_error
+    await self.page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+2025-11-13 23:23:25,211 - src.app - INFO - Route changed to: /login
+2025-11-13 23:23:25,219 - src.app - INFO - Showing login form
+2025-11-13 23:23:25,221 - src.app - ERROR - Error in show_login: module 'flet' has no attribute 'icons'
+2025-11-13 23:23:25,225 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 222, in show_login
+    login_form = LoginForm(self.on_login_success)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\auth\login.py", line 28, in __init__
+    prefix_icon=ft.icons.EMAIL_OUTLINED,
+                ^^^^^^^^
+AttributeError: module 'flet' has no attribute 'icons'
+
+2025-11-13 23:23:25,227 - src.app - ERROR - Showing error: Failed to load login form. Please try again.
+2025-11-13 23:23:25,232 - src.app - ERROR - Error showing error dialog: object NoneType can't be used in 'await' expression
+2025-11-13 23:23:25,233 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 222, in show_login
+    login_form = LoginForm(self.on_login_success)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\auth\login.py", line 28, in __init__
+    prefix_icon=ft.icons.EMAIL_OUTLINED,
+                ^^^^^^^^
+AttributeError: module 'flet' has no attribute 'icons'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 202, in show_error
+    await self.page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+2025-11-13 23:23:25,239 - src.app - INFO - Route changed to: /login
+2025-11-13 23:23:25,242 - src.app - INFO - Route changed to: /dashboard
+2025-11-13 23:23:25,243 - src.app - INFO - User not authenticated, showing login form
+2025-11-13 23:23:25,247 - src.app - ERROR - Error creating login view: 'Page' object has no attribute 'update_async'
+2025-11-13 23:23:25,248 - src.app - ERROR - Error in route_change: cannot access free variable 'traceback' where it is not associated with a value in enclosing scope
+2025-11-13 23:23:25,251 - concurrent.futures - ERROR - exception calling callback for <Future at 0x1a4565c9ed0 state=finished raised NameError>
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 349, in route_change
+    await page.update_async()
+          ^^^^^^^^^^^^^^^^^
+AttributeError: 'Page' object has no attribute 'update_async'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 353, in route_change
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: cannot access free variable 'traceback' where it is not associated with a value in enclosing scope
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 895, in _on_completion
+    raise exception
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\event_handler.py", line 27, in fn
+    await self.handler(ce)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 407, in route_change
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: cannot access free variable 'traceback' where it is not associated with a value in enclosing scope
+2025-11-13 23:25:39,514 - flet_web.fastapi - INFO - Session disconnected: _362VCMvN1UwVLjNH_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:25:40,120 - flet_web.fastapi - INFO - New FletApp: bHWeOy4N
+2025-11-13 23:25:40,292 - flet_web.fastapi - INFO - Existing session requested: 362VCMvN1UwVLjNH
+2025-11-13 23:25:40,295 - flet_web.fastapi - INFO - Session reconnected: _362VCMvN1UwVLjNH_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:25:40,297 - flet_web.fastapi - INFO - Disposing FletApp: EWWMbhsW
+2025-11-13 23:25:42,092 - flet_web.fastapi - INFO - Session disconnected: _362VCMvN1UwVLjNH_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:25:42,628 - flet_web.fastapi - INFO - New FletApp: 6dMAcWNI
+2025-11-13 23:25:42,781 - flet_web.fastapi - INFO - Existing session requested: 362VCMvN1UwVLjNH
+2025-11-13 23:25:42,785 - flet_web.fastapi - INFO - Session reconnected: _362VCMvN1UwVLjNH_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:25:42,786 - flet_web.fastapi - INFO - Disposing FletApp: bHWeOy4N
+2025-11-13 23:25:47,420 - flet_web.fastapi - INFO - Session disconnected: _362VCMvN1UwVLjNH_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:25:47,516 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-13 23:25:47,517 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmpxkfiya9u
+2025-11-13 23:25:47,528 - flet - INFO - Flet app has started...
+2025-11-13 23:25:47,531 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-13 23:25:47,657 - app - INFO - 
+✅ Application started successfully!
+2025-11-13 23:25:47,660 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-13 23:25:47,663 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-13 23:31:32,904 - app - INFO - ================================================================================
+2025-11-13 23:31:32,906 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-13 23:31:32
+2025-11-13 23:31:32,908 - app - INFO - 
+🔄 Starting backend server...
+2025-11-13 23:31:32,919 - app - ERROR - ❌ Error in backend: signal only works in main thread of the main interpreter
+2025-11-13 23:31:32,934 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 238, in run_backend
+    uvicorn.run(
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\uvicorn\main.py", line 588, in run
+    ChangeReload(config, target=server.run, sockets=[sock]).run()
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\uvicorn\supervisors\basereload.py", line 52, in run
+    self.startup()
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\uvicorn\supervisors\basereload.py", line 83, in startup
+    signal.signal(sig, self.signal_handler)
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\signal.py", line 56, in signal
+    handler = _signal.signal(_enum_to_int(signalnum), _enum_to_int(handler))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: signal only works in main thread of the main interpreter
+
+2025-11-13 23:31:34,935 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-13 23:31:41,573 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-13 23:31:44,012 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-13 23:31:44,019 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-13 23:31:44,019 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-13 23:31:44,021 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-13 23:31:44,185 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-13 23:31:44,186 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-13 23:31:44,952 - flet_web.fastapi - INFO - New FletApp: MW3MPabZ
+2025-11-13 23:31:44,960 - flet_web.fastapi - INFO - New session created (1 total): _mM0IgXWSVnbOlMi1_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:31:44,963 - flet_web.fastapi - INFO - Start session: mM0IgXWSVnbOlMi1
+2025-11-13 23:31:44,965 - src.app - INFO - Initializing application...
+2025-11-13 23:31:44,968 - src.app - INFO - App initialized. Authenticated: False
+2025-11-13 23:31:44,983 - src.app - INFO - Starting with initial route: /dashboard
+2025-11-13 23:31:44,984 - src.app - INFO - Route changed to: /dashboard
+2025-11-13 23:31:44,985 - src.app - ERROR - Error in route_change: 'bool' object is not callable
+2025-11-13 23:31:44,985 - src.app - ERROR - Application initialization error: cannot access free variable 'traceback' where it is not associated with a value in enclosing scope
+2025-11-13 23:31:44,988 - app - ERROR - ❌ Error in flet_main: cannot access local variable 'traceback' where it is not associated with a value
+2025-11-13 23:31:45,009 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 374, in route_change
+    if not await app.is_authenticated():
+                 ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'bool' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 425, in main
+    await route_change(initial_route)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 399, in route_change
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: cannot access free variable 'traceback' where it is not associated with a value in enclosing scope
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 429, in main
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'traceback' where it is not associated with a value
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 190, in on_page_init
+    await flet_main(page)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 440, in main
+    traceback.print_exc()
+    ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'traceback' where it is not associated with a value
+
+2025-11-13 23:31:45,018 - app - ERROR - ❌ Error initializing page: 'Page' object has no attribute 'update_async'
+2025-11-13 23:31:45,040 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 374, in route_change
+    if not await app.is_authenticated():
+                 ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'bool' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 425, in main
+    await route_change(initial_route)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 399, in route_change
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: cannot access free variable 'traceback' where it is not associated with a value in enclosing scope
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 429, in main
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'traceback' where it is not associated with a value
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 190, in on_page_init
+    await flet_main(page)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 440, in main
+    traceback.print_exc()
+    ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'traceback' where it is not associated with a value
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 214, in on_page_init
+    await page.update_async()
+          ^^^^^^^^^^^^^^^^^
+AttributeError: 'Page' object has no attribute 'update_async'
+
+2025-11-13 23:31:45,257 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmpr2dizlrt
+2025-11-13 23:31:45,259 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-13 23:31:45,272 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-13 23:31:45,283 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-13 23:31:46,342 - flet_web.fastapi - INFO - New FletApp: PhanVE7b
+2025-11-13 23:31:46,564 - flet_web.fastapi - INFO - New session created (2 total): _oSihskXiALCSqocD_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:31:46,568 - flet_web.fastapi - INFO - Start session: oSihskXiALCSqocD
+2025-11-13 23:31:46,570 - src.app - INFO - Initializing application...
+2025-11-13 23:31:46,577 - src.app - INFO - App initialized. Authenticated: False
+2025-11-13 23:31:46,596 - src.app - INFO - Starting with initial route: /
+2025-11-13 23:31:46,598 - src.app - INFO - Route changed to: /
+2025-11-13 23:31:46,601 - src.app - INFO - Showing login form
+2025-11-13 23:31:46,605 - src.app - ERROR - Error creating login form: module 'flet' has no attribute 'colors'
+2025-11-13 23:31:46,609 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 241, in show_login
+    bgcolor=ft.colors.WHITE,
+            ^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'colors'
+
+2025-11-13 23:31:46,611 - src.app - ERROR - Error showing error dialog: 'Page' object has no attribute 'update_async'
+2025-11-13 23:31:46,623 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 241, in show_login
+    bgcolor=ft.colors.WHITE,
+            ^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'colors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 210, in show_error
+    await self.page.update_async()
+          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Page' object has no attribute 'update_async'
+
+2025-11-13 23:31:46,628 - src.app - ERROR - Error in route_change: object NoneType can't be used in 'await' expression
+2025-11-13 23:31:46,637 - src.app - ERROR - Application initialization error: cannot access free variable 'traceback' where it is not associated with a value in enclosing scope
+2025-11-13 23:31:46,639 - app - ERROR - ❌ Error in flet_main: cannot access local variable 'traceback' where it is not associated with a value
+2025-11-13 23:31:46,660 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 395, in route_change
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 425, in main
+    await route_change(initial_route)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 399, in route_change
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: cannot access free variable 'traceback' where it is not associated with a value in enclosing scope
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 429, in main
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'traceback' where it is not associated with a value
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 190, in on_page_init
+    await flet_main(page)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 440, in main
+    traceback.print_exc()
+    ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'traceback' where it is not associated with a value
+
+2025-11-13 23:31:46,678 - app - ERROR - ❌ Error initializing page: 'Page' object has no attribute 'update_async'
+2025-11-13 23:31:46,713 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 395, in route_change
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 425, in main
+    await route_change(initial_route)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 399, in route_change
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: cannot access free variable 'traceback' where it is not associated with a value in enclosing scope
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 429, in main
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'traceback' where it is not associated with a value
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 190, in on_page_init
+    await flet_main(page)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 440, in main
+    traceback.print_exc()
+    ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'traceback' where it is not associated with a value
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 214, in on_page_init
+    await page.update_async()
+          ^^^^^^^^^^^^^^^^^
+AttributeError: 'Page' object has no attribute 'update_async'
+
+2025-11-13 23:31:51,452 - flet_web.fastapi - INFO - Session disconnected: _oSihskXiALCSqocD_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:34:04,994 - flet_web.fastapi - INFO - Session disconnected: _mM0IgXWSVnbOlMi1_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:34:05,097 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-13 23:34:05,099 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmpr2dizlrt
+2025-11-13 23:34:05,109 - flet - INFO - Flet app has started...
+2025-11-13 23:34:05,110 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-13 23:34:05,225 - app - INFO - 
+✅ Application started successfully!
+2025-11-13 23:34:05,227 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-13 23:34:05,231 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-13 23:34:10,083 - app - INFO - ================================================================================
+2025-11-13 23:34:10,085 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-13 23:34:10
+2025-11-13 23:34:10,087 - app - INFO - 
+🔄 Starting backend server...
+2025-11-13 23:34:10,097 - app - ERROR - ❌ Error in backend: signal only works in main thread of the main interpreter
+2025-11-13 23:34:10,115 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 238, in run_backend
+    uvicorn.run(
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\uvicorn\main.py", line 588, in run
+    ChangeReload(config, target=server.run, sockets=[sock]).run()
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\uvicorn\supervisors\basereload.py", line 52, in run
+    self.startup()
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\uvicorn\supervisors\basereload.py", line 83, in startup
+    signal.signal(sig, self.signal_handler)
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\signal.py", line 56, in signal
+    handler = _signal.signal(_enum_to_int(signalnum), _enum_to_int(handler))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: signal only works in main thread of the main interpreter
+
+2025-11-13 23:34:12,089 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-13 23:34:18,790 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-13 23:34:21,545 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-13 23:34:21,550 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-13 23:34:21,551 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-13 23:34:21,551 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-13 23:34:21,702 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-13 23:34:21,703 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-13 23:34:22,720 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmpfwbfqdja
+2025-11-13 23:34:22,722 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-13 23:34:22,727 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-13 23:34:22,736 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-13 23:34:23,031 - flet_web.fastapi - INFO - New FletApp: wlhtdNj9
+2025-11-13 23:34:23,082 - flet_web.fastapi - INFO - New session created (1 total): _xWrVkAUNz8piJJ34_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:34:23,085 - flet_web.fastapi - INFO - Start session: xWrVkAUNz8piJJ34
+2025-11-13 23:34:23,088 - src.app - INFO - Initializing application...
+2025-11-13 23:34:23,101 - src.app - INFO - App initialized. Authenticated: False
+2025-11-13 23:34:23,128 - src.app - INFO - Starting with initial route: /dashboard
+2025-11-13 23:34:23,141 - src.app - INFO - Route changed to: /dashboard
+2025-11-13 23:34:23,176 - src.app - INFO - User not authenticated, redirecting to login
+2025-11-13 23:34:23,179 - src.app - INFO - Showing login form
+2025-11-13 23:34:23,205 - src.app - ERROR - Error creating login form: module 'flet' has no attribute 'colors'
+2025-11-13 23:34:23,226 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 241, in show_login
+    bgcolor=ft.colors.WHITE,
+            ^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'colors'
+
+2025-11-13 23:34:23,244 - src.app - ERROR - Error showing error dialog: 'Page' object has no attribute 'update_async'
+2025-11-13 23:34:23,272 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 241, in show_login
+    bgcolor=ft.colors.WHITE,
+            ^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'colors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 210, in show_error
+    await self.page.update_async()
+          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Page' object has no attribute 'update_async'
+
+2025-11-13 23:34:23,291 - src.app - INFO - Route changed to: /
+2025-11-13 23:34:23,297 - src.app - INFO - Showing login form
+2025-11-13 23:34:23,310 - src.app - ERROR - Error creating login form: module 'flet' has no attribute 'colors'
+2025-11-13 23:34:23,326 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 241, in show_login
+    bgcolor=ft.colors.WHITE,
+            ^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'colors'
+
+2025-11-13 23:34:23,330 - src.app - ERROR - Error showing error dialog: 'Page' object has no attribute 'update_async'
+2025-11-13 23:34:23,355 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 241, in show_login
+    bgcolor=ft.colors.WHITE,
+            ^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'colors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 210, in show_error
+    await self.page.update_async()
+          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Page' object has no attribute 'update_async'
+
+2025-11-13 23:34:23,369 - src.app - ERROR - Error in route_change: object NoneType can't be used in 'await' expression
+2025-11-13 23:34:23,378 - app - ERROR - ❌ Error in flet_main: cannot access free variable 'traceback' where it is not associated with a value in enclosing scope
+2025-11-13 23:34:23,424 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 394, in route_change
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 190, in on_page_init
+    await flet_main(page)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 663, in main
+    await route_change(None)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 398, in route_change
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: cannot access free variable 'traceback' where it is not associated with a value in enclosing scope
+
+2025-11-13 23:34:23,455 - app - ERROR - ❌ Error initializing page: 'Page' object has no attribute 'update_async'
+2025-11-13 23:34:23,496 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 394, in route_change
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 190, in on_page_init
+    await flet_main(page)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 663, in main
+    await route_change(None)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 398, in route_change
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: cannot access free variable 'traceback' where it is not associated with a value in enclosing scope
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 214, in on_page_init
+    await page.update_async()
+          ^^^^^^^^^^^^^^^^^
+AttributeError: 'Page' object has no attribute 'update_async'
+
+2025-11-13 23:34:24,058 - flet_web.fastapi - INFO - New FletApp: mxoLWQyX
+2025-11-13 23:34:24,277 - flet_web.fastapi - INFO - New session created (2 total): _cH9LJgDqlvkjUYYk_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:34:24,280 - flet_web.fastapi - INFO - Start session: cH9LJgDqlvkjUYYk
+2025-11-13 23:34:24,281 - src.app - INFO - Initializing application...
+2025-11-13 23:34:24,290 - src.app - INFO - App initialized. Authenticated: False
+2025-11-13 23:34:24,308 - src.app - INFO - Starting with initial route: /
+2025-11-13 23:34:24,309 - src.app - INFO - Route changed to: /
+2025-11-13 23:34:24,312 - src.app - INFO - Showing login form
+2025-11-13 23:34:24,317 - src.app - ERROR - Error creating login form: module 'flet' has no attribute 'colors'
+2025-11-13 23:34:24,328 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 241, in show_login
+    bgcolor=ft.colors.WHITE,
+            ^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'colors'
+
+2025-11-13 23:34:24,333 - src.app - ERROR - Error showing error dialog: 'Page' object has no attribute 'update_async'
+2025-11-13 23:34:24,337 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 241, in show_login
+    bgcolor=ft.colors.WHITE,
+            ^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'colors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 210, in show_error
+    await self.page.update_async()
+          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Page' object has no attribute 'update_async'
+
+2025-11-13 23:34:24,347 - src.app - ERROR - Error in route_change: object NoneType can't be used in 'await' expression
+2025-11-13 23:34:24,349 - src.app - ERROR - Application initialization error: cannot access free variable 'traceback' where it is not associated with a value in enclosing scope
+2025-11-13 23:34:24,349 - app - ERROR - ❌ Error in flet_main: cannot access local variable 'traceback' where it is not associated with a value
+2025-11-13 23:34:24,373 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 394, in route_change
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 424, in main
+    await route_change(initial_route)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 398, in route_change
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: cannot access free variable 'traceback' where it is not associated with a value in enclosing scope
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 190, in on_page_init
+    await flet_main(page)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 428, in main
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'traceback' where it is not associated with a value
+
+2025-11-13 23:34:24,379 - app - ERROR - ❌ Error initializing page: 'Page' object has no attribute 'update_async'
+2025-11-13 23:34:24,399 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 394, in route_change
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 424, in main
+    await route_change(initial_route)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 398, in route_change
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: cannot access free variable 'traceback' where it is not associated with a value in enclosing scope
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 190, in on_page_init
+    await flet_main(page)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 428, in main
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'traceback' where it is not associated with a value
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 214, in on_page_init
+    await page.update_async()
+          ^^^^^^^^^^^^^^^^^
+AttributeError: 'Page' object has no attribute 'update_async'
+
+2025-11-13 23:36:59,359 - app - INFO - ================================================================================
+2025-11-13 23:36:59,361 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-13 23:36:59
+2025-11-13 23:36:59,363 - app - INFO - 
+🔄 Starting backend server...
+2025-11-13 23:36:59,384 - app - ERROR - ❌ Error in backend: signal only works in main thread of the main interpreter
+2025-11-13 23:36:59,398 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 238, in run_backend
+    uvicorn.run(
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\uvicorn\main.py", line 588, in run
+    ChangeReload(config, target=server.run, sockets=[sock]).run()
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\uvicorn\supervisors\basereload.py", line 52, in run
+    self.startup()
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\uvicorn\supervisors\basereload.py", line 83, in startup
+    signal.signal(sig, self.signal_handler)
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\signal.py", line 56, in signal
+    handler = _signal.signal(_enum_to_int(signalnum), _enum_to_int(handler))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: signal only works in main thread of the main interpreter
+
+2025-11-13 23:37:01,364 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-13 23:37:11,876 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-13 23:37:15,711 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-13 23:37:15,717 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-13 23:37:15,717 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-13 23:37:15,718 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-13 23:37:15,951 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-13 23:37:15,952 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-13 23:37:16,844 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-13 23:37:16,854 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-13 23:37:16,859 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-13 23:37:18,595 - flet_web.fastapi - INFO - New FletApp: mhgF3Se2
+2025-11-13 23:37:18,832 - flet_web.fastapi - INFO - New session created (3 total): _w7CpBQBTrs5hRTdb_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:37:18,835 - flet_web.fastapi - INFO - Start session: w7CpBQBTrs5hRTdb
+2025-11-13 23:37:18,844 - src.app - INFO - Initializing application...
+2025-11-13 23:37:18,870 - src.app - INFO - App initialized. Authenticated: False
+2025-11-13 23:37:18,898 - src.app - INFO - Starting with initial route: /
+2025-11-13 23:37:18,900 - src.app - INFO - Route changed to: /
+2025-11-13 23:37:18,909 - src.app - INFO - Showing login form
+2025-11-13 23:37:18,909 - src.app - ERROR - Error creating login form: module 'flet' has no attribute 'colors'
+2025-11-13 23:37:18,920 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 241, in show_login
+    bgcolor=ft.colors.WHITE,
+            ^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'colors'
+
+2025-11-13 23:37:18,920 - src.app - ERROR - Error showing error dialog: 'Page' object has no attribute 'update_async'
+2025-11-13 23:37:18,933 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 241, in show_login
+    bgcolor=ft.colors.WHITE,
+            ^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'colors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 210, in show_error
+    await self.page.update_async()
+          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Page' object has no attribute 'update_async'
+
+2025-11-13 23:37:18,942 - src.app - ERROR - Error in route_change: object NoneType can't be used in 'await' expression
+2025-11-13 23:37:18,954 - src.app - ERROR - Application initialization error: cannot access free variable 'traceback' where it is not associated with a value in enclosing scope
+2025-11-13 23:37:18,954 - app - ERROR - ❌ Error in flet_main: cannot access local variable 'traceback' where it is not associated with a value
+2025-11-13 23:37:18,974 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 394, in route_change
+    page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 424, in main
+    initial_route = "/login"
+  File "D:\lawyer_office_management\frontend\src\app.py", line 398, in route_change
+    if 'traceback' in globals():
+                 ^^^^^^^^^
+NameError: cannot access free variable 'traceback' where it is not associated with a value in enclosing scope
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 190, in on_page_init
+    await flet_main(page)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 428, in main
+    logger.info(f"Starting with initial route: {initial_route}")
+                 ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'traceback' where it is not associated with a value
+
+2025-11-13 23:37:18,981 - app - ERROR - ❌ Error initializing page: 'Page' object has no attribute 'update_async'
+2025-11-13 23:37:19,000 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 394, in route_change
+    page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 424, in main
+    initial_route = "/login"
+  File "D:\lawyer_office_management\frontend\src\app.py", line 398, in route_change
+    if 'traceback' in globals():
+                 ^^^^^^^^^
+NameError: cannot access free variable 'traceback' where it is not associated with a value in enclosing scope
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 190, in on_page_init
+    await flet_main(page)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 428, in main
+    logger.info(f"Starting with initial route: {initial_route}")
+                 ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'traceback' where it is not associated with a value
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 214, in on_page_init
+    await page.update_async()
+          ^^^^^^^^^^^^^^^^^
+AttributeError: 'Page' object has no attribute 'update_async'
+
+2025-11-13 23:37:23,583 - flet_web.fastapi - INFO - Session disconnected: _xWrVkAUNz8piJJ34_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:37:23,604 - flet_web.fastapi - INFO - Session disconnected: _w7CpBQBTrs5hRTdb_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:37:23,604 - flet_web.fastapi - INFO - Session disconnected: _cH9LJgDqlvkjUYYk_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:38:53,711 - app - INFO - ================================================================================
+2025-11-13 23:38:53,714 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-13 23:38:53
+2025-11-13 23:38:53,716 - app - INFO - 
+🔄 Starting backend server...
+2025-11-13 23:38:53,718 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-13 23:38:55,398 - app - INFO - [Backend] Performing system checks...
+2025-11-13 23:38:55,399 - app - INFO - [Backend] 
+2025-11-13 23:38:55,754 - app - INFO - Backend server started successfully
+2025-11-13 23:38:56,384 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-13 23:38:56,815 - app - INFO - [Backend] November 13, 2025 - 23:38:56
+2025-11-13 23:38:56,816 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-13 23:38:56,817 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-13 23:38:56,818 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-13 23:38:56,819 - app - INFO - [Backend] 
+2025-11-13 23:38:56,820 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-13 23:38:56,821 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-13 23:38:57,755 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-13 23:39:06,741 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-13 23:39:10,189 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-13 23:39:10,194 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-13 23:39:10,195 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-13 23:39:10,196 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-13 23:39:10,401 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-13 23:39:10,402 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-13 23:39:15,387 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmpce5_iwfr
+2025-11-13 23:39:15,398 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-13 23:39:15,403 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-13 23:39:15,420 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-13 23:39:17,369 - flet_web.fastapi - INFO - New FletApp: gyay2h3d
+2025-11-13 23:39:17,616 - flet_web.fastapi - INFO - New session created (1 total): _MmkoOoeoBJr6wBk4_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:39:17,698 - flet_web.fastapi - INFO - Start session: MmkoOoeoBJr6wBk4
+2025-11-13 23:39:17,740 - src.app - INFO - Initializing application...
+2025-11-13 23:39:17,816 - src.app - INFO - App initialized. Authenticated: False
+2025-11-13 23:39:17,870 - src.app - INFO - Starting with initial route: /
+2025-11-13 23:39:17,873 - src.app - INFO - Route changed to: /
+2025-11-13 23:39:17,879 - src.app - INFO - Showing login form
+2025-11-13 23:39:17,915 - src.app - ERROR - Error creating login form: module 'flet' has no attribute 'colors'
+2025-11-13 23:39:17,969 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 241, in show_login
+    bgcolor=ft.colors.WHITE,
+            ^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'colors'
+
+2025-11-13 23:39:17,972 - src.app - ERROR - Error showing error dialog: 'Page' object has no attribute 'update_async'
+2025-11-13 23:39:17,981 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 241, in show_login
+    bgcolor=ft.colors.WHITE,
+            ^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'colors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 210, in show_error
+    await self.page.update_async()
+          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Page' object has no attribute 'update_async'
+
+2025-11-13 23:39:17,987 - src.app - ERROR - Error in route_change: object NoneType can't be used in 'await' expression
+2025-11-13 23:39:17,997 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 392, in route_change
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+2025-11-13 23:39:18,002 - src.app - ERROR - Application initialization error: object NoneType can't be used in 'await' expression
+2025-11-13 23:39:18,018 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 392, in route_change
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 429, in main
+    await route_change(initial_route)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 401, in route_change
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+2025-11-13 23:39:18,032 - src.app - ERROR - Failed to update page with error: object NoneType can't be used in 'await' expression
+2025-11-13 23:39:18,054 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 392, in route_change
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 429, in main
+    await route_change(initial_route)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 401, in route_change
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 442, in main
+    await page.update()
+TypeError: object NoneType can't be used in 'await' expression
+
+2025-11-13 23:39:18,075 - src.app - INFO - App initialized. Authenticated: False
+2025-11-13 23:39:18,085 - src.app - INFO - Showing login form
+2025-11-13 23:39:18,091 - src.app - ERROR - Error creating login form: module 'flet' has no attribute 'colors'
+2025-11-13 23:39:18,098 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 241, in show_login
+    bgcolor=ft.colors.WHITE,
+            ^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'colors'
+
+2025-11-13 23:39:18,101 - src.app - ERROR - Error showing error dialog: 'Page' object has no attribute 'update_async'
+2025-11-13 23:39:18,111 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 241, in show_login
+    bgcolor=ft.colors.WHITE,
+            ^^^^^^^^^
+AttributeError: module 'flet' has no attribute 'colors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 210, in show_error
+    await self.page.update_async()
+          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Page' object has no attribute 'update_async'
+
+2025-11-13 23:39:49,260 - flet_web.fastapi - INFO - Session disconnected: _MmkoOoeoBJr6wBk4_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-13 23:39:49,376 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-13 23:39:49,377 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmpce5_iwfr
+2025-11-13 23:39:49,413 - flet - INFO - Flet app has started...
+2025-11-13 23:39:49,420 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-13 23:39:49,554 - app - INFO - 
+✅ Application started successfully!
+2025-11-13 23:39:49,555 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-13 23:39:49,558 - app - INFO - ✅ Cleanup complete. Goodbye! 👋

@@ -426,3 +426,62 @@ Watching for file changes with StatReloader
 Watching for file changes with StatReloader
 "GET /admin/ HTTP/1.1" 302 0
 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4178
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Watching for file changes with StatReloader
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Watching for file changes with StatReloader
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Watching for file changes with StatReloader
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Watching for file changes with StatReloader
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 4178
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 4178
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Request received
+Client error response
+Not Found: /api/
+"GET /api/ HTTP/1.1" 404 2656
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 4178
+Watching for file changes with StatReloader
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 4178
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader

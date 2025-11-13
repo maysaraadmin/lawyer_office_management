@@ -1,0 +1,7 @@
+2025-11-13 22:42:44,108 - app - ERROR - ❌ Fatal error: name 'main_async' is not defined
+2025-11-13 22:42:44,109 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 498, in main
+    return asyncio.run(main_async())
+                       ^^^^^^^^^^
+NameError: name 'main_async' is not defined
+

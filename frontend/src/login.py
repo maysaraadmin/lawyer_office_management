@@ -1,55 +1,97 @@
 import flet as ft
 from flet_core import UserControl
+from typing import Callable, Awaitable
 
-# Use string colors for compatibility
-GREY_600 = "#757575"  # Equivalent to ft.colors.GREY_600
+# Color constants
+PRIMARY_COLOR = "#1976d2"
+BACKGROUND_COLOR = "#f5f5f5"
+TEXT_COLOR = "#000000"
+GREY_600 = "#757575"
+WHITE = "#ffffff"
+
+class LoginError(Exception):
+    """Custom exception for login errors"""
+    pass
 
 class LoginForm(UserControl):
-    def __init__(self, on_login_success):
+    """Login form component"""
+    
+    def __init__(self, on_login_success: Callable[[], Awaitable[None]]):
         super().__init__()
         self.on_login_success = on_login_success
+        self.error_message = ""
+        
+        # Form fields
         self.username = ft.TextField(
             label="Username",
             hint_text="Enter your username",
             width=400,
+            border_radius=5,
+            border_color="#e0e0e0",
+            bgcolor=WHITE,
+            text_size=14,
         )
+        
         self.password = ft.TextField(
             label="Password",
             hint_text="Enter your password",
             width=400,
             password=True,
             can_reveal_password=True,
+            border_radius=5,
+            border_color="#e0e0e0",
+            bgcolor=WHITE,
+            text_size=14,
         )
-        self.error_text = ft.Text("", color="red")
         
+        self.error_text = ft.Text(
+            "", 
+            color="red",
+            size=12,
+            weight=ft.FontWeight.W_400,
+        )
+        
+    async def validate_credentials(self, username: str, password: str) -> bool:
+        """Validate user credentials"""
+        # TODO: Implement actual credential validation
+        # This is a placeholder for demonstration
+        if not username or not password:
+            raise LoginError("Username and password are required")
+        return True
+    
     async def login_click(self, e):
-        if not self.username.value or not self.password.value:
-            self.error_text.value = "Please fill in all fields"
-            await self.update_async()
-            return
+        """Handle login button click"""
+        try:
+            if not self.username.value or not self.password.value:
+                raise LoginError("Please fill in all fields")
+                
+            # Validate credentials
+            is_valid = await self.validate_credentials(
+                self.username.value.strip(),
+                self.password.value
+            )
             
-        # For now, just log in with any non-empty credentials
-        self.on_login_success()
+            if is_valid:
+                self.error_text.value = ""
+                await self.update_async()
+                await self.on_login_success()
+                
+        except LoginError as e:
+            self.error_text.value = str(e)
+            await self.update_async()
+        except Exception as e:
+            self.error_text.value = "An unexpected error occurred"
+            print(f"Login error: {str(e)}")
+            await self.update_async()
     
     def build(self):
-        # Style the form controls
-        self.username.border_radius = 5
-        self.username.border_color = "#e0e0e0"
-        self.username.bgcolor = "#ffffff"
-        self.username.text_size = 14
-        
-        self.password.border_radius = 5
-        self.password.border_color = "#e0e0e0"
-        self.password.bgcolor = "#ffffff"
-        self.password.text_size = 14
-        
         login_button = ft.ElevatedButton(
             "Login",
             on_click=self.login_click,
             width=400,
             height=45,
-            color="#ffffff",  # White text
-            bgcolor="#1e88e5",  # Blue 600
+            color=WHITE,  # White text
+            bgcolor=PRIMARY_COLOR,  # Primary color
         )
         
         return ft.Container(
@@ -59,8 +101,17 @@ class LoginForm(UserControl):
                         ft.Container(
                             content=ft.Column(
                                 [
-                                    ft.Text("Welcome Back!", size=28, weight=ft.FontWeight.BOLD, color="#1a237e"),
-                                    ft.Text("Please sign in to continue", color=GREY_600, size=14),
+                                    ft.Text(
+                                        "Welcome Back!", 
+                                        size=28, 
+                                        weight=ft.FontWeight.BOLD, 
+                                        color=PRIMARY_COLOR
+                                    ),
+                                    ft.Text(
+                                        "Please sign in to continue", 
+                                        color=GREY_600, 
+                                        size=14
+                                    ),
                                 ],
                                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                                 spacing=5,
@@ -81,13 +132,13 @@ class LoginForm(UserControl):
                                 spacing=0,
                                 width=400,
                             ),
-                            padding=ft.padding.symmetric(horizontal=20, vertical=10),
+                            padding=20,
                         ),
                     ],
                     spacing=0,
                     horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 ),
-                bgcolor="#ffffff",
+                bgcolor=WHITE,
                 border_radius=10,
                 shadow=ft.BoxShadow(
                     spread_radius=1,
