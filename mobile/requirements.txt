@@ -1,0 +1,5 @@
+flet>=0.21.0
+requests>=2.31.0
+python-dotenv>=1.0.0
+httpx>=0.24.1
+python-jose[cryptography]>=3.3.0  # For JWT handling
