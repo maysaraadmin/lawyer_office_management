@@ -1,9 +1,0 @@
-Metadata-Version: 2.4
-Name: lawyer_office_frontend
-Version: 0.1
-Requires-Python: >=3.8
-Requires-Dist: flet
-Requires-Dist: httpx
-Requires-Dist: python-jose
-Dynamic: requires-dist
-Dynamic: requires-python

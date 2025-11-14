@@ -1,5 +1,8 @@
 import flet as ft
 from datetime import datetime
+import logging
+
+logger = logging.getLogger(__name__)
 
 class ClientsView:
     def __init__(self, app):
@@ -302,8 +305,207 @@ class ClientsView:
         print(f"Searching clients: {e.control.value}")
     
     def _show_add_client_dialog(self, e):
-        # TODO: Implement add client dialog
-        print("Add new client clicked")
+        """Show dialog to add a new client"""
+        # Create form fields
+        first_name_field = ft.TextField(
+            label="First Name",
+            autofocus=True,
+            width=300
+        )
+        
+        last_name_field = ft.TextField(
+            label="Last Name",
+            width=300
+        )
+        
+        email_field = ft.TextField(
+            label="Email",
+            width=300
+        )
+        
+        phone_field = ft.TextField(
+            label="Phone",
+            width=300
+        )
+        
+        address_field = ft.TextField(
+            label="Address",
+            width=300
+        )
+        
+        city_field = ft.TextField(
+            label="City",
+            width=300
+        )
+        
+        state_field = ft.TextField(
+            label="State",
+            width=300
+        )
+        
+        postal_code_field = ft.TextField(
+            label="Postal Code",
+            width=300
+        )
+        
+        country_field = ft.TextField(
+            label="Country",
+            value="United States",
+            width=300
+        )
+        
+        date_of_birth_field = ft.TextField(
+            label="Date of Birth (YYYY-MM-DD)",
+            width=300
+        )
+        
+        occupation_field = ft.TextField(
+            label="Occupation",
+            width=300
+        )
+        
+        company_field = ft.TextField(
+            label="Company",
+            width=300
+        )
+        
+        is_active_field = ft.Checkbox(
+            label="Active",
+            value=True
+        )
+        
+        def close_dialog(e):
+            self.page.dialog.open = False
+            self.page.update()
+        
+        def save_client(e):
+            """Save the new client"""
+            import asyncio
+            
+            async def _save():
+                try:
+                    # Validate required fields
+                    if not first_name_field.value or not last_name_field.value or not email_field.value:
+                        self.page.snack_bar = ft.SnackBar(
+                            content=ft.Text("Please fill in all required fields"),
+                            bgcolor=ft.Colors.RED
+                        )
+                        self.page.snack_bar.open = True
+                        await self.page.update_async()
+                        return
+                    
+                    # Prepare client data
+                    client_data = {
+                        "first_name": first_name_field.value,
+                        "last_name": last_name_field.value,
+                        "email": email_field.value,
+                        "phone": phone_field.value or "",
+                        "address": address_field.value or "",
+                        "city": city_field.value or "",
+                        "state": state_field.value or "",
+                        "postal_code": postal_code_field.value or "",
+                        "country": country_field.value or "",
+                        "date_of_birth": date_of_birth_field.value or None,
+                        "occupation": occupation_field.value or "",
+                        "company": company_field.value or "",
+                        "is_active": is_active_field.value
+                    }
+                    
+                    # Create client via API
+                    from src.services.api_client import api_client
+                    result = await api_client.create_client(client_data)
+                    
+                    # Show success message
+                    self.page.snack_bar = ft.SnackBar(
+                        content=ft.Text("Client created successfully!"),
+                        bgcolor=ft.Colors.GREEN
+                    )
+                    self.page.snack_bar.open = True
+                    
+                    # Close dialog and refresh data
+                    close_dialog(e)
+                    await self.load_data()
+                    await self.page.update_async()
+                    
+                except Exception as ex:
+                    logger.error(f"Error creating client: {str(ex)}")
+                    self.page.snack_bar = ft.SnackBar(
+                        content=ft.Text(f"Error creating client: {str(ex)}"),
+                        bgcolor=ft.Colors.RED
+                    )
+                    self.page.snack_bar.open = True
+                    await self.page.update_async()
+            
+            # Run the async function
+            asyncio.create_task(_save())
+        
+        # Create dialog with tabs for better organization
+        tabs = ft.Tabs(
+            selected_index=0,
+            tabs=[
+                ft.Tab(
+                    text="Basic Info",
+                    content=ft.Column(
+                        [
+                            first_name_field,
+                            last_name_field,
+                            email_field,
+                            phone_field,
+                            is_active_field
+                        ],
+                        tight=True,
+                        height=300,
+                        scroll=ft.ScrollMode.AUTO
+                    )
+                ),
+                ft.Tab(
+                    text="Address",
+                    content=ft.Column(
+                        [
+                            address_field,
+                            city_field,
+                            state_field,
+                            postal_code_field,
+                            country_field
+                        ],
+                        tight=True,
+                        height=300,
+                        scroll=ft.ScrollMode.AUTO
+                    )
+                ),
+                ft.Tab(
+                    text="Additional",
+                    content=ft.Column(
+                        [
+                            date_of_birth_field,
+                            occupation_field,
+                            company_field
+                        ],
+                        tight=True,
+                        height=300,
+                        scroll=ft.ScrollMode.AUTO
+                    )
+                )
+            ],
+            height=400,
+            expand=True
+        )
+        
+        # Create dialog
+        dialog = ft.AlertDialog(
+            modal=True,
+            title=ft.Text("Add New Client"),
+            content=tabs,
+            actions=[
+                ft.TextButton("Cancel", on_click=close_dialog),
+                ft.TextButton("Save", on_click=save_client),
+            ],
+            actions_alignment=ft.MainAxisAlignment.END
+        )
+        
+        self.page.dialog = dialog
+        dialog.open = True
+        self.page.update()
     
     def _view_client(self, client):
         # TODO: Implement client detail view

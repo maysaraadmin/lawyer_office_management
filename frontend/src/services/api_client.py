@@ -1,306 +1,206 @@
-import os
-import json
 import httpx
-from typing import Dict, Any, Optional, List, Union
-from datetime import datetime, timedelta
 import logging
+from typing import Dict, List, Optional, Any
+from datetime import datetime
 
 logger = logging.getLogger(__name__)
 
 class APIClient:
-    """
-    API client for communicating with the Lawyer Office backend
-    """
+    """Client for communicating with the Django backend API"""
     
-    def __init__(self, base_url: str = None):
-        self.base_url = base_url or os.getenv(
-            "API_BASE_URL", 
-            "http://localhost:8000/api"
+    def __init__(self, base_url: str = "http://127.0.0.1:8000/api/v1"):
+        self.base_url = base_url.rstrip('/')
+        self.client = httpx.Client(
+            base_url=self.base_url,
+            timeout=30.0,
+            headers={"Content-Type": "application/json"}
         )
-        self.client = httpx.AsyncClient()
-        self._token = None
-        self._refresh_token = None
-        self._token_expiry = None
-        self._auth_header = {}
-    
-    @property
-    def token(self) -> Optional[str]:
-        return self._token
-    
-    @token.setter
-    def token(self, value: str):
-        self._token = value
-        if value:
-            self._auth_header = {"Authorization": f"Bearer {value}"}
-        else:
-            self._auth_header = {}
-    
-    @property
-    def is_authenticated(self) -> bool:
-        """Check if the user is authenticated and token is not expired"""
-        if not self.token:
-            return False
+        self.access_token: Optional[str] = None
         
-        if self._token_expiry and datetime.now() < self._token_expiry:
-            return True
-            
-        return False
+    def set_auth_token(self, token: str):
+        """Set the authentication token for API requests"""
+        self.access_token = token
+        self.client.headers.update({"Authorization": f"Bearer {token}"})
+        
+    def clear_auth_token(self):
+        """Clear the authentication token"""
+        self.access_token = None
+        if "Authorization" in self.client.headers:
+            del self.client.headers["Authorization"]
     
-    async def _request(
-        self, 
-        method: str, 
-        endpoint: str, 
-        data: Optional[Dict] = None,
-        params: Optional[Dict] = None,
-        headers: Optional[Dict] = None,
-        files: Optional[Dict] = None,
-        require_auth: bool = True,
-    ) -> Dict[str, Any]:
-        """
-        Make an HTTP request to the API
-        """
-        url = f"{self.base_url.rstrip('/')}/{endpoint.lstrip('/')}"
-        
-        # Prepare headers
-        request_headers = {}
-        if require_auth and self.is_authenticated:
-            request_headers.update(self._auth_header)
-        
-        if headers:
-            request_headers.update(headers)
-        
-        # Prepare request data
-        json_data = None
-        if data and not files:
-            json_data = data
-            if 'Content-Type' not in request_headers:
-                request_headers['Content-Type'] = 'application/json'
-        
-        try:
-            # Make the request
-            response = await self.client.request(
-                method=method.upper(),
-                url=url,
-                json=json_data,
-                data=data if files else None,
-                files=files,
-                params=params,
-                headers=request_headers,
-                timeout=30.0,
-            )
-            
-            # Handle token refresh on 401
-            if response.status_code == 401 and require_auth and self._refresh_token:
-                refresh_success = await self.refresh_token()
-                if refresh_success:
-                    # Retry the request with the new token
-                    return await self._request(
-                        method, endpoint, data, params, headers, files, require_auth
-                    )
-            
-            response.raise_for_status()
-            
-            # Handle empty responses
-            if response.status_code == 204:  # No Content
-                return {"status": "success", "message": "Operation completed successfully"}
-                
-            # Parse JSON response
-            try:
-                return response.json()
-            except json.JSONDecodeError:
-                return {
-                    "status": "error",
-                    "message": "Invalid JSON response",
-                    "raw_response": response.text
-                }
-                
-        except httpx.HTTPStatusError as e:
-            # Handle HTTP errors
-            error_detail = {"status_code": e.response.status_code}
-            try:
-                error_detail.update(e.response.json())
-            except:
-                error_detail["detail"] = e.response.text
-                
-            logger.error(
-                f"API request failed: {method} {url} - {e.response.status_code}",
-                extra={"error": error_detail}
-            )
-            
-            return {
-                "status": "error",
-                "message": f"HTTP {e.response.status_code}: {e.response.text}",
-                "error": error_detail,
-                "status_code": e.response.status_code
-            }
-            
-        except Exception as e:
-            # Handle other errors
-            logger.exception(f"API request failed: {method} {url}")
-            return {
-                "status": "error",
-                "message": str(e),
-                "error": {"detail": str(e)}
-            }
-    
-    # Authentication methods
     async def login(self, email: str, password: str) -> Dict[str, Any]:
-        """
-        Authenticate a user and get an access token
-        """
-        data = {"email": email, "password": password}
-        response = await self._request(
-            "POST", 
-            "auth/token/", 
-            data=data, 
-            require_auth=False
-        )
-        
-        if response.get("access"):
-            self.token = response["access"]
-            self._refresh_token = response.get("refresh")
-            
-            # Set token expiry (default to 5 minutes if not provided)
-            expires_in = response.get("expires_in", 300)
-            self._token_expiry = datetime.now() + timedelta(seconds=expires_in)
-            
-            # Store user data
-            user_response = await self._request("GET", "auth/me/")
-            if user_response.get("status") == "success":
-                self._user = user_response.get("data", {})
-            
-            return {
-                "status": "success",
-                "message": "Login successful",
-                "user": self._user,
-                "tokens": {
-                    "access": self.token,
-                    "refresh": self._refresh_token,
-                    "expires_in": expires_in
-                }
-            }
-        
-        return response
-    
-    async def refresh_token(self) -> bool:
-        """
-        Refresh the access token using the refresh token
-        Returns True if successful, False otherwise
-        """
-        if not self._refresh_token:
-            return False
-            
+        """Authenticate with the backend and return access token"""
         try:
-            response = await self._request(
-                "POST",
-                "auth/token/refresh/",
-                data={"refresh": self._refresh_token},
-                require_auth=False
+            response = self.client.post(
+                "/auth/login/",
+                json={"email": email, "password": password}
             )
+            response.raise_for_status()
+            data = response.json()
             
-            if response.get("access"):
-                self.token = response["access"]
+            # Set the token if login successful
+            if "access" in data:
+                self.set_auth_token(data["access"])
                 
-                # Update token expiry
-                expires_in = response.get("expires_in", 300)
-                self._token_expiry = datetime.now() + timedelta(seconds=expires_in)
-                
-                return True
-                
+            return data
+        except httpx.HTTPError as e:
+            logger.error(f"Login error: {str(e)}")
+            raise Exception(f"Login failed: {str(e)}")
         except Exception as e:
-            logger.error(f"Failed to refresh token: {str(e)}")
-            
-        return False
+            logger.error(f"Unexpected login error: {str(e)}")
+            raise
     
-    async def logout(self):
-        """
-        Log out the current user
-        """
-        # Invalidate tokens on the server if needed
-        if self._refresh_token:
-            try:
-                await self._request(
-                    "POST",
-                    "auth/token/blacklist/",
-                    data={"refresh": self._refresh_token}
-                )
-            except Exception as e:
-                logger.warning(f"Error during logout: {str(e)}")
-        
-        # Clear local authentication state
-        self.token = None
-        self._refresh_token = None
-        self._token_expiry = None
-        self._user = None
-    
-    # User methods
     async def get_current_user(self) -> Dict[str, Any]:
-        """
-        Get the current authenticated user's profile
-        """
-        return await self._request("GET", "auth/me/")
-    
-    # Case methods
-    async def get_cases(self, params: Optional[Dict] = None) -> Dict[str, Any]:
-        """
-        Get a list of cases with optional filtering
-        """
-        return await self._request("GET", "cases/", params=params)
-    
-    async def get_case(self, case_id: str) -> Dict[str, Any]:
-        """
-        Get a single case by ID
-        """
-        return await self._request("GET", f"cases/{case_id}/")
-    
-    async def create_case(self, case_data: Dict) -> Dict[str, Any]:
-        """
-        Create a new case
-        """
-        return await self._request("POST", "cases/", data=case_data)
-    
-    # Appointment methods
-    async def get_appointments(self, params: Optional[Dict] = None) -> Dict[str, Any]:
-        """
-        Get a list of appointments with optional filtering
-        """
-        return await self._request("GET", "appointments/", params=params)
-    
-    async def create_appointment(self, appointment_data: Dict) -> Dict[str, Any]:
-        """
-        Create a new appointment
-        """
-        return await self._request("POST", "appointments/", data=appointment_data)
-    
-    # Document methods
-    async def upload_document(self, file_path: str, case_id: str) -> Dict[str, Any]:
-        """
-        Upload a document for a case
-        """
+        """Get current user information"""
         try:
-            with open(file_path, "rb") as f:
-                files = {
-                    "file": (os.path.basename(file_path), f, "application/octet-stream"),
-                    "case": (None, case_id),
-                }
+            if not self.access_token:
+                raise Exception("Not authenticated")
                 
-                return await self._request(
-                    "POST",
-                    "documents/upload/",
-                    files=files,
-                    headers={"Content-Type": "multipart/form-data"}
-                )
+            response = self.client.get("/auth/user/")
+            response.raise_for_status()
+            return response.json()
+        except httpx.HTTPError as e:
+            logger.error(f"Get current user error: {str(e)}")
+            raise Exception(f"Failed to get user data: {str(e)}")
         except Exception as e:
+            logger.error(f"Unexpected error getting user: {str(e)}")
+            raise
+    
+    async def get_appointments(self) -> List[Dict[str, Any]]:
+        """Get all appointments for the current user"""
+        try:
+            if not self.access_token:
+                raise Exception("Not authenticated")
+                
+            response = self.client.get("/appointments/")
+            response.raise_for_status()
+            return response.json()
+        except httpx.HTTPError as e:
+            logger.error(f"Get appointments error: {str(e)}")
+            # Return empty list if API is not available
+            return []
+        except Exception as e:
+            logger.error(f"Unexpected error getting appointments: {str(e)}")
+            return []
+    
+    async def get_clients(self) -> List[Dict[str, Any]]:
+        """Get all clients for the current user"""
+        try:
+            if not self.access_token:
+                raise Exception("Not authenticated")
+                
+            response = self.client.get("/clients/")
+            response.raise_for_status()
+            return response.json()
+        except httpx.HTTPError as e:
+            logger.error(f"Get clients error: {str(e)}")
+            # Return empty list if API is not available
+            return []
+        except Exception as e:
+            logger.error(f"Unexpected error getting clients: {str(e)}")
+            return []
+    
+    async def create_appointment(self, appointment_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Create a new appointment"""
+        try:
+            if not self.access_token:
+                logger.error("No access token - not authenticated")
+                raise Exception("Not authenticated")
+            
+            logger.info(f"Posting to /appointments/ with data: {appointment_data}")
+            logger.info(f"Authorization header: {self.client.headers.get('Authorization')}")
+                
+            response = self.client.post("/appointments/", json=appointment_data)
+            logger.info(f"Response status: {response.status_code}")
+            logger.info(f"Response text: {response.text}")
+            response.raise_for_status()
+            return response.json()
+        except httpx.HTTPError as e:
+            logger.error(f"Create appointment error: {str(e)}")
+            raise Exception(f"Failed to create appointment: {str(e)}")
+        except Exception as e:
+            logger.error(f"Unexpected error creating appointment: {str(e)}")
+            raise
+    
+    async def create_client(self, client_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Create a new client"""
+        try:
+            if not self.access_token:
+                raise Exception("Not authenticated")
+                
+            response = self.client.post("/clients/", json=client_data)
+            response.raise_for_status()
+            return response.json()
+        except httpx.HTTPError as e:
+            logger.error(f"Create client error: {str(e)}")
+            raise Exception(f"Failed to create client: {str(e)}")
+        except Exception as e:
+            logger.error(f"Unexpected error creating client: {str(e)}")
+            raise
+    
+    async def update_appointment(self, appointment_id: int, appointment_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Update an existing appointment"""
+        try:
+            if not self.access_token:
+                raise Exception("Not authenticated")
+                
+            response = self.client.put(f"/appointments/{appointment_id}/", json=appointment_data)
+            response.raise_for_status()
+            return response.json()
+        except httpx.HTTPError as e:
+            logger.error(f"Update appointment error: {str(e)}")
+            raise Exception(f"Failed to update appointment: {str(e)}")
+        except Exception as e:
+            logger.error(f"Unexpected error updating appointment: {str(e)}")
+            raise
+    
+    async def delete_appointment(self, appointment_id: int) -> bool:
+        """Delete an appointment"""
+        try:
+            if not self.access_token:
+                raise Exception("Not authenticated")
+                
+            response = self.client.delete(f"/appointments/{appointment_id}/")
+            response.raise_for_status()
+            return True
+        except httpx.HTTPError as e:
+            logger.error(f"Delete appointment error: {str(e)}")
+            return False
+        except Exception as e:
+            logger.error(f"Unexpected error deleting appointment: {str(e)}")
+            return False
+    
+    async def get_appointment_stats(self) -> Dict[str, Any]:
+        """Get appointment statistics"""
+        try:
+            if not self.access_token:
+                raise Exception("Not authenticated")
+                
+            response = self.client.get("/appointments/stats/")
+            response.raise_for_status()
+            return response.json()
+        except httpx.HTTPError as e:
+            logger.error(f"Get appointment stats error: {str(e)}")
+            # Return default stats if API is not available
             return {
-                "status": "error",
-                "message": f"Failed to upload file: {str(e)}"
+                "total": 0,
+                "upcoming": 0,
+                "completed": 0,
+                "cancelled": 0
+            }
+        except Exception as e:
+            logger.error(f"Unexpected error getting appointment stats: {str(e)}")
+            return {
+                "total": 0,
+                "upcoming": 0,
+                "completed": 0,
+                "cancelled": 0
             }
     
-    async def close(self):
-        """
-        Close the HTTP client
-        """
-        await self.client.aclose()
+    def close(self):
+        """Close the HTTP client"""
+        if self.client:
+            self.client.close()
 
-# Singleton instance
+# Global API client instance
 api_client = APIClient()

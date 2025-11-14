@@ -127,6 +127,144 @@ def cleanup(backend_process):
         except Exception as e:
             logger.error(f"Error stopping backend: {e}")
 
+def initialize_backend_api():
+    """Initialize the backend API by running migrations and collecting static files"""
+    try:
+        # Get the backend directory
+        backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'backend'))
+        
+        logger.info("Initializing backend API...")
+        
+        # Run migrations
+        logger.info("Running database migrations...")
+        migrate_cmd = [sys.executable, 'manage.py', 'migrate']
+        result = subprocess.run(
+            migrate_cmd,
+            cwd=backend_dir,
+            capture_output=True,
+            text=True,
+            timeout=60
+        )
+        
+        if result.returncode != 0:
+            logger.warning(f"Migration warnings: {result.stderr}")
+        else:
+            logger.info("Database migrations completed successfully")
+        
+        # Collect static files (optional, for production)
+        logger.info("Collecting static files...")
+        collectstatic_cmd = [sys.executable, 'manage.py', 'collectstatic', '--noinput']
+        result = subprocess.run(
+            collectstatic_cmd,
+            cwd=backend_dir,
+            capture_output=True,
+            text=True,
+            timeout=30
+        )
+        
+        if result.returncode != 0:
+            logger.warning(f"Static files collection warnings: {result.stderr}")
+        else:
+            logger.info("Static files collected successfully")
+        
+        # Create superuser if it doesn't exist (for initial setup)
+        logger.info("Checking for superuser...")
+        createsuperuser_cmd = [sys.executable, 'manage.py', 'shell', '-c', 
+            "from django.contrib.auth import get_user_model; "
+            "User = get_user_model(); "
+            "User.objects.filter(is_superuser=True).exists() or "
+            "User.objects.create_superuser('admin@lawyer.com', 'admin123')"]
+        result = subprocess.run(
+            createsuperuser_cmd,
+            cwd=backend_dir,
+            capture_output=True,
+            text=True,
+            timeout=30
+        )
+        
+        if result.returncode == 0:
+            logger.info("Superuser setup completed")
+        else:
+            logger.info("Superuser already exists or setup not needed")
+        
+        logger.info("Backend API initialization completed successfully")
+        return True
+        
+    except subprocess.TimeoutExpired:
+        logger.error("Backend API initialization timed out")
+        return False
+    except Exception as e:
+        logger.error(f"Error initializing backend API: {e}")
+        return False
+
+def is_backend_running():
+    """Check if backend server is already running"""
+    import httpx
+    
+    try:
+        with httpx.Client(timeout=2) as client:
+            response = client.get("http://127.0.0.1:8000/")
+            if response.status_code == 200:
+                logger.info("Backend server is already running")
+                return True
+    except:
+        pass
+    
+    return False
+
+def wait_for_backend_api(timeout: int = 30):
+    """Wait for the backend API to be ready"""
+    import httpx
+    import time
+    
+    logger.info("Waiting for backend API to be ready...")
+    start_time = time.time()
+    
+    while time.time() - start_time < timeout:
+        try:
+            # Try to connect to the backend API health endpoint
+            with httpx.Client(timeout=2) as client:
+                # First check if Django server is responding
+                response = client.get("http://127.0.0.1:8000/")
+                if response.status_code in [200, 302]:
+                    logger.info("Django server is responding...")
+                    
+                    # Now check if API health endpoint is available
+                    try:
+                        api_response = client.get("http://127.0.0.1:8000/api/v1/health/")
+                        if api_response.status_code == 200:
+                            logger.info("Backend API is ready!")
+                            return True
+                        elif api_response.status_code == 404:
+                            logger.warning("Health endpoint not found, trying auth endpoint...")
+                            # Try auth endpoint as fallback
+                            auth_response = client.get("http://127.0.0.1:8000/api/v1/auth/")
+                            if auth_response.status_code in [200, 401, 405]:  # 405 means endpoint exists but wrong method
+                                logger.info("Backend API is ready!")
+                                return True
+                    except Exception as e:
+                        logger.debug(f"API endpoint not yet available: {str(e)}")
+                        
+        except Exception as e:
+            logger.debug(f"Backend not ready yet: {str(e)}")
+        
+        time.sleep(1)
+    
+    # Try one more time with detailed error
+    try:
+        with httpx.Client(timeout=5) as client:
+            response = client.get("http://127.0.0.1:8000/api/v1/health/")
+            if response.status_code == 200:
+                logger.info("Backend API is ready!")
+                return True
+            else:
+                logger.error(f"Backend API health check returned status {response.status_code}")
+                logger.error(f"Response: {response.text}")
+    except Exception as e:
+        logger.error(f"Failed to connect to backend API: {str(e)}")
+    
+    raise RuntimeError(f"Backend API did not become ready within {timeout} seconds")
+
 def run_backend_in_thread():
     """Run the backend server in a separate process"""
     try:
@@ -172,12 +310,15 @@ def run_backend_in_thread():
         log_thread.start()
         
         # Give the server time to start
-        time.sleep(2)
+        time.sleep(3)
         
         # Check if the process is still running
         if process.poll() is not None:
             raise RuntimeError("Backend server failed to start")
             
+        # Wait for API to be ready
+        wait_for_backend_api()
+        
         logger.info("Backend server started successfully")
         return process
         
@@ -270,16 +411,25 @@ def main():
         os.chdir(script_dir)
         
         try:
-            # Start backend server
-            logger.info("\n🔄 Starting backend server...")
-            backend_process = run_backend_in_thread()
-            
-            # Give the backend some time to start
-            time.sleep(2)
-            
-            # Check if backend is running
-            if backend_process.poll() is not None:
-                raise RuntimeError("Backend server failed to start")
+            # Check if backend is already running
+            if is_backend_running():
+                logger.info("Backend server is already running, proceeding to start frontend...")
+                backend_process = None
+            else:
+                # Initialize the backend API first
+                if not initialize_backend_api():
+                    raise RuntimeError("Failed to initialize backend API")
+                
+                # Start backend server
+                logger.info("\n🔄 Starting backend server...")
+                backend_process = run_backend_in_thread()
+                
+                # Give the backend some time to start
+                time.sleep(2)
+                
+                # Check if backend is running
+                if backend_process.poll() is not None:
+                    raise RuntimeError("Backend server failed to start")
             
             # Start frontend
             logger.info("\n🖥️  Starting frontend application...")

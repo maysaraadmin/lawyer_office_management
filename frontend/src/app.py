@@ -24,7 +24,8 @@ try:
     from .views.clients import ClientsView
     from .views.profile.profile_view import ProfileView
     from .login import LoginForm, LoginError
-    from services.storage import Storage
+    from src.services.storage import Storage
+    from src.services.api_client import api_client
 except ImportError as e:
     logger.error(f"Import error: {str(e)}")
     raise
@@ -93,6 +94,9 @@ class LawyerOfficeApp:
             self.access_token = stored_token
             logger.info("Restored authentication state from storage")
             logger.info(f"Authentication state: {self.is_authenticated}")
+            
+            # Restore the API client token
+            api_client.set_auth_token(self.access_token)
         else:
             logger.info("No stored token found")
             # Try to set and get a test value to verify storage is working
@@ -139,6 +143,7 @@ class LawyerOfficeApp:
             label_type=ft.NavigationRailLabelType.ALL,
             min_width=100,
             min_extended_width=200,
+            expand=True,
             on_change=self.navigate,
             destinations=self.nav_items
         )
@@ -243,6 +248,10 @@ class LawyerOfficeApp:
             self.is_authenticated = True
             # Store authentication token (in a real app, this would come from your auth service)
             self.storage.set("access_token", "dummy_token")
+            self.access_token = "dummy_token"
+            
+            # Set the API client token
+            api_client.set_auth_token(self.access_token)
             
             # Initialize views after successful login
             if hasattr(self, 'initialize_views'):
@@ -432,20 +441,17 @@ class LawyerOfficeApp:
             self.content.content = dashboard_view
             logger.info("Content updated with dashboard view")
             
-            # Create main view with navigation rail and content
-            main_view = ft.Row(
-                [
-                    self.nav_rail,
-                    ft.VerticalDivider(width=1),
-                    self.content,
-                ],
-                expand=True,
-            )
+            # Update main layout
+            self.main.controls = [self.nav_rail, ft.VerticalDivider(width=1), self.content]
             
-            # Add the view to page
-            view = ft.View("/dashboard", [main_view])
-            self.page.views.append(view)
-            logger.info(f"View added to page. Total views: {len(self.page.views)}")
+            # Create and add the dashboard view
+            dashboard_view_full = ft.View(
+                "/dashboard",
+                [self.main],
+                padding=ft.padding.all(0),
+                bgcolor=ft.Colors.with_opacity(0.95, ft.Colors.GREY_50)
+            )
+            self.page.views.append(dashboard_view_full)
             
             # Update the page
             try:
@@ -471,7 +477,12 @@ class LawyerOfficeApp:
         """Handle user logout"""
         try:
             self.is_authenticated = False
+            self.access_token = None
             self.storage.remove("access_token")
+            
+            # Clear the API client token
+            api_client.clear_auth_token()
+            
             await self.show_login()
         except Exception as e:
             logger.error(f"Error during logout: {str(e)}")
@@ -522,20 +533,17 @@ class LawyerOfficeApp:
             self.content.content = self.profile_view
             logger.info("Content updated with profile view")
             
-            # Create main view with navigation rail and content
-            main_view = ft.Row(
-                [
-                    self.nav_rail,
-                    ft.VerticalDivider(width=1),
-                    self.content,
-                ],
-                expand=True,
-            )
+            # Update main layout
+            self.main.controls = [self.nav_rail, ft.VerticalDivider(width=1), self.content]
             
-            # Add the view to page
-            view = ft.View("/profile", [main_view])
-            self.page.views.append(view)
-            logger.info(f"Profile view added to page. Total views: {len(self.page.views)}")
+            # Create and add the profile view
+            profile_view_full = ft.View(
+                "/profile",
+                [self.main],
+                padding=ft.padding.all(0),
+                bgcolor=ft.Colors.with_opacity(0.95, ft.Colors.GREY_50)
+            )
+            self.page.views.append(profile_view_full)
             
             # Update the page
             try:
@@ -556,6 +564,90 @@ class LawyerOfficeApp:
             logger.error(f"Error in show_profile: {str(e)}")
             logger.error(traceback.format_exc())
             await self.show_error("Failed to load profile")
+    
+    async def show_appointments(self):
+        """Show appointments view"""
+        try:
+            logger.info("Showing appointments")
+            
+            if not hasattr(self, 'page') or not self.page:
+                logger.error("Page not available in show_appointments")
+                return
+                
+            # Clean up the page
+            self.page.views.clear()
+            
+            # Reset navigation to appointments
+            self.nav_rail.selected_index = 1
+            
+            # Use the pre-built appointments view
+            self.content.content = self.appointments_view
+            
+            # Update main layout
+            self.main.controls = [self.nav_rail, ft.VerticalDivider(width=1), self.content]
+            
+            # Create and add the appointments view
+            appointments_view_full = ft.View(
+                "/appointments",
+                [self.main],
+                padding=ft.padding.all(0),
+                bgcolor=ft.Colors.with_opacity(0.95, ft.Colors.GREY_50)
+            )
+            self.page.views.append(appointments_view_full)
+            
+            # Update the page
+            try:
+                self.page.update()
+                logger.info("Page updated successfully with appointments view")
+            except Exception as e:
+                logger.error(f"Error updating page: {str(e)}")
+                
+        except Exception as e:
+            logger.error(f"Error in show_appointments: {str(e)}")
+            logger.error(traceback.format_exc())
+            await self.show_error("Failed to load appointments")
+    
+    async def show_clients(self):
+        """Show clients view"""
+        try:
+            logger.info("Showing clients")
+            
+            if not hasattr(self, 'page') or not self.page:
+                logger.error("Page not available in show_clients")
+                return
+                
+            # Clean up the page
+            self.page.views.clear()
+            
+            # Reset navigation to clients
+            self.nav_rail.selected_index = 2
+            
+            # Use the pre-built clients view
+            self.content.content = self.clients_view
+            
+            # Update main layout
+            self.main.controls = [self.nav_rail, ft.VerticalDivider(width=1), self.content]
+            
+            # Create and add the clients view
+            clients_view_full = ft.View(
+                "/clients",
+                [self.main],
+                padding=ft.padding.all(0),
+                bgcolor=ft.Colors.with_opacity(0.95, ft.Colors.GREY_50)
+            )
+            self.page.views.append(clients_view_full)
+            
+            # Update the page
+            try:
+                self.page.update()
+                logger.info("Page updated successfully with clients view")
+            except Exception as e:
+                logger.error(f"Error updating page: {str(e)}")
+                
+        except Exception as e:
+            logger.error(f"Error in show_clients: {str(e)}")
+            logger.error(traceback.format_exc())
+            await self.show_error("Failed to load clients")
     
     async def route_change(self, route):
         """Handle route changes"""
@@ -584,6 +676,24 @@ class LawyerOfficeApp:
                     self.page.go("/login")
                 else:
                     await self.show_dashboard()
+            elif route == "/appointments":
+                logger.info(f"Appointments route accessed. is_authenticated: {self.is_authenticated}")
+                logger.info(f"Access token exists: {self.access_token is not None}")
+                if not self.is_authenticated:
+                    logger.info("User not authenticated, redirecting to login")
+                    # Use page.go to navigate to login without triggering route_change again
+                    self.page.go("/login")
+                else:
+                    await self.show_appointments()
+            elif route == "/clients":
+                logger.info(f"Clients route accessed. is_authenticated: {self.is_authenticated}")
+                logger.info(f"Access token exists: {self.access_token is not None}")
+                if not self.is_authenticated:
+                    logger.info("User not authenticated, redirecting to login")
+                    # Use page.go to navigate to login without triggering route_change again
+                    self.page.go("/login")
+                else:
+                    await self.show_clients()
             elif route == "/profile":
                 logger.info(f"Profile route accessed. is_authenticated: {self.is_authenticated}")
                 logger.info(f"Access token exists: {self.access_token is not None}")

@@ -2,17 +2,34 @@ import flet as ft
 import flet_core
 import sys
 import os
+import logging
 from datetime import datetime
+from src.services.api_client import api_client
+
+logger = logging.getLogger(__name__)
+
+# Color constants
+WHITE = "#FFFFFF"
+GREY_50 = "#FAFAFA"
+GREY_100 = "#F5F5F5"
+GREY_200 = "#EEEEEE"
+GREY_300 = "#E0E0E0"
+GREY_400 = "#BDBDBD"
+GREY_500 = "#9E9E9E"
+GREY_600 = "#757575"
+GREY_700 = "#616161"
+GREY_800 = "#424242"
+GREY_900 = "#212121"
+BLUE = "#2196F3"
+GREEN = "#4CAF50"
+ORANGE = "#FF9800"
+RED = "#F44336"
 
 # Add the project root to the Python path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..')))
 
 # Import from the services package
-from services import api_client
-from services.storage import Storage
-
-# Import navigation utility
-from ...utils.navigation import navigate_to
+from src.services.storage import Storage
 
 class ProfileView(flet_core.UserControl):
     def __init__(self, page: ft.Page):
@@ -27,49 +44,56 @@ class ProfileView(flet_core.UserControl):
         await self.load_user_data()
 
     async def load_user_data(self):
+        """Load user data from API"""
         try:
             print("DEBUG: Starting to load user data...")
-            # For now, since we're using dummy auth, use mock data
-            # In a real app, this would be: user_data = await api_client.get_current_user()
-            try:
-                user_data = await api_client.get_current_user()
-                print(f"DEBUG: User data received from API: {user_data}")
-            except Exception as api_error:
-                print(f"DEBUG: API call failed: {str(api_error)}")
-                # Use mock data for demo purposes
-                user_data = {
+            # Try to get user data from API
+            user_data = await api_client.get_current_user()
+            
+            if user_data:
+                self.user_data = user_data
+                print(f"DEBUG: User data loaded from API: {user_data}")
+            else:
+                # Fallback to mock data if API returns nothing
+                print("DEBUG: API returned no data, using mock data")
+                self.user_data = {
                     "id": 1,
                     "email": "lawyer@example.com",
                     "first_name": "John",
                     "last_name": "Smith",
                     "phone": "+1-555-0123",
                     "date_of_birth": "1980-01-01",
-                    "address": "123 Main St, City, State 12345"
+                    "address": "123 Main St, City, State 12345",
+                    "user_type": "lawyer"
                 }
-                print(f"DEBUG: Using mock user data: {user_data}")
             
-            if user_data:
-                self.user_data = user_data
-                self.loading = False
-                print("DEBUG: User data loaded successfully")
-                self.update()
-            else:
-                self.error = "Failed to load profile data"
-                self.loading = False
-                print("DEBUG: Failed to load user data - no data returned")
-                self.update()
-        except Exception as e:
-            self.error = str(e)
             self.loading = False
-            print(f"DEBUG: Error loading user data: {str(e)}")
+            print("DEBUG: User data loaded successfully")
+            self.update()
+            
+        except Exception as e:
+            print(f"DEBUG: Error loading user data from API: {str(e)}")
+            # Use mock data as fallback
+            self.user_data = {
+                "id": 1,
+                "email": "lawyer@example.com",
+                "first_name": "John",
+                "last_name": "Smith",
+                "phone": "+1-555-0123",
+                "date_of_birth": "1980-01-01",
+                "address": "123 Main St, City, State 12345",
+                "user_type": "lawyer"
+            }
+            self.loading = False
+            print("DEBUG: Using mock user data as fallback")
             self.update()
 
     async def logout(self, e):
-        from services.storage import Storage
+        from src.services.storage import Storage
         storage = Storage()
         storage.remove("access_token")
         storage.remove("refresh_token")
-        await navigate_to(self.page, "/login")
+        self.page.go("/login")
 
     def build(self):
         if self.loading:

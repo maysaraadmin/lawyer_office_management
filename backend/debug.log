@@ -501,3 +501,432 @@ Response sent
 Request received
 Response sent
 "GET /api/v1/docs/?format=openapi HTTP/1.1" 200 28608
+Request received
+Client error response
+Unauthorized: /api/v1/appointments/
+"GET /api/v1/appointments/ HTTP/1.1" 401 58
+Watching for file changes with StatReloader
+Request received
+Client error response
+Unauthorized: /api/v1/appointments/
+"GET /api/v1/appointments/ HTTP/1.1" 401 58
+Request received
+Client error response
+Unauthorized: /api/v1/cases/
+"GET /api/v1/cases/ HTTP/1.1" 401 58
+Request received
+Client error response
+Unauthorized: /api/v1/clients/
+"GET /api/v1/clients/ HTTP/1.1" 401 58
+Request received
+Client error response
+Unauthorized: /api/v1/appointments/
+"GET /api/v1/appointments/ HTTP/1.1" 401 58
+Request received
+Client error response
+Unauthorized: /api/v1/cases/
+"GET /api/v1/cases/ HTTP/1.1" 401 58
+Request received
+Client error response
+Not Found: /api/v1/core/test/
+"GET /api/v1/core/test/ HTTP/1.1" 404 4591
+Request received
+Client error response
+Not Found: /api/v1/core/test/
+"GET /api/v1/core/test/ HTTP/1.1" 404 4591
+Request received
+Client error response
+Not Found: /api/v1/core/test/
+"GET /api/v1/core/test/ HTTP/1.1" 404 4591
+Request received
+Client error response
+Not Found: /api/v1/core/test/
+"GET /api/v1/core/test/ HTTP/1.1" 404 4591
+Request received
+Client error response
+Not Found: /api/v1/core/test/
+"GET /api/v1/core/test/ HTTP/1.1" 404 4591
+Request received
+Client error response
+Unauthorized: /api/v1/appointments/
+"GET /api/v1/appointments/ HTTP/1.1" 401 58
+Request received
+Client error response
+Unauthorized: /api/v1/appointments/
+"GET /api/v1/appointments/ HTTP/1.1" 401 58
+Request received
+Client error response
+Unauthorized: /api/v1/appointments/
+"GET /api/v1/appointments/ HTTP/1.1" 401 58
+Request received
+Client error response
+Not Found: /api/v1/core/appointments/
+"GET /api/v1/core/appointments/ HTTP/1.1" 404 4615
+Request received
+Client error response
+Not Found: /api/v1/core/appointments/
+"GET /api/v1/core/appointments/ HTTP/1.1" 404 4615
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Client error response
+Not Found: /api/v1/core/test/
+"GET /api/v1/core/test/ HTTP/1.1" 404 4591
+Request received
+Client error response
+Not Found: /api/v1/core/test/
+"GET /api/v1/core/test/ HTTP/1.1" 404 4591
+Watching for file changes with StatReloader
+Request received
+Client error response
+Not Found: /api/v1/core/test/
+"GET /api/v1/core/test/ HTTP/1.1" 404 4591
+D:\lawyer_office_management\backend\apps\core\views\public.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Request received
+Client error response
+Not Found: /api/v1/core/test/
+"GET /api/v1/core/test/ HTTP/1.1" 404 4591
+Watching for file changes with StatReloader
+Request received
+Client error response
+Not Found: /api/v1/core/appointments/
+"GET /api/v1/core/appointments/ HTTP/1.1" 404 4615
+Request received
+Client error response
+Not Found: /api/v1/core/appointments/
+"GET /api/v1/core/appointments/ HTTP/1.1" 404 4615
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/docs/ HTTP/1.1" 200 2235
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/docs/ HTTP/1.1" 200 2235
+Request received
+Response sent
+"GET /api/v1/core/appointments/ HTTP/1.1" 200 313
+Request received
+Response sent
+"GET /api/v1/core/appointments/ HTTP/1.1" 200 313
+Request received
+Client error response
+Not Found: /api/v1/auth/me/
+"GET /api/v1/auth/me/ HTTP/1.1" 404 7153
+Request received
+Client error response
+Forbidden: /api/v1/auth/profile/
+"GET /api/v1/auth/profile/ HTTP/1.1" 403 63
+Watching for file changes with StatReloader
+Request received
+Client error response
+Not Found: /api/v1/
+"GET /api/v1/ HTTP/1.1" 404 4806
+Request received
+Client error response
+Method Not Allowed: /api/v1/auth/login/
+"GET /api/v1/auth/login/ HTTP/1.1" 405 40
+Request received
+Client error response
+Not Found: /api/v1/
+"GET /api/v1/ HTTP/1.1" 404 4806
+Request received
+Client error response
+Method Not Allowed: /api/v1/auth/login/
+"GET /api/v1/auth/login/ HTTP/1.1" 405 40
+Request received
+Client error response
+Unauthorized: /api/v1/auth/login/
+"POST /api/v1/auth/login/ HTTP/1.1" 401 63
+Request received
+Client error response
+Unauthorized: /api/v1/auth/login/
+"POST /api/v1/auth/login/ HTTP/1.1" 401 63
+Request received
+Client error response
+Not Found: /api/v1/auth/token/
+"POST /api/v1/auth/token/ HTTP/1.1" 404 7163
+Request received
+Client error response
+Unauthorized: /api/v1/auth/login/
+"POST /api/v1/auth/login/ HTTP/1.1" 401 63
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Client error response
+Unauthorized: /api/v1/auth/login/
+"POST /api/v1/auth/login/ HTTP/1.1" 401 63
+Request received
+Client error response
+Not Found: /api/auth/user/
+"GET /api/auth/user/ HTTP/1.1" 404 2686
+Request received
+Client error response
+Not Found: /api/auth/user/
+"GET /api/auth/user/ HTTP/1.1" 404 2686
+Watching for file changes with StatReloader
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Client error response
+Not Found: /api/v1/auth/
+"GET /api/v1/auth/ HTTP/1.1" 404 6899
+Request received
+Client error response
+Unauthorized: /api/v1/auth/login/
+"POST /api/v1/auth/login/ HTTP/1.1" 401 63
+Request received
+Response sent
+"POST /api/v1/auth/login/ HTTP/1.1" 200 859
+Request received
+Client error response
+Not Found: /api/v1/auth/user/
+"GET /api/v1/auth/user/ HTTP/1.1" 404 6914
+Request received
+Client error response
+Not Found: /api/v1/auth/user/
+"GET /api/v1/auth/user/ HTTP/1.1" 404 6914
+Request received
+Client error response
+Not Found: /api/v1/auth/user/
+"GET /api/v1/auth/user/ HTTP/1.1" 404 6914
+Request received
+Client error response
+Not Found: /api/v1/auth/user/
+"GET /api/v1/auth/user/ HTTP/1.1" 404 6914
+Request received
+Client error response
+Not Found: /api/v1/auth/user/
+"GET /api/v1/auth/user/ HTTP/1.1" 404 6914
+Watching for file changes with StatReloader
+Request received
+Client error response
+Not Found: /api/v1/
+"GET /api/v1/ HTTP/1.1" 404 4561
+Request received
+Client error response
+Not Found: /api/v1/
+"GET /api/v1/ HTTP/1.1" 404 4561
+Request received
+Client error response
+Not Found: /api/v1/
+"GET /api/v1/ HTTP/1.1" 404 4561
+Request received
+Client error response
+Not Found: /api/v1/
+"GET /api/v1/ HTTP/1.1" 404 4561
+Request received
+Client error response
+Not Found: /api/v1/
+"GET /api/v1/ HTTP/1.1" 404 4561
+Request received
+Client error response
+Not Found: /api/v1/
+"GET /api/v1/ HTTP/1.1" 404 4561
+Request received
+Client error response
+Not Found: /api/v1/
+"GET /api/v1/ HTTP/1.1" 404 4561
+Request received
+Client error response
+Not Found: /api/v1/
+"GET /api/v1/ HTTP/1.1" 404 4561
+Request received
+Client error response
+Not Found: /api/v1/
+"GET /api/v1/ HTTP/1.1" 404 4561
+Request received
+Client error response
+Not Found: /api/v1/
+"GET /api/v1/ HTTP/1.1" 404 4561
+Request received
+Client error response
+Not Found: /api/v1/
+"GET /api/v1/ HTTP/1.1" 404 4561
+Request received
+Client error response
+Not Found: /api/v1/
+"GET /api/v1/ HTTP/1.1" 404 4561
+Request received
+Client error response
+Not Found: /api/v1/
+"GET /api/v1/ HTTP/1.1" 404 4561
+Request received
+Client error response
+Not Found: /api/v1/
+"GET /api/v1/ HTTP/1.1" 404 4561
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Client error response
+Not Found: /api/v1/
+"GET /api/v1/ HTTP/1.1" 404 4561
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Watching for file changes with StatReloader
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79

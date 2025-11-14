@@ -1,19 +1,27 @@
 import flet as ft
 from datetime import datetime, timedelta
-from typing import List, Dict, Any
+from flet import *
 import logging
-
-from services import api_client
-
-# Color constants
-GREY_600 = "#757575"
-WHITE = "#FFFFFF"
-BLUE_600 = "#1E88E5"
-GREEN_600 = "#43A047"
-ORANGE_600 = "#FB8C00"
-RED_600 = "#E53935"
+from src.services.api_client import api_client
 
 logger = logging.getLogger(__name__)
+
+# Color constants
+WHITE = "#FFFFFF"
+GREY_50 = "#FAFAFA"
+GREY_100 = "#F5F5F5"
+GREY_200 = "#EEEEEE"
+GREY_300 = "#E0E0E0"
+GREY_400 = "#BDBDBD"
+GREY_500 = "#9E9E9E"
+GREY_600 = "#757575"
+GREY_700 = "#616161"
+GREY_800 = "#424242"
+GREY_900 = "#212121"
+BLUE = "#2196F3"
+GREEN = "#4CAF50"
+ORANGE = "#FF9800"
+RED = "#F44336"
 
 class DashboardView:
     def __init__(self, app):
@@ -273,99 +281,97 @@ shadow_color="#E0E0E0",
                         ft.IconButton(
                             icon="chevron_right",
                             bgcolor=BLUE_600,
+                            icon_color=WHITE,
                             on_click=self._view_appointment,
-                            data=appt,  # Store appointment data in the button
+                            data=appt,
                         ),
                     ],
-                    alignment=ft.MainAxisAlignment.START,
+                    alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                 ),
                 padding=10,
             ),
             elevation=0,
-shadow_color="#EEEEEE",
+            shadow_color="#EEEEEE",
             shape=ft.RoundedRectangleBorder(radius=8),
         )
+
+async def _retry_load(self, e):
+    """Retry loading data"""
+    self.error = None
+    self.loading = True
+    await self.load_data()
+    # Rebuild the view
+    self.controls.clear()
+    new_view = self.build()
+    if self.app and hasattr(self.app, 'content'):
+        self.app.content.content = new_view
+        self.app.page.update()
+
+async def load_data(self):
+    """Load dashboard data from API"""
+    try:
+        logger.info("Loading dashboard data...")
+        self.loading = True
+        self.error = None
+        
+        # Load appointments data
+        appointments = await api_client.get_appointments()
+        appointments_count = len(appointments)
+        # Filter upcoming appointments (next 7 days)
+        now = datetime.now()
+        upcoming = []
+        for appt in appointments:
+            try:
+                # Handle different time formats
+                appt_time_str = appt.get('date_time', appt.get('time', ''))
+                if isinstance(appt_time_str, str):
+                    appt_time = datetime.fromisoformat(appt_time_str.replace('Z', '+00:00'))
+                elif isinstance(appt_time_str, datetime):
+                    appt_time = appt_time_str
+                else:
+                    continue
+                
+                if now <= appt_time <= now + timedelta(days=7):
+                    upcoming.append(appt)
+            except Exception as e:
+                logger.warning(f"Error parsing appointment time: {e}")
+                continue
+        
+        self.appointments_data = upcoming
+        logger.info(f"Loaded {len(upcoming)} upcoming appointments")
+        
+        # Load stats data
+        try:
+            stats = await api_client.get_appointment_stats()
+            self.stats_data = {
+                "total_appointments": stats.get("total", appointments_count),
+                "active_clients": stats.get("active_clients", 0),
+                "upcoming_deadlines": stats.get("upcoming", len(upcoming)),
+                "total_revenue": stats.get("total_revenue", 0.0),
+            }
+        except:
+            # Fallback to computed stats
+            self.stats_data = {
+                "total_appointments": appointments_count,
+                "active_clients": len(set(appt.get('client_id', '') for appt in appointments)),
+                "upcoming_deadlines": len(upcoming),
+                "total_revenue": 0.0,
+            }
+        
+        logger.info("Stats data loaded")
+        
+        self.loading = False
+        self.data_loaded = True
+        logger.info("Dashboard data loaded successfully")
+        
+    except Exception as e:
+        logger.error(f"Error loading dashboard data: {str(e)}")
+        self.error = str(e)
+        self.loading = False
     
     async def did_mount_async(self):
-        """Called when the dashboard is mounted"""
-        await self.load_dashboard_data()
-    
-    async def load_dashboard_data(self):
-        """Load dashboard data from API"""
-        try:
-            logger.info("Loading dashboard data...")
-            self.loading = True
-            self.error = None
-            
-            # Load appointments data
-            appointments_count = 0
-            try:
-                appointments = await api_client.get_appointments()
-                appointments_count = len(appointments)
-                # Filter upcoming appointments (next 7 days)
-                now = datetime.now()
-                upcoming = []
-                for appt in appointments:
-                    appt_time = datetime.fromisoformat(appt.get('date_time', '').replace('Z', '+00:00'))
-                    if appt_time > now and appt_time <= now + timedelta(days=7):
-                        upcoming.append(appt)
-                self.appointments_data = upcoming[:5]  # Show max 5 appointments
-                logger.info(f"Loaded {len(self.appointments_data)} upcoming appointments")
-            except Exception as e:
-                logger.error(f"Failed to load appointments: {str(e)}")
-                self.appointments_data = []
-                appointments_count = 0
-            
-            # Load stats data
-            try:
-                # For now, use mock data for stats since we don't have specific endpoints
-                # In a real app, these would come from the API
-                self.stats_data = {
-                    "total_appointments": appointments_count,
-                    "active_clients": 18,  # This would come from a clients endpoint
-                    "upcoming_deadlines": 5,  # This would come from a cases/deadlines endpoint
-                    "total_revenue": 12450.00,  # This would come from a billing endpoint
-                }
-                logger.info("Stats data loaded")
-            except Exception as e:
-                logger.error(f"Failed to load stats: {str(e)}")
-                self.stats_data = {
-                    "total_appointments": 0,
-                    "active_clients": 0,
-                    "upcoming_deadlines": 0,
-                    "total_revenue": 0.00,
-                }
-            
-            self.loading = False
-            self.data_loaded = True
-            logger.info("Dashboard data loaded successfully")
-            
-            # Update the UI
-            if hasattr(self, 'controls') and self.controls:
-                self.controls.clear()
-                new_content = self.build()
-                if hasattr(self.page, 'update'):
-                    self.page.update()
-            
-        except Exception as e:
-            logger.error(f"Error loading dashboard data: {str(e)}")
-            self.loading = False
-            self.error = str(e)
-            
-            # Update UI to show error
-            if hasattr(self, 'controls') and self.controls:
-                self.controls.clear()
-                new_content = self.build()
-                if hasattr(self.page, 'update'):
-                    self.page.update()
-    
-    async def _retry_load(self, e):
-        """Retry loading dashboard data"""
-        await self.load_dashboard_data()
-    
-    def _get_upcoming_appointments(self):
-        """Fallback method - now returns loaded data"""
-        return self.appointments_data if self.appointments_data else []
+        """Called when the view is mounted to the page"""
+        await self.load_data()
     
     async def _view_appointment(self, e):
         """Handle viewing an appointment"""
