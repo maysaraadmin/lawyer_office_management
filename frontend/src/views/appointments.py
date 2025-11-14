@@ -18,7 +18,7 @@ class AppointmentsView:
                     ),
                     ft.ElevatedButton(
                         "New Appointment",
-                        icon=ft.icons.ADD,
+                        icon="add",
                         on_click=self._show_add_appointment_dialog,
                     ),
                 ],
@@ -55,12 +55,11 @@ class AppointmentsView:
                 ),
                 ft.OutlinedButton(
                     "Apply Filters",
-                    icon=ft.icons.FILTER_ALT,
+                    icon="filter_alt",
                     on_click=self._apply_filters,
                 ),
                 ft.Container(expand=True),  # Spacer
                 ft.SearchBar(
-                    hint_text="Search appointments...",
                     on_submit=self._search_appointments,
                     width=300,
                 ),
@@ -79,7 +78,7 @@ class AppointmentsView:
             [
                 header,
                 filter_row,
-                ft.Divider(height=20, color=ft.colors.TRANSPARENT),
+                ft.Divider(height=20, color="transparent"),
                 self.appointments_list,
             ],
             expand=True,
@@ -107,7 +106,7 @@ class AppointmentsView:
                 )
         else:
             self.appointments_list.controls.append(
-                ft.Text("No appointments for today", italic=True, color=ft.colors.GREY)
+                ft.Text("No appointments for today", italic=True, color="#9E9E9E")
             )
         
         # Add upcoming section
@@ -125,7 +124,7 @@ class AppointmentsView:
                 )
         else:
             self.appointments_list.controls.append(
-                ft.Text("No upcoming appointments", italic=True, color=ft.colors.GREY)
+                ft.Text("No upcoming appointments", italic=True, color="#9E9E9E")
             )
         
         self.page.update()
@@ -153,9 +152,9 @@ class AppointmentsView:
                             ),
                             padding=10,
                             border_radius=8,
-                            bgcolor=ft.colors.BLUE_50,
+                            bgcolor="#E3F2FD",
                         ),
-                        ft.VerticalDivider(width=20, color=ft.colors.TRANSPARENT),
+                        ft.VerticalDivider(width=20, color="transparent"),
                         ft.Column(
                             [
                                 ft.Text(
@@ -170,7 +169,7 @@ class AppointmentsView:
                                 ft.Text(
                                     f"Type: {appt['type']} • {appt['location']}",
                                     style=ft.TextThemeStyle.BODY_SMALL,
-                                    color=ft.colors.GREY_600,
+                                    color="#757575",
                                 ),
                             ],
                             alignment=ft.MainAxisAlignment.CENTER,
@@ -179,10 +178,10 @@ class AppointmentsView:
                         ft.Container(expand=True),  # Spacer
                         ft.PopupMenuButton(
                             items=[
-                                ft.PopupMenuItem(text="Edit", icon=ft.icons.EDIT),
-                                ft.PopupMenuItem(text="Cancel", icon=ft.icons.CANCEL),
+                                ft.PopupMenuItem(text="Edit", icon="edit"),
+                                ft.PopupMenuItem(text="Cancel", icon="cancel"),
                                 ft.PopupMenuItem(),  # Divider
-                                ft.PopupMenuItem(text="View Details", icon=ft.icons.VISIBILITY),
+                                ft.PopupMenuItem(text="View Details", icon="visibility"),
                             ]
                         ),
                     ],
@@ -191,7 +190,7 @@ class AppointmentsView:
                 padding=10,
             ),
             elevation=0,
-            shadow_color=ft.colors.GREY_200,
+            shadow_color="#EEEEEE",
             shape=ft.RoundedRectangleBorder(radius=8),
         )
     

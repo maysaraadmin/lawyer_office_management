@@ -58,7 +58,7 @@ class ProfileView(flet_core.UserControl):
 
         if self.error:
             return ft.Container(
-                content=ft.Text(f"Error: {self.error}", color=ft.colors.RED),
+                content=ft.Text(f"Error: {self.error}", color="#F44336"),
                 alignment=ft.alignment.center,
                 expand=True,
             )
@@ -86,7 +86,7 @@ class ProfileView(flet_core.UserControl):
                     ft.Row(
                         [
                             ft.IconButton(
-                                icon=ft.icons.ARROW_BACK,
+                                icon="arrow_back",
                                 on_click=lambda _: self.page.go("/"),
                             ),
                             ft.Text(
@@ -96,7 +96,7 @@ class ProfileView(flet_core.UserControl):
                             ),
                             ft.Container(expand=True),
                             ft.IconButton(
-                                icon=ft.icons.EDIT,
+                                icon="edit",
                                 on_click=lambda _: self.page.go("/profile/edit"),
                             ),
                         ],
@@ -111,7 +111,7 @@ class ProfileView(flet_core.UserControl):
                             ft.CircleAvatar(
                                 radius=50,
                                 background_image=self.user_data.get("profile_picture"),
-                                content=ft.Icon(ft.icons.PERSON, size=40)
+                                content=ft.Icon("person", size=40)
                                 if not self.user_data.get("profile_picture")
                                 else None,
                             ),
@@ -124,11 +124,11 @@ class ProfileView(flet_core.UserControl):
                                     ),
                                     ft.Text(
                                         self.user_data.get("email", ""),
-                                        color=ft.colors.GREY_600,
+                                        color="#757575",
                                     ),
                                     ft.Text(
                                         self.user_data.get("user_type", "").capitalize(),
-                                        color=ft.colors.BLUE_600,
+                                        color="#2196F3",
                                     ),
                                 ],
                                 spacing=5,
@@ -144,28 +144,28 @@ class ProfileView(flet_core.UserControl):
                     
                     # Email
                     ft.ListTile(
-                        leading=ft.Icon(ft.icons.EMAIL),
+                        leading=ft.Icon("email"),
                         title=ft.Text("Email"),
                         subtitle=ft.Text(self.user_data.get("email", "")),
                     ),
                     
                     # Phone
                     ft.ListTile(
-                        leading=ft.Icon(ft.icons.PHONE),
+                        leading=ft.Icon("phone"),
                         title=ft.Text("Phone"),
                         subtitle=ft.Text(self.user_data.get("phone") or "Not provided"),
                     ),
                     
                     # Date of Birth
                     ft.ListTile(
-                        leading=ft.Icon(ft.icons.CALENDAR_TODAY),
+                        leading=ft.Icon("calendar_today"),
                         title=ft.Text("Date of Birth"),
                         subtitle=ft.Text(dob or "Not provided"),
                     ),
                     
                     # Address
                     ft.ListTile(
-                        leading=ft.Icon(ft.icons.HOME),
+                        leading=ft.Icon("home"),
                         title=ft.Text("Address"),
                         subtitle=ft.Text(self.user_data.get("address") or "Not provided"),
                     ),
@@ -175,10 +175,10 @@ class ProfileView(flet_core.UserControl):
                     ft.ElevatedButton(
                         "Logout",
                         on_click=self.logout,
-                        icon=ft.icons.LOGOUT,
+                        icon="logout",
                         style=ft.ButtonStyle(
-                            bgcolor=ft.colors.RED,
-                            color=ft.colors.WHITE,
+                            bgcolor="#F44336",
+                            color="#FFFFFF",
                         ),
                         width=200,
                     ),

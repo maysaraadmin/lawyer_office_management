@@ -5,7 +5,7 @@ import asyncio
 import logging
 import traceback
 from pathlib import Path
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, Union
 
 # Configure logging
 logging.basicConfig(
@@ -29,9 +29,43 @@ except ImportError as e:
     logger.error(f"Import error: {str(e)}")
     raise
 
+async def safe_page_update(page: ft.Page) -> None:
+    """Safely update the page, handling both sync and async update methods."""
+    if page is None:
+        logger.warning("Attempted to update None page")
+        return
+    
+    # Check if page has been destroyed or is in an invalid state
+    if hasattr(page, '_disposed') and page._disposed:
+        logger.warning("Attempted to update disposed page")
+        return
+    
+    try:
+        # Check if page is still valid before updating
+        if hasattr(page, 'window') and page.window is None:
+            logger.warning("Attempted to update page with None window")
+            return
+        
+        page.update()
+    except Exception as e:
+        logger.error(f"Error updating page: {str(e)}")
+        try:
+            if hasattr(page, 'update_async'):
+                await page.update_async()
+            else:
+                page.update()
+        except Exception as e2:
+            logger.error(f"Secondary error updating page: {str(e2)}")
+
 class LawyerOfficeApp:
     def __init__(self, page: ft.Page):
+        logger.info(f"LawyerOfficeApp.__init__ called with page: {page}")
         self.page = page
+        if self.page is None:
+            logger.error("Page is None in LawyerOfficeApp.__init__")
+            return
+        
+        logger.info(f"Setting page properties for page id: {id(self.page)}")
         self.page.title = "Lawyer Office Management"
         self.page.theme_mode = ft.ThemeMode.LIGHT
         self.page.padding = 0
@@ -39,30 +73,24 @@ class LawyerOfficeApp:
         self.page.window_height = 800
         self.page.window_resizable = True
         
-        # Set page theme
-        self.page.theme = ft.Theme(
-            color_scheme_seed="blue",
-            use_material3=True
-        )
-        
         # Define colors
         self.primary_color = "#1976d2"
         self.background_color = "#f5f5f5"
         self.text_color = "#000000"
         
-        # Initialize storage and authentication state
+        # Initialize authentication state
         self.storage = Storage()
-        self.is_authenticated = bool(self.storage.get("access_token"))
+        self.is_authenticated = False
+        self.access_token = None
         self.user_data: Dict[str, Any] = {}
         
-        logger.info(f"App initialized. Authenticated: {self.is_authenticated}")
+        logger.info("App initialized")
         
         # Initialize views
-        self.dashboard_view = DashboardView(self)
-        self.appointments_view = AppointmentsView(self)
-        self.clients_view = ClientsView(self)
-        # Initialize login view
-        self.login_view = None
+        self.dashboard_view = DashboardView(self).build()
+        self.appointments_view = AppointmentsView(self).build()
+        self.clients_view = ClientsView(self).build()
+        # Initialize profile view
         self.profile_view = None
         
         # Set up navigation
@@ -73,13 +101,13 @@ class LawyerOfficeApp:
                 label="Dashboard"
             ),
             ft.NavigationRailDestination(
-                icon="calendar_today_outlined",
-                selected_icon="calendar_today",
+                icon="event_note",
+                selected_icon="event_available",
                 label="Appointments"
             ),
             ft.NavigationRailDestination(
-                icon="people_outline",
-                selected_icon="people",
+                icon="people_alt",
+                selected_icon="groups",
                 label="Clients"
             ),
             ft.NavigationRailDestination(
@@ -119,31 +147,57 @@ class LawyerOfficeApp:
         
         # Set the initial view
         self.page.add(self.main)
-        self.page.update()
+        try:
+            self.page.update()
+        except Exception as e:
+            logger.error(f"Error updating page: {str(e)}")
         
-        # Initialize login view if not authenticated
-        if not self.is_authenticated:
-            # We'll show the login form when the page is ready
-            self.page.on_resize = lambda _: asyncio.create_task(self.show_login()) if not self.is_authenticated else None
+        # Initialize login
+        self.login_form = None
     
     async def navigate(self, e):
-        if not self.is_authenticated:
-            return
+        try:
+            index = e.control.selected_index
+            if index == 0:
+                self.content.content = self.dashboard_view
+            elif index == 1:
+                self.content.content = self.appointments_view
+            elif index == 2:
+                self.content.content = self.clients_view
+            elif index == 3:  # Profile
+                if not self.profile_view:
+                    self.profile_view = ProfileView(self).build()
+                    if hasattr(self.profile_view, 'did_mount_async'):
+                        try:
+                            await self.profile_view.did_mount_async()
+                        except Exception as e:
+                            logger.warning(f"Profile view did_mount_async failed: {str(e)}")
+                self.content.content = self.profile_view
             
-        index = e.control.selected_index
-        if index == 0:
-            self.content.content = self.dashboard_view
-        elif index == 1:
-            self.content.content = self.appointments_view
-        elif index == 2:
-            self.content.content = self.clients_view
-        elif index == 3:  # Profile
-            if not self.profile_view:
-                self.profile_view = ProfileView(self.page)
-                await self.profile_view.did_mount_async()
-            self.content.content = self.profile_view
-        
-        self.page.update()
+            # Update the page
+            await safe_page_update(self.page)
+            
+        except Exception as e:
+            logger.error(f"Navigation error: {str(e)}")
+            if 'traceback' in globals():
+                logger.error(traceback.format_exc())
+            
+            # Show error to user
+            self.page.snack_bar = ft.SnackBar(
+                content=ft.Text("Error navigating. Please try again.")
+            )
+            self.page.snack_bar.open = True
+            
+            # Try to update the page to show the error
+            try:
+                await safe_page_update(self.page)
+            except Exception as update_error:
+                logger.error(f"Error showing error message: {str(update_error)}")
+                # Last resort - try direct update
+                try:
+                    self.page.update()
+                except Exception as e:
+                    logger.error(f"Error updating page: {str(e)}")
     
     async def on_login_success(self):
         """Handle successful login"""
@@ -171,7 +225,7 @@ class LawyerOfficeApp:
                 self.page.go("/dashboard")
             else:
                 self.page.route = "/dashboard"
-                await self.page.update_async()
+                await safe_page_update(self.page)
             
         except Exception as e:
             error_msg = f"Login success handler error: {str(e)}"
@@ -207,7 +261,7 @@ class LawyerOfficeApp:
             
             self.page.dialog = error_dialog
             error_dialog.open = True
-            await self.page.update_async()
+            await safe_page_update(self.page)
             
         except Exception as e:
             logger.error(f"Error showing error dialog: {str(e)}")
@@ -218,74 +272,147 @@ class LawyerOfficeApp:
         """Show login form"""
         try:
             logger.info("Showing login form")
+            logger.info(f"Page object in show_login: {self.page}")
+            logger.info(f"Page id in show_login: {id(self.page) if self.page else 'None'}")
             
             if not hasattr(self, 'page') or not self.page:
                 logger.error("Page not available in show_login")
                 return
                 
-            # Clean up the page
-            self.page.controls.clear()
-            
-            # Create login form with error handling
-            try:
-                login_form = LoginForm(self.on_login_success)
-                
-                # Create main container with gradient background
-                login_container = ft.Container(
-                    content=ft.Column(
-                        [
-                            ft.Container(
-                                content=login_form,
-                                padding=40,
-                                width=500,
-                                bgcolor=ft.colors.WHITE,
-                                border_radius=10,
-                                shadow=ft.BoxShadow(
-                                    spread_radius=1,
-                                    blur_radius=15,
-                                    color=ft.colors.BLUE_GREY_300,
-                                    offset=ft.Offset(0, 0),
+            # Create login view
+            login_view = ft.View(
+                "/login",
+                [
+                    ft.Container(
+                        content=ft.Column(
+                            [
+                                ft.Text(
+                                    "Welcome Back!", 
+                                    size=28, 
+                                    weight=ft.FontWeight.BOLD, 
+                                    color="#1976d2"
                                 ),
-                            )
-                        ],
-                        alignment=ft.MainAxisAlignment.CENTER,
-                        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                        expand=True,
-                    ),
-                    padding=40,
-                    gradient=ft.LinearGradient(
-                        begin=ft.alignment.top_center,
-                        end=ft.alignment.bottom_center,
-                        colors=[ft.colors.BLUE_50, ft.colors.WHITE],
-                    ),
-                    expand=True,
-                )
-                
-                # Add login container to the page
-                self.page.add(login_container)
-                self.page.route = "/login"
-                
-                # Update the page
-                if hasattr(self.page, 'update_async'):
-                    await self.page.update_async()
-                else:
-                    await self.page.update()
-                    
-            except Exception as form_error:
-                logger.error(f"Error creating login form: {str(form_error)}")
-                logger.error(traceback.format_exc())
-                await self.show_error("Failed to initialize login form. Please refresh the page.")
+                                ft.Text(
+                                    "Please sign in to continue", 
+                                    color="#757575", 
+                                    size=14
+                                ),
+                                ft.Container(height=20),
+                                ft.TextField(
+                                    label="Username",
+                                    hint_text="Enter your username",
+                                    width=400,
+                                    border_radius=5,
+                                    border_color="#e0e0e0",
+                                    bgcolor="#ffffff",
+                                    text_size=14,
+                                ),
+                                ft.Container(height=15),
+                                ft.TextField(
+                                    label="Password",
+                                    hint_text="Enter your password",
+                                    width=400,
+                                    password=True,
+                                    can_reveal_password=True,
+                                    border_radius=5,
+                                    border_color="#e0e0e0",
+                                    bgcolor="#ffffff",
+                                    text_size=14,
+                                ),
+                                ft.Container(height=15),
+                                ft.ElevatedButton(
+                                    "Login",
+                                    on_click=self.login_click,
+                                    width=400,
+                                    height=45,
+                                    color="#ffffff",
+                                    bgcolor="#1976d2",
+                                ),
+                            ],
+                            spacing=0,
+                            width=400,
+                            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                        ),
+                        bgcolor="#ffffff",
+                        border_radius=10,
+                        padding=20,
+                        alignment=ft.alignment.center,
+                    )
+                ],
+                bgcolor="#f5f5f5",
+                vertical_alignment=ft.MainAxisAlignment.CENTER,
+                horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                spacing=0,
+            )
+            
+            logger.info("Login view created")
+            
+            # Clear all views and add login view
+            self.page.views.clear()
+            self.page.views.append(login_view)
+            logger.info(f"Login view added. Views count: {len(self.page.views)}")
+            
+            # Update the page
+            try:
+                logger.info("Updating page with login view...")
+                self.page.update()
+                logger.info("Page updated successfully")
+            except Exception as update_error:
+                logger.error(f"Error updating page: {str(update_error)}")
                 
         except Exception as e:
             error_msg = f"Error in show_login: {str(e)}"
             logger.error(error_msg)
             logger.error(traceback.format_exc())
-            await self.show_error("An error occurred while loading the login page.")
+            await self.show_error(f"Failed to show login form: {str(e)}")
+    
+    async def login_click(self, e):
+        """Handle login button click"""
+        try:
+            # For now, just simulate successful login
+            await self.on_login_success()
+        except Exception as ex:
+            logger.error(f"Login error: {str(ex)}")
+            await self.show_error("Login failed. Please try again.")
 
+    async def show_dashboard(self):
+        """Show dashboard view"""
+        try:
+            logger.info("Showing dashboard")
+            
+            if not hasattr(self, 'page') or not self.page:
+                logger.error("Page not available in show_dashboard")
+                return
+                
+            # Clean up the page
+            self.page.views.clear()
+            
+            # Add the main view with dashboard
+            self.content.content = self.dashboard_view
+            self.page.views.append(ft.View("/dashboard", [self.main]))
+            
+            # Update the page
+            try:
+                self.page.update()
+            except Exception as e:
+                logger.error(f"Error updating page: {str(e)}")
+                
+        except Exception as e:
+            logger.error(f"Error in show_dashboard: {str(e)}")
+            logger.error(traceback.format_exc())
+            await self.show_error("Failed to load dashboard")
+    
     async def on_logout(self):
         """Handle user logout"""
-        self.is_authenticated = False
-        await self.show_login()
+        try:
+            self.is_authenticated = False
+            self.storage.remove("access_token")
+            await self.show_login()
+        except Exception as e:
+            logger.error(f"Error during logout: {str(e)}")
+            self.page.snack_bar = ft.SnackBar(content=ft.Text("Error during logout. Please refresh the page."))
+            self.page.snack_bar.open = True
+            await safe_page_update(self.page)
     
     async def route_change(self, route):
         """Handle route changes"""
@@ -299,35 +426,23 @@ class LawyerOfficeApp:
             if route == "/login":
                 await self.show_login()
             elif route == "/dashboard":
-                if not await self.is_authenticated():
+                if not self.is_authenticated:
                     logger.info("User not authenticated, showing login form")
                     self.page.route = "/login"
-                    await self.show_login()
-                    return
-                await self.show_dashboard()
+                    try:
+                        self.page.update()
+                    except Exception as e:
+                        logger.error(f"Error updating page: {str(e)}")
+                else:
+                    await self.show_dashboard()
             else:
-                # 404 Page
-                if hasattr(self.page, 'views'):
-                    self.page.views.append(
-                        ft.View(
-                            "/404",
-                            [
-                                ft.AppBar(title=ft.Text("404"), bgcolor=self.primary_color),
-                                ft.Text("Page not found"),
-                            ],
-                        )
-                    )
-            
-            if hasattr(self.page, 'update_async'):
-                await self.page.update_async()
-            else:
-                await self.page.update()
-            
+                # Default to login for unknown routes
+                await self.show_login()
+
         except Exception as e:
             logger.error(f"Error in route_change: {str(e)}")
-            if 'traceback' in globals():
-                logger.error(traceback.format_exc())
-            await self.show_error(f"An error occurred: {str(e)}")
+            logger.error(traceback.format_exc())
+            await self.show_error(f"Failed to navigate to {route}")
 
 async def main(page: ft.Page):
     # Set up logging
@@ -388,19 +503,31 @@ async def main(page: ft.Page):
                         )
                     )
                 
-                if hasattr(page, 'update'):
-                    await page.update()
-                else:
-                    page.update()
+                # Update page safely
+                try:
+                    if page is not None:
+                        if hasattr(page, 'update') and callable(getattr(page, 'update')):
+                            page.update()
+                        elif hasattr(page, 'update_sync') and callable(getattr(page, 'update_sync')):
+                            page.update_sync()
+                except Exception as update_error:
+                    logger.error(f"Failed to update page: {str(update_error)}")
+                    # Don't re-raise, just log the error
                     
             except Exception as route_error:
                 logger.error(f"Error in route_change: {str(route_error)}")
                 if 'traceback' in globals():
                     logger.error(traceback.format_exc())
-                if hasattr(page, 'update'):
-                    await page.update()
-                else:
-                    page.update()
+                # Update page safely
+                try:
+                    if page is not None:
+                        if hasattr(page, 'update') and callable(getattr(page, 'update')):
+                            page.update()
+                        elif hasattr(page, 'update_sync') and callable(getattr(page, 'update_sync')):
+                            page.update_sync()
+                except Exception as update_error:
+                    logger.error(f"Failed to update page: {str(update_error)}")
+                    # Don't re-raise, just log the error
         
         # Set up view pop handler
         async def view_pop(view):
@@ -409,10 +536,16 @@ async def main(page: ft.Page):
                     page.views.pop()
                     top_view = page.views[-1]
                     page.route = top_view.route
-                    if hasattr(page, 'update'):
-                        await page.update()
-                    else:
-                        page.update()
+                    # Update page safely
+                    try:
+                        if page is not None:
+                            if hasattr(page, 'update') and callable(getattr(page, 'update')):
+                                page.update()
+                            elif hasattr(page, 'update_sync') and callable(getattr(page, 'update_sync')):
+                                page.update_sync()
+                    except Exception as update_error:
+                        logger.error(f"Failed to update page: {str(update_error)}")
+                        # Don't re-raise, just log the error
             except Exception as e:
                 logger.error(f"Error in view_pop: {str(e)}")
         
@@ -438,10 +571,16 @@ async def main(page: ft.Page):
             try:
                 page.clean()
                 page.add(ft.Text(f"Application error: {str(app_error)}", color="red"))
-                if hasattr(page, 'update'):
-                    await page.update()
-                else:
-                    page.update()
+                # Update page safely
+                try:
+                    if page is not None:
+                        if hasattr(page, 'update') and callable(getattr(page, 'update')):
+                            page.update()
+                        elif hasattr(page, 'update_sync') and callable(getattr(page, 'update_sync')):
+                            page.update_sync()
+                except Exception as update_error:
+                    logger.error(f"Failed to update page: {str(update_error)}")
+                    # Don't re-raise, just log the error
             except Exception as update_error:
                 logger.error(f"Failed to update page with error: {str(update_error)}")
                 if 'traceback' in globals():
@@ -468,9 +607,15 @@ async def main(page: ft.Page):
             page.clean()
             page.add(ft.Text("An unexpected error occurred. Please refresh the page.", color="red"))
             if hasattr(page, 'update'):
-                await page.update()
+                try:
+                    page.update()
+                except Exception as e:
+                    logger.error(f"Error updating page: {str(e)}")
             else:
-                page.update()
+                try:
+                    page.update()
+                except Exception as e:
+                    logger.error(f"Error updating page: {str(e)}")
         except Exception as e:
             print(f"Failed to show error message: {str(e)}")
             

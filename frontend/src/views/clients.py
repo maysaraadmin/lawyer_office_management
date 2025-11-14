@@ -18,7 +18,7 @@ class ClientsView:
                     ),
                     ft.ElevatedButton(
                         "Add Client",
-                        icon=ft.icons.PERSON_ADD,
+                        icon="person_add",
                         on_click=self._show_add_client_dialog,
                     ),
                 ],
@@ -31,7 +31,6 @@ class ClientsView:
         search_bar = ft.Row(
             [
                 ft.SearchBar(
-                    hint_text="Search clients...",
                     on_change=self._search_clients,
                     width=400,
                 ),
@@ -72,7 +71,7 @@ class ClientsView:
             [
                 header,
                 search_bar,
-                ft.Divider(height=20, color=ft.colors.TRANSPARENT),
+                ft.Divider(height=20, color="transparent"),
                 self.clients_list,
             ],
             expand=True,
@@ -97,22 +96,22 @@ class ClientsView:
                     content=ft.Column(
                         [
                             ft.Icon(
-                                ft.icons.PEOPLE_OUTLINE,
+                                "people_outline",
                                 size=48,
-                                color=ft.colors.GREY_400,
+                                color="#BDBDBD",
                             ),
                             ft.Text(
                                 "No clients found",
                                 style=ft.TextThemeStyle.TITLE_MEDIUM,
-                                color=ft.colors.GREY_600,
+                                color="#757575",
                             ),
                             ft.Text(
                                 "Add your first client to get started",
-                                color=ft.colors.GREY_500,
+                                color="#9E9E9E",
                             ),
                             ft.ElevatedButton(
                                 "Add Client",
-                                icon=ft.icons.ADD,
+                                icon="add",
                                 on_click=self._show_add_client_dialog,
                             ),
                         ],
@@ -128,7 +127,7 @@ class ClientsView:
     
     def _build_client_card(self, client):
         # Determine status color
-        status_color = ft.colors.GREEN_500 if client["status"] == "Active" else ft.colors.GREY_500
+        status_color = "#4CAF50" if client["status"] == "Active" else "#9E9E9E"
         
         return ft.Card(
             content=ft.Container(
@@ -139,16 +138,16 @@ class ClientsView:
                             content=ft.Text(
                                 client["name"][0].upper(),
                                 style=ft.TextThemeStyle.HEADLINE_MEDIUM,
-                                color=ft.colors.WHITE,
+                                color="#FFFFFF",
                                 weight=ft.FontWeight.BOLD,
                             ),
                             width=60,
                             height=60,
                             border_radius=30,
-                            bgcolor=ft.colors.BLUE_500,
+                            bgcolor="#2196F3",
                             alignment=ft.alignment.center,
                         ),
-                        ft.VerticalDivider(width=20, color=ft.colors.TRANSPARENT),
+                        ft.VerticalDivider(width=20, color="transparent"),
                         # Client info
                         ft.Column(
                             [
@@ -163,14 +162,14 @@ class ClientsView:
                                             content=ft.Text(
                                                 client["type"],
                                                 size=12,
-                                                color=ft.colors.WHITE,
+                                                color="#FFFFFF",
                                             ),
                                             padding=ft.padding.symmetric(horizontal=8, vertical=2),
                                             border_radius=10,
                                             bgcolor=(
-                                                ft.colors.BLUE_500 
+                                                "#2196F3" 
                                                 if client["type"] == "Business" 
-                                                else ft.colors.PURPLE_500
+                                                else "#9C27B0"
                                             ),
                                         ),
                                     ],
@@ -183,25 +182,25 @@ class ClientsView:
                                 ft.Row(
                                     [
                                         ft.Icon(
-                                            ft.icons.PHONE,
+                                            "phone",
                                             size=14,
-                                            color=ft.colors.GREY_600,
+                                            color="#757575",
                                         ),
                                         ft.Text(
                                             client["phone"],
                                             style=ft.TextThemeStyle.BODY_SMALL,
-                                            color=ft.colors.GREY_600,
+                                            color="#757575",
                                         ),
                                         ft.Container(width=20),  # Spacer
                                         ft.Icon(
-                                            ft.icons.CIRCLE,
+                                            "circle",
                                             size=8,
                                             color=status_color,
                                         ),
                                         ft.Text(
                                             client["status"],
                                             style=ft.TextThemeStyle.BODY_SMALL,
-                                            color=ft.colors.GREY_600,
+                                            color="#757575",
                                         ),
                                     ],
                                     spacing=4,
@@ -216,23 +215,23 @@ class ClientsView:
                             items=[
                                 ft.PopupMenuItem(
                                     text="View Profile",
-                                    icon=ft.icons.PERSON,
+                                    icon="person",
                                     on_click=lambda e, c=client: self._view_client(c),
                                 ),
                                 ft.PopupMenuItem(
                                     text="Edit",
-                                    icon=ft.icons.EDIT,
+                                    icon="edit",
                                     on_click=lambda e, c=client: self._edit_client(c),
                                 ),
                                 ft.PopupMenuItem(),  # Divider
                                 ft.PopupMenuItem(
                                     text="New Appointment",
-                                    icon=ft.icons.ADD_ALARM,
+                                    icon="add_alarm",
                                     on_click=lambda e, c=client: self._new_appointment(c),
                                 ),
                                 ft.PopupMenuItem(
                                     text="Send Message",
-                                    icon=ft.icons.EMAIL,
+                                    icon="email",
                                     on_click=lambda e, c=client: self._send_message(c),
                                 ),
                             ]
@@ -244,7 +243,7 @@ class ClientsView:
                 on_click=lambda e, c=client: self._view_client(c),
             ),
             elevation=1,
-            shadow_color=ft.colors.GREY_200,
+            shadow_color="#EEEEEE",
             shape=ft.RoundedRectangleBorder(radius=8),
         )
     

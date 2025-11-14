@@ -26,7 +26,7 @@ class LoginForm(ft.Container):
             label="Email",
             hint_text="Enter your email",
             keyboard_type=ft.KeyboardType.EMAIL,
-            prefix_icon=ft.icons.EMAIL_OUTLINED,
+            prefix_icon="email_outlined",
             border_radius=10,
             width=400,
         )
@@ -36,7 +36,7 @@ class LoginForm(ft.Container):
             hint_text="Enter your password",
             password=True,
             can_reveal_password=True,
-            prefix_icon=ft.icons.LOCK_OUTLINED,
+            prefix_icon="lock_outlined",
             border_radius=10,
             width=400,
         )
@@ -66,7 +66,7 @@ class LoginForm(ft.Container):
                     self.email,
                     self.password,
                     self.error_text,
-                    ft.Divider(height=10, color=ft.colors.TRANSPARENT),
+                    ft.Divider(height=10, color="transparent"),
                     self.login_button,
                 ],
                 spacing=20,
@@ -74,12 +74,12 @@ class LoginForm(ft.Container):
             ),
             padding=40,
             width=500,
-            bgcolor=ft.colors.WHITE,
+            bgcolor="#FFFFFF",
             border_radius=10,
             shadow=ft.BoxShadow(
                 spread_radius=1,
                 blur_radius=15,
-                color=ft.colors.BLUE_GREY_300,
+                color="#607D8B",
                 offset=ft.Offset(0, 0),
             )
         )

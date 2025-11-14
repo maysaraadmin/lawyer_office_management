@@ -13,8 +13,12 @@ class DashboardView:
     def __init__(self, app):
         self.app = app
         self.page = app.page
+        self.controls = []  # Store child controls
     
     def build(self):
+        """Build the dashboard view"""
+        # Clear any existing controls
+        self.controls = []
         # Header with welcome message
         header = ft.Container(
             content=ft.Column(
@@ -38,9 +42,9 @@ class DashboardView:
         # Stats cards
         stats_row = ft.Row(
             [
-                self._build_stat_card("Total Appointments", "24", "#2196F3", "calendar_today"),
+                self._build_stat_card("Total Appointments", "24", "#2196F3", "calendar_month"),
                 self._build_stat_card("Active Clients", "18", "#4CAF50", "people"),
-                self._build_stat_card("Upcoming Deadlines", "5", "#FF9800", "notification_important"),
+                self._build_stat_card("Upcoming Deadlines", "5", "#FF9800", "notifications"),
                 self._build_stat_card("Total Revenue", "$12,450", "#9C27B0", "attach_money"),
             ],
             spacing=20,
@@ -69,7 +73,7 @@ class DashboardView:
             )
         
         # Main content column
-        return ft.Column(
+        content = ft.Column(
             [
                 header,
                 stats_row,
@@ -77,17 +81,22 @@ class DashboardView:
                 appointments_list if appointments else ft.Text("No upcoming appointments", italic=True),
             ],
             expand=True,
-            scroll=ft.ScrollMode.AUTO,
         )
+        
+        # Store the content in controls
+        self.controls.append(content)
+        return content
     
-    def _build_stat_card(self, title: str, value: str, color: str, icon) -> ft.Card:
+    def _build_stat_card(self, title: str, value: str, color: str, icon_name: str) -> ft.Card:
+        # Convert icon name to lowercase and replace any underscores
+        icon_name = str(icon_name).lower().replace('_', '')
         return ft.Card(
             content=ft.Container(
                 content=ft.Column(
                     [
                         ft.Row(
                             [
-                                ft.Icon(icon, color=color, size=24),
+                                ft.Icon(name=icon_name, color=color, size=24),
                                 ft.Text(
                                     value,
                                     style=ft.TextThemeStyle.HEADLINE_MEDIUM,
@@ -162,7 +171,8 @@ shadow_color="#E0E0E0",
                         ft.IconButton(
                             icon="chevron_right",
                             bgcolor=BLUE_600,
-                            on_click=lambda e, a=appt: self._view_appointment(a),
+                            on_click=self._view_appointment,
+                            data=appt,  # Store appointment data in the button
                         ),
                     ],
                     alignment=ft.MainAxisAlignment.START,
@@ -204,6 +214,20 @@ shadow_color="#EEEEEE",
             },
         ]
     
-    def _view_appointment(self, appointment):
-        # TODO: Implement appointment detail view
-        print(f"Viewing appointment: {appointment['id']}")
+    async def _view_appointment(self, e):
+        """Handle viewing an appointment"""
+        try:
+            appointment = e.control.data
+            print(f"Viewing appointment: {appointment['id']}")
+            # In a real app, this would navigate to the appointment detail view
+            if hasattr(self, 'page') and self.page:
+                self.page.snack_bar = ft.SnackBar(
+                    content=ft.Text(f"Viewing appointment: {appointment['title']}")
+                )
+                self.page.snack_bar.open = True
+                try:
+                    await self.page.update_async()
+                except:
+                    self.page.update()
+        except Exception as ex:
+            print(f"Error viewing appointment: {str(ex)}")

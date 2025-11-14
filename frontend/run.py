@@ -232,7 +232,12 @@ def run_flet_app():
                     ]
                 )
                 page.dialog = error_dialog
-                await page.update_async()
+                try:
+                    page.update()
+                except:
+                    # If sync update fails, try async if available
+                    if hasattr(page, 'update_async'):
+                        await page.update_async()
                 
         except Exception as e:
             logger.error(f"❌ Error initializing page: {str(e)}")

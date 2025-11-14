@@ -16,9 +16,10 @@ class LoginError(Exception):
 class LoginForm(UserControl):
     """Login form component"""
     
-    def __init__(self, on_login_success: Callable[[], Awaitable[None]]):
+    def __init__(self, on_login_success: Callable[[], Awaitable[None]], page: ft.Page = None):
         super().__init__()
         self.on_login_success = on_login_success
+        self.page = page
         self.error_message = ""
         
         # Form fields
@@ -85,75 +86,90 @@ class LoginForm(UserControl):
             await self.update_async()
     
     def build(self):
-        login_button = ft.ElevatedButton(
-            "Login",
-            on_click=self.login_click,
-            width=400,
-            height=45,
-            color=WHITE,  # White text
-            bgcolor=PRIMARY_COLOR,  # Primary color
-        )
-        
-        return ft.Container(
-            content=ft.Container(
-                content=ft.Column(
-                    [
-                        ft.Container(
-                            content=ft.Column(
-                                [
-                                    ft.Text(
-                                        "Welcome Back!", 
-                                        size=28, 
-                                        weight=ft.FontWeight.BOLD, 
-                                        color=PRIMARY_COLOR
-                                    ),
-                                    ft.Text(
-                                        "Please sign in to continue", 
-                                        color=GREY_600, 
-                                        size=14
-                                    ),
-                                ],
-                                horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                                spacing=5,
+        try:
+            print("Building login form...")
+            
+            login_button = ft.ElevatedButton(
+                "Login",
+                on_click=self.login_click,
+                width=400,
+                height=45,
+                color=WHITE,  # White text
+                bgcolor=PRIMARY_COLOR,  # Primary color
+            )
+            print("Login button created")
+            
+            container = ft.Container(
+                content=ft.Container(
+                    content=ft.Column(
+                        [
+                            ft.Container(
+                                content=ft.Column(
+                                    [
+                                        ft.Text(
+                                            "Welcome Back!", 
+                                            size=28, 
+                                            weight=ft.FontWeight.BOLD, 
+                                            color=PRIMARY_COLOR
+                                        ),
+                                        ft.Text(
+                                            "Please sign in to continue", 
+                                            color=GREY_600, 
+                                            size=14
+                                        ),
+                                    ],
+                                    horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                                    spacing=5,
+                                ),
+                                padding=20,
                             ),
-                            padding=20,
-                        ),
-                        ft.Container(
-                            content=ft.Column(
-                                [
-                                    self.username,
-                                    ft.Container(height=15),
-                                    self.password,
-                                    ft.Container(height=5),
-                                    self.error_text,
-                                    ft.Container(height=15),
-                                    login_button,
-                                ],
-                                spacing=0,
-                                width=400,
+                            ft.Container(
+                                content=ft.Column(
+                                    [
+                                        self.username,
+                                        ft.Container(height=15),
+                                        self.password,
+                                        ft.Container(height=5),
+                                        self.error_text,
+                                        ft.Container(height=15),
+                                        login_button,
+                                    ],
+                                    spacing=0,
+                                    width=400,
+                                ),
+                                padding=20,
                             ),
-                            padding=20,
-                        ),
-                    ],
-                    spacing=0,
-                    horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                        ],
+                        spacing=0,
+                        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                    ),
+                    bgcolor=WHITE,
+                    border_radius=10,
+                    shadow=ft.BoxShadow(
+                        spread_radius=1,
+                        blur_radius=15,
+                        color="#cfd8dc",  # Light blue-grey
+                        offset=ft.Offset(0, 4),
+                    ),
+                    width=480,
                 ),
-                bgcolor=WHITE,
-                border_radius=10,
-                shadow=ft.BoxShadow(
-                    spread_radius=1,
-                    blur_radius=15,
-                    color="#cfd8dc",  # Light blue-grey
-                    offset=ft.Offset(0, 4),
+                alignment=ft.alignment.center,
+                expand=True,
+                padding=20,
+                gradient=ft.LinearGradient(
+                    begin=ft.alignment.top_left,
+                    end=ft.alignment.bottom_right,
+                    colors=["#e8eaf6", "#c5cae9"],
                 ),
-                width=480,
-            ),
-            alignment=ft.alignment.center,
-            expand=True,
-            padding=20,
-            gradient=ft.LinearGradient(
-                begin=ft.alignment.top_left,
-                end=ft.alignment.bottom_right,
-                colors=["#e8eaf6", "#c5cae9"],
-            ),
-        )
+            )
+            print("Login form container created")
+            return container
+        except Exception as e:
+            print(f"Error building login form: {str(e)}")
+            import traceback
+            traceback.print_exc()
+            # Return a simple fallback UI
+            return ft.Column([
+                ft.Text("Login Form Error", color="red"),
+                ft.Text(f"Error: {str(e)}", color="red")
+            ])

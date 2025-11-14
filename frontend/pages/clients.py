@@ -10,7 +10,7 @@ class ClientsPage(BasePage):
         self.client_list = ft.ListView(expand=True, spacing=10, padding=20)
         self.search_field = ft.TextField(
             label="Search clients...",
-            prefix_icon=ft.icons.SEARCH,
+            prefix_icon="search",
             on_submit=self.search_clients,
             expand=True
         )
@@ -65,7 +65,7 @@ class ClientsPage(BasePage):
                 ft.Text("Clients", style=ft.TextThemeStyle.HEADLINE_MEDIUM),
                 ft.ElevatedButton(
                     "Add New Client",
-                    icon=ft.icons.PERSON_ADD,
+                    icon="person_add",
                     on_click=self.add_new_client,
                 ),
             ],
@@ -79,7 +79,7 @@ class ClientsPage(BasePage):
                 ft.Container(
                     content=ft.Column(
                         [
-                            ft.Icon(ft.icons.PEOPLE_ALT, size=48),
+                            ft.Icon("people_alt", size=48),
                             ft.Text("No clients found"),
                             ft.ElevatedButton(
                                 "Add New Client",
@@ -107,7 +107,7 @@ class ClientsPage(BasePage):
                     [
                         self.search_field,
                         ft.IconButton(
-                            icon=ft.icons.FILTER_LIST,
+                            icon="filter_list",
                             tooltip="Filter clients",
                             on_click=self.show_filters,
                         ),
@@ -132,11 +132,11 @@ class ClientsPage(BasePage):
                 content=ft.Column(
                     [
                         ft.ListTile(
-                            leading=ft.Icon(ft.icons.PERSON),
+                            leading=ft.Icon("person"),
                             title=ft.Text(f"{client.get('first_name', '')} {client.get('last_name', '')}"),
                             subtitle=ft.Text(client.get('email', '')),
                             trailing=ft.PopupMenuButton(
-                                icon=ft.icons.MORE_VERT,
+                                icon="more_vert",
                                 items=[
                                     ft.PopupMenuItem(
                                         text="View Details",
