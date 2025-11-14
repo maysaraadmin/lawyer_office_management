@@ -5709,3 +5709,1551 @@ AttributeError: 'LawyerOfficeApp' object has no attribute 'login_click'
 2025-11-14 21:51:40,429 - src.app - INFO - User logged in successfully
 2025-11-14 21:51:40,432 - src.app - INFO - Route changed to: /dashboard
 2025-11-14 21:51:40,433 - src.app - INFO - Showing dashboard
+2025-11-14 21:53:21,587 - flet_web.fastapi - INFO - Session disconnected: _5kpVFgC2fmPUsSce_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 21:53:21,688 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-14 21:53:21,689 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmptsatyno9
+2025-11-14 21:53:21,698 - flet - INFO - Flet app has started...
+2025-11-14 21:53:21,699 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-14 21:53:21,815 - src.app - INFO - Application shutdown requested
+2025-11-14 21:53:21,816 - src.app - INFO - Application shutdown complete
+2025-11-14 21:53:21,823 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 21:53:21,824 - src.app - INFO - Setting page properties for page id: 2337656812432
+2025-11-14 21:53:21,824 - src.app - INFO - App initialized
+2025-11-14 21:53:21,947 - src.app - INFO - Showing login form
+2025-11-14 21:53:21,948 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 21:53:21,950 - src.app - INFO - Page id in show_login: 2337656812432
+2025-11-14 21:53:21,953 - src.app - INFO - Login view created
+2025-11-14 21:53:21,954 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 21:53:21,955 - src.app - INFO - Updating page with login view...
+2025-11-14 21:53:21,969 - src.app - INFO - Page updated successfully
+2025-11-14 21:53:21,970 - src.app - INFO - Application shutdown requested
+2025-11-14 21:53:21,971 - src.app - INFO - Application shutdown complete
+2025-11-14 21:53:21,986 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 21:53:21,988 - src.app - INFO - Setting page properties for page id: 2337662165648
+2025-11-14 21:53:21,989 - src.app - INFO - App initialized
+2025-11-14 21:53:22,135 - src.app - INFO - Showing login form
+2025-11-14 21:53:22,140 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 21:53:22,140 - src.app - INFO - Page id in show_login: 2337662165648
+2025-11-14 21:53:22,155 - src.app - INFO - Login view created
+2025-11-14 21:53:22,158 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 21:53:22,167 - src.app - INFO - Updating page with login view...
+2025-11-14 21:53:22,177 - src.app - INFO - Page updated successfully
+2025-11-14 21:53:22,185 - app - INFO - 
+✅ Application started successfully!
+2025-11-14 21:53:22,186 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-14 21:53:22,186 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-14 21:53:59,405 - app - INFO - ================================================================================
+2025-11-14 21:53:59,408 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-14 21:53:59
+2025-11-14 21:53:59,411 - app - INFO - 
+🔄 Starting backend server...
+2025-11-14 21:53:59,413 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-14 21:54:00,470 - app - INFO - [Backend] Performing system checks...
+2025-11-14 21:54:00,471 - app - INFO - [Backend] 
+2025-11-14 21:54:00,982 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-14 21:54:01,214 - app - INFO - [Backend] November 14, 2025 - 21:54:01
+2025-11-14 21:54:01,215 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-14 21:54:01,216 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-14 21:54:01,217 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-14 21:54:01,217 - app - INFO - [Backend] 
+2025-11-14 21:54:01,218 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-14 21:54:01,219 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-14 21:54:01,428 - app - INFO - Backend server started successfully
+2025-11-14 21:54:03,431 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-14 21:54:11,493 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-14 21:54:14,456 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-14 21:54:14,463 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-14 21:54:14,465 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-14 21:54:14,466 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-14 21:54:14,652 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-14 21:54:14,654 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-14 21:54:15,451 - flet_web.fastapi - INFO - New FletApp: mhR8CUTW
+2025-11-14 21:54:15,458 - flet_web.fastapi - INFO - New session created (1 total): _1VzXBY9tzIVgg9nh_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 21:54:15,460 - flet_web.fastapi - INFO - Start session: 1VzXBY9tzIVgg9nh
+2025-11-14 21:54:15,466 - src.app - INFO - Initializing application...
+2025-11-14 21:54:15,467 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 21:54:15,469 - src.app - INFO - Setting page properties for page id: 2652812976400
+2025-11-14 21:54:15,470 - src.app - INFO - App initialized
+2025-11-14 21:54:15,609 - src.app - INFO - Starting with initial route: /dashboard
+2025-11-14 21:54:15,614 - src.app - INFO - Route changed to: /dashboard
+2025-11-14 21:54:15,615 - src.app - INFO - User not authenticated, redirecting to login
+2025-11-14 21:54:15,616 - src.app - INFO - Showing login form
+2025-11-14 21:54:15,617 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/login', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 21:54:15,620 - src.app - INFO - Page id in show_login: 2652812976400
+2025-11-14 21:54:15,630 - src.app - INFO - Login view created
+2025-11-14 21:54:15,703 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 21:54:15,845 - src.app - INFO - Updating page with login view...
+2025-11-14 21:54:15,895 - src.app - INFO - Page updated successfully
+2025-11-14 21:54:16,124 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmpw5nftjtc
+2025-11-14 21:54:16,125 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-14 21:54:16,134 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-14 21:54:16,136 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-14 21:54:17,056 - flet_web.fastapi - INFO - New FletApp: BDAlJPii
+2025-11-14 21:54:17,245 - flet_web.fastapi - INFO - New session created (2 total): _SSHH6ehLSzLOf42g_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 21:54:17,249 - flet_web.fastapi - INFO - Start session: SSHH6ehLSzLOf42g
+2025-11-14 21:54:17,250 - src.app - INFO - Initializing application...
+2025-11-14 21:54:17,251 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 21:54:17,257 - src.app - INFO - Setting page properties for page id: 2652875923472
+2025-11-14 21:54:17,261 - src.app - INFO - App initialized
+2025-11-14 21:54:17,400 - src.app - INFO - Starting with initial route: /
+2025-11-14 21:54:17,400 - src.app - INFO - Route changed to: /
+2025-11-14 21:54:17,401 - src.app - INFO - Showing login form
+2025-11-14 21:54:17,402 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 21:54:17,403 - src.app - INFO - Page id in show_login: 2652875923472
+2025-11-14 21:54:17,405 - src.app - INFO - Login view created
+2025-11-14 21:54:17,406 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 21:54:17,407 - src.app - INFO - Updating page with login view...
+2025-11-14 21:54:17,420 - src.app - INFO - Page updated successfully
+2025-11-14 21:54:31,861 - src.app - INFO - User logged in successfully
+2025-11-14 21:54:31,864 - src.app - INFO - Route changed to: /dashboard
+2025-11-14 21:54:31,865 - src.app - INFO - Showing dashboard
+2025-11-14 21:56:16,000 - flet_web.fastapi - INFO - Session disconnected: _1VzXBY9tzIVgg9nh_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 21:56:16,002 - flet_web.fastapi - INFO - Session disconnected: _SSHH6ehLSzLOf42g_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 21:56:16,106 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-14 21:56:16,107 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmpw5nftjtc
+2025-11-14 21:56:16,124 - flet - INFO - Flet app has started...
+2025-11-14 21:56:16,126 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-14 21:56:16,267 - src.app - INFO - Application shutdown requested
+2025-11-14 21:56:16,272 - src.app - INFO - Application shutdown complete
+2025-11-14 21:56:16,303 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 21:56:16,307 - src.app - INFO - Setting page properties for page id: 2652875923472
+2025-11-14 21:56:16,308 - src.app - INFO - App initialized
+2025-11-14 21:56:16,421 - src.app - INFO - Showing login form
+2025-11-14 21:56:16,422 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 21:56:16,424 - src.app - INFO - Page id in show_login: 2652875923472
+2025-11-14 21:56:16,427 - src.app - INFO - Login view created
+2025-11-14 21:56:16,428 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 21:56:16,429 - src.app - INFO - Updating page with login view...
+2025-11-14 21:56:16,440 - src.app - INFO - Page updated successfully
+2025-11-14 21:56:16,441 - src.app - INFO - Application shutdown requested
+2025-11-14 21:56:16,442 - src.app - INFO - Application shutdown complete
+2025-11-14 21:56:16,457 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/login', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 21:56:16,460 - src.app - INFO - Setting page properties for page id: 2652812976400
+2025-11-14 21:56:16,461 - src.app - INFO - App initialized
+2025-11-14 21:56:16,594 - src.app - INFO - Showing login form
+2025-11-14 21:56:16,595 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/login', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 21:56:16,599 - src.app - INFO - Page id in show_login: 2652812976400
+2025-11-14 21:56:16,603 - src.app - INFO - Login view created
+2025-11-14 21:56:16,603 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 21:56:16,604 - src.app - INFO - Updating page with login view...
+2025-11-14 21:56:16,610 - src.app - INFO - Page updated successfully
+2025-11-14 21:56:16,613 - app - INFO - 
+✅ Application started successfully!
+2025-11-14 21:56:16,614 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-14 21:56:16,617 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-14 21:56:21,130 - app - INFO - ================================================================================
+2025-11-14 21:56:21,131 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-14 21:56:21
+2025-11-14 21:56:21,132 - app - INFO - 
+🔄 Starting backend server...
+2025-11-14 21:56:21,134 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-14 21:56:22,720 - app - INFO - [Backend] Performing system checks...
+2025-11-14 21:56:22,721 - app - INFO - [Backend] 
+2025-11-14 21:56:23,149 - app - INFO - Backend server started successfully
+2025-11-14 21:56:23,536 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-14 21:56:23,816 - app - INFO - [Backend] November 14, 2025 - 21:56:23
+2025-11-14 21:56:23,817 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-14 21:56:23,817 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-14 21:56:23,818 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-14 21:56:23,818 - app - INFO - [Backend] 
+2025-11-14 21:56:23,819 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-14 21:56:23,820 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-14 21:56:25,150 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-14 21:56:35,142 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-14 21:56:39,093 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-14 21:56:39,102 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-14 21:56:39,104 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-14 21:56:39,108 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-14 21:56:39,548 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-14 21:56:39,549 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-14 21:56:40,704 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmp8ctea7t9
+2025-11-14 21:56:40,714 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-14 21:56:40,716 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-14 21:56:40,717 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-14 21:56:41,980 - flet_web.fastapi - INFO - New FletApp: rIGNt0jW
+2025-11-14 21:56:42,212 - flet_web.fastapi - INFO - New session created (1 total): _uAokdRnO1fes3Xf7_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 21:56:42,218 - flet_web.fastapi - INFO - Start session: uAokdRnO1fes3Xf7
+2025-11-14 21:56:42,220 - src.app - INFO - Initializing application...
+2025-11-14 21:56:42,222 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 21:56:42,234 - src.app - INFO - Setting page properties for page id: 2141449303760
+2025-11-14 21:56:42,238 - src.app - INFO - App initialized
+2025-11-14 21:56:42,444 - src.app - INFO - Starting with initial route: /
+2025-11-14 21:56:42,445 - src.app - INFO - Route changed to: /
+2025-11-14 21:56:42,446 - src.app - INFO - Showing login form
+2025-11-14 21:56:42,447 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 21:56:42,448 - src.app - INFO - Page id in show_login: 2141449303760
+2025-11-14 21:56:42,452 - src.app - INFO - Login view created
+2025-11-14 21:56:42,452 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 21:56:42,453 - src.app - INFO - Updating page with login view...
+2025-11-14 21:56:42,465 - src.app - INFO - Page updated successfully
+2025-11-14 21:57:06,441 - src.app - INFO - User logged in successfully
+2025-11-14 21:57:06,445 - src.app - INFO - Route changed to: /dashboard
+2025-11-14 21:57:06,445 - src.app - INFO - Showing dashboard
+2025-11-14 21:59:03,065 - flet_web.fastapi - INFO - Session disconnected: _uAokdRnO1fes3Xf7_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 21:59:03,173 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-14 21:59:03,174 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmp8ctea7t9
+2025-11-14 21:59:03,180 - flet - INFO - Flet app has started...
+2025-11-14 21:59:03,181 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-14 21:59:03,306 - src.app - INFO - Application shutdown requested
+2025-11-14 21:59:03,307 - src.app - INFO - Application shutdown complete
+2025-11-14 21:59:03,330 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 21:59:03,333 - src.app - INFO - Setting page properties for page id: 2141449303760
+2025-11-14 21:59:03,333 - src.app - INFO - App initialized
+2025-11-14 21:59:03,406 - src.app - INFO - Showing login form
+2025-11-14 21:59:03,407 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 21:59:03,409 - src.app - INFO - Page id in show_login: 2141449303760
+2025-11-14 21:59:03,411 - src.app - INFO - Login view created
+2025-11-14 21:59:03,411 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 21:59:03,413 - src.app - INFO - Updating page with login view...
+2025-11-14 21:59:03,417 - src.app - INFO - Page updated successfully
+2025-11-14 21:59:03,419 - app - INFO - 
+✅ Application started successfully!
+2025-11-14 21:59:03,420 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-14 21:59:03,421 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-14 21:59:06,867 - app - INFO - ================================================================================
+2025-11-14 21:59:06,868 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-14 21:59:06
+2025-11-14 21:59:06,869 - app - INFO - 
+🔄 Starting backend server...
+2025-11-14 21:59:06,870 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-14 21:59:08,170 - app - INFO - [Backend] Performing system checks...
+2025-11-14 21:59:08,170 - app - INFO - [Backend] 
+2025-11-14 21:59:08,879 - app - INFO - Backend server started successfully
+2025-11-14 21:59:08,943 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-14 21:59:09,140 - app - INFO - [Backend] November 14, 2025 - 21:59:09
+2025-11-14 21:59:09,141 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-14 21:59:09,141 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-14 21:59:09,142 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-14 21:59:09,143 - app - INFO - [Backend] 
+2025-11-14 21:59:09,143 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-14 21:59:09,144 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-14 21:59:10,880 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-14 21:59:19,750 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-14 21:59:23,253 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-14 21:59:23,260 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-14 21:59:23,261 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-14 21:59:23,262 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-14 21:59:23,521 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-14 21:59:23,523 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-14 21:59:24,641 - flet_web.fastapi - INFO - New FletApp: 3hBy4mRx
+2025-11-14 21:59:24,668 - flet_web.fastapi - INFO - New session created (1 total): _PsSmKRkTMAxCkzkf_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 21:59:24,670 - flet_web.fastapi - INFO - Start session: PsSmKRkTMAxCkzkf
+2025-11-14 21:59:24,683 - src.app - INFO - Initializing application...
+2025-11-14 21:59:24,683 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 21:59:24,696 - src.app - INFO - Setting page properties for page id: 1465201042256
+2025-11-14 21:59:24,703 - src.app - INFO - App initialized
+2025-11-14 21:59:24,806 - src.app - ERROR - Application initialization error: name 'route_change' is not defined
+2025-11-14 21:59:24,810 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 514, in main
+    page.on_route_change = route_change
+                           ^^^^^^^^^^^^
+NameError: name 'route_change' is not defined
+
+2025-11-14 21:59:24,817 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 21:59:24,818 - src.app - INFO - Setting page properties for page id: 1465201042256
+2025-11-14 21:59:24,825 - src.app - INFO - App initialized
+2025-11-14 21:59:24,916 - src.app - INFO - Showing login form
+2025-11-14 21:59:24,917 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 21:59:24,918 - src.app - INFO - Page id in show_login: 1465201042256
+2025-11-14 21:59:24,921 - src.app - INFO - Login view created
+2025-11-14 21:59:24,922 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 21:59:24,924 - src.app - INFO - Updating page with login view...
+2025-11-14 21:59:24,932 - src.app - INFO - Page updated successfully
+2025-11-14 21:59:24,940 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmp_rogech9
+2025-11-14 21:59:24,942 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-14 21:59:24,943 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-14 21:59:24,944 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-14 21:59:25,933 - flet_web.fastapi - INFO - New FletApp: E1nKZaMt
+2025-11-14 21:59:26,113 - flet_web.fastapi - INFO - New session created (2 total): _tHRRfcddcG3AwMQ1_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 21:59:26,117 - flet_web.fastapi - INFO - Start session: tHRRfcddcG3AwMQ1
+2025-11-14 21:59:26,118 - src.app - INFO - Initializing application...
+2025-11-14 21:59:26,119 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 21:59:26,131 - src.app - INFO - Setting page properties for page id: 1465207471568
+2025-11-14 21:59:26,144 - src.app - INFO - App initialized
+2025-11-14 21:59:26,249 - src.app - ERROR - Application initialization error: name 'route_change' is not defined
+2025-11-14 21:59:26,252 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 514, in main
+    page.on_route_change = route_change
+                           ^^^^^^^^^^^^
+NameError: name 'route_change' is not defined
+
+2025-11-14 21:59:26,263 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 21:59:26,265 - src.app - INFO - Setting page properties for page id: 1465207471568
+2025-11-14 21:59:26,275 - src.app - INFO - App initialized
+2025-11-14 21:59:26,428 - src.app - INFO - Showing login form
+2025-11-14 21:59:26,429 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 21:59:26,431 - src.app - INFO - Page id in show_login: 1465207471568
+2025-11-14 21:59:26,434 - src.app - INFO - Login view created
+2025-11-14 21:59:26,435 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 21:59:26,442 - src.app - INFO - Updating page with login view...
+2025-11-14 21:59:26,451 - src.app - INFO - Page updated successfully
+2025-11-14 21:59:42,658 - src.app - INFO - User logged in successfully
+2025-11-14 21:59:42,662 - src.app - INFO - Route changed to: RouteChangeEvent(route='/dashboard', name='route_change', data='/dashboard')
+2025-11-14 21:59:42,663 - src.app - INFO - Showing login form
+2025-11-14 21:59:42,664 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 21:59:42,679 - src.app - INFO - Page id in show_login: 1465207471568
+2025-11-14 21:59:42,684 - src.app - INFO - Login view created
+2025-11-14 21:59:42,684 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 21:59:42,687 - src.app - INFO - Updating page with login view...
+2025-11-14 21:59:42,700 - src.app - INFO - Page updated successfully
+2025-11-14 21:59:49,376 - flet_web.fastapi - INFO - Session disconnected: _PsSmKRkTMAxCkzkf_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:00:03,541 - src.app - INFO - User logged in successfully
+2025-11-14 22:00:18,848 - flet_web.fastapi - INFO - Session disconnected: _tHRRfcddcG3AwMQ1_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:00:19,420 - flet_web.fastapi - INFO - New FletApp: 6CvjDXKJ
+2025-11-14 22:00:19,584 - flet_web.fastapi - INFO - Existing session requested: tHRRfcddcG3AwMQ1
+2025-11-14 22:00:19,594 - flet_web.fastapi - INFO - Session reconnected: _tHRRfcddcG3AwMQ1_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:00:19,596 - flet_web.fastapi - INFO - Disposing FletApp: E1nKZaMt
+2025-11-14 22:00:23,034 - flet_web.fastapi - INFO - Session disconnected: _tHRRfcddcG3AwMQ1_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:00:50,580 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-14 22:00:50,581 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmp_rogech9
+2025-11-14 22:00:50,587 - flet - INFO - Flet app has started...
+2025-11-14 22:00:50,587 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-14 22:00:50,706 - app - INFO - 
+✅ Application started successfully!
+2025-11-14 22:00:50,706 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-14 22:00:50,708 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-14 22:02:08,799 - app - INFO - ================================================================================
+2025-11-14 22:02:08,800 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-14 22:02:08
+2025-11-14 22:02:08,802 - app - INFO - 
+🔄 Starting backend server...
+2025-11-14 22:02:08,803 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-14 22:02:09,593 - app - INFO - [Backend] Performing system checks...
+2025-11-14 22:02:09,594 - app - INFO - [Backend] 
+2025-11-14 22:02:10,020 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-14 22:02:10,156 - app - INFO - [Backend] November 14, 2025 - 22:02:10
+2025-11-14 22:02:10,157 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-14 22:02:10,158 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-14 22:02:10,159 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-14 22:02:10,159 - app - INFO - [Backend] 
+2025-11-14 22:02:10,160 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-14 22:02:10,161 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-14 22:02:10,812 - app - INFO - Backend server started successfully
+2025-11-14 22:02:12,815 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-14 22:02:20,707 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:02:23,375 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-14 22:02:23,381 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-14 22:02:23,381 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-14 22:02:23,382 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-14 22:02:23,545 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-14 22:02:23,548 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-14 22:02:24,650 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmp642tjrb2
+2025-11-14 22:02:24,651 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-14 22:02:24,652 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:02:24,655 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-14 22:02:25,474 - flet_web.fastapi - INFO - New FletApp: qAM8TjPl
+2025-11-14 22:02:25,715 - flet_web.fastapi - INFO - New session created (1 total): _lHoDsziGTmtwHrob_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:02:25,722 - flet_web.fastapi - INFO - Start session: lHoDsziGTmtwHrob
+2025-11-14 22:02:25,723 - src.app - INFO - Initializing application...
+2025-11-14 22:02:25,724 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 22:02:25,732 - src.app - INFO - Setting page properties for page id: 2177293300176
+2025-11-14 22:02:25,740 - src.app - INFO - App initialized
+2025-11-14 22:02:25,859 - src.app - ERROR - Application initialization error: name 'route_change' is not defined
+2025-11-14 22:02:25,863 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 520, in main
+    page.on_route_change = route_change
+                           ^^^^^^^^^^^^
+NameError: name 'route_change' is not defined
+
+2025-11-14 22:02:25,868 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:02:25,877 - src.app - INFO - Setting page properties for page id: 2177293300176
+2025-11-14 22:02:25,879 - src.app - INFO - App initialized
+2025-11-14 22:02:25,974 - src.app - INFO - Showing login form
+2025-11-14 22:02:25,975 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:02:25,976 - src.app - INFO - Page id in show_login: 2177293300176
+2025-11-14 22:02:25,978 - src.app - INFO - Login view created
+2025-11-14 22:02:25,979 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:02:25,979 - src.app - INFO - Updating page with login view...
+2025-11-14 22:02:25,993 - src.app - INFO - Page updated successfully
+2025-11-14 22:02:40,418 - src.app - INFO - User logged in successfully
+2025-11-14 22:02:40,424 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=RuntimeError('no running event loop')>
+Traceback (most recent call last):
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 495, in route_change_wrapper
+    return asyncio.create_task(app.route_change(route))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 371, in create_task
+    loop = events.get_running_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: no running event loop
+2025-11-14 22:04:06,686 - flet_web.fastapi - INFO - Session disconnected: _lHoDsziGTmtwHrob_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:04:06,789 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-14 22:04:06,789 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmp642tjrb2
+2025-11-14 22:04:06,796 - flet - INFO - Flet app has started...
+2025-11-14 22:04:06,796 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-14 22:04:06,925 - app - INFO - 
+✅ Application started successfully!
+2025-11-14 22:04:06,927 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-14 22:04:06,930 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-14 22:04:09,368 - app - INFO - ================================================================================
+2025-11-14 22:04:09,368 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-14 22:04:09
+2025-11-14 22:04:09,370 - app - INFO - 
+🔄 Starting backend server...
+2025-11-14 22:04:09,371 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-14 22:04:10,181 - app - INFO - [Backend] Performing system checks...
+2025-11-14 22:04:10,182 - app - INFO - [Backend] 
+2025-11-14 22:04:10,941 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-14 22:04:11,128 - app - INFO - [Backend] November 14, 2025 - 22:04:11
+2025-11-14 22:04:11,129 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-14 22:04:11,129 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-14 22:04:11,130 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-14 22:04:11,131 - app - INFO - [Backend] 
+2025-11-14 22:04:11,131 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-14 22:04:11,132 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-14 22:04:11,409 - app - INFO - Backend server started successfully
+2025-11-14 22:04:13,411 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-14 22:04:20,252 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:04:22,633 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-14 22:04:22,638 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-14 22:04:22,639 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-14 22:04:22,640 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-14 22:04:22,796 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-14 22:04:22,798 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-14 22:04:23,784 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmppuizhecv
+2025-11-14 22:04:23,786 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-14 22:04:23,788 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:04:23,791 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-14 22:04:24,622 - flet_web.fastapi - INFO - New FletApp: OxmcOq7l
+2025-11-14 22:04:24,897 - flet_web.fastapi - INFO - New session created (1 total): _TNUWbdSWWAZuXo1J_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:04:24,899 - flet_web.fastapi - INFO - Start session: TNUWbdSWWAZuXo1J
+2025-11-14 22:04:24,900 - src.app - INFO - Initializing application...
+2025-11-14 22:04:24,902 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 22:04:24,905 - src.app - INFO - Setting page properties for page id: 2287197434832
+2025-11-14 22:04:24,912 - src.app - INFO - App initialized
+2025-11-14 22:04:25,032 - src.app - ERROR - Application initialization error: name 'route_change' is not defined
+2025-11-14 22:04:25,035 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 536, in main
+    page.on_route_change = route_change
+                           ^^^^^^^^^^^^
+NameError: name 'route_change' is not defined
+
+2025-11-14 22:04:25,039 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:04:25,044 - src.app - INFO - Setting page properties for page id: 2287197434832
+2025-11-14 22:04:25,049 - src.app - INFO - App initialized
+2025-11-14 22:04:25,204 - src.app - INFO - Showing login form
+2025-11-14 22:04:25,205 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:04:25,210 - src.app - INFO - Page id in show_login: 2287197434832
+2025-11-14 22:04:25,215 - src.app - INFO - Login view created
+2025-11-14 22:04:25,216 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:04:25,217 - src.app - INFO - Updating page with login view...
+2025-11-14 22:04:25,223 - src.app - INFO - Page updated successfully
+2025-11-14 22:04:37,881 - src.app - INFO - User logged in successfully
+2025-11-14 22:04:37,887 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=RuntimeError('no running event loop')>
+Traceback (most recent call last):
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet\core\page.py", line 906, in wrapper
+    handler(*args)
+  File "D:\lawyer_office_management\frontend\src\app.py", line 511, in route_change_wrapper
+    return asyncio.create_task(app.route_change(route))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 371, in create_task
+    loop = events.get_running_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: no running event loop
+2025-11-14 22:05:16,442 - flet_web.fastapi - INFO - Session disconnected: _TNUWbdSWWAZuXo1J_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:05:16,566 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-14 22:05:16,567 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmppuizhecv
+2025-11-14 22:05:16,573 - flet - INFO - Flet app has started...
+2025-11-14 22:05:16,574 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-14 22:05:16,684 - app - INFO - 
+✅ Application started successfully!
+2025-11-14 22:05:16,685 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-14 22:05:16,686 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-14 22:05:26,075 - app - INFO - ================================================================================
+2025-11-14 22:05:26,076 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-14 22:05:26
+2025-11-14 22:05:26,077 - app - INFO - 
+🔄 Starting backend server...
+2025-11-14 22:05:26,078 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-14 22:05:27,047 - app - INFO - [Backend] Performing system checks...
+2025-11-14 22:05:27,047 - app - INFO - [Backend] 
+2025-11-14 22:05:27,554 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-14 22:05:27,778 - app - INFO - [Backend] November 14, 2025 - 22:05:27
+2025-11-14 22:05:27,779 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-14 22:05:27,780 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-14 22:05:27,781 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-14 22:05:27,782 - app - INFO - [Backend] 
+2025-11-14 22:05:27,783 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-14 22:05:27,786 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-14 22:05:28,092 - app - INFO - Backend server started successfully
+2025-11-14 22:05:30,095 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-14 22:05:37,258 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:05:39,628 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-14 22:05:39,632 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-14 22:05:39,633 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-14 22:05:39,634 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-14 22:05:39,793 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-14 22:05:39,794 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-14 22:05:40,755 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmp6uu97cxc
+2025-11-14 22:05:40,758 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-14 22:05:40,762 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:05:40,765 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-14 22:05:41,552 - flet_web.fastapi - INFO - New FletApp: egnSZU9p
+2025-11-14 22:05:41,781 - flet_web.fastapi - INFO - New session created (1 total): _orYNKQC2gTlrIWEr_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:05:41,782 - flet_web.fastapi - INFO - Start session: orYNKQC2gTlrIWEr
+2025-11-14 22:05:41,783 - src.app - INFO - Initializing application...
+2025-11-14 22:05:41,784 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 22:05:41,792 - src.app - INFO - Setting page properties for page id: 2425053787600
+2025-11-14 22:05:41,797 - src.app - INFO - App initialized
+2025-11-14 22:05:41,897 - src.app - ERROR - Application initialization error: name 'route_change' is not defined
+2025-11-14 22:05:41,902 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 553, in main
+    page.on_route_change = route_change
+                           ^^^^^^^^^^^^
+NameError: name 'route_change' is not defined
+
+2025-11-14 22:05:41,910 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:05:41,912 - src.app - INFO - Setting page properties for page id: 2425053787600
+2025-11-14 22:05:41,915 - src.app - INFO - App initialized
+2025-11-14 22:05:42,014 - src.app - INFO - Showing login form
+2025-11-14 22:05:42,015 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:05:42,016 - src.app - INFO - Page id in show_login: 2425053787600
+2025-11-14 22:05:42,023 - src.app - INFO - Login view created
+2025-11-14 22:05:42,023 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:05:42,025 - src.app - INFO - Updating page with login view...
+2025-11-14 22:05:42,034 - src.app - INFO - Page updated successfully
+2025-11-14 22:06:37,434 - src.app - INFO - User logged in successfully
+2025-11-14 22:06:37,448 - src.app - INFO - Route changed to: /dashboard
+2025-11-14 22:06:37,455 - src.app - INFO - User not authenticated, showing login form
+2025-11-14 22:06:37,576 - src.app - INFO - Route changed to: /login
+2025-11-14 22:06:37,580 - src.app - INFO - Showing login form
+2025-11-14 22:06:37,583 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/login', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:06:37,597 - src.app - INFO - Page id in show_login: 2425053787600
+2025-11-14 22:06:37,606 - src.app - INFO - Login view created
+2025-11-14 22:06:37,608 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:06:37,610 - src.app - INFO - Updating page with login view...
+2025-11-14 22:06:37,660 - src.app - INFO - Page updated successfully
+2025-11-14 22:06:55,935 - src.app - INFO - User logged in successfully
+2025-11-14 22:06:55,956 - src.app - INFO - Route changed to: /dashboard
+2025-11-14 22:06:55,965 - src.app - INFO - Showing dashboard
+2025-11-14 22:09:35,898 - flet_web.fastapi - INFO - Session disconnected: _orYNKQC2gTlrIWEr_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:09:36,037 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-14 22:09:36,046 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmp6uu97cxc
+2025-11-14 22:09:36,069 - flet - INFO - Flet app has started...
+2025-11-14 22:09:36,072 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-14 22:09:36,190 - app - INFO - 
+✅ Application started successfully!
+2025-11-14 22:09:36,190 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-14 22:09:36,190 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-14 22:09:45,395 - app - INFO - ================================================================================
+2025-11-14 22:09:45,398 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-14 22:09:45
+2025-11-14 22:09:45,399 - app - INFO - 
+🔄 Starting backend server...
+2025-11-14 22:09:45,399 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-14 22:09:46,134 - app - INFO - [Backend] Performing system checks...
+2025-11-14 22:09:46,134 - app - INFO - [Backend] 
+2025-11-14 22:09:46,505 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-14 22:09:46,690 - app - INFO - [Backend] November 14, 2025 - 22:09:46
+2025-11-14 22:09:46,690 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-14 22:09:46,690 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-14 22:09:46,690 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-14 22:09:46,695 - app - INFO - [Backend] 
+2025-11-14 22:09:46,695 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-14 22:09:46,695 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-14 22:09:47,408 - app - INFO - Backend server started successfully
+2025-11-14 22:09:49,410 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-14 22:09:55,489 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:09:57,755 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-14 22:09:57,762 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-14 22:09:57,762 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-14 22:09:57,762 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-14 22:09:57,910 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-14 22:09:57,912 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-14 22:09:58,619 - flet_web.fastapi - INFO - New FletApp: xhaYG68r
+2025-11-14 22:09:58,619 - flet_web.fastapi - INFO - New session created (1 total): _qRA271k0JKPd6Zf1_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:09:58,629 - flet_web.fastapi - INFO - Start session: qRA271k0JKPd6Zf1
+2025-11-14 22:09:58,631 - src.app - INFO - Initializing application...
+2025-11-14 22:09:58,632 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 22:09:58,635 - src.app - INFO - Setting page properties for page id: 1889571232976
+2025-11-14 22:09:58,640 - src.app - INFO - App initialized
+2025-11-14 22:09:58,836 - src.app - ERROR - Application initialization error: name 'route_change' is not defined
+2025-11-14 22:09:58,842 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 618, in main
+    page.on_route_change = route_change
+                           ^^^^^^^^^^^^
+NameError: name 'route_change' is not defined
+
+2025-11-14 22:09:58,857 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:09:58,872 - src.app - INFO - Setting page properties for page id: 1889571232976
+2025-11-14 22:09:58,876 - src.app - INFO - App initialized
+2025-11-14 22:09:59,022 - src.app - INFO - Showing login form
+2025-11-14 22:09:59,022 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:09:59,023 - src.app - INFO - Page id in show_login: 1889571232976
+2025-11-14 22:09:59,026 - src.app - INFO - Login view created
+2025-11-14 22:09:59,026 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:09:59,027 - src.app - INFO - Updating page with login view...
+2025-11-14 22:09:59,037 - src.app - INFO - Page updated successfully
+2025-11-14 22:09:59,051 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmpiatqhdv5
+2025-11-14 22:09:59,052 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-14 22:09:59,054 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:09:59,055 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-14 22:09:59,863 - flet_web.fastapi - INFO - New FletApp: 3OIFhOkx
+2025-11-14 22:10:00,096 - flet_web.fastapi - INFO - New session created (2 total): _pZvIx3cWS7Ikoapp_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:10:00,099 - flet_web.fastapi - INFO - Start session: pZvIx3cWS7Ikoapp
+2025-11-14 22:10:00,100 - src.app - INFO - Initializing application...
+2025-11-14 22:10:00,102 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 22:10:00,122 - src.app - INFO - Setting page properties for page id: 1889571709840
+2025-11-14 22:10:00,129 - src.app - INFO - App initialized
+2025-11-14 22:10:00,220 - src.app - ERROR - Application initialization error: name 'route_change' is not defined
+2025-11-14 22:10:00,220 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 618, in main
+    page.on_route_change = route_change
+                           ^^^^^^^^^^^^
+NameError: name 'route_change' is not defined
+
+2025-11-14 22:10:00,233 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:10:00,234 - src.app - INFO - Setting page properties for page id: 1889571709840
+2025-11-14 22:10:00,237 - src.app - INFO - App initialized
+2025-11-14 22:10:00,340 - src.app - INFO - Showing login form
+2025-11-14 22:10:00,341 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:10:00,343 - src.app - INFO - Page id in show_login: 1889571709840
+2025-11-14 22:10:00,352 - src.app - INFO - Login view created
+2025-11-14 22:10:00,353 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:10:00,353 - src.app - INFO - Updating page with login view...
+2025-11-14 22:10:00,368 - src.app - INFO - Page updated successfully
+2025-11-14 22:10:23,043 - src.app - INFO - User logged in successfully
+2025-11-14 22:10:23,048 - src.app - INFO - Route change wrapper called with: /dashboard
+2025-11-14 22:10:23,052 - src.app - INFO - Same route /dashboard, skipping to avoid loop
+2025-11-14 22:10:31,977 - flet_web.fastapi - INFO - Session disconnected: _qRA271k0JKPd6Zf1_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:10:33,345 - flet_web.fastapi - INFO - Session disconnected: _pZvIx3cWS7Ikoapp_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:13:56,504 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-14 22:13:56,507 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmpiatqhdv5
+2025-11-14 22:13:56,519 - flet - INFO - Flet app has started...
+2025-11-14 22:13:56,521 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-14 22:13:56,646 - app - INFO - 
+✅ Application started successfully!
+2025-11-14 22:13:56,646 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-14 22:13:56,647 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-14 22:13:59,062 - app - INFO - ================================================================================
+2025-11-14 22:13:59,063 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-14 22:13:59
+2025-11-14 22:13:59,064 - app - INFO - 
+🔄 Starting backend server...
+2025-11-14 22:13:59,064 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-14 22:13:59,834 - app - INFO - [Backend] Performing system checks...
+2025-11-14 22:13:59,834 - app - INFO - [Backend] 
+2025-11-14 22:14:00,229 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-14 22:14:00,422 - app - INFO - [Backend] November 14, 2025 - 22:14:00
+2025-11-14 22:14:00,422 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-14 22:14:00,423 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-14 22:14:00,424 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-14 22:14:00,424 - app - INFO - [Backend] 
+2025-11-14 22:14:00,425 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-14 22:14:00,426 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-14 22:14:01,074 - app - INFO - Backend server started successfully
+2025-11-14 22:14:03,076 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-14 22:14:09,101 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:14:12,094 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-14 22:14:12,099 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-14 22:14:12,100 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-14 22:14:12,100 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-14 22:14:12,253 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-14 22:14:12,254 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-14 22:14:13,299 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmpkocv3o17
+2025-11-14 22:14:13,300 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-14 22:14:13,301 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:14:13,303 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-14 22:14:14,172 - flet_web.fastapi - INFO - New FletApp: RZI7H8Dd
+2025-11-14 22:14:14,369 - flet_web.fastapi - INFO - New session created (1 total): _najTcggUJWFQbeL5_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:14:14,373 - flet_web.fastapi - INFO - Start session: najTcggUJWFQbeL5
+2025-11-14 22:14:14,375 - src.app - INFO - Initializing application...
+2025-11-14 22:14:14,378 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 22:14:14,389 - src.app - INFO - Setting page properties for page id: 1732641568848
+2025-11-14 22:14:14,398 - src.app - INFO - App initialized
+2025-11-14 22:14:14,499 - src.app - INFO - Starting with initial route: /
+2025-11-14 22:14:14,500 - src.app - INFO - Route changed to: /
+2025-11-14 22:14:14,501 - src.app - INFO - Showing login form
+2025-11-14 22:14:14,501 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:14:14,503 - src.app - INFO - Page id in show_login: 1732641568848
+2025-11-14 22:14:14,505 - src.app - INFO - Login view created
+2025-11-14 22:14:14,505 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:14:14,508 - src.app - INFO - Updating page with login view...
+2025-11-14 22:14:14,518 - src.app - INFO - Page updated successfully
+2025-11-14 22:14:31,430 - src.app - INFO - User logged in successfully
+2025-11-14 22:14:31,436 - src.app - INFO - Route change wrapper called with: /dashboard
+2025-11-14 22:14:31,440 - src.app - INFO - Same route /dashboard, skipping to avoid loop
+2025-11-14 22:14:38,155 - flet_web.fastapi - INFO - Session disconnected: _najTcggUJWFQbeL5_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:14:38,582 - flet_web.fastapi - INFO - New FletApp: dpN25LDM
+2025-11-14 22:14:38,704 - flet_web.fastapi - INFO - Existing session requested: najTcggUJWFQbeL5
+2025-11-14 22:14:38,713 - flet_web.fastapi - INFO - Session reconnected: _najTcggUJWFQbeL5_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:14:38,713 - flet_web.fastapi - INFO - Disposing FletApp: RZI7H8Dd
+2025-11-14 22:14:39,841 - flet_web.fastapi - INFO - Session disconnected: _najTcggUJWFQbeL5_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:14:40,378 - flet_web.fastapi - INFO - New FletApp: apL16vIT
+2025-11-14 22:14:40,511 - flet_web.fastapi - INFO - Existing session requested: najTcggUJWFQbeL5
+2025-11-14 22:14:40,512 - flet_web.fastapi - INFO - Session reconnected: _najTcggUJWFQbeL5_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:14:40,512 - flet_web.fastapi - INFO - Disposing FletApp: dpN25LDM
+2025-11-14 22:16:05,071 - flet_web.fastapi - INFO - Session disconnected: _najTcggUJWFQbeL5_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:16:05,183 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-14 22:16:05,183 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmpkocv3o17
+2025-11-14 22:16:05,191 - flet - INFO - Flet app has started...
+2025-11-14 22:16:05,192 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-14 22:16:05,312 - src.app - INFO - Application shutdown requested
+2025-11-14 22:16:05,312 - src.app - INFO - Application shutdown complete
+2025-11-14 22:16:05,317 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:16:05,317 - src.app - INFO - Setting page properties for page id: 1732641568848
+2025-11-14 22:16:05,324 - src.app - INFO - App initialized
+2025-11-14 22:16:05,470 - src.app - INFO - Showing login form
+2025-11-14 22:16:05,471 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:16:05,471 - src.app - INFO - Page id in show_login: 1732641568848
+2025-11-14 22:16:05,471 - src.app - INFO - Login view created
+2025-11-14 22:16:05,471 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:16:05,491 - src.app - INFO - Updating page with login view...
+2025-11-14 22:16:05,500 - src.app - INFO - Page updated successfully
+2025-11-14 22:16:05,502 - app - INFO - 
+✅ Application started successfully!
+2025-11-14 22:16:05,504 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-14 22:16:05,505 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-14 22:16:08,827 - app - INFO - ================================================================================
+2025-11-14 22:16:08,827 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-14 22:16:08
+2025-11-14 22:16:08,827 - app - INFO - 
+🔄 Starting backend server...
+2025-11-14 22:16:08,831 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-14 22:16:09,784 - app - INFO - [Backend] Performing system checks...
+2025-11-14 22:16:09,784 - app - INFO - [Backend] 
+2025-11-14 22:16:10,157 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-14 22:16:10,281 - app - INFO - [Backend] November 14, 2025 - 22:16:10
+2025-11-14 22:16:10,281 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-14 22:16:10,283 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-14 22:16:10,284 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-14 22:16:10,285 - app - INFO - [Backend] 
+2025-11-14 22:16:10,285 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-14 22:16:10,285 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-14 22:16:10,842 - app - INFO - Backend server started successfully
+2025-11-14 22:16:12,844 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-14 22:16:19,126 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:16:21,367 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-14 22:16:21,370 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-14 22:16:21,370 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-14 22:16:21,370 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-14 22:16:21,521 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-14 22:16:21,522 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-14 22:16:22,533 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmp3mxx2ntc
+2025-11-14 22:16:22,540 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-14 22:16:22,542 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:16:22,542 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-14 22:16:22,735 - flet_web.fastapi - INFO - New FletApp: ESp37525
+2025-11-14 22:16:22,774 - flet_web.fastapi - INFO - New session created (1 total): _FKg5by1giexyLQhV_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:16:22,777 - flet_web.fastapi - INFO - Start session: FKg5by1giexyLQhV
+2025-11-14 22:16:22,778 - src.app - INFO - Initializing application...
+2025-11-14 22:16:22,780 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 22:16:22,785 - src.app - INFO - Setting page properties for page id: 2129720654608
+2025-11-14 22:16:22,792 - src.app - INFO - App initialized
+2025-11-14 22:16:22,983 - src.app - INFO - Starting with initial route: /dashboard
+2025-11-14 22:16:22,984 - src.app - INFO - Route changed to: /dashboard
+2025-11-14 22:16:22,984 - src.app - INFO - User not authenticated, showing login form
+2025-11-14 22:16:23,428 - flet_web.fastapi - INFO - New FletApp: G1cvclCi
+2025-11-14 22:16:23,595 - flet_web.fastapi - INFO - New session created (2 total): _YnReUHNNGk3glwMY_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:16:23,601 - flet_web.fastapi - INFO - Start session: YnReUHNNGk3glwMY
+2025-11-14 22:16:23,602 - src.app - INFO - Initializing application...
+2025-11-14 22:16:23,609 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 22:16:23,617 - src.app - INFO - Setting page properties for page id: 2129725877008
+2025-11-14 22:16:23,627 - src.app - INFO - App initialized
+2025-11-14 22:16:23,742 - src.app - INFO - Starting with initial route: /
+2025-11-14 22:16:23,742 - src.app - INFO - Route changed to: /
+2025-11-14 22:16:23,743 - src.app - INFO - Showing login form
+2025-11-14 22:16:23,744 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:16:23,745 - src.app - INFO - Page id in show_login: 2129725877008
+2025-11-14 22:16:23,747 - src.app - INFO - Login view created
+2025-11-14 22:16:23,748 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:16:23,748 - src.app - INFO - Updating page with login view...
+2025-11-14 22:16:23,760 - src.app - INFO - Page updated successfully
+2025-11-14 22:21:45,982 - flet_web.fastapi - INFO - Session disconnected: _FKg5by1giexyLQhV_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:22:16,573 - src.app - INFO - User logged in successfully
+2025-11-14 22:22:16,581 - src.app - INFO - Route change wrapper called with: /dashboard
+2025-11-14 22:22:16,592 - src.app - INFO - Route changed to: /dashboard
+2025-11-14 22:22:16,594 - src.app - INFO - Showing dashboard
+2025-11-14 22:22:16,638 - src.app - INFO - Dashboard view created: <class 'flet.core.column.Column'>
+2025-11-14 22:22:16,646 - src.app - INFO - Content updated with dashboard view
+2025-11-14 22:22:16,648 - src.app - INFO - View added to page. Total views: 1
+2025-11-14 22:22:16,717 - src.app - INFO - Page updated successfully
+2025-11-14 22:22:20,863 - src.app - INFO - Route change wrapper called with: /clients
+2025-11-14 22:22:20,866 - src.app - INFO - Route changed to: /clients
+2025-11-14 22:22:20,867 - src.app - INFO - Showing login form
+2025-11-14 22:22:20,870 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/clients', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:22:20,877 - src.app - INFO - Page id in show_login: 2129725877008
+2025-11-14 22:22:20,883 - src.app - INFO - Login view created
+2025-11-14 22:22:20,884 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:22:20,885 - src.app - INFO - Updating page with login view...
+2025-11-14 22:22:20,897 - src.app - INFO - Page updated successfully
+2025-11-14 22:22:42,168 - src.app - INFO - User logged in successfully
+2025-11-14 22:22:42,172 - src.app - INFO - Route change wrapper called with: /dashboard
+2025-11-14 22:22:42,173 - src.app - INFO - Route changed to: /dashboard
+2025-11-14 22:22:42,180 - src.app - INFO - Showing dashboard
+2025-11-14 22:22:42,222 - src.app - INFO - Dashboard view created: <class 'flet.core.column.Column'>
+2025-11-14 22:22:42,223 - src.app - INFO - Content updated with dashboard view
+2025-11-14 22:22:42,224 - src.app - INFO - View added to page. Total views: 1
+2025-11-14 22:22:42,298 - src.app - INFO - Page updated successfully
+2025-11-14 22:22:46,434 - src.app - INFO - Route change wrapper called with: /profile
+2025-11-14 22:22:46,436 - src.app - INFO - Route changed to: /profile
+2025-11-14 22:22:46,436 - src.app - INFO - Showing profile
+2025-11-14 22:22:51,325 - src.app - INFO - Route change wrapper called with: /clients
+2025-11-14 22:22:51,331 - src.app - INFO - Route changed to: /clients
+2025-11-14 22:22:51,332 - src.app - INFO - Showing login form
+2025-11-14 22:22:51,333 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/clients', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:22:51,334 - src.app - INFO - Page id in show_login: 2129725877008
+2025-11-14 22:22:51,338 - src.app - INFO - Login view created
+2025-11-14 22:22:51,340 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:22:51,342 - src.app - INFO - Updating page with login view...
+2025-11-14 22:22:51,361 - src.app - INFO - Page updated successfully
+2025-11-14 22:23:07,714 - src.app - INFO - User logged in successfully
+2025-11-14 22:23:07,720 - src.app - INFO - Route change wrapper called with: /dashboard
+2025-11-14 22:23:07,726 - src.app - INFO - Route changed to: /dashboard
+2025-11-14 22:23:07,727 - src.app - INFO - Showing dashboard
+2025-11-14 22:23:07,769 - src.app - INFO - Dashboard view created: <class 'flet.core.column.Column'>
+2025-11-14 22:23:07,770 - src.app - INFO - Content updated with dashboard view
+2025-11-14 22:23:07,772 - src.app - INFO - View added to page. Total views: 1
+2025-11-14 22:23:07,849 - src.app - INFO - Page updated successfully
+2025-11-14 22:23:11,391 - src.app - INFO - Route change wrapper called with: /profile
+2025-11-14 22:23:11,395 - src.app - INFO - Route changed to: /profile
+2025-11-14 22:23:11,395 - src.app - INFO - Showing profile
+2025-11-14 22:24:19,521 - flet_web.fastapi - INFO - Session disconnected: _YnReUHNNGk3glwMY_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:24:19,632 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-14 22:24:19,632 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmp3mxx2ntc
+2025-11-14 22:24:19,644 - flet - INFO - Flet app has started...
+2025-11-14 22:24:19,646 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-14 22:24:19,758 - src.app - INFO - Application shutdown requested
+2025-11-14 22:24:19,760 - src.app - INFO - Application shutdown complete
+2025-11-14 22:24:19,762 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/login', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:24:19,765 - src.app - INFO - Setting page properties for page id: 2129720654608
+2025-11-14 22:24:19,769 - src.app - INFO - App initialized
+2025-11-14 22:24:19,833 - src.app - INFO - Showing login form
+2025-11-14 22:24:19,834 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/login', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:24:19,835 - src.app - INFO - Page id in show_login: 2129720654608
+2025-11-14 22:24:19,840 - src.app - INFO - Login view created
+2025-11-14 22:24:19,841 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:24:19,842 - src.app - INFO - Updating page with login view...
+2025-11-14 22:24:19,848 - src.app - INFO - Page updated successfully
+2025-11-14 22:24:19,848 - src.app - INFO - Application shutdown requested
+2025-11-14 22:24:19,851 - src.app - INFO - Application shutdown complete
+2025-11-14 22:24:19,857 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/profile', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:24:19,862 - src.app - INFO - Setting page properties for page id: 2129725877008
+2025-11-14 22:24:19,864 - src.app - INFO - App initialized
+2025-11-14 22:24:19,942 - src.app - INFO - Showing login form
+2025-11-14 22:24:19,944 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/profile', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:24:19,946 - src.app - INFO - Page id in show_login: 2129725877008
+2025-11-14 22:24:19,948 - src.app - INFO - Login view created
+2025-11-14 22:24:19,949 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:24:19,950 - src.app - INFO - Updating page with login view...
+2025-11-14 22:24:19,955 - src.app - INFO - Page updated successfully
+2025-11-14 22:24:19,959 - app - INFO - 
+✅ Application started successfully!
+2025-11-14 22:24:19,961 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-14 22:24:19,962 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-14 22:24:22,270 - app - INFO - ================================================================================
+2025-11-14 22:24:22,270 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-14 22:24:22
+2025-11-14 22:24:22,270 - app - INFO - 
+🔄 Starting backend server...
+2025-11-14 22:24:22,270 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-14 22:24:23,112 - app - INFO - [Backend] Performing system checks...
+2025-11-14 22:24:23,117 - app - INFO - [Backend] 
+2025-11-14 22:24:23,812 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-14 22:24:24,298 - app - INFO - Backend server started successfully
+2025-11-14 22:24:24,412 - app - INFO - [Backend] November 14, 2025 - 22:24:24
+2025-11-14 22:24:24,413 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-14 22:24:24,414 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-14 22:24:24,415 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-14 22:24:24,416 - app - INFO - [Backend] 
+2025-11-14 22:24:24,416 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-14 22:24:24,417 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-14 22:24:26,313 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-14 22:24:33,593 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:24:36,467 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-14 22:24:36,471 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-14 22:24:36,471 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-14 22:24:36,478 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-14 22:24:36,676 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-14 22:24:36,681 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-14 22:24:37,795 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmpipltiap6
+2025-11-14 22:24:37,798 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-14 22:24:37,802 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:24:37,805 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-14 22:24:38,710 - flet_web.fastapi - INFO - New FletApp: cQ79gr3P
+2025-11-14 22:24:38,929 - flet_web.fastapi - INFO - New session created (1 total): _TNbQPU8zhMVmGSdY_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:24:38,931 - flet_web.fastapi - INFO - Start session: TNbQPU8zhMVmGSdY
+2025-11-14 22:24:38,931 - src.app - INFO - Initializing application...
+2025-11-14 22:24:38,932 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 22:24:38,935 - src.app - INFO - Setting page properties for page id: 1791522060624
+2025-11-14 22:24:38,941 - src.app - INFO - App initialized
+2025-11-14 22:24:39,052 - src.app - INFO - Starting with initial route: /
+2025-11-14 22:24:39,052 - src.app - INFO - Route changed to: /
+2025-11-14 22:24:39,052 - src.app - INFO - Showing login form
+2025-11-14 22:24:39,052 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:24:39,055 - src.app - INFO - Page id in show_login: 1791522060624
+2025-11-14 22:24:39,063 - src.app - INFO - Login view created
+2025-11-14 22:24:39,064 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:24:39,068 - src.app - INFO - Updating page with login view...
+2025-11-14 22:24:39,081 - src.app - INFO - Page updated successfully
+2025-11-14 22:24:52,240 - src.app - INFO - User logged in successfully
+2025-11-14 22:24:52,240 - src.app - INFO - Route change wrapper called with: /dashboard
+2025-11-14 22:24:52,248 - src.app - INFO - Route changed to: /dashboard
+2025-11-14 22:24:52,249 - src.app - INFO - Showing dashboard
+2025-11-14 22:24:52,286 - src.app - INFO - Dashboard view created: <class 'flet.core.column.Column'>
+2025-11-14 22:24:52,288 - src.app - INFO - Content updated with dashboard view
+2025-11-14 22:24:52,289 - src.app - INFO - View added to page. Total views: 1
+2025-11-14 22:24:52,372 - src.app - INFO - Page updated successfully
+2025-11-14 22:27:00,627 - flet_web.fastapi - INFO - Session disconnected: _TNbQPU8zhMVmGSdY_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:29:16,083 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-14 22:29:16,084 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmpipltiap6
+2025-11-14 22:29:16,091 - flet - INFO - Flet app has started...
+2025-11-14 22:29:16,093 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-14 22:29:16,217 - src.app - INFO - Application shutdown requested
+2025-11-14 22:29:16,219 - src.app - INFO - Application shutdown complete
+2025-11-14 22:29:16,240 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:29:16,240 - src.app - INFO - Setting page properties for page id: 1791522060624
+2025-11-14 22:29:16,251 - src.app - INFO - App initialized
+2025-11-14 22:29:16,326 - src.app - INFO - Showing login form
+2025-11-14 22:29:16,327 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:29:16,328 - src.app - INFO - Page id in show_login: 1791522060624
+2025-11-14 22:29:16,331 - src.app - INFO - Login view created
+2025-11-14 22:29:16,332 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:29:16,333 - src.app - INFO - Updating page with login view...
+2025-11-14 22:29:16,337 - src.app - INFO - Page updated successfully
+2025-11-14 22:29:16,339 - app - INFO - 
+✅ Application started successfully!
+2025-11-14 22:29:16,340 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-14 22:29:16,342 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-14 22:29:20,611 - app - INFO - ================================================================================
+2025-11-14 22:29:20,612 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-14 22:29:20
+2025-11-14 22:29:20,612 - app - INFO - 
+🔄 Starting backend server...
+2025-11-14 22:29:20,612 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-14 22:29:22,624 - app - INFO - Backend server started successfully
+2025-11-14 22:29:23,981 - app - INFO - [Backend] Performing system checks...
+2025-11-14 22:29:23,982 - app - INFO - [Backend] 
+2025-11-14 22:29:24,626 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-14 22:29:25,756 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-14 22:29:26,222 - app - INFO - [Backend] November 14, 2025 - 22:29:26
+2025-11-14 22:29:26,253 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-14 22:29:26,298 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-14 22:29:26,336 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-14 22:29:26,356 - app - INFO - [Backend] 
+2025-11-14 22:29:26,387 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-14 22:29:26,418 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-14 22:29:41,212 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:29:45,535 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-14 22:29:45,541 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-14 22:29:45,542 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-14 22:29:45,543 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-14 22:29:46,030 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-14 22:29:46,031 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-14 22:29:47,387 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmpgvp5t3ud
+2025-11-14 22:29:47,390 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-14 22:29:47,395 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:29:47,401 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-14 22:29:48,395 - flet_web.fastapi - INFO - New FletApp: Kav87qm1
+2025-11-14 22:29:48,623 - flet_web.fastapi - INFO - New session created (1 total): _TJkFjukCuXT7cI1q_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:29:48,626 - flet_web.fastapi - INFO - Start session: TJkFjukCuXT7cI1q
+2025-11-14 22:29:48,627 - src.app - INFO - Initializing application...
+2025-11-14 22:29:48,628 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 22:29:48,630 - src.app - INFO - Setting page properties for page id: 2173554271056
+2025-11-14 22:29:48,637 - src.app - INFO - App initialized
+2025-11-14 22:29:48,770 - src.app - INFO - Starting with initial route: /
+2025-11-14 22:29:48,770 - src.app - INFO - Route changed to: /
+2025-11-14 22:29:48,770 - src.app - INFO - Showing login form
+2025-11-14 22:29:48,770 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:29:48,782 - src.app - INFO - Page id in show_login: 2173554271056
+2025-11-14 22:29:48,789 - src.app - INFO - Login view created
+2025-11-14 22:29:48,791 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:29:48,792 - src.app - INFO - Updating page with login view...
+2025-11-14 22:29:48,807 - src.app - INFO - Page updated successfully
+2025-11-14 22:30:02,111 - src.app - INFO - User logged in successfully
+2025-11-14 22:30:02,116 - src.app - INFO - Route change wrapper called with: /dashboard
+2025-11-14 22:30:02,125 - src.app - INFO - Route changed to: /dashboard
+2025-11-14 22:30:02,126 - src.app - INFO - Showing dashboard
+2025-11-14 22:30:02,152 - src.app - INFO - Dashboard view created: <class 'flet.core.column.Column'>
+2025-11-14 22:30:02,162 - src.app - INFO - Content updated with dashboard view
+2025-11-14 22:30:02,167 - src.app - INFO - View added to page. Total views: 1
+2025-11-14 22:30:02,244 - src.app - INFO - Page updated successfully
+2025-11-14 22:30:48,474 - flet_web.fastapi - INFO - Session disconnected: _TJkFjukCuXT7cI1q_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:30:50,300 - flet_web.fastapi - INFO - New FletApp: jYGY27rp
+2025-11-14 22:30:50,578 - flet_web.fastapi - INFO - Existing session requested: TJkFjukCuXT7cI1q
+2025-11-14 22:30:50,583 - flet_web.fastapi - INFO - Session reconnected: _TJkFjukCuXT7cI1q_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:30:50,588 - flet_web.fastapi - INFO - Disposing FletApp: Kav87qm1
+2025-11-14 22:32:08,771 - flet_web.fastapi - INFO - Session disconnected: _TJkFjukCuXT7cI1q_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:32:08,923 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-14 22:32:08,964 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmpgvp5t3ud
+2025-11-14 22:32:09,026 - flet - INFO - Flet app has started...
+2025-11-14 22:32:09,028 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-14 22:32:09,141 - src.app - INFO - Application shutdown requested
+2025-11-14 22:32:09,142 - src.app - INFO - Application shutdown complete
+2025-11-14 22:32:09,158 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '259.3333435058594', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}', 'windowminimized': '', 'windowmaximized': '', 'windowfocused': '', 'windowfullscreen': ''}
+2025-11-14 22:32:09,161 - src.app - INFO - Setting page properties for page id: 2173554271056
+2025-11-14 22:32:09,165 - src.app - INFO - App initialized
+2025-11-14 22:32:09,290 - src.app - INFO - Showing login form
+2025-11-14 22:32:09,291 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '259.3333435058594', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}', 'windowminimized': '', 'windowmaximized': '', 'windowfocused': '', 'windowfullscreen': ''}
+2025-11-14 22:32:09,291 - src.app - INFO - Page id in show_login: 2173554271056
+2025-11-14 22:32:09,295 - src.app - INFO - Login view created
+2025-11-14 22:32:09,295 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:32:09,298 - src.app - INFO - Updating page with login view...
+2025-11-14 22:32:09,310 - src.app - INFO - Page updated successfully
+2025-11-14 22:32:09,312 - app - INFO - 
+✅ Application started successfully!
+2025-11-14 22:32:09,312 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-14 22:32:09,312 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-14 22:32:12,262 - app - INFO - ================================================================================
+2025-11-14 22:32:12,262 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-14 22:32:12
+2025-11-14 22:32:12,262 - app - INFO - 
+🔄 Starting backend server...
+2025-11-14 22:32:12,262 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-14 22:32:13,545 - app - INFO - [Backend] Performing system checks...
+2025-11-14 22:32:13,546 - app - INFO - [Backend] 
+2025-11-14 22:32:14,234 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-14 22:32:14,275 - app - INFO - Backend server started successfully
+2025-11-14 22:32:14,526 - app - INFO - [Backend] November 14, 2025 - 22:32:14
+2025-11-14 22:32:14,527 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-14 22:32:14,528 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-14 22:32:14,528 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-14 22:32:14,529 - app - INFO - [Backend] 
+2025-11-14 22:32:14,529 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-14 22:32:14,529 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-14 22:32:16,277 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-14 22:32:23,384 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:32:25,760 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-14 22:32:25,762 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-14 22:32:25,762 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-14 22:32:25,767 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-14 22:32:25,916 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-14 22:32:25,917 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-14 22:32:26,917 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmpbexbbbxm
+2025-11-14 22:32:26,920 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-14 22:32:26,926 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:32:26,927 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-14 22:32:27,719 - flet_web.fastapi - INFO - New FletApp: fRD27Ril
+2025-11-14 22:32:27,932 - flet_web.fastapi - INFO - New session created (1 total): _yRGMuXcSPGQYgr5b_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:32:27,940 - flet_web.fastapi - INFO - Start session: yRGMuXcSPGQYgr5b
+2025-11-14 22:32:27,941 - src.app - INFO - Initializing application...
+2025-11-14 22:32:27,944 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 22:32:27,958 - src.app - INFO - Setting page properties for page id: 1971728956112
+2025-11-14 22:32:27,974 - src.app - INFO - App initialized
+2025-11-14 22:32:28,077 - src.app - INFO - Starting with initial route: /
+2025-11-14 22:32:28,078 - src.app - INFO - Route changed to: /
+2025-11-14 22:32:28,078 - src.app - INFO - Showing login form
+2025-11-14 22:32:28,079 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:32:28,080 - src.app - INFO - Page id in show_login: 1971728956112
+2025-11-14 22:32:28,082 - src.app - INFO - Login view created
+2025-11-14 22:32:28,083 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:32:28,084 - src.app - INFO - Updating page with login view...
+2025-11-14 22:32:28,096 - src.app - INFO - Page updated successfully
+2025-11-14 22:32:40,179 - src.app - INFO - User logged in successfully
+2025-11-14 22:32:40,183 - src.app - INFO - Route change wrapper called with: /dashboard
+2025-11-14 22:32:40,193 - src.app - INFO - Route changed to: /dashboard
+2025-11-14 22:32:40,198 - src.app - INFO - Showing dashboard
+2025-11-14 22:32:40,235 - src.app - INFO - Dashboard view created: <class 'flet.core.column.Column'>
+2025-11-14 22:32:40,239 - src.app - INFO - Content updated with dashboard view
+2025-11-14 22:32:40,244 - src.app - INFO - View added to page. Total views: 1
+2025-11-14 22:32:40,320 - src.app - INFO - Page updated successfully
+2025-11-14 22:34:39,004 - flet_web.fastapi - INFO - Session disconnected: _yRGMuXcSPGQYgr5b_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:34:39,092 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-14 22:34:39,093 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmpbexbbbxm
+2025-11-14 22:34:39,099 - flet - INFO - Flet app has started...
+2025-11-14 22:34:39,100 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-14 22:34:39,222 - src.app - INFO - Application shutdown requested
+2025-11-14 22:34:39,224 - src.app - INFO - Application shutdown complete
+2025-11-14 22:34:39,260 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:34:39,262 - src.app - INFO - Setting page properties for page id: 1971728956112
+2025-11-14 22:34:39,269 - src.app - INFO - App initialized
+2025-11-14 22:34:39,408 - src.app - INFO - Showing login form
+2025-11-14 22:34:39,409 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:34:39,411 - src.app - INFO - Page id in show_login: 1971728956112
+2025-11-14 22:34:39,412 - src.app - INFO - Login view created
+2025-11-14 22:34:39,412 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:34:39,416 - src.app - INFO - Updating page with login view...
+2025-11-14 22:34:39,424 - src.app - INFO - Page updated successfully
+2025-11-14 22:34:39,426 - app - INFO - 
+✅ Application started successfully!
+2025-11-14 22:34:39,427 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-14 22:34:39,428 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-14 22:34:41,675 - app - INFO - ================================================================================
+2025-11-14 22:34:41,676 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-14 22:34:41
+2025-11-14 22:34:41,677 - app - INFO - 
+🔄 Starting backend server...
+2025-11-14 22:34:41,679 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-14 22:34:42,735 - app - INFO - [Backend] Performing system checks...
+2025-11-14 22:34:42,738 - app - INFO - [Backend] 
+2025-11-14 22:34:43,433 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-14 22:34:43,690 - app - INFO - Backend server started successfully
+2025-11-14 22:34:43,729 - app - INFO - [Backend] November 14, 2025 - 22:34:43
+2025-11-14 22:34:43,730 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-14 22:34:43,730 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-14 22:34:43,731 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-14 22:34:43,731 - app - INFO - [Backend] 
+2025-11-14 22:34:43,732 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-14 22:34:43,733 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-14 22:34:45,691 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-14 22:34:52,034 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:34:54,381 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-14 22:34:54,385 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-14 22:34:54,385 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-14 22:34:54,389 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-14 22:34:54,542 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-14 22:34:54,543 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-14 22:34:55,613 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmpn2_19ol5
+2025-11-14 22:34:55,618 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-14 22:34:55,623 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:34:55,624 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-14 22:34:55,687 - flet_web.fastapi - INFO - New FletApp: dfXHTiIg
+2025-11-14 22:34:55,694 - flet_web.fastapi - INFO - New session created (1 total): _BxkQpu8TF8mYKTQd_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:34:55,696 - flet_web.fastapi - INFO - Start session: BxkQpu8TF8mYKTQd
+2025-11-14 22:34:55,700 - src.app - INFO - Initializing application...
+2025-11-14 22:34:55,703 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/dashboard', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 22:34:55,704 - src.app - INFO - Setting page properties for page id: 3104503889168
+2025-11-14 22:34:55,707 - src.app - INFO - Stored token found: False
+2025-11-14 22:34:55,708 - src.app - INFO - No stored token found
+2025-11-14 22:34:55,710 - src.app - INFO - App initialized
+2025-11-14 22:34:55,802 - src.app - INFO - Starting with initial route: /dashboard
+2025-11-14 22:34:55,803 - src.app - INFO - Route changed to: /dashboard
+2025-11-14 22:34:55,804 - src.app - INFO - User not authenticated, showing login form
+2025-11-14 22:34:55,810 - src.app - INFO - Route change wrapper called with: /login
+2025-11-14 22:34:55,814 - src.app - INFO - Route changed to: /login
+2025-11-14 22:34:55,817 - src.app - INFO - Showing login form
+2025-11-14 22:34:55,818 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/login', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:34:55,821 - src.app - INFO - Page id in show_login: 3104503889168
+2025-11-14 22:34:55,823 - src.app - INFO - Login view created
+2025-11-14 22:34:55,824 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:34:55,824 - src.app - INFO - Updating page with login view...
+2025-11-14 22:34:55,839 - src.app - INFO - Page updated successfully
+2025-11-14 22:34:56,906 - flet_web.fastapi - INFO - New FletApp: agmnml0W
+2025-11-14 22:34:57,096 - flet_web.fastapi - INFO - New session created (2 total): _yvZwskcZbzRBykBu_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:34:57,101 - flet_web.fastapi - INFO - Start session: yvZwskcZbzRBykBu
+2025-11-14 22:34:57,101 - src.app - INFO - Initializing application...
+2025-11-14 22:34:57,103 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 22:34:57,105 - src.app - INFO - Setting page properties for page id: 3104604956624
+2025-11-14 22:34:57,112 - src.app - INFO - Stored token found: False
+2025-11-14 22:34:57,115 - src.app - INFO - No stored token found
+2025-11-14 22:34:57,122 - src.app - INFO - App initialized
+2025-11-14 22:34:57,226 - src.app - INFO - Starting with initial route: /
+2025-11-14 22:34:57,227 - src.app - INFO - Route changed to: /
+2025-11-14 22:34:57,228 - src.app - INFO - Showing login form
+2025-11-14 22:34:57,228 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:34:57,234 - src.app - INFO - Page id in show_login: 3104604956624
+2025-11-14 22:34:57,238 - src.app - INFO - Login view created
+2025-11-14 22:34:57,239 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:34:57,240 - src.app - INFO - Updating page with login view...
+2025-11-14 22:34:57,252 - src.app - INFO - Page updated successfully
+2025-11-14 22:35:10,492 - src.app - INFO - User logged in successfully
+2025-11-14 22:35:10,496 - src.app - INFO - Route change wrapper called with: /dashboard
+2025-11-14 22:35:10,501 - src.app - INFO - Route changed to: /dashboard
+2025-11-14 22:35:10,509 - src.app - INFO - Showing dashboard
+2025-11-14 22:35:10,544 - src.app - INFO - Dashboard view created: <class 'flet.core.column.Column'>
+2025-11-14 22:35:10,546 - src.app - INFO - Content updated with dashboard view
+2025-11-14 22:35:10,548 - src.app - INFO - View added to page. Total views: 1
+2025-11-14 22:35:10,591 - src.app - INFO - Page updated successfully
+2025-11-14 22:36:46,982 - flet_web.fastapi - INFO - Session disconnected: _yvZwskcZbzRBykBu_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:36:46,985 - flet_web.fastapi - INFO - Session disconnected: _BxkQpu8TF8mYKTQd_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:36:47,080 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-14 22:36:47,081 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmpn2_19ol5
+2025-11-14 22:37:11,112 - app - INFO - ================================================================================
+2025-11-14 22:37:11,112 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-14 22:37:11
+2025-11-14 22:37:11,115 - app - INFO - 
+🔄 Starting backend server...
+2025-11-14 22:37:11,116 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-14 22:37:13,241 - app - INFO - Backend server started successfully
+2025-11-14 22:37:14,077 - app - INFO - [Backend] Performing system checks...
+2025-11-14 22:37:14,078 - app - INFO - [Backend] 
+2025-11-14 22:37:15,248 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-14 22:37:17,081 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-14 22:37:17,785 - app - INFO - [Backend] November 14, 2025 - 22:37:17
+2025-11-14 22:37:17,801 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-14 22:37:17,802 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-14 22:37:17,802 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-14 22:37:17,816 - app - INFO - [Backend] 
+2025-11-14 22:37:17,833 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-14 22:37:17,833 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-14 22:37:31,440 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:37:35,688 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-14 22:37:35,693 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-14 22:37:35,694 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-14 22:37:35,694 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-14 22:37:35,918 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-14 22:37:35,920 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-14 22:37:37,176 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmptmo9p9b4
+2025-11-14 22:37:37,178 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-14 22:37:37,180 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:37:37,181 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-14 22:37:38,371 - flet_web.fastapi - INFO - New FletApp: FFnRtzHs
+2025-11-14 22:37:38,591 - flet_web.fastapi - INFO - New session created (1 total): _JAo5nYzYq7wPINEK_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:37:38,596 - flet_web.fastapi - INFO - Start session: JAo5nYzYq7wPINEK
+2025-11-14 22:37:38,597 - src.app - INFO - Initializing application...
+2025-11-14 22:37:38,598 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 22:37:38,599 - src.app - INFO - Setting page properties for page id: 2721467086544
+2025-11-14 22:37:38,606 - src.app - INFO - Stored token found: False
+2025-11-14 22:37:38,607 - src.app - INFO - No stored token found
+2025-11-14 22:37:38,608 - src.app - INFO - App initialized
+2025-11-14 22:37:38,761 - src.app - INFO - Starting with initial route: /
+2025-11-14 22:37:38,763 - src.app - INFO - Route changed to: /
+2025-11-14 22:37:38,765 - src.app - INFO - Root route accessed. is_authenticated: False
+2025-11-14 22:37:38,766 - src.app - INFO - Access token exists: False
+2025-11-14 22:37:38,767 - src.app - INFO - Showing login form
+2025-11-14 22:37:38,768 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:37:38,768 - src.app - INFO - Page id in show_login: 2721467086544
+2025-11-14 22:37:38,772 - src.app - INFO - Login view created
+2025-11-14 22:37:38,772 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:37:38,773 - src.app - INFO - Updating page with login view...
+2025-11-14 22:37:38,801 - src.app - INFO - Page updated successfully
+2025-11-14 22:37:52,158 - src.app - INFO - User logged in successfully
+2025-11-14 22:37:52,162 - src.app - INFO - Route change wrapper called with: /dashboard
+2025-11-14 22:37:52,164 - src.app - INFO - Route changed to: /dashboard
+2025-11-14 22:37:52,165 - src.app - INFO - Dashboard route accessed. is_authenticated: True
+2025-11-14 22:37:52,165 - src.app - INFO - Access token exists: False
+2025-11-14 22:37:52,165 - src.app - INFO - Showing dashboard
+2025-11-14 22:37:52,197 - src.app - INFO - Dashboard view created: <class 'flet.core.column.Column'>
+2025-11-14 22:37:52,204 - src.app - INFO - Content updated with dashboard view
+2025-11-14 22:37:52,205 - src.app - INFO - View added to page. Total views: 1
+2025-11-14 22:37:52,308 - src.app - INFO - Page updated successfully
+2025-11-14 22:38:22,763 - flet_web.fastapi - INFO - Session disconnected: _JAo5nYzYq7wPINEK_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:44:22,758 - app - INFO - ================================================================================
+2025-11-14 22:44:22,759 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-14 22:44:22
+2025-11-14 22:44:22,761 - app - INFO - 
+🔄 Starting backend server...
+2025-11-14 22:44:22,761 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-14 22:44:23,662 - app - INFO - [Backend] Performing system checks...
+2025-11-14 22:44:23,663 - app - INFO - [Backend] 
+2025-11-14 22:44:24,263 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-14 22:44:24,457 - app - INFO - [Backend] November 14, 2025 - 22:44:24
+2025-11-14 22:44:24,458 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-14 22:44:24,459 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-14 22:44:24,459 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-14 22:44:24,460 - app - INFO - [Backend] 
+2025-11-14 22:44:24,460 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-14 22:44:24,461 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-14 22:44:24,770 - app - INFO - Backend server started successfully
+2025-11-14 22:44:26,773 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-14 22:44:35,596 - src.app - ERROR - Import error: No module named 'src.views.utils'
+2025-11-14 22:44:35,597 - app - ERROR - ❌ Error in main: No module named 'src.views.utils'
+2025-11-14 22:44:35,607 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 286, in main
+    run_flet_app()
+  File "D:\lawyer_office_management\frontend\run.py", line 193, in run_flet_app
+    from src.app import main as flet_main
+  File "D:\lawyer_office_management\frontend\src\app.py", line 25, in <module>
+    from .views.profile.profile_view import ProfileView
+  File "D:\lawyer_office_management\frontend\src\views\profile\profile_view.py", line 15, in <module>
+    from ..utils.navigation import navigate_to
+ModuleNotFoundError: No module named 'src.views.utils'
+
+2025-11-14 22:44:35,617 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-14 22:44:35,619 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-14 22:45:33,910 - app - INFO - ================================================================================
+2025-11-14 22:45:33,911 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-14 22:45:33
+2025-11-14 22:45:33,912 - app - INFO - 
+🔄 Starting backend server...
+2025-11-14 22:45:33,913 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-14 22:45:34,959 - app - INFO - [Backend] Performing system checks...
+2025-11-14 22:45:34,961 - app - INFO - [Backend] 
+2025-11-14 22:45:35,558 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-14 22:45:35,825 - app - INFO - [Backend] November 14, 2025 - 22:45:35
+2025-11-14 22:45:35,825 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-14 22:45:35,826 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-14 22:45:35,826 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-14 22:45:35,827 - app - INFO - [Backend] 
+2025-11-14 22:45:35,828 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-14 22:45:35,828 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-14 22:45:35,970 - app - INFO - Backend server started successfully
+2025-11-14 22:45:37,971 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-14 22:45:51,598 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:45:56,793 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-14 22:45:56,807 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-14 22:45:56,808 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-14 22:45:56,809 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-14 22:45:57,071 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-14 22:45:57,071 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-14 22:45:58,459 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmpm3rihqg9
+2025-11-14 22:45:58,460 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-14 22:45:58,462 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:45:58,462 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-14 22:45:59,937 - flet_web.fastapi - INFO - New FletApp: CkTT6Vxo
+2025-11-14 22:46:00,149 - flet_web.fastapi - INFO - New session created (1 total): _TmbHAEylFVgZfeVd_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:46:00,151 - flet_web.fastapi - INFO - Start session: TmbHAEylFVgZfeVd
+2025-11-14 22:46:00,152 - src.app - INFO - Initializing application...
+2025-11-14 22:46:00,153 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 22:46:00,154 - src.app - INFO - Setting page properties for page id: 2366141773904
+2025-11-14 22:46:00,158 - src.app - INFO - Stored token found: False
+2025-11-14 22:46:00,159 - src.app - INFO - Stored token value: None
+2025-11-14 22:46:00,160 - src.app - INFO - No stored token found
+2025-11-14 22:46:00,172 - src.app - INFO - Storage test - set: test_value, got: None
+2025-11-14 22:46:00,173 - src.app - INFO - App initialized
+2025-11-14 22:46:00,355 - src.app - INFO - Starting with initial route: /
+2025-11-14 22:46:00,356 - src.app - INFO - Route changed to: /
+2025-11-14 22:46:00,357 - src.app - INFO - Root route accessed. is_authenticated: False
+2025-11-14 22:46:00,357 - src.app - INFO - Access token exists: False
+2025-11-14 22:46:00,358 - src.app - INFO - Showing login form
+2025-11-14 22:46:00,358 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:46:00,359 - src.app - INFO - Page id in show_login: 2366141773904
+2025-11-14 22:46:00,367 - src.app - INFO - Login view created
+2025-11-14 22:46:00,368 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:46:00,368 - src.app - INFO - Updating page with login view...
+2025-11-14 22:46:00,375 - src.app - INFO - Page updated successfully
+2025-11-14 22:46:13,690 - src.app - INFO - User logged in successfully
+2025-11-14 22:46:13,695 - src.app - INFO - Route change wrapper called with: /dashboard
+2025-11-14 22:46:13,705 - src.app - INFO - Route changed to: /dashboard
+2025-11-14 22:46:13,706 - src.app - INFO - Dashboard route accessed. is_authenticated: True
+2025-11-14 22:46:13,707 - src.app - INFO - Access token exists: False
+2025-11-14 22:46:13,708 - src.app - INFO - Showing dashboard
+2025-11-14 22:46:13,745 - src.app - INFO - Dashboard view created: <class 'flet.core.column.Column'>
+2025-11-14 22:46:13,746 - src.app - INFO - Content updated with dashboard view
+2025-11-14 22:46:13,753 - src.app - INFO - View added to page. Total views: 1
+2025-11-14 22:46:13,892 - src.app - INFO - Page updated successfully
+2025-11-14 22:48:00,822 - app - INFO - ================================================================================
+2025-11-14 22:48:00,823 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-14 22:48:00
+2025-11-14 22:48:00,823 - app - INFO - 
+🔄 Starting backend server...
+2025-11-14 22:48:00,824 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-14 22:48:01,917 - app - INFO - [Backend] Performing system checks...
+2025-11-14 22:48:01,918 - app - INFO - [Backend] 
+2025-11-14 22:48:02,502 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-14 22:48:02,761 - app - INFO - [Backend] November 14, 2025 - 22:48:02
+2025-11-14 22:48:02,761 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-14 22:48:02,762 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-14 22:48:02,763 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-14 22:48:02,763 - app - INFO - [Backend] 
+2025-11-14 22:48:02,764 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-14 22:48:02,764 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-14 22:48:02,865 - app - INFO - Backend server started successfully
+2025-11-14 22:48:04,865 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-14 22:48:25,576 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:48:33,058 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-14 22:48:33,066 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-14 22:48:33,066 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-14 22:48:33,071 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-14 22:48:33,405 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-14 22:48:33,407 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-14 22:48:35,039 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmpip0yx2xs
+2025-11-14 22:48:35,041 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-14 22:48:35,041 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-14 22:48:35,041 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-14 22:48:37,267 - flet_web.fastapi - INFO - New FletApp: Z3mGnrFs
+2025-11-14 22:48:37,554 - flet_web.fastapi - INFO - New session created (1 total): _TXdcloKTFc8gBVsj_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:48:37,556 - flet_web.fastapi - INFO - Start session: TXdcloKTFc8gBVsj
+2025-11-14 22:48:37,557 - src.app - INFO - Initializing application...
+2025-11-14 22:48:37,558 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 22:48:37,559 - src.app - INFO - Setting page properties for page id: 2606922396368
+2025-11-14 22:48:37,568 - src.app - INFO - Stored token found: False
+2025-11-14 22:48:37,568 - src.app - INFO - Stored token value: None
+2025-11-14 22:48:37,569 - src.app - INFO - No stored token found
+2025-11-14 22:48:37,582 - src.app - INFO - Storage test - set: test_value, got: None
+2025-11-14 22:48:37,583 - src.app - INFO - App initialized
+2025-11-14 22:48:37,920 - src.app - INFO - Starting with initial route: /
+2025-11-14 22:48:37,921 - src.app - INFO - Route changed to: /
+2025-11-14 22:48:37,922 - src.app - INFO - Root route accessed. is_authenticated: False
+2025-11-14 22:48:37,922 - src.app - INFO - Access token exists: False
+2025-11-14 22:48:37,923 - src.app - INFO - Showing login form
+2025-11-14 22:48:37,924 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:48:37,925 - src.app - INFO - Page id in show_login: 2606922396368
+2025-11-14 22:48:37,929 - src.app - INFO - Login view created
+2025-11-14 22:48:37,936 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:48:37,937 - src.app - INFO - Updating page with login view...
+2025-11-14 22:48:37,956 - src.app - INFO - Page updated successfully
+2025-11-14 22:48:51,311 - src.app - INFO - User logged in successfully
+2025-11-14 22:48:51,316 - src.app - INFO - Route change wrapper called with: /dashboard
+2025-11-14 22:48:51,324 - src.app - INFO - Route changed to: /dashboard
+2025-11-14 22:48:51,324 - src.app - INFO - Dashboard route accessed. is_authenticated: True
+2025-11-14 22:48:51,325 - src.app - INFO - Access token exists: False
+2025-11-14 22:48:51,325 - src.app - INFO - Showing dashboard
+2025-11-14 22:48:51,372 - src.app - INFO - Dashboard view created: <class 'flet.core.column.Column'>
+2025-11-14 22:48:51,374 - src.app - INFO - Content updated with dashboard view
+2025-11-14 22:48:51,375 - src.app - INFO - View added to page. Total views: 1
+2025-11-14 22:48:51,457 - src.app - INFO - Page updated successfully
+2025-11-14 22:49:43,192 - flet_web.fastapi - INFO - Session disconnected: _TXdcloKTFc8gBVsj_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:50:02,761 - flet_web.fastapi - INFO - New FletApp: q4mlo9iE
+2025-11-14 22:50:02,949 - flet_web.fastapi - INFO - New session created (2 total): _MTyuqqvMcQo25ToC_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 22:50:02,953 - flet_web.fastapi - INFO - Start session: MTyuqqvMcQo25ToC
+2025-11-14 22:50:02,953 - src.app - INFO - Initializing application...
+2025-11-14 22:50:02,954 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 22:50:02,955 - src.app - INFO - Setting page properties for page id: 2606892097744
+2025-11-14 22:50:02,960 - src.app - INFO - Stored token found: False
+2025-11-14 22:50:02,961 - src.app - INFO - Stored token value: None
+2025-11-14 22:50:02,961 - src.app - INFO - No stored token found
+2025-11-14 22:50:02,974 - src.app - INFO - Storage test - set: test_value, got: None
+2025-11-14 22:50:02,976 - src.app - INFO - App initialized
+2025-11-14 22:50:03,164 - src.app - INFO - Starting with initial route: /
+2025-11-14 22:50:03,164 - src.app - INFO - Route changed to: /
+2025-11-14 22:50:03,165 - src.app - INFO - Root route accessed. is_authenticated: False
+2025-11-14 22:50:03,165 - src.app - INFO - Access token exists: False
+2025-11-14 22:50:03,165 - src.app - INFO - Showing login form
+2025-11-14 22:50:03,166 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 22:50:03,166 - src.app - INFO - Page id in show_login: 2606892097744
+2025-11-14 22:50:03,175 - src.app - INFO - Login view created
+2025-11-14 22:50:03,175 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 22:50:03,175 - src.app - INFO - Updating page with login view...
+2025-11-14 22:50:03,180 - src.app - INFO - Page updated successfully
+2025-11-14 22:50:15,201 - src.app - INFO - User logged in successfully
+2025-11-14 22:50:15,220 - src.app - INFO - Route change wrapper called with: /dashboard
+2025-11-14 22:50:15,224 - src.app - INFO - Route changed to: /dashboard
+2025-11-14 22:50:15,224 - src.app - INFO - Dashboard route accessed. is_authenticated: True
+2025-11-14 22:50:15,225 - src.app - INFO - Access token exists: False
+2025-11-14 22:50:15,226 - src.app - INFO - Showing dashboard
+2025-11-14 22:50:15,267 - src.app - INFO - Dashboard view created: <class 'flet.core.column.Column'>
+2025-11-14 22:50:15,270 - src.app - INFO - Content updated with dashboard view
+2025-11-14 22:50:15,276 - src.app - INFO - View added to page. Total views: 1
+2025-11-14 22:50:15,412 - src.app - INFO - Page updated successfully
+2025-11-14 22:52:49,639 - flet_web.fastapi - INFO - Session disconnected: _MTyuqqvMcQo25ToC_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 23:03:18,986 - app - INFO - ================================================================================
+2025-11-14 23:03:18,988 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-14 23:03:18
+2025-11-14 23:03:18,988 - app - INFO - 
+🔄 Starting backend server...
+2025-11-14 23:03:18,989 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-14 23:03:20,651 - app - INFO - [Backend] Performing system checks...
+2025-11-14 23:03:20,652 - app - INFO - [Backend] 
+2025-11-14 23:03:21,053 - app - INFO - Backend server started successfully
+2025-11-14 23:03:21,787 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-14 23:03:22,071 - app - INFO - [Backend] November 14, 2025 - 23:03:22
+2025-11-14 23:03:22,072 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-14 23:03:22,073 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-14 23:03:22,074 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-14 23:03:22,075 - app - INFO - [Backend] 
+2025-11-14 23:03:22,076 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-14 23:03:22,077 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-14 23:03:23,054 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-14 23:03:36,573 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-14 23:03:40,627 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-14 23:03:40,634 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-14 23:03:40,634 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-14 23:03:40,635 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-14 23:03:41,680 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-14 23:03:41,681 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-14 23:03:42,741 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-14 23:03:42,745 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-14 23:03:42,752 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-14 23:03:45,120 - flet_web.fastapi - INFO - New FletApp: SmrhzKrM
+2025-11-14 23:03:46,153 - flet_web.fastapi - INFO - New session created (3 total): _WDhT7wzSX1z9WPbB_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 23:03:46,156 - flet_web.fastapi - INFO - Start session: WDhT7wzSX1z9WPbB
+2025-11-14 23:03:46,156 - src.app - INFO - Initializing application...
+2025-11-14 23:03:46,156 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 23:03:46,156 - src.app - INFO - Setting page properties for page id: 2606928889744
+2025-11-14 23:03:46,166 - src.app - INFO - Stored token found: False
+2025-11-14 23:03:46,167 - src.app - INFO - Stored token value: None
+2025-11-14 23:03:46,167 - src.app - INFO - No stored token found
+2025-11-14 23:03:46,176 - src.app - INFO - Storage test - set: test_value, got: None
+2025-11-14 23:03:46,176 - src.app - INFO - App initialized
+2025-11-14 23:03:46,421 - src.app - INFO - Starting with initial route: /
+2025-11-14 23:03:46,422 - src.app - INFO - Route changed to: /
+2025-11-14 23:03:46,423 - src.app - INFO - Root route accessed. is_authenticated: False
+2025-11-14 23:03:46,423 - src.app - INFO - Access token exists: False
+2025-11-14 23:03:46,423 - src.app - INFO - Showing login form
+2025-11-14 23:03:46,424 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 23:03:46,424 - src.app - INFO - Page id in show_login: 2606928889744
+2025-11-14 23:03:46,427 - src.app - INFO - Login view created
+2025-11-14 23:03:46,428 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 23:03:46,428 - src.app - INFO - Updating page with login view...
+2025-11-14 23:03:46,442 - src.app - INFO - Page updated successfully
+2025-11-14 23:04:00,945 - src.app - INFO - User logged in successfully
+2025-11-14 23:04:00,950 - src.app - INFO - Route change wrapper called with: /dashboard
+2025-11-14 23:04:00,955 - src.app - INFO - Route changed to: /dashboard
+2025-11-14 23:04:00,957 - src.app - INFO - Dashboard route accessed. is_authenticated: True
+2025-11-14 23:04:00,957 - src.app - INFO - Access token exists: False
+2025-11-14 23:04:00,958 - src.app - INFO - Showing dashboard
+2025-11-14 23:04:00,984 - src.app - INFO - Dashboard view created: <class 'flet.core.column.Column'>
+2025-11-14 23:04:00,988 - src.app - INFO - Content updated with dashboard view
+2025-11-14 23:04:00,991 - src.app - INFO - View added to page. Total views: 1
+2025-11-14 23:04:01,077 - src.app - INFO - Page updated successfully
+2025-11-14 23:13:05,691 - app - INFO - ================================================================================
+2025-11-14 23:13:05,691 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-14 23:13:05
+2025-11-14 23:13:05,694 - app - INFO - 
+🔄 Starting backend server...
+2025-11-14 23:13:05,695 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-14 23:13:06,918 - app - INFO - [Backend] Performing system checks...
+2025-11-14 23:13:06,918 - app - INFO - [Backend] 
+2025-11-14 23:13:07,656 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-14 23:13:07,759 - app - INFO - Backend server started successfully
+2025-11-14 23:13:08,012 - app - INFO - [Backend] November 14, 2025 - 23:13:08
+2025-11-14 23:13:08,012 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-14 23:13:08,013 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-14 23:13:08,013 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-14 23:13:08,014 - app - INFO - [Backend] 
+2025-11-14 23:13:08,014 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-14 23:13:08,015 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-14 23:13:09,766 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-14 23:13:25,954 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-14 23:13:30,531 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-14 23:13:30,543 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-14 23:13:30,544 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-14 23:13:30,544 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-14 23:13:30,868 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-14 23:13:30,871 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-14 23:13:32,135 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmpjts_lg7q
+2025-11-14 23:13:32,136 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-14 23:13:32,138 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-14 23:13:32,139 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-14 23:13:33,645 - flet_web.fastapi - INFO - New FletApp: 4BwEMdVO
+2025-11-14 23:13:33,946 - flet_web.fastapi - INFO - New session created (1 total): _acpQobHYVCmJvkag_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 23:13:33,949 - flet_web.fastapi - INFO - Start session: acpQobHYVCmJvkag
+2025-11-14 23:13:33,950 - src.app - INFO - Initializing application...
+2025-11-14 23:13:33,951 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 23:13:33,952 - src.app - INFO - Setting page properties for page id: 1412627382032
+2025-11-14 23:13:33,956 - src.app - INFO - Stored token found: False
+2025-11-14 23:13:33,957 - src.app - INFO - Stored token value: None
+2025-11-14 23:13:33,957 - src.app - INFO - No stored token found
+2025-11-14 23:13:33,967 - src.app - INFO - Storage test - set: test_value, got: None
+2025-11-14 23:13:33,968 - src.app - INFO - App initialized
+2025-11-14 23:13:34,124 - src.app - INFO - Starting with initial route: /
+2025-11-14 23:13:34,125 - src.app - INFO - Route changed to: /
+2025-11-14 23:13:34,125 - src.app - INFO - Root route accessed. is_authenticated: False
+2025-11-14 23:13:34,126 - src.app - INFO - Access token exists: False
+2025-11-14 23:13:34,126 - src.app - INFO - Showing login form
+2025-11-14 23:13:34,129 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 23:13:34,129 - src.app - INFO - Page id in show_login: 1412627382032
+2025-11-14 23:13:34,134 - src.app - INFO - Login view created
+2025-11-14 23:13:34,134 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 23:13:34,135 - src.app - INFO - Updating page with login view...
+2025-11-14 23:13:34,143 - src.app - INFO - Page updated successfully
+2025-11-14 23:13:58,202 - src.app - INFO - User logged in successfully
+2025-11-14 23:13:58,206 - src.app - INFO - Route change wrapper called with: /dashboard
+2025-11-14 23:13:58,210 - src.app - INFO - Route changed to: /dashboard
+2025-11-14 23:13:58,211 - src.app - INFO - Dashboard route accessed. is_authenticated: True
+2025-11-14 23:13:58,214 - src.app - INFO - Access token exists: False
+2025-11-14 23:13:58,215 - src.app - INFO - Showing dashboard
+2025-11-14 23:13:58,218 - src.app - INFO - Dashboard view created: <class 'flet.core.column.Column'>
+2025-11-14 23:13:58,218 - src.app - INFO - Content updated with dashboard view
+2025-11-14 23:13:58,219 - src.app - INFO - View added to page. Total views: 1
+2025-11-14 23:13:58,237 - src.app - INFO - Page updated successfully
+2025-11-14 23:13:58,239 - src.views.dashboard - INFO - Loading dashboard data...
+2025-11-14 23:13:58,241 - src.views.dashboard - ERROR - Failed to load appointments: 'APIClient' object has no attribute 'get_appointments'
+2025-11-14 23:13:58,242 - src.views.dashboard - INFO - Stats data loaded
+2025-11-14 23:13:58,247 - src.views.dashboard - INFO - Dashboard data loaded successfully
+2025-11-14 23:13:58,281 - src.app - INFO - Dashboard did_mount_async called successfully
+2025-11-14 23:14:08,065 - src.app - INFO - Route change wrapper called with: /appointments
+2025-11-14 23:14:08,068 - src.app - INFO - Route changed to: /appointments
+2025-11-14 23:14:08,069 - src.app - INFO - Showing login form
+2025-11-14 23:14:08,069 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/appointments', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 23:14:08,070 - src.app - INFO - Page id in show_login: 1412627382032
+2025-11-14 23:14:08,073 - src.app - INFO - Login view created
+2025-11-14 23:14:08,074 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 23:14:08,074 - src.app - INFO - Updating page with login view...
+2025-11-14 23:14:08,090 - src.app - INFO - Page updated successfully
+2025-11-14 23:14:12,957 - flet_web.fastapi - INFO - Session disconnected: _acpQobHYVCmJvkag_b33333ddc935e6c039a127abd2fe983df1e3408a

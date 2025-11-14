@@ -485,3 +485,19 @@ Watching for file changes with StatReloader
 Watching for file changes with StatReloader
 Watching for file changes with StatReloader
 Watching for file changes with StatReloader
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/docs/ HTTP/1.1" 200 2235
+"GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+"GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+"GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+"GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+"GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+"GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+"GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+Request received
+Response sent
+"GET /api/v1/docs/?format=openapi HTTP/1.1" 200 28608

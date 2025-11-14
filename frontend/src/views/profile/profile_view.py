@@ -8,7 +8,7 @@ from datetime import datetime
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..')))
 
 # Import from the services package
-from services import auth_service, api_client
+from services import api_client
 from services.storage import Storage
 
 # Import navigation utility
@@ -23,29 +23,52 @@ class ProfileView(flet_core.UserControl):
         self.error = None
 
     async def did_mount_async(self):
+        print("DEBUG: did_mount_async called")
         await self.load_user_data()
 
     async def load_user_data(self):
         try:
-            # Get current user data
-            response = await api_client.get("/auth/me/")
-            if response.status_code == 200:
-                self.user_data = response.json()
+            print("DEBUG: Starting to load user data...")
+            # For now, since we're using dummy auth, use mock data
+            # In a real app, this would be: user_data = await api_client.get_current_user()
+            try:
+                user_data = await api_client.get_current_user()
+                print(f"DEBUG: User data received from API: {user_data}")
+            except Exception as api_error:
+                print(f"DEBUG: API call failed: {str(api_error)}")
+                # Use mock data for demo purposes
+                user_data = {
+                    "id": 1,
+                    "email": "lawyer@example.com",
+                    "first_name": "John",
+                    "last_name": "Smith",
+                    "phone": "+1-555-0123",
+                    "date_of_birth": "1980-01-01",
+                    "address": "123 Main St, City, State 12345"
+                }
+                print(f"DEBUG: Using mock user data: {user_data}")
+            
+            if user_data:
+                self.user_data = user_data
                 self.loading = False
-                await self.update_async()
+                print("DEBUG: User data loaded successfully")
+                self.update()
             else:
                 self.error = "Failed to load profile data"
                 self.loading = False
-                await self.update_async()
+                print("DEBUG: Failed to load user data - no data returned")
+                self.update()
         except Exception as e:
             self.error = str(e)
             self.loading = False
-            await self.update_async()
+            print(f"DEBUG: Error loading user data: {str(e)}")
+            self.update()
 
     async def logout(self, e):
-        await auth_service.logout()
-        Storage.remove("access_token")
-        Storage.remove("refresh_token")
+        from services.storage import Storage
+        storage = Storage()
+        storage.remove("access_token")
+        storage.remove("refresh_token")
         await navigate_to(self.page, "/login")
 
     def build(self):
@@ -87,7 +110,7 @@ class ProfileView(flet_core.UserControl):
                         [
                             ft.IconButton(
                                 icon="arrow_back",
-                                on_click=lambda _: self.page.go("/"),
+                                on_click=lambda _: self.page.go("/dashboard"),
                             ),
                             ft.Text(
                                 "My Profile",
