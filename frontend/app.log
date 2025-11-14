@@ -5669,3 +5669,43 @@ AttributeError: 'LawyerOfficeApp' object has no attribute 'login_click'
 2025-11-14 21:51:15,233 - flet_web.fastapi - INFO - Route URL strategy configured: path
 2025-11-14 21:51:15,475 - flet_web.fastapi - INFO - Starting up Flet App Manager
 2025-11-14 21:51:15,484 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-14 21:51:16,635 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmptsatyno9
+2025-11-14 21:51:16,637 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-14 21:51:16,641 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-14 21:51:16,642 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-14 21:51:16,719 - flet_web.fastapi - INFO - New FletApp: JDy9QmLB
+2025-11-14 21:51:16,733 - flet_web.fastapi - INFO - New session created (1 total): _1ksZ6n2OkZT2oQG1_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 21:51:16,736 - flet_web.fastapi - INFO - Start session: 1ksZ6n2OkZT2oQG1
+2025-11-14 21:51:16,737 - src.app - INFO - Initializing application...
+2025-11-14 21:51:16,738 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 21:51:16,740 - src.app - INFO - Setting page properties for page id: 2337656812432
+2025-11-14 21:51:16,740 - src.app - INFO - App initialized
+2025-11-14 21:51:16,831 - src.app - INFO - Starting with initial route: /
+2025-11-14 21:51:16,832 - src.app - INFO - Route changed to: /
+2025-11-14 21:51:16,833 - src.app - INFO - Showing login form
+2025-11-14 21:51:16,835 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 21:51:16,836 - src.app - INFO - Page id in show_login: 2337656812432
+2025-11-14 21:51:16,838 - src.app - INFO - Login view created
+2025-11-14 21:51:16,839 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 21:51:16,840 - src.app - INFO - Updating page with login view...
+2025-11-14 21:51:16,859 - src.app - INFO - Page updated successfully
+2025-11-14 21:51:17,883 - flet_web.fastapi - INFO - New FletApp: XEHWKLqH
+2025-11-14 21:51:18,107 - flet_web.fastapi - INFO - New session created (2 total): _5kpVFgC2fmPUsSce_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 21:51:18,110 - flet_web.fastapi - INFO - Start session: 5kpVFgC2fmPUsSce
+2025-11-14 21:51:18,111 - src.app - INFO - Initializing application...
+2025-11-14 21:51:18,115 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-14 21:51:18,131 - src.app - INFO - Setting page properties for page id: 2337662165648
+2025-11-14 21:51:18,133 - src.app - INFO - App initialized
+2025-11-14 21:51:18,309 - src.app - INFO - Starting with initial route: /
+2025-11-14 21:51:18,312 - src.app - INFO - Route changed to: /
+2025-11-14 21:51:18,315 - src.app - INFO - Showing login form
+2025-11-14 21:51:18,316 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-14 21:51:18,318 - src.app - INFO - Page id in show_login: 2337662165648
+2025-11-14 21:51:18,322 - src.app - INFO - Login view created
+2025-11-14 21:51:18,324 - src.app - INFO - Login view added. Views count: 1
+2025-11-14 21:51:18,330 - src.app - INFO - Updating page with login view...
+2025-11-14 21:51:18,341 - src.app - INFO - Page updated successfully
+2025-11-14 21:51:19,023 - flet_web.fastapi - INFO - Session disconnected: _1ksZ6n2OkZT2oQG1_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-14 21:51:40,429 - src.app - INFO - User logged in successfully
+2025-11-14 21:51:40,432 - src.app - INFO - Route changed to: /dashboard
+2025-11-14 21:51:40,433 - src.app - INFO - Showing dashboard
