@@ -1,0 +1,374 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Clients{% endblock %}
+
+{% block content %}
+<div class="mb-6 flex justify-between items-center">
+    <div>
+        <h1 class="text-2xl font-semibold text-gray-900">Clients</h1>
+        <p class="mt-1 text-sm text-gray-500">Manage your client information and contacts</p>
+    </div>
+    <button onclick="showAddClientModal()" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
+        </svg>
+        New Client
+    </button>
+</div>
+
+<!-- Search and Filters -->
+<div class="bg-white shadow rounded-lg mb-6 p-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="md:col-span-2">
+            <label class="block text-sm font-medium text-gray-700 mb-1">Search</label>
+            <input type="text" id="searchInput" placeholder="Search by name, email, or phone..." 
+                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+        </div>
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
+            <select id="statusFilter" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                <option value="">All Clients</option>
+                <option value="true">Active</option>
+                <option value="false">Inactive</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<!-- Clients List -->
+<div class="bg-white shadow overflow-hidden sm:rounded-md">
+    <ul class="divide-y divide-gray-200" id="clientsList">
+        {% for client in clients %}
+        <li class="hover:bg-gray-50">
+            <div class="px-4 py-4 sm:px-6">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <div class="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center">
+                                <span class="text-sm font-medium text-green-800">
+                                    {{ client.first_name.0|upper }}{{ client.last_name.0|upper }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <div class="flex items-center">
+                                <h3 class="text-lg font-medium text-gray-900">{{ client.first_name }} {{ client.last_name }}</h3>
+                                <span class="ml-2 inline-flex px-2 py-1 text-xs font-semibold rounded-full 
+                                    {% if client.is_active %}bg-green-100 text-green-800{% else %}bg-red-100 text-red-800{% endif %}">
+                                    {% if client.is_active %}Active{% else %}Inactive{% endif %}
+                                </span>
+                            </div>
+                            <div class="mt-1 text-sm text-gray-500">
+                                {% if client.email %}<p>{{ client.email }}</p>{% endif %}
+                                {% if client.phone %}<p>{{ client.phone }}</p>{% endif %}
+                                {% if client.city %}<p>{{ client.city }}, {{ client.state }}</p>{% endif %}
+                                {% if client.company %}<p>{{ client.company }}</p>{% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <button onclick="viewClientDetails('{{ client.id }}')" class="text-blue-600 hover:text-blue-900" title="View Details">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                        </button>
+                        <button onclick="editClient('{{ client.id }}')" class="text-blue-600 hover:text-blue-900" title="Edit">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                            </svg>
+                        </button>
+                        {% if client.is_active %}
+                        <button onclick="toggleClientStatus('{{ client.id }}', false)" class="text-yellow-600 hover:text-yellow-900" title="Deactivate">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>
+                            </svg>
+                        </button>
+                        {% else %}
+                        <button onclick="toggleClientStatus('{{ client.id }}', true)" class="text-green-600 hover:text-green-900" title="Activate">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </button>
+                        {% endif %}
+                        <button onclick="deleteClient('{{ client.id }}')" class="text-red-600 hover:text-red-900" title="Delete">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </li>
+        {% empty %}
+        <li class="px-4 py-8 text-center">
+            <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+            <h3 class="mt-2 text-sm font-medium text-gray-900">No clients</h3>
+            <p class="mt-1 text-sm text-gray-500">Get started by adding a new client.</p>
+            <div class="mt-6">
+                <button onclick="showAddClientModal()" class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
+                    </svg>
+                    New Client
+                </button>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<!-- Add/Edit Client Modal -->
+<div id="clientModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
+    <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+        <div class="mt-3">
+            <h3 class="text-lg leading-6 font-medium text-gray-900" id="clientModalTitle">Add Client</h3>
+            <form id="clientForm" class="mt-4 space-y-4">
+                {% csrf_token %}
+                <input type="hidden" id="clientId" name="id">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">First Name</label>
+                        <input type="text" id="first_name" name="first_name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Last Name</label>
+                        <input type="text" id="last_name" name="last_name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="email" name="email" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Phone</label>
+                    <input type="tel" id="phone" name="phone" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Company</label>
+                    <input type="text" id="company" name="company" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Address</label>
+                    <textarea id="address" name="address" rows="2" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                </div>
+                <div class="grid grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">City</label>
+                        <input type="text" id="city" name="city" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">State</label>
+                        <input type="text" id="state" name="state" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Postal Code</label>
+                        <input type="text" id="postal_code" name="postal_code" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Date of Birth</label>
+                    <input type="date" id="date_of_birth" name="date_of_birth" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Occupation</label>
+                    <input type="text" id="occupation" name="occupation" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+                <div class="flex justify-end space-x-3">
+                    <button type="button" onclick="closeClientModal()" class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400">
+                        Cancel
+                    </button>
+                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                        Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Client Details Modal -->
+<div id="clientDetailsModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
+    <div class="relative top-20 mx-auto p-5 border w-full max-w-2xl shadow-lg rounded-md bg-white">
+        <div class="mt-3">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg leading-6 font-medium text-gray-900">Client Details</h3>
+                <button onclick="closeClientDetailsModal()" class="text-gray-400 hover:text-gray-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="clientDetailsContent">
+                <!-- Client details will be loaded here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block scripts %}
+<script>
+function showAddClientModal() {
+    document.getElementById('clientModalTitle').textContent = 'Add Client';
+    document.getElementById('clientForm').reset();
+    document.getElementById('clientId').value = '';
+    document.getElementById('clientModal').classList.remove('hidden');
+}
+
+function closeClientModal() {
+    document.getElementById('clientModal').classList.add('hidden');
+}
+
+function editClient(id) {
+    fetch(`/api/clients/clients/${id}/`)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('clientModalTitle').textContent = 'Edit Client';
+            document.getElementById('clientId').value = data.id;
+            document.getElementById('first_name').value = data.first_name;
+            document.getElementById('last_name').value = data.last_name;
+            document.getElementById('email').value = data.email || '';
+            document.getElementById('phone').value = data.phone || '';
+            document.getElementById('company').value = data.company || '';
+            document.getElementById('address').value = data.address || '';
+            document.getElementById('city').value = data.city || '';
+            document.getElementById('state').value = data.state || '';
+            document.getElementById('postal_code').value = data.postal_code || '';
+            document.getElementById('date_of_birth').value = data.date_of_birth || '';
+            document.getElementById('occupation').value = data.occupation || '';
+            document.getElementById('clientModal').classList.remove('hidden');
+        });
+}
+
+function deleteClient(id) {
+    if (confirm('Are you sure you want to delete this client?')) {
+        fetch(`/api/clients/clients/${id}/`, {
+            method: 'DELETE',
+            headers: {
+                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+            }
+        })
+        .then(() => {
+            location.reload();
+        });
+    }
+}
+
+function toggleClientStatus(id, isActive) {
+    const action = isActive ? 'activate' : 'deactivate';
+    fetch(`/api/clients/clients/${id}/${action}/`, {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+        }
+    })
+    .then(() => {
+        location.reload();
+    });
+}
+
+function viewClientDetails(id) {
+    fetch(`/api/clients/clients/${id}/`)
+        .then(response => response.json())
+        .then(data => {
+            const detailsHtml = `
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-medium text-gray-900">Personal Information</h4>
+                        <p class="text-sm text-gray-600 mt-1">Name: ${data.first_name} ${data.last_name}</p>
+                        <p class="text-sm text-gray-600">Email: ${data.email || 'N/A'}</p>
+                        <p class="text-sm text-gray-600">Phone: ${data.phone || 'N/A'}</p>
+                        <p class="text-sm text-gray-600">Date of Birth: ${data.date_of_birth || 'N/A'}</p>
+                        <p class="text-sm text-gray-600">Occupation: ${data.occupation || 'N/A'}</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-900">Address</h4>
+                        <p class="text-sm text-gray-600 mt-1">${data.address || 'N/A'}</p>
+                        <p class="text-sm text-gray-600">${data.city || ''}, ${data.state || ''} ${data.postal_code || ''}</p>
+                        <p class="text-sm text-gray-600">${data.country || ''}</p>
+                        <p class="text-sm text-gray-600 mt-2">Company: ${data.company || 'N/A'}</p>
+                        <p class="text-sm text-gray-600">Status: ${data.is_active ? 'Active' : 'Inactive'}</p>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <h4 class="font-medium text-gray-900 mb-2">Recent Notes</h4>
+                    <div id="clientNotes"></div>
+                </div>
+            `;
+            document.getElementById('clientDetailsContent').innerHTML = detailsHtml;
+            
+            // Load notes
+            fetch(`/api/clients/clients/${id}/notes/recent/`)
+                .then(response => response.json())
+                .then(notes => {
+                    const notesHtml = notes.length > 0 
+                        ? notes.map(note => `
+                            <div class="border-l-4 border-blue-400 pl-4 py-2">
+                                <p class="text-sm font-medium text-gray-900">${note.title}</p>
+                                <p class="text-sm text-gray-600">${note.content}</p>
+                                <p class="text-xs text-gray-500 mt-1">By ${note.created_by_name} on ${new Date(note.created_at).toLocaleDateString()}</p>
+                            </div>
+                        `).join('')
+                        : '<p class="text-sm text-gray-500">No notes yet</p>';
+                    document.getElementById('clientNotes').innerHTML = notesHtml;
+                });
+            
+            document.getElementById('clientDetailsModal').classList.remove('hidden');
+        });
+}
+
+function closeClientDetailsModal() {
+    document.getElementById('clientDetailsModal').classList.add('hidden');
+}
+
+document.getElementById('clientForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    const id = document.getElementById('clientId').value;
+    const url = id ? `/api/clients/clients/${id}/` : '/api/clients/clients/';
+    const method = id ? 'PUT' : 'POST';
+    
+    fetch(url, {
+        method: method,
+        headers: {
+            'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(Object.fromEntries(formData))
+    })
+    .then(() => {
+        location.reload();
+    });
+});
+
+// Search functionality
+document.getElementById('searchInput').addEventListener('input', function(e) {
+    filterClients();
+});
+
+document.getElementById('statusFilter').addEventListener('change', function(e) {
+    filterClients();
+});
+
+function filterClients() {
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+    const statusFilter = document.getElementById('statusFilter').value;
+    const clients = document.querySelectorAll('#clientsList li');
+    
+    clients.forEach(li => {
+        const text = li.textContent.toLowerCase();
+        const isActive = li.textContent.includes('Active') && !li.textContent.includes('Inactive');
+        
+        const matchesSearch = !searchTerm || text.includes(searchTerm);
+        const matchesStatus = !statusFilter || 
+            (statusFilter === 'true' && isActive) || 
+            (statusFilter === 'false' && !isActive);
+        
+        li.style.display = matchesSearch && matchesStatus ? '' : 'none';
+    });
+}
+</script>
+{% endblock %}
+{% endblock %}

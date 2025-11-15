@@ -11,8 +11,12 @@ urlpatterns = [
     path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('register/', views.RegisterView.as_view(), name='register'),
     
+    # Profile management
+    path('profile/', views.ProfileView.as_view(), name='profile'),
+    
     # User management
     path('users/', views.UserListCreateView.as_view(), name='user-list'),
     path('users/<str:id>/', views.UserDetailView.as_view(), name='user-detail'),
+    path('users/me/', views.ProfileView.as_view(), name='user-me'),  # Alias for current user
     path('change-password/', views.ChangePasswordView.as_view(), name='change-password'),
 ]

@@ -14932,3 +14932,800 @@ KeyError: 'name'
 2025-11-15 05:07:06,924 - app - INFO - [Backend] "GET /api/v1/clients/ HTTP/1.1" 200 2551
 2025-11-15 05:07:07,115 - src.app - INFO - Page updated successfully with clients view
 2025-11-15 05:07:16,545 - flet_web.fastapi - INFO - Session disconnected: _c7qhOrNibXPXPaaE_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-15 05:08:52,704 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-15 05:08:52,705 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmp63vyqrcr
+2025-11-15 05:08:52,712 - flet - INFO - Flet app has started...
+2025-11-15 05:08:52,713 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-15 05:08:52,819 - src.app - INFO - Application shutdown requested
+2025-11-15 05:08:52,819 - src.app - INFO - Application shutdown complete
+2025-11-15 05:08:52,914 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/clients', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-15 05:08:52,915 - src.app - INFO - Setting page properties for page id: 2733173585488
+2025-11-15 05:08:52,919 - src.app - INFO - Stored token found: False
+2025-11-15 05:08:52,920 - src.app - INFO - Stored token value: None
+2025-11-15 05:08:52,921 - src.app - INFO - No stored token found
+2025-11-15 05:08:52,925 - src.app - INFO - Storage test - set: test_value, got: test_value
+2025-11-15 05:08:52,926 - src.app - INFO - App initialized
+2025-11-15 05:08:53,023 - src.app - INFO - Showing login form
+2025-11-15 05:08:53,023 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/clients', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-15 05:08:53,025 - src.app - INFO - Page id in show_login: 2733173585488
+2025-11-15 05:08:53,027 - src.app - INFO - Login view created
+2025-11-15 05:08:53,028 - src.app - INFO - Login view added. Views count: 1
+2025-11-15 05:08:53,029 - src.app - INFO - Updating page with login view...
+2025-11-15 05:08:53,042 - src.app - INFO - Page updated successfully
+2025-11-15 05:08:53,044 - app - INFO - 
+✅ Application started successfully!
+2025-11-15 05:08:53,045 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-15 05:08:53,045 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-15 15:52:41,023 - app - INFO - ================================================================================
+2025-11-15 15:52:41,026 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-15 15:52:41
+2025-11-15 15:52:44,230 - app - INFO - Initializing backend API...
+2025-11-15 15:52:44,233 - app - INFO - Running database migrations...
+2025-11-15 15:52:47,373 - app - WARNING - Migration warnings: SystemCheckError: System check identified some issues:
+
+ERRORS:
+dashboard.RecentActivity.action_type: (fields.E009) 'max_length' is too small to fit the longest value in 'choices' (21 characters).
+
+2025-11-15 15:52:47,378 - app - INFO - Collecting static files...
+2025-11-15 15:52:49,201 - app - INFO - Static files collected successfully
+2025-11-15 15:52:49,201 - app - INFO - Checking for superuser...
+2025-11-15 15:52:50,839 - app - INFO - Superuser setup completed
+2025-11-15 15:52:50,840 - app - INFO - Backend API initialization completed successfully
+2025-11-15 15:52:50,841 - app - INFO - 
+🔄 Starting backend server...
+2025-11-15 15:52:50,843 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-15 15:52:51,965 - app - INFO - [Backend] Performing system checks...
+2025-11-15 15:52:51,968 - app - INFO - [Backend] 
+2025-11-15 15:52:52,504 - app - INFO - [Backend] SystemCheckError: System check identified some issues:
+2025-11-15 15:52:52,505 - app - INFO - [Backend] 
+2025-11-15 15:52:52,506 - app - INFO - [Backend] ERRORS:
+2025-11-15 15:52:52,507 - app - INFO - [Backend] dashboard.RecentActivity.action_type: (fields.E009) 'max_length' is too small to fit the longest value in 'choices' (21 characters).
+2025-11-15 15:52:52,510 - app - INFO - [Backend] 
+2025-11-15 15:52:52,511 - app - INFO - [Backend] System check identified 1 issue (0 silenced).
+2025-11-15 15:52:53,333 - app - INFO - 
+🛑 Shutdown signal received...
+2025-11-15 15:52:53,342 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-15 15:52:53,343 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-15 15:53:13,544 - app - INFO - ================================================================================
+2025-11-15 15:53:13,544 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-15 15:53:13
+2025-11-15 15:53:16,081 - app - INFO - Initializing backend API...
+2025-11-15 15:53:16,083 - app - INFO - Running database migrations...
+2025-11-15 15:53:17,287 - app - WARNING - Migration warnings: SystemCheckError: System check identified some issues:
+
+ERRORS:
+dashboard.RecentActivity.action_type: (fields.E009) 'max_length' is too small to fit the longest value in 'choices' (21 characters).
+
+2025-11-15 15:53:17,287 - app - INFO - Collecting static files...
+2025-11-15 15:53:18,180 - app - INFO - Static files collected successfully
+2025-11-15 15:53:18,180 - app - INFO - Checking for superuser...
+2025-11-15 15:53:19,121 - app - INFO - Superuser setup completed
+2025-11-15 15:53:19,123 - app - INFO - Backend API initialization completed successfully
+2025-11-15 15:53:19,123 - app - INFO - 
+🔄 Starting backend server...
+2025-11-15 15:53:19,123 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-15 15:53:19,852 - app - INFO - [Backend] Performing system checks...
+2025-11-15 15:53:19,853 - app - INFO - [Backend] 
+2025-11-15 15:53:20,193 - app - INFO - [Backend] SystemCheckError: System check identified some issues:
+2025-11-15 15:53:20,193 - app - INFO - [Backend] 
+2025-11-15 15:53:20,193 - app - INFO - [Backend] ERRORS:
+2025-11-15 15:53:20,197 - app - INFO - [Backend] dashboard.RecentActivity.action_type: (fields.E009) 'max_length' is too small to fit the longest value in 'choices' (21 characters).
+2025-11-15 15:53:20,197 - app - INFO - [Backend] 
+2025-11-15 15:53:20,197 - app - INFO - [Backend] System check identified 1 issue (0 silenced).
+2025-11-15 15:53:22,135 - app - ERROR - Error starting backend server: Backend server failed to start
+2025-11-15 15:53:22,135 - app - ERROR - ❌ Error in main: Backend server failed to start
+2025-11-15 15:53:22,144 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 425, in main
+    backend_process = run_backend_in_thread()
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\run.py", line 317, in run_backend_in_thread
+    raise RuntimeError("Backend server failed to start")
+RuntimeError: Backend server failed to start
+
+2025-11-15 15:53:22,149 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-15 15:53:22,151 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-15 15:54:00,843 - app - INFO - ================================================================================
+2025-11-15 15:54:00,843 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-15 15:54:00
+2025-11-15 15:54:03,489 - app - INFO - Initializing backend API...
+2025-11-15 15:54:03,489 - app - INFO - Running database migrations...
+2025-11-15 15:54:05,471 - app - INFO - Database migrations completed successfully
+2025-11-15 15:54:05,473 - app - INFO - Collecting static files...
+2025-11-15 15:54:06,593 - app - INFO - Static files collected successfully
+2025-11-15 15:54:06,593 - app - INFO - Checking for superuser...
+2025-11-15 15:54:07,702 - app - INFO - Superuser setup completed
+2025-11-15 15:54:07,703 - app - INFO - Backend API initialization completed successfully
+2025-11-15 15:54:07,703 - app - INFO - 
+🔄 Starting backend server...
+2025-11-15 15:54:07,703 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-15 15:54:08,479 - app - INFO - [Backend] Performing system checks...
+2025-11-15 15:54:08,479 - app - INFO - [Backend] 
+2025-11-15 15:54:08,822 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-15 15:54:08,967 - app - INFO - [Backend] November 15, 2025 - 15:54:08
+2025-11-15 15:54:08,970 - app - INFO - [Backend] Django version 5.2.8, using settings 'lawyer_office.settings'
+2025-11-15 15:54:08,970 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-15 15:54:08,971 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-15 15:54:08,971 - app - INFO - [Backend] 
+2025-11-15 15:54:08,973 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-15 15:54:08,973 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-15 15:54:10,718 - app - INFO - Waiting for backend API to be ready...
+2025-11-15 15:54:10,753 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2025-11-15 15:54:10,753 - app - INFO - [Backend] [15/Nov/2025 15:54:10] "GET / HTTP/1.1" 302 0
+2025-11-15 15:54:10,761 - app - INFO - Django server is responding...
+2025-11-15 15:54:10,768 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/v1/health/ "HTTP/1.1 200 OK"
+2025-11-15 15:54:10,769 - app - INFO - [Backend] [15/Nov/2025 15:54:10] "GET /api/v1/health/ HTTP/1.1" 200 79
+2025-11-15 15:54:10,770 - app - INFO - Backend API is ready!
+2025-11-15 15:54:10,772 - app - INFO - Backend server started successfully
+2025-11-15 15:54:12,774 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-15 15:54:18,109 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-15 15:54:21,033 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-15 15:54:21,038 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-15 15:54:21,038 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-15 15:54:21,038 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-15 15:54:21,271 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-15 15:54:21,273 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-15 15:54:22,457 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmphdhq1q84
+2025-11-15 15:54:22,462 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-15 15:54:22,462 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-15 15:54:22,463 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-15 15:54:23,647 - flet_web.fastapi - INFO - New FletApp: MRnWREaF
+2025-11-15 15:54:23,953 - flet_web.fastapi - INFO - New session created (1 total): _CGa0DzMiIQYbGwBz_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-15 15:54:23,956 - flet_web.fastapi - INFO - Start session: CGa0DzMiIQYbGwBz
+2025-11-15 15:54:23,956 - src.app - INFO - Initializing application...
+2025-11-15 15:54:23,960 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-15 15:54:23,963 - src.app - INFO - Setting page properties for page id: 2240567740560
+2025-11-15 15:54:23,978 - src.app - INFO - Stored token found: False
+2025-11-15 15:54:23,980 - src.app - INFO - Stored token value: None
+2025-11-15 15:54:23,985 - src.app - INFO - No stored token found
+2025-11-15 15:54:23,992 - src.app - INFO - Storage test - set: test_value, got: test_value
+2025-11-15 15:54:23,993 - src.app - INFO - App initialized
+2025-11-15 15:54:23,994 - src.app - ERROR - Application initialization error: module 'flet' has no attribute 'icons'
+2025-11-15 15:54:24,021 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 691, in main
+    app = LawyerOfficeApp(page)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\app.py", line 109, in __init__
+    self.dashboard_view = DashboardView(self).build()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 53, in build
+    self._build_sidebar(),
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 82, in _build_sidebar
+    ft.icons.BUSINESS_CENTER,
+    ^^^^^^^^
+AttributeError: module 'flet' has no attribute 'icons'
+
+2025-11-15 15:54:24,033 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-15 15:54:24,040 - src.app - INFO - Setting page properties for page id: 2240567740560
+2025-11-15 15:54:24,054 - src.app - INFO - Stored token found: False
+2025-11-15 15:54:24,054 - src.app - INFO - Stored token value: None
+2025-11-15 15:54:24,056 - src.app - INFO - No stored token found
+2025-11-15 15:54:24,061 - src.app - INFO - Storage test - set: test_value, got: test_value
+2025-11-15 15:54:24,071 - src.app - INFO - App initialized
+2025-11-15 15:54:24,071 - app - ERROR - ❌ Error in flet_main: module 'flet' has no attribute 'icons'
+2025-11-15 15:54:24,085 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 357, in on_page_init
+    page.app = LawyerOfficeApp(page)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\app.py", line 109, in __init__
+    self.dashboard_view = DashboardView(self).build()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 53, in build
+    self._build_sidebar(),
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 82, in _build_sidebar
+    ft.icons.BUSINESS_CENTER,
+    ^^^^^^^^
+AttributeError: module 'flet' has no attribute 'icons'
+
+2025-11-15 15:56:05,457 - flet_web.fastapi - INFO - Session disconnected: _CGa0DzMiIQYbGwBz_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-15 15:56:05,637 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-15 15:56:05,647 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmphdhq1q84
+2025-11-15 15:56:05,675 - flet - INFO - Flet app has started...
+2025-11-15 15:56:05,678 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-15 15:56:05,803 - app - INFO - 
+✅ Application started successfully!
+2025-11-15 15:56:05,803 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-15 15:56:05,803 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-15 16:00:34,745 - app - INFO - ================================================================================
+2025-11-15 16:00:34,746 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-15 16:00:34
+2025-11-15 16:00:35,769 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2025-11-15 16:00:35,773 - app - INFO - Initializing backend API...
+2025-11-15 16:00:35,774 - app - INFO - Running database migrations...
+2025-11-15 16:00:39,158 - app - INFO - Database migrations completed successfully
+2025-11-15 16:00:39,220 - app - INFO - Collecting static files...
+2025-11-15 16:00:41,303 - app - INFO - Static files collected successfully
+2025-11-15 16:00:41,306 - app - INFO - Checking for superuser...
+2025-11-15 16:00:43,073 - app - INFO - Superuser setup completed
+2025-11-15 16:00:43,073 - app - INFO - Backend API initialization completed successfully
+2025-11-15 16:00:43,074 - app - INFO - 
+🔄 Starting backend server...
+2025-11-15 16:00:43,074 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-15 16:00:45,139 - app - INFO - [Backend] Performing system checks...
+2025-11-15 16:00:45,140 - app - INFO - [Backend] 
+2025-11-15 16:00:45,773 - app - INFO - [Backend] System check identified no issues (0 silenced).
+2025-11-15 16:00:46,002 - app - INFO - [Backend] November 15, 2025 - 16:00:46
+2025-11-15 16:00:46,003 - app - INFO - [Backend] Django version 5.2.8, using settings 'lawyer_office.settings'
+2025-11-15 16:00:46,004 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-15 16:00:46,004 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-15 16:00:46,006 - app - INFO - [Backend] 
+2025-11-15 16:00:46,006 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-15 16:00:46,007 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-15 16:00:46,120 - app - INFO - Waiting for backend API to be ready...
+2025-11-15 16:00:46,152 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2025-11-15 16:00:46,155 - app - INFO - Django server is responding...
+2025-11-15 16:00:46,163 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/v1/health/ "HTTP/1.1 200 OK"
+2025-11-15 16:00:46,164 - app - INFO - Backend API is ready!
+2025-11-15 16:00:46,165 - app - INFO - Backend server started successfully
+2025-11-15 16:00:48,167 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-15 16:00:58,661 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-15 16:01:03,929 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-15 16:01:03,936 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-15 16:01:03,937 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-15 16:01:03,938 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-15 16:01:04,194 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-15 16:01:04,196 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-15 16:01:06,282 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmplur_qjzr
+2025-11-15 16:01:06,286 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-15 16:01:06,301 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-15 16:01:06,303 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-15 16:01:08,301 - flet_web.fastapi - INFO - New FletApp: zGhfFhvA
+2025-11-15 16:01:08,548 - flet_web.fastapi - INFO - New session created (1 total): _Fub1UvSwq5xjWVNM_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-15 16:01:08,552 - flet_web.fastapi - INFO - Start session: Fub1UvSwq5xjWVNM
+2025-11-15 16:01:08,553 - src.app - INFO - Initializing application...
+2025-11-15 16:01:08,555 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-15 16:01:08,560 - src.app - INFO - Setting page properties for page id: 2195390104464
+2025-11-15 16:01:08,580 - src.app - INFO - Stored token found: False
+2025-11-15 16:01:08,581 - src.app - INFO - Stored token value: None
+2025-11-15 16:01:08,582 - src.app - INFO - No stored token found
+2025-11-15 16:01:08,591 - src.app - INFO - Storage test - set: test_value, got: test_value
+2025-11-15 16:01:08,597 - src.app - INFO - App initialized
+2025-11-15 16:01:08,597 - src.app - ERROR - Application initialization error: module 'flet' has no attribute 'icons'
+2025-11-15 16:01:08,616 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 691, in main
+    app = LawyerOfficeApp(page)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\app.py", line 109, in __init__
+    self.dashboard_view = DashboardView(self).build()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 53, in build
+    self._build_sidebar(),
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 82, in _build_sidebar
+    ft.icons.BUSINESS_CENTER,
+    ^^^^^^^^
+AttributeError: module 'flet' has no attribute 'icons'
+
+2025-11-15 16:01:08,642 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-15 16:01:08,646 - src.app - INFO - Setting page properties for page id: 2195390104464
+2025-11-15 16:01:08,662 - src.app - INFO - Stored token found: False
+2025-11-15 16:01:08,663 - src.app - INFO - Stored token value: None
+2025-11-15 16:01:08,664 - src.app - INFO - No stored token found
+2025-11-15 16:01:08,669 - src.app - INFO - Storage test - set: test_value, got: test_value
+2025-11-15 16:01:08,675 - src.app - INFO - App initialized
+2025-11-15 16:01:08,676 - app - ERROR - ❌ Error in flet_main: module 'flet' has no attribute 'icons'
+2025-11-15 16:01:08,685 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 357, in on_page_init
+    page.app = LawyerOfficeApp(page)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\app.py", line 109, in __init__
+    self.dashboard_view = DashboardView(self).build()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 53, in build
+    self._build_sidebar(),
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 82, in _build_sidebar
+    ft.icons.BUSINESS_CENTER,
+    ^^^^^^^^
+AttributeError: module 'flet' has no attribute 'icons'
+
+2025-11-15 16:13:53,648 - flet_web.fastapi - INFO - Session disconnected: _Fub1UvSwq5xjWVNM_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-15 16:13:53,798 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-15 16:13:53,895 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmplur_qjzr
+2025-11-15 16:13:54,059 - flet - INFO - Flet app has started...
+2025-11-15 16:13:54,063 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-15 16:13:54,175 - app - INFO - 
+✅ Application started successfully!
+2025-11-15 16:13:54,176 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-15 16:13:54,177 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-15 16:21:19,735 - app - INFO - ================================================================================
+2025-11-15 16:21:19,737 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-15 16:21:19
+2025-11-15 16:21:22,503 - app - INFO - Initializing backend API...
+2025-11-15 16:21:22,506 - app - INFO - Running database migrations...
+2025-11-15 16:21:25,068 - app - INFO - Database migrations completed successfully
+2025-11-15 16:21:25,069 - app - INFO - Collecting static files...
+2025-11-15 16:21:26,481 - app - INFO - Static files collected successfully
+2025-11-15 16:21:26,482 - app - INFO - Checking for superuser...
+2025-11-15 16:21:27,880 - app - INFO - Superuser setup completed
+2025-11-15 16:21:27,881 - app - INFO - Backend API initialization completed successfully
+2025-11-15 16:21:27,882 - app - INFO - 
+🔄 Starting backend server...
+2025-11-15 16:21:27,883 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-15 16:21:28,784 - app - INFO - [Backend] Performing system checks...
+2025-11-15 16:21:28,784 - app - INFO - [Backend] 
+2025-11-15 16:21:29,249 - app - INFO - [Backend] System check identified some issues:
+2025-11-15 16:21:29,250 - app - INFO - [Backend] 
+2025-11-15 16:21:29,251 - app - INFO - [Backend] WARNINGS:
+2025-11-15 16:21:29,252 - app - INFO - [Backend] ?: (urls.W005) URL namespace 'appointments_api' isn't unique. You may not be able to reverse all URLs in this namespace
+2025-11-15 16:21:29,253 - app - INFO - [Backend] ?: (urls.W005) URL namespace 'clients_api' isn't unique. You may not be able to reverse all URLs in this namespace
+2025-11-15 16:21:29,254 - app - INFO - [Backend] ?: (urls.W005) URL namespace 'users_api' isn't unique. You may not be able to reverse all URLs in this namespace
+2025-11-15 16:21:29,255 - app - INFO - [Backend] 
+2025-11-15 16:21:29,256 - app - INFO - [Backend] System check identified 3 issues (0 silenced).
+2025-11-15 16:21:29,542 - app - INFO - [Backend] November 15, 2025 - 16:21:29
+2025-11-15 16:21:29,542 - app - INFO - [Backend] Django version 5.2.8, using settings 'lawyer_office.settings'
+2025-11-15 16:21:29,544 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-15 16:21:29,545 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-15 16:21:29,546 - app - INFO - [Backend] 
+2025-11-15 16:21:29,546 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-15 16:21:29,547 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-15 16:21:30,894 - app - INFO - Waiting for backend API to be ready...
+2025-11-15 16:21:30,937 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2025-11-15 16:21:30,937 - app - INFO - [Backend] [15/Nov/2025 16:21:30] "GET / HTTP/1.1" 302 0
+2025-11-15 16:21:30,940 - app - INFO - Django server is responding...
+2025-11-15 16:21:30,949 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/v1/health/ "HTTP/1.1 200 OK"
+2025-11-15 16:21:30,949 - app - INFO - [Backend] [15/Nov/2025 16:21:30] "GET /api/v1/health/ HTTP/1.1" 200 79
+2025-11-15 16:21:30,951 - app - INFO - Backend API is ready!
+2025-11-15 16:21:30,952 - app - INFO - Backend server started successfully
+2025-11-15 16:21:32,954 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-15 16:21:38,334 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-15 16:21:42,387 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-15 16:21:42,392 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-15 16:21:42,393 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-15 16:21:42,394 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-15 16:21:42,610 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-15 16:21:42,611 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-15 16:21:43,717 - flet_web.fastapi - INFO - New FletApp: nWYFWaud
+2025-11-15 16:21:43,736 - flet_web.fastapi - INFO - New session created (1 total): _eBsQzhxjqPXH1ueF_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-15 16:21:43,744 - flet_web.fastapi - INFO - Start session: eBsQzhxjqPXH1ueF
+2025-11-15 16:21:43,804 - src.app - INFO - Initializing application...
+2025-11-15 16:21:43,812 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-15 16:21:43,829 - src.app - INFO - Setting page properties for page id: 1458463895760
+2025-11-15 16:21:43,840 - src.app - INFO - Stored token found: False
+2025-11-15 16:21:43,841 - src.app - INFO - Stored token value: None
+2025-11-15 16:21:43,846 - src.app - INFO - No stored token found
+2025-11-15 16:21:43,855 - src.app - INFO - Storage test - set: test_value, got: test_value
+2025-11-15 16:21:43,858 - src.app - INFO - App initialized
+2025-11-15 16:21:43,861 - src.app - ERROR - Application initialization error: MEDIUM
+2025-11-15 16:21:43,925 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 691, in main
+    app = LawyerOfficeApp(page)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\app.py", line 109, in __init__
+    self.dashboard_view = DashboardView(self).build()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 58, in build
+    self._build_sidebar(),
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 107, in _build_sidebar
+    self._nav_item(
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 215, in _nav_item
+    weight=ft.FontWeight.MEDIUM if is_active else ft.FontWeight.NORMAL,
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\enum.py", line 767, in __getattr__
+    raise AttributeError(name) from None
+AttributeError: MEDIUM
+
+2025-11-15 16:21:43,959 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-15 16:21:43,973 - src.app - INFO - Setting page properties for page id: 1458463895760
+2025-11-15 16:21:43,992 - src.app - INFO - Stored token found: False
+2025-11-15 16:21:43,994 - src.app - INFO - Stored token value: None
+2025-11-15 16:21:43,995 - src.app - INFO - No stored token found
+2025-11-15 16:21:44,028 - src.app - INFO - Storage test - set: test_value, got: test_value
+2025-11-15 16:21:44,035 - src.app - INFO - App initialized
+2025-11-15 16:21:44,093 - app - ERROR - ❌ Error in flet_main: MEDIUM
+2025-11-15 16:21:44,111 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 357, in on_page_init
+    page.app = LawyerOfficeApp(page)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\app.py", line 109, in __init__
+    self.dashboard_view = DashboardView(self).build()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 58, in build
+    self._build_sidebar(),
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 107, in _build_sidebar
+    self._nav_item(
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 215, in _nav_item
+    weight=ft.FontWeight.MEDIUM if is_active else ft.FontWeight.NORMAL,
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\enum.py", line 767, in __getattr__
+    raise AttributeError(name) from None
+AttributeError: MEDIUM
+
+2025-11-15 16:21:44,148 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmptox6tozx
+2025-11-15 16:21:44,154 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-15 16:21:44,156 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-15 16:21:44,157 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-15 16:21:45,197 - flet_web.fastapi - INFO - New FletApp: TRqASYJV
+2025-11-15 16:21:45,443 - flet_web.fastapi - INFO - New session created (2 total): _AbIbIQ4EpWW2lTED_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-15 16:21:45,444 - flet_web.fastapi - INFO - Start session: AbIbIQ4EpWW2lTED
+2025-11-15 16:21:45,445 - src.app - INFO - Initializing application...
+2025-11-15 16:21:45,446 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-15 16:21:45,450 - src.app - INFO - Setting page properties for page id: 1458469689232
+2025-11-15 16:21:45,459 - src.app - INFO - Stored token found: False
+2025-11-15 16:21:45,462 - src.app - INFO - Stored token value: None
+2025-11-15 16:21:45,463 - src.app - INFO - No stored token found
+2025-11-15 16:21:45,481 - src.app - INFO - Storage test - set: test_value, got: test_value
+2025-11-15 16:21:45,487 - src.app - INFO - App initialized
+2025-11-15 16:21:45,490 - src.app - ERROR - Application initialization error: MEDIUM
+2025-11-15 16:21:45,497 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 691, in main
+    app = LawyerOfficeApp(page)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\app.py", line 109, in __init__
+    self.dashboard_view = DashboardView(self).build()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 58, in build
+    self._build_sidebar(),
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 107, in _build_sidebar
+    self._nav_item(
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 215, in _nav_item
+    weight=ft.FontWeight.MEDIUM if is_active else ft.FontWeight.NORMAL,
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\enum.py", line 767, in __getattr__
+    raise AttributeError(name) from None
+AttributeError: MEDIUM
+
+2025-11-15 16:21:45,520 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-15 16:21:45,523 - src.app - INFO - Setting page properties for page id: 1458469689232
+2025-11-15 16:21:45,536 - src.app - INFO - Stored token found: False
+2025-11-15 16:21:45,538 - src.app - INFO - Stored token value: None
+2025-11-15 16:21:45,539 - src.app - INFO - No stored token found
+2025-11-15 16:21:45,546 - src.app - INFO - Storage test - set: test_value, got: test_value
+2025-11-15 16:21:45,552 - src.app - INFO - App initialized
+2025-11-15 16:21:45,555 - app - ERROR - ❌ Error in flet_main: MEDIUM
+2025-11-15 16:21:45,561 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 357, in on_page_init
+    page.app = LawyerOfficeApp(page)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\app.py", line 109, in __init__
+    self.dashboard_view = DashboardView(self).build()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 58, in build
+    self._build_sidebar(),
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 107, in _build_sidebar
+    self._nav_item(
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 215, in _nav_item
+    weight=ft.FontWeight.MEDIUM if is_active else ft.FontWeight.NORMAL,
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\enum.py", line 767, in __getattr__
+    raise AttributeError(name) from None
+AttributeError: MEDIUM
+
+2025-11-15 16:22:47,689 - flet_web.fastapi - INFO - Session disconnected: _AbIbIQ4EpWW2lTED_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-15 16:22:49,546 - flet_web.fastapi - INFO - Session disconnected: _eBsQzhxjqPXH1ueF_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-15 16:31:38,867 - app - INFO - ================================================================================
+2025-11-15 16:31:38,867 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-15 16:31:38
+2025-11-15 16:31:39,724 - app - INFO - [Backend] [15/Nov/2025 16:31:39] "GET / HTTP/1.1" 302 0
+2025-11-15 16:31:39,729 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2025-11-15 16:31:39,733 - app - INFO - Initializing backend API...
+2025-11-15 16:31:39,734 - app - INFO - Running database migrations...
+2025-11-15 16:31:42,078 - app - INFO - Database migrations completed successfully
+2025-11-15 16:31:42,078 - app - INFO - Collecting static files...
+2025-11-15 16:31:43,398 - app - INFO - Static files collected successfully
+2025-11-15 16:31:43,399 - app - INFO - Checking for superuser...
+2025-11-15 16:31:44,700 - app - INFO - Superuser setup completed
+2025-11-15 16:31:44,700 - app - INFO - Backend API initialization completed successfully
+2025-11-15 16:31:44,701 - app - INFO - 
+🔄 Starting backend server...
+2025-11-15 16:31:44,702 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-15 16:31:45,703 - app - INFO - [Backend] Performing system checks...
+2025-11-15 16:31:45,704 - app - INFO - [Backend] 
+2025-11-15 16:31:46,191 - app - INFO - [Backend] System check identified some issues:
+2025-11-15 16:31:46,192 - app - INFO - [Backend] 
+2025-11-15 16:31:46,193 - app - INFO - [Backend] WARNINGS:
+2025-11-15 16:31:46,194 - app - INFO - [Backend] ?: (urls.W005) URL namespace 'appointments_api' isn't unique. You may not be able to reverse all URLs in this namespace
+2025-11-15 16:31:46,195 - app - INFO - [Backend] ?: (urls.W005) URL namespace 'clients_api' isn't unique. You may not be able to reverse all URLs in this namespace
+2025-11-15 16:31:46,196 - app - INFO - [Backend] ?: (urls.W005) URL namespace 'users_api' isn't unique. You may not be able to reverse all URLs in this namespace
+2025-11-15 16:31:46,197 - app - INFO - [Backend] 
+2025-11-15 16:31:46,197 - app - INFO - [Backend] System check identified 3 issues (0 silenced).
+2025-11-15 16:31:46,364 - app - INFO - [Backend] November 15, 2025 - 16:31:46
+2025-11-15 16:31:46,365 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-15 16:31:46,365 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-15 16:31:46,366 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-15 16:31:46,367 - app - INFO - [Backend] 
+2025-11-15 16:31:46,368 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-15 16:31:46,369 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-15 16:31:47,713 - app - INFO - Waiting for backend API to be ready...
+2025-11-15 16:31:47,739 - app - INFO - [Backend] [15/Nov/2025 16:31:47] "GET / HTTP/1.1" 302 0
+2025-11-15 16:31:47,742 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2025-11-15 16:31:47,745 - app - INFO - Django server is responding...
+2025-11-15 16:31:47,749 - app - INFO - [Backend] [15/Nov/2025 16:31:47] "GET /api/v1/health/ HTTP/1.1" 200 79
+2025-11-15 16:31:47,750 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/v1/health/ "HTTP/1.1 200 OK"
+2025-11-15 16:31:47,753 - app - INFO - Backend API is ready!
+2025-11-15 16:31:47,755 - app - INFO - Backend server started successfully
+2025-11-15 16:31:49,756 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-15 16:31:56,775 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-15 16:32:00,105 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-15 16:32:00,113 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-15 16:32:00,113 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-15 16:32:00,114 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-15 16:32:00,307 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-15 16:32:00,309 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-15 16:32:01,088 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-15 16:32:01,101 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-15 16:32:01,110 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-15 16:32:02,908 - flet_web.fastapi - INFO - New FletApp: yoDg7u8D
+2025-11-15 16:32:03,215 - flet_web.fastapi - INFO - New session created (3 total): _YngJJZjhtCgoQIN9_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-15 16:32:03,265 - flet_web.fastapi - INFO - Start session: YngJJZjhtCgoQIN9
+2025-11-15 16:32:03,335 - src.app - INFO - Initializing application...
+2025-11-15 16:32:03,360 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-15 16:32:03,399 - src.app - INFO - Setting page properties for page id: 1458469765584
+2025-11-15 16:32:03,437 - src.app - INFO - Stored token found: False
+2025-11-15 16:32:03,484 - src.app - INFO - Stored token value: None
+2025-11-15 16:32:03,529 - src.app - INFO - No stored token found
+2025-11-15 16:32:03,545 - src.app - INFO - Storage test - set: test_value, got: test_value
+2025-11-15 16:32:03,552 - src.app - INFO - App initialized
+2025-11-15 16:32:03,563 - src.app - ERROR - Application initialization error: MEDIUM
+2025-11-15 16:32:03,611 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 691, in main
+    app = LawyerOfficeApp(page)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\app.py", line 109, in __init__
+    self.dashboard_view = DashboardView(self).build()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 58, in build
+    self._build_sidebar(),
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 107, in _build_sidebar
+    self._nav_item(
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 215, in _nav_item
+    weight=ft.FontWeight.W_500 if is_active else ft.FontWeight.W_400,
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\enum.py", line 767, in __getattr__
+    raise AttributeError(name) from None
+AttributeError: MEDIUM
+
+2025-11-15 16:32:03,662 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-15 16:32:03,702 - src.app - INFO - Setting page properties for page id: 1458469765584
+2025-11-15 16:32:03,728 - src.app - INFO - Stored token found: False
+2025-11-15 16:32:03,777 - src.app - INFO - Stored token value: None
+2025-11-15 16:32:03,796 - src.app - INFO - No stored token found
+2025-11-15 16:32:03,812 - src.app - INFO - Storage test - set: test_value, got: test_value
+2025-11-15 16:32:03,819 - src.app - INFO - App initialized
+2025-11-15 16:32:03,843 - app - ERROR - ❌ Error in flet_main: MEDIUM
+2025-11-15 16:32:03,867 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 357, in on_page_init
+    page.app = LawyerOfficeApp(page)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\app.py", line 109, in __init__
+    self.dashboard_view = DashboardView(self).build()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 58, in build
+    self._build_sidebar(),
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 107, in _build_sidebar
+    self._nav_item(
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 215, in _nav_item
+    weight=ft.FontWeight.W_500 if is_active else ft.FontWeight.W_400,
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\enum.py", line 767, in __getattr__
+    raise AttributeError(name) from None
+AttributeError: MEDIUM
+
+2025-11-15 16:32:07,663 - flet_web.fastapi - INFO - Session disconnected: _YngJJZjhtCgoQIN9_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-15 16:32:38,508 - app - INFO - ================================================================================
+2025-11-15 16:32:38,510 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-15 16:32:38
+2025-11-15 16:32:39,488 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2025-11-15 16:32:39,505 - app - INFO - Initializing backend API...
+2025-11-15 16:32:39,516 - app - INFO - Running database migrations...
+2025-11-15 16:32:44,535 - app - INFO - Database migrations completed successfully
+2025-11-15 16:32:44,569 - app - INFO - Collecting static files...
+2025-11-15 16:32:45,994 - app - INFO - Static files collected successfully
+2025-11-15 16:32:45,995 - app - INFO - Checking for superuser...
+2025-11-15 16:32:48,638 - app - INFO - Superuser setup completed
+2025-11-15 16:32:48,639 - app - INFO - Backend API initialization completed successfully
+2025-11-15 16:32:48,641 - app - INFO - 
+🔄 Starting backend server...
+2025-11-15 16:32:48,642 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-15 16:32:50,250 - app - INFO - [Backend] Performing system checks...
+2025-11-15 16:32:50,251 - app - INFO - [Backend] 
+2025-11-15 16:32:50,944 - app - INFO - [Backend] System check identified some issues:
+2025-11-15 16:32:50,946 - app - INFO - [Backend] 
+2025-11-15 16:32:50,947 - app - INFO - [Backend] WARNINGS:
+2025-11-15 16:32:50,949 - app - INFO - [Backend] ?: (urls.W005) URL namespace 'appointments_api' isn't unique. You may not be able to reverse all URLs in this namespace
+2025-11-15 16:32:50,952 - app - INFO - [Backend] ?: (urls.W005) URL namespace 'clients_api' isn't unique. You may not be able to reverse all URLs in this namespace
+2025-11-15 16:32:50,953 - app - INFO - [Backend] ?: (urls.W005) URL namespace 'users_api' isn't unique. You may not be able to reverse all URLs in this namespace
+2025-11-15 16:32:50,954 - app - INFO - [Backend] 
+2025-11-15 16:32:50,955 - app - INFO - [Backend] System check identified 3 issues (0 silenced).
+2025-11-15 16:32:51,165 - app - INFO - [Backend] November 15, 2025 - 16:32:51
+2025-11-15 16:32:51,167 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-15 16:32:51,173 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-15 16:32:51,182 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-15 16:32:51,184 - app - INFO - [Backend] 
+2025-11-15 16:32:51,185 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-15 16:32:51,186 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-15 16:32:51,675 - app - INFO - Waiting for backend API to be ready...
+2025-11-15 16:32:51,720 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2025-11-15 16:32:51,723 - app - INFO - Django server is responding...
+2025-11-15 16:32:51,734 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/v1/health/ "HTTP/1.1 200 OK"
+2025-11-15 16:32:51,736 - app - INFO - Backend API is ready!
+2025-11-15 16:32:51,736 - app - INFO - Backend server started successfully
+2025-11-15 16:32:53,738 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-15 16:33:05,411 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-15 16:33:10,239 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-15 16:33:10,249 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-15 16:33:10,250 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-15 16:33:10,250 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-15 16:33:10,482 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-15 16:33:10,484 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-15 16:33:12,234 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmp1__tf_u2
+2025-11-15 16:33:12,236 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-15 16:33:12,238 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-15 16:33:12,239 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-15 16:33:13,525 - flet_web.fastapi - INFO - New FletApp: cT4nKC0o
+2025-11-15 16:33:13,984 - flet_web.fastapi - INFO - New session created (1 total): _FvUVB4DcwyQhsc9w_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-15 16:33:13,989 - flet_web.fastapi - INFO - Start session: FvUVB4DcwyQhsc9w
+2025-11-15 16:33:13,993 - src.app - INFO - Initializing application...
+2025-11-15 16:33:13,997 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-15 16:33:14,002 - src.app - INFO - Setting page properties for page id: 2131510708496
+2025-11-15 16:33:14,018 - src.app - INFO - Stored token found: False
+2025-11-15 16:33:14,020 - src.app - INFO - Stored token value: None
+2025-11-15 16:33:14,021 - src.app - INFO - No stored token found
+2025-11-15 16:33:14,034 - src.app - INFO - Storage test - set: test_value, got: test_value
+2025-11-15 16:33:14,035 - src.app - INFO - App initialized
+2025-11-15 16:33:14,046 - src.app - ERROR - Application initialization error: Column.__init__() got an unexpected keyword argument 'padding'
+2025-11-15 16:33:14,102 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 691, in main
+    app = LawyerOfficeApp(page)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\app.py", line 109, in __init__
+    self.dashboard_view = DashboardView(self).build()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 58, in build
+    self._build_sidebar(),
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 105, in _build_sidebar
+    ft.Column(
+TypeError: Column.__init__() got an unexpected keyword argument 'padding'
+
+2025-11-15 16:33:14,135 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-15 16:33:14,145 - src.app - INFO - Setting page properties for page id: 2131510708496
+2025-11-15 16:33:14,160 - src.app - INFO - Stored token found: False
+2025-11-15 16:33:14,161 - src.app - INFO - Stored token value: None
+2025-11-15 16:33:14,162 - src.app - INFO - No stored token found
+2025-11-15 16:33:14,168 - src.app - INFO - Storage test - set: test_value, got: test_value
+2025-11-15 16:33:14,169 - src.app - INFO - App initialized
+2025-11-15 16:33:14,184 - app - ERROR - ❌ Error in flet_main: Column.__init__() got an unexpected keyword argument 'padding'
+2025-11-15 16:33:14,247 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 357, in on_page_init
+    page.app = LawyerOfficeApp(page)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\app.py", line 109, in __init__
+    self.dashboard_view = DashboardView(self).build()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 58, in build
+    self._build_sidebar(),
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 105, in _build_sidebar
+    ft.Column(
+TypeError: Column.__init__() got an unexpected keyword argument 'padding'
+
+2025-11-15 16:33:46,865 - flet_web.fastapi - INFO - Session disconnected: _FvUVB4DcwyQhsc9w_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-15 16:33:46,976 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-15 16:33:46,977 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmp1__tf_u2
+2025-11-15 16:33:47,022 - flet - INFO - Flet app has started...
+2025-11-15 16:33:47,052 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-15 16:33:47,189 - app - INFO - 
+✅ Application started successfully!
+2025-11-15 16:33:47,190 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-15 16:33:47,198 - app - INFO - ✅ Cleanup complete. Goodbye! 👋
+2025-11-15 16:59:06,497 - app - INFO - ================================================================================
+2025-11-15 16:59:06,498 - app - INFO - 🚀 Starting Lawyer Office Management System - 2025-11-15 16:59:06
+2025-11-15 16:59:07,739 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2025-11-15 16:59:07,745 - app - INFO - Initializing backend API...
+2025-11-15 16:59:07,745 - app - INFO - Running database migrations...
+2025-11-15 16:59:11,196 - app - INFO - Database migrations completed successfully
+2025-11-15 16:59:11,197 - app - INFO - Collecting static files...
+2025-11-15 16:59:12,689 - app - INFO - Static files collected successfully
+2025-11-15 16:59:12,690 - app - INFO - Checking for superuser...
+2025-11-15 16:59:14,196 - app - INFO - Superuser setup completed
+2025-11-15 16:59:14,198 - app - INFO - Backend API initialization completed successfully
+2025-11-15 16:59:14,199 - app - INFO - 
+🔄 Starting backend server...
+2025-11-15 16:59:14,200 - app - INFO - Starting backend server in D:\lawyer_office_management\backend
+2025-11-15 16:59:15,561 - app - INFO - [Backend] Performing system checks...
+2025-11-15 16:59:15,562 - app - INFO - [Backend] 
+2025-11-15 16:59:16,097 - app - INFO - [Backend] System check identified some issues:
+2025-11-15 16:59:16,098 - app - INFO - [Backend] 
+2025-11-15 16:59:16,099 - app - INFO - [Backend] WARNINGS:
+2025-11-15 16:59:16,099 - app - INFO - [Backend] ?: (urls.W005) URL namespace 'appointments_api' isn't unique. You may not be able to reverse all URLs in this namespace
+2025-11-15 16:59:16,101 - app - INFO - [Backend] ?: (urls.W005) URL namespace 'clients_api' isn't unique. You may not be able to reverse all URLs in this namespace
+2025-11-15 16:59:16,102 - app - INFO - [Backend] ?: (urls.W005) URL namespace 'users_api' isn't unique. You may not be able to reverse all URLs in this namespace
+2025-11-15 16:59:16,103 - app - INFO - [Backend] 
+2025-11-15 16:59:16,103 - app - INFO - [Backend] System check identified 3 issues (0 silenced).
+2025-11-15 16:59:16,280 - app - INFO - [Backend] November 15, 2025 - 16:59:16
+2025-11-15 16:59:16,281 - app - INFO - [Backend] Django version 5.2.8, using settings 'config.settings'
+2025-11-15 16:59:16,282 - app - INFO - [Backend] Starting development server at http://0.0.0.0:8000/
+2025-11-15 16:59:16,283 - app - INFO - [Backend] Quit the server with CTRL-BREAK.
+2025-11-15 16:59:16,284 - app - INFO - [Backend] 
+2025-11-15 16:59:16,284 - app - INFO - [Backend] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+2025-11-15 16:59:16,285 - app - INFO - [Backend] For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+2025-11-15 16:59:17,243 - app - INFO - Waiting for backend API to be ready...
+2025-11-15 16:59:17,296 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/ "HTTP/1.1 302 Found"
+2025-11-15 16:59:17,300 - app - INFO - Django server is responding...
+2025-11-15 16:59:17,304 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/v1/health/ "HTTP/1.1 200 OK"
+2025-11-15 16:59:17,306 - app - INFO - Backend API is ready!
+2025-11-15 16:59:17,307 - app - INFO - Backend server started successfully
+2025-11-15 16:59:19,581 - app - INFO - 
+🖥️  Starting frontend application...
+2025-11-15 16:59:28,257 - flet - INFO - Assets path configured: D:\lawyer_office_management\frontend\assets
+2025-11-15 16:59:31,846 - flet - INFO - Starting Flet web server on port 8503...
+2025-11-15 16:59:31,852 - flet_web.fastapi - INFO - Web renderer configured: WebRenderer.CANVAS_KIT
+2025-11-15 16:59:31,853 - flet_web.fastapi - INFO - Use color emoji: True
+2025-11-15 16:59:31,854 - flet_web.fastapi - INFO - Route URL strategy configured: path
+2025-11-15 16:59:32,068 - flet_web.fastapi - INFO - Starting up Flet App Manager
+2025-11-15 16:59:32,069 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-15 16:59:33,422 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmp77jmdbpr
+2025-11-15 16:59:33,425 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-15 16:59:33,428 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-15 16:59:33,430 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-15 16:59:35,155 - flet_web.fastapi - INFO - New FletApp: YJQwocwh
+2025-11-15 16:59:35,609 - flet_web.fastapi - INFO - New session created (1 total): _Ppg7tIZyA2MwFa7x_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-15 16:59:35,640 - flet_web.fastapi - INFO - Start session: Ppg7tIZyA2MwFa7x
+2025-11-15 16:59:35,641 - src.app - INFO - Initializing application...
+2025-11-15 16:59:35,641 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-15 16:59:35,643 - src.app - INFO - Setting page properties for page id: 2362978436752
+2025-11-15 16:59:35,654 - src.app - INFO - Stored token found: False
+2025-11-15 16:59:35,655 - src.app - INFO - Stored token value: None
+2025-11-15 16:59:35,655 - src.app - INFO - No stored token found
+2025-11-15 16:59:35,660 - src.app - INFO - Storage test - set: test_value, got: test_value
+2025-11-15 16:59:35,667 - src.app - INFO - App initialized
+2025-11-15 16:59:35,675 - src.app - ERROR - Application initialization error: CircleAvatar.__init__() got an unexpected keyword argument 'background_image_url'
+2025-11-15 16:59:35,815 - src.app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\src\app.py", line 691, in main
+    app = LawyerOfficeApp(page)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\app.py", line 109, in __init__
+    self.dashboard_view = DashboardView(self).build()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 58, in build
+    self._build_sidebar(),
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 159, in _build_sidebar
+    ft.CircleAvatar(
+TypeError: CircleAvatar.__init__() got an unexpected keyword argument 'background_image_url'
+
+2025-11-15 16:59:35,834 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-15 16:59:35,857 - src.app - INFO - Setting page properties for page id: 2362978436752
+2025-11-15 16:59:35,873 - src.app - INFO - Stored token found: False
+2025-11-15 16:59:35,874 - src.app - INFO - Stored token value: None
+2025-11-15 16:59:35,875 - src.app - INFO - No stored token found
+2025-11-15 16:59:35,890 - src.app - INFO - Storage test - set: test_value, got: test_value
+2025-11-15 16:59:35,891 - src.app - INFO - App initialized
+2025-11-15 16:59:35,901 - app - ERROR - ❌ Error in flet_main: CircleAvatar.__init__() got an unexpected keyword argument 'background_image_url'
+2025-11-15 16:59:35,926 - app - ERROR - Traceback (most recent call last):
+  File "D:\lawyer_office_management\frontend\run.py", line 357, in on_page_init
+    page.app = LawyerOfficeApp(page)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\app.py", line 109, in __init__
+    self.dashboard_view = DashboardView(self).build()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 58, in build
+    self._build_sidebar(),
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\frontend\src\views\dashboard.py", line 159, in _build_sidebar
+    ft.CircleAvatar(
+TypeError: CircleAvatar.__init__() got an unexpected keyword argument 'background_image_url'
+
+2025-11-15 16:59:57,229 - flet_web.fastapi - INFO - Session disconnected: _Ppg7tIZyA2MwFa7x_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-15 16:59:57,343 - flet_web.fastapi - INFO - Shutting down Flet App Manager
+2025-11-15 16:59:57,344 - flet_web.fastapi - INFO - Deleting temp dir: C:\Users\T\AppData\Local\Temp\tmp77jmdbpr
+2025-11-15 16:59:57,344 - flet - INFO - Flet app has started...
+2025-11-15 16:59:57,352 - flet_web.fastapi - INFO - Closing Flet web server...
+2025-11-15 16:59:57,459 - app - INFO - 
+✅ Application started successfully!
+2025-11-15 16:59:57,460 - app - INFO - 
+🧹 Cleaning up resources...
+2025-11-15 16:59:57,461 - app - INFO - ✅ Cleanup complete. Goodbye! 👋

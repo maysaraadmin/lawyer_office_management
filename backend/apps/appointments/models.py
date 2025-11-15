@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.conf import settings
+from apps.clients.models import Client
 
 class Appointment(models.Model):
     """Model representing an appointment."""
@@ -17,6 +18,14 @@ class Appointment(models.Model):
         related_name='appointments',
         verbose_name=_('user')
     )
+    client = models.ForeignKey(
+        Client,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='appointments',
+        verbose_name=_('client')
+    )
     title = models.CharField(_('title'), max_length=200)
     description = models.TextField(_('description'), blank=True)
     start_time = models.DateTimeField(_('start time'))
@@ -27,6 +36,8 @@ class Appointment(models.Model):
         choices=Status.choices,
         default=Status.SCHEDULED
     )
+    location = models.CharField(_('location'), max_length=255, blank=True)
+    notes = models.TextField(_('notes'), blank=True)
     created_at = models.DateTimeField(_('created at'), auto_now_add=True)
     updated_at = models.DateTimeField(_('updated at'), auto_now=True)
 

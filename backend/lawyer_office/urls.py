@@ -41,15 +41,22 @@ api_patterns = [
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
 
+from apps.web.urls import urlpatterns as web_patterns
+
 urlpatterns = [
-    # Root URL redirects to API documentation
-    path('', RedirectView.as_view(url='/api/v1/docs/', permanent=False)),
+    # Root URL redirects to dashboard
+    path('', RedirectView.as_view(url='/web/dashboard/', permanent=False)),
     
     # Admin
     path('admin/', admin.site.urls),
     
+    # Web Application
+    path('web/', include(web_patterns)),
+    
     # API v1 (only include once)
     path('api/v1/', include(api_patterns)),
+    # API direct access (for web app compatibility)
+    path('api/', include(api_patterns)),
 ]
 
 if settings.DEBUG:

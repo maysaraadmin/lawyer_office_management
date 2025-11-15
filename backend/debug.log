@@ -1519,3 +1519,291 @@ Response sent
 Request received
 Response sent
 "GET /api/v1/clients/ HTTP/1.1" 200 2551
+Watching for file changes with StatReloader
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/docs/ HTTP/1.1" 200 2235
+"GET /static/drf-yasg/style.css HTTP/1.1" 304 0
+"GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 304 0
+"GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 304 0
+"GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 304 0
+"GET /static/drf-yasg/insQ.min.js HTTP/1.1" 304 0
+"GET /static/drf-yasg/immutable.min.js HTTP/1.1" 304 0
+"GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 304 0
+Request received
+Response sent
+"GET /api/v1/docs/?format=openapi HTTP/1.1" 200 25447
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/docs/ HTTP/1.1" 200 2235
+Request received
+Response sent
+"GET /api/v1/docs/?format=openapi HTTP/1.1" 200 25447
+D:\lawyer_office_management\backend\lawyer_office\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /web/dashboard/ HTTP/1.1" 200 19584
+Request received
+Client error response
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2824
+Request received
+Response sent
+"POST /web/logout/ HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /web/login/ HTTP/1.1" 200 4265
+Request received
+Response sent
+"POST /web/login/ HTTP/1.1" 200 4456
+Request received
+Internal Server Error: /web/register/
+Traceback (most recent call last):
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\lawyer_office_management\backend\apps\web\views.py", line 120, in get
+    return render(request, self.template_name, {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: registration/register.html
+Server error response
+"GET /web/register/ HTTP/1.1" 500 102800
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /web/dashboard/ HTTP/1.1" 302 0
+Request received
+Client error response
+Not Found: /accounts/login/
+"GET /accounts/login/?next=/web/dashboard/ HTTP/1.1" 404 2857
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /web/dashboard/ HTTP/1.1" 302 0
+Request received
+Client error response
+Not Found: /accounts/login/
+"GET /accounts/login/?next=/web/dashboard/ HTTP/1.1" 404 2857
+Watching for file changes with StatReloader
+Request received
+Client error response
+Not Found: /accounts/login/
+"GET /accounts/login/?next=/web/dashboard/ HTTP/1.1" 404 2857
+Request received
+Client error response
+Not Found: /accounts/login/
+"GET /accounts/login/?next=/web/dashboard/ HTTP/1.1" 404 2857
+Request received
+Client error response
+Not Found: /accounts/login/
+"GET /accounts/login/?next=/web/dashboard/ HTTP/1.1" 404 2857
+Request received
+Response sent
+"GET /web/login/ HTTP/1.1" 200 4265
+Request received
+Response sent
+"GET /web/register/ HTTP/1.1" 200 1443
+D:\lawyer_office_management\backend\apps\web\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Request received
+Response sent
+"GET /web/register/ HTTP/1.1" 200 1454
+Request received
+Response sent
+"GET /web/register/ HTTP/1.1" 200 1454
+Request received
+Response sent
+"GET /web/register/ HTTP/1.1" 200 1454
+Request received
+Response sent
+"GET /web/register/ HTTP/1.1" 200 1454
+Request received
+Client error response
+Not Found: /web
+"GET /web HTTP/1.1" 404 2800
+D:\lawyer_office_management\backend\apps\web\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lawyer_office_management\backend\apps\web\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lawyer_office_management\backend\apps\web\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Request received
+Client error response
+"GET /web HTTP/1.1" 301 0
+Request received
+Response sent
+"GET /web/ HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /web/dashboard/ HTTP/1.1" 302 0
+Request received
+Client error response
+Not Found: /accounts/login/
+"GET /accounts/login/?next=/web/dashboard/ HTTP/1.1" 404 2857
+Request received
+Response sent
+"GET /web/login/ HTTP/1.1" 200 4265
+Request received
+Response sent
+"GET /web/register/ HTTP/1.1" 200 1454
+D:\lawyer_office_management\backend\apps\web\forms.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lawyer_office_management\backend\apps\web\forms.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lawyer_office_management\backend\apps\web\views.py changed, reloading.
+Watching for file changes with StatReloader
+Request received
+Response sent
+"GET /web/register/ HTTP/1.1" 200 1454
+Request received
+Response sent
+"GET /web/register/ HTTP/1.1" 200 1454
+Request received
+Response sent
+"GET /web/register/ HTTP/1.1" 200 1454
+Request received
+Response sent
+"GET /web/register/ HTTP/1.1" 200 1454
+Request received
+Response sent
+"GET /web/register/ HTTP/1.1" 200 10553
+Request received
+Response sent
+"GET /web/register/ HTTP/1.1" 200 9388
+Request received
+Response sent
+"GET /web/register/ HTTP/1.1" 200 7898
+Request received
+Response sent
+"GET /web/login/ HTTP/1.1" 200 4291
+Request received
+Response sent
+"POST /web/login/ HTTP/1.1" 200 4482
+Request received
+Response sent
+"POST /web/login/ HTTP/1.1" 200 4482
+Request received
+Response sent
+"POST /web/login/ HTTP/1.1" 200 4482
+D:\lawyer_office_management\backend\apps\web\forms.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lawyer_office_management\backend\apps\web\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lawyer_office_management\backend\apps\web\views.py changed, reloading.
+Watching for file changes with StatReloader
+Request received
+Response sent
+"POST /web/login/ HTTP/1.1" 200 4482
+Request received
+Response sent
+"POST /web/login/ HTTP/1.1" 200 4482
+Request received
+Response sent
+"POST /web/login/ HTTP/1.1" 200 4498
+Request received
+Response sent
+"POST /web/login/ HTTP/1.1" 200 4498
+Request received
+Response sent
+"POST /web/login/ HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /web/dashboard/ HTTP/1.1" 200 16346
+Request received
+Response sent
+"GET /web/appointments/ HTTP/1.1" 200 27625
+Request received
+Response sent
+"GET /web/clients/ HTTP/1.1" 200 28650
+Request received
+Response sent
+"GET /web/profile/ HTTP/1.1" 200 18306
+Request received
+Response sent
+"GET /web/clients/ HTTP/1.1" 200 28650
+Request received
+Response sent
+"GET /web/dashboard/ HTTP/1.1" 200 16346
+Request received
+Response sent
+"GET /web/appointments/ HTTP/1.1" 200 27625
+Request received
+Response sent
+"GET /web/clients/ HTTP/1.1" 200 28650
+Request received
+Response sent
+"GET /web/profile/ HTTP/1.1" 200 18306
+Request received
+Response sent
+"POST /web/logout/ HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /web/login/ HTTP/1.1" 200 4250
+Request received
+Response sent
+"GET /web/register/ HTTP/1.1" 200 10108
+Request received
+Response sent
+"GET /web/register/ HTTP/1.1" 200 15172
+Request received
+Response sent
+"GET /web/login/ HTTP/1.1" 200 4250
+Watching for file changes with StatReloader
+D:\lawyer_office_management\backend\apps\appointments\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lawyer_office_management\backend\apps\appointments\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lawyer_office_management\backend\apps\appointments\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lawyer_office_management\backend\apps\appointments\views.py changed, reloading.
+Watching for file changes with StatReloader
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+D:\lawyer_office_management\backend\lawyer_office\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lawyer_office_management\backend\apps\users\urls.py changed, reloading.
+Watching for file changes with StatReloader

@@ -10,4 +10,5 @@ router.register(r'', views.AppointmentViewSet, basename='appointment')
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('stats/', views.AppointmentStatsView.as_view(), name='appointment-stats'),
 ]

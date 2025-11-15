@@ -33,10 +33,9 @@ INSTALLED_APPS = [
     # Local apps
     'apps.users.apps.UsersConfig',
     'apps.clients.apps.ClientsConfig',
-    'apps.cases.apps.CasesConfig',
     'apps.appointments.apps.AppointmentsConfig',
-    'apps.documents.apps.DocumentsConfig',
-    'apps.billing.apps.BillingConfig',
+    'apps.dashboard.apps.DashboardConfig',
+    'apps.web.apps.WebConfig',
 ]
 
 MIDDLEWARE = [
@@ -48,15 +47,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'apps.core.middleware.RequestLoggingMiddleware',  # Custom logging
 ]
 
-ROOT_URLCONF = 'config.urls'
+ROOT_URLCONF = 'lawyer_office.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,6 +128,11 @@ CORS_ALLOWED_ORIGINS = [
 
 # Custom User Model
 AUTH_USER_MODEL = 'users.User'
+
+# Django authentication settings
+LOGIN_URL = '/web/login/'
+LOGIN_REDIRECT_URL = '/web/dashboard/'
+LOGOUT_REDIRECT_URL = '/web/login/'
 
 # Media files
 MEDIA_URL = '/media/'

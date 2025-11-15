@@ -11,7 +11,7 @@ class Client(models.Model):
     # Basic Information
     first_name = models.CharField(_('first name'), max_length=150)
     last_name = models.CharField(_('last name'), max_length=150)
-    email = models.EmailField(_('email address'), unique=True, blank=True, null=True)
+    email = models.EmailField(_('email address'), blank=True, null=True)
     phone = models.CharField(_('phone number'), max_length=20, blank=True)
     
     # Address Information
@@ -28,6 +28,15 @@ class Client(models.Model):
     
     # Status
     is_active = models.BooleanField(_('active'), default=True)
+    
+    # User who created this client
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name='clients',
+        verbose_name=_('created by')
+    )
     
     # Timestamps
     created_at = models.DateTimeField(_('created at'), auto_now_add=True)
