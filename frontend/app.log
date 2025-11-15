@@ -14864,3 +14864,71 @@ KeyError: 'name'
 2025-11-15 05:06:37,568 - flet_web.fastapi - INFO - Route URL strategy configured: path
 2025-11-15 05:06:37,766 - flet_web.fastapi - INFO - Starting up Flet App Manager
 2025-11-15 05:06:37,767 - flet - INFO - App URL: http://127.0.0.1:8503
+2025-11-15 05:06:41,783 - flet_web.fastapi - INFO - Temp dir created for patched index and manifest: C:\Users\T\AppData\Local\Temp\tmp63vyqrcr
+2025-11-15 05:06:41,789 - flet_web.fastapi - INFO - Web root: C:\Users\T\AppData\Local\Programs\Python\Python311\Lib\site-packages\flet_web\web
+2025-11-15 05:06:41,795 - flet_web.fastapi - INFO - assets_dir does not exist: D:\lawyer_office_management\frontend\assets
+2025-11-15 05:06:41,820 - flet_web.fastapi - INFO - Assets dir: None
+2025-11-15 05:06:43,344 - flet_web.fastapi - INFO - New FletApp: GixWiESi
+2025-11-15 05:06:43,604 - flet_web.fastapi - INFO - New session created (1 total): _c7qhOrNibXPXPaaE_b33333ddc935e6c039a127abd2fe983df1e3408a
+2025-11-15 05:06:43,613 - flet_web.fastapi - INFO - Start session: c7qhOrNibXPXPaaE
+2025-11-15 05:06:43,614 - src.app - INFO - Initializing application...
+2025-11-15 05:06:43,615 - src.app - INFO - LawyerOfficeApp.__init__ called with page: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light'}
+2025-11-15 05:06:43,618 - src.app - INFO - Setting page properties for page id: 2733173585488
+2025-11-15 05:06:43,635 - src.app - INFO - Stored token found: False
+2025-11-15 05:06:43,646 - src.app - INFO - Stored token value: None
+2025-11-15 05:06:43,647 - src.app - INFO - No stored token found
+2025-11-15 05:06:43,667 - src.app - INFO - Storage test - set: test_value, got: test_value
+2025-11-15 05:06:43,668 - src.app - INFO - App initialized
+2025-11-15 05:06:43,751 - src.app - INFO - Starting with initial route: /
+2025-11-15 05:06:43,751 - src.app - INFO - Route changed to: /
+2025-11-15 05:06:43,752 - src.app - INFO - Root route accessed. is_authenticated: False
+2025-11-15 05:06:43,753 - src.app - INFO - Access token exists: False
+2025-11-15 05:06:43,754 - src.app - INFO - Showing login form
+2025-11-15 05:06:43,755 - src.app - INFO - Page object in show_login: page {'id': 'page', 'route': '/', 'pwa': 'false', 'web': 'true', 'debug': 'false', 'platform': 'windows', 'platformbrightness': 'light', 'media': '{"padding":{"top":0,"right":0,"bottom":0,"left":0},"view_padding":{"top":0,"right":0,"bottom":0,"left":0},"view_insets":{"top":0,"right":0,"bottom":0,"left":0}}', 'width': '1280', 'height': '559.3333129882812', 'windowwidth': '', 'windowheight': '', 'windowtop': '', 'windowleft': '', 'clientip': '127.0.0.1', 'clientuseragent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'title': 'Lawyer Office Management', 'thememode': 'light', 'theme': '{"color_scheme_seed":"blue","use_material3":true,"page_transitions":{},"system_overlay_style":{}}'}
+2025-11-15 05:06:43,763 - src.app - INFO - Page id in show_login: 2733173585488
+2025-11-15 05:06:43,767 - src.app - INFO - Login view created
+2025-11-15 05:06:43,768 - src.app - INFO - Login view added. Views count: 1
+2025-11-15 05:06:43,769 - src.app - INFO - Updating page with login view...
+2025-11-15 05:06:43,783 - src.app - INFO - Page updated successfully
+2025-11-15 05:06:58,162 - app - INFO - [Backend] Request received
+2025-11-15 05:07:00,225 - app - INFO - [Backend] Response sent
+2025-11-15 05:07:00,234 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8000/api/v1/auth/login/ "HTTP/1.1 200 OK"
+2025-11-15 05:07:00,235 - app - INFO - [Backend] "POST /api/v1/auth/login/ HTTP/1.1" 200 872
+2025-11-15 05:07:00,254 - src.app - INFO - Login successful
+2025-11-15 05:07:00,254 - src.app - INFO - Showing dashboard
+2025-11-15 05:07:00,257 - src.app - INFO - Dashboard view created: <class 'flet.core.column.Column'>
+2025-11-15 05:07:00,259 - src.app - INFO - Content updated with dashboard view
+2025-11-15 05:07:00,280 - src.app - INFO - Page updated successfully
+2025-11-15 05:07:03,469 - app - INFO - [Backend] Request received
+2025-11-15 05:07:03,688 - app - INFO - [Backend] Response sent
+2025-11-15 05:07:03,695 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/v1/appointments/ "HTTP/1.1 200 OK"
+2025-11-15 05:07:03,696 - app - INFO - [Backend] "GET /api/v1/appointments/ HTTP/1.1" 200 888
+2025-11-15 05:07:03,700 - src.views.appointments - INFO - API response: {'count': 3, 'next': None, 'previous': None, 'results': [{'id': 12, 'user': 5, 'title': 'Consultation with Admin User', 'description': 'Appointment for Admin User.', 'start_time': '2025-12-13T12:45:00Z', 'end_time': '2025-12-13T13:45:00Z', 'status': 'scheduled', 'created_at': '2025-11-14T23:35:56.695215Z', 'updated_at': '2025-11-14T23:35:56.695215Z'}, {'id': 19, 'user': 5, 'title': 'Consultation with Admin User', 'description': 'Appointment for Admin User.', 'start_time': '2025-12-02T11:00:00Z', 'end_time': '2025-12-02T12:00:00Z', 'status': 'scheduled', 'created_at': '2025-11-14T23:35:56.727604Z', 'updated_at': '2025-11-14T23:35:56.727604Z'}, {'id': 21, 'user': 5, 'title': 'Consultation with Admin User', 'description': 'Appointment for Admin User.', 'start_time': '2025-11-24T14:45:00Z', 'end_time': '2025-11-24T15:45:00Z', 'status': 'confirmed', 'created_at': '2025-11-14T23:35:56.736592Z', 'updated_at': '2025-11-14T23:35:56.736592Z'}]}
+2025-11-15 05:07:03,706 - src.views.appointments - INFO - Loaded 3 appointments
+2025-11-15 05:07:03,793 - src.app - INFO - Route change wrapper called with: /appointments
+2025-11-15 05:07:03,797 - src.app - INFO - Route changed to: /appointments
+2025-11-15 05:07:03,798 - src.app - INFO - Appointments route accessed. is_authenticated: True
+2025-11-15 05:07:03,799 - src.app - INFO - Access token exists: True
+2025-11-15 05:07:03,800 - src.app - INFO - Showing appointments
+2025-11-15 05:07:03,898 - app - INFO - [Backend] Request received
+2025-11-15 05:07:04,078 - app - INFO - [Backend] Response sent
+2025-11-15 05:07:04,083 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/v1/appointments/ "HTTP/1.1 200 OK"
+2025-11-15 05:07:04,089 - app - INFO - [Backend] "GET /api/v1/appointments/ HTTP/1.1" 200 888
+2025-11-15 05:07:04,095 - src.views.appointments - INFO - API response: {'count': 3, 'next': None, 'previous': None, 'results': [{'id': 12, 'user': 5, 'title': 'Consultation with Admin User', 'description': 'Appointment for Admin User.', 'start_time': '2025-12-13T12:45:00Z', 'end_time': '2025-12-13T13:45:00Z', 'status': 'scheduled', 'created_at': '2025-11-14T23:35:56.695215Z', 'updated_at': '2025-11-14T23:35:56.695215Z'}, {'id': 19, 'user': 5, 'title': 'Consultation with Admin User', 'description': 'Appointment for Admin User.', 'start_time': '2025-12-02T11:00:00Z', 'end_time': '2025-12-02T12:00:00Z', 'status': 'scheduled', 'created_at': '2025-11-14T23:35:56.727604Z', 'updated_at': '2025-11-14T23:35:56.727604Z'}, {'id': 21, 'user': 5, 'title': 'Consultation with Admin User', 'description': 'Appointment for Admin User.', 'start_time': '2025-11-24T14:45:00Z', 'end_time': '2025-11-24T15:45:00Z', 'status': 'confirmed', 'created_at': '2025-11-14T23:35:56.736592Z', 'updated_at': '2025-11-14T23:35:56.736592Z'}]}
+2025-11-15 05:07:04,113 - src.views.appointments - INFO - Loaded 3 appointments
+2025-11-15 05:07:04,165 - src.app - INFO - Page updated successfully with appointments view
+2025-11-15 05:07:05,905 - app - INFO - [Backend] Request received
+2025-11-15 05:07:06,114 - app - INFO - [Backend] Response sent
+2025-11-15 05:07:06,120 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/v1/clients/ "HTTP/1.1 200 OK"
+2025-11-15 05:07:06,121 - app - INFO - [Backend] "GET /api/v1/clients/ HTTP/1.1" 200 2551
+2025-11-15 05:07:06,580 - src.app - INFO - Route change wrapper called with: /clients
+2025-11-15 05:07:06,583 - src.app - INFO - Route changed to: /clients
+2025-11-15 05:07:06,587 - src.app - INFO - Clients route accessed. is_authenticated: True
+2025-11-15 05:07:06,589 - src.app - INFO - Access token exists: True
+2025-11-15 05:07:06,590 - src.app - INFO - Showing clients
+2025-11-15 05:07:06,678 - app - INFO - [Backend] Request received
+2025-11-15 05:07:06,914 - app - INFO - [Backend] Response sent
+2025-11-15 05:07:06,919 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/v1/clients/ "HTTP/1.1 200 OK"
+2025-11-15 05:07:06,924 - app - INFO - [Backend] "GET /api/v1/clients/ HTTP/1.1" 200 2551
+2025-11-15 05:07:07,115 - src.app - INFO - Page updated successfully with clients view
+2025-11-15 05:07:16,545 - flet_web.fastapi - INFO - Session disconnected: _c7qhOrNibXPXPaaE_b33333ddc935e6c039a127abd2fe983df1e3408a
