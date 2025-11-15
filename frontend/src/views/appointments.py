@@ -9,6 +9,10 @@ class AppointmentsView:
     def __init__(self, app):
         self.app = app
         self.page = app.page
+        self.appointments = []  # Initialize appointments list
+        self.appointments_list = ft.ListView()  # Initialize appointments list view
+        self.loading = False
+        self.error = None
     
     def build(self):
         # Header with title and add button
@@ -55,117 +59,7 @@ class AppointmentsView:
             alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
         )
 
-        # Appointments list (mock data for now)
-        appointments_list = ft.ListView(
-            expand=True,
-            spacing=10,
-            padding=ft.padding.all(10),
-        )
-
-        # Add mock appointments
-        now = datetime.now()
-        mock_appointments = [
-            {
-                "id": 1,
-                "title": "Client Consultation",
-                "description": "Initial consultation with new client",
-                "time": now + timedelta(hours=2),
-                "date": now,
-                "type": "Consultation",
-                "location": "Office",
-                "status": "Scheduled",
-            },
-            {
-                "id": 2,
-                "title": "Case Review",
-                "description": "Review case documents and prepare strategy",
-                "time": now - timedelta(hours=2),
-                "date": now,
-                "type": "Internal",
-                "location": "Office",
-                "status": "Completed",
-            },
-            {
-                "id": 3,
-                "title": "Court Appearance",
-                "description": "Attend hearing at downtown courthouse",
-                "time": now + timedelta(days=1),
-                "date": now + timedelta(days=1),
-                "type": "Court",
-                "location": "Downtown Courthouse",
-                "status": "Scheduled",
-            },
-            {
-                "id": 4,
-                "title": "Client Meeting",
-                "description": "Follow-up meeting with existing client",
-                "time": now - timedelta(hours=2),
-                "date": now,
-                "type": "Consultation",
-                "location": "Phone",
-                "status": "Completed",
-            },
-        ]
-
-        for appointment in mock_appointments:
-            status_color = {
-                "Scheduled": ft.Colors.BLUE,
-                "Completed": ft.Colors.GREEN,
-                "Cancelled": ft.Colors.RED,
-                "Rescheduled": ft.Colors.ORANGE,
-            }.get(appointment["status"], ft.Colors.GREY)
-
-            appointment_card = ft.Card(
-                content=ft.Container(
-                    content=ft.Column(
-                        [
-                            ft.Row(
-                                [
-                                    ft.Text(
-                                        appointment["title"],
-                                        size=16,
-                                        weight=ft.FontWeight.BOLD,
-                                        expand=True,
-                                    ),
-                                    ft.Container(
-                                        content=ft.Text(
-                                            appointment["status"],
-                                            size=12,
-                                            color=ft.Colors.WHITE,
-                                        ),
-                                        bgcolor=status_color,
-                                        padding=ft.padding.symmetric(5, 10),
-                                        border_radius=5,
-                                    ),
-                                ]
-                            ),
-                            ft.Text(appointment["description"]),
-                            ft.Row(
-                                [
-                                    ft.Icon("schedule", size=16),
-                                    ft.Text(
-                                        appointment["time"].strftime("%I:%M %p")
-                                        if isinstance(appointment["time"], datetime)
-                                        else appointment["time"]
-                                    ),
-                                    ft.Icon("calendar_today", size=16),
-                                    ft.Text(
-                                        appointment["date"].strftime("%b %d, %Y")
-                                        if isinstance(appointment["date"], datetime)
-                                        else appointment["date"]
-                                    ),
-                                    ft.Icon("location_on", size=16),
-                                    ft.Text(appointment["location"]),
-                                ],
-                            ),
-                        ],
-                        spacing=5,
-                    ),
-                    padding=ft.padding.all(15),
-                ),
-                elevation=2,
-            )
-            appointments_list.controls.append(appointment_card)
+        # Appointments list 
 
         # Main container
         container = ft.Container(
@@ -174,7 +68,7 @@ class AppointmentsView:
                     header,
                     search_filter_row,
                     ft.Divider(),
-                    appointments_list,
+                    self.appointments_list,
                 ],
                 scroll=ft.ScrollMode.AUTO,
             ),
@@ -352,16 +246,110 @@ class AppointmentsView:
         # TODO: Implement filter logic
         print("Applying filters...")
     
-    def _search_appointments(self, e):
-        # TODO: Implement search logic
-        print(f"Searching for: {e.control.value}")
-
     async def load_data(self):
         """Load appointments data from API"""
         try:
             from src.services.api_client import api_client
-            appointments = await api_client.get_appointments()
+            appointments_response = await api_client.get_appointments()
+            logger.info(f"API response: {appointments_response}")
+            
+            # Handle both dict with 'results' and direct list responses
+            if isinstance(appointments_response, dict) and 'results' in appointments_response:
+                appointments = appointments_response['results']
+            elif isinstance(appointments_response, list):
+                appointments = appointments_response
+            else:
+                appointments = []
+            
             logger.info(f"Loaded {len(appointments)} appointments")
+            
+            # Update appointments with real data
+            self.appointments = appointments
+            self.update_display()
         except Exception as e:
             logger.error(f"Error loading appointments: {str(e)}")
-            # Keep mock data if API fails
+            # Set empty list if API fails
+            self.appointments = []
+    
+    async def did_mount_async(self):
+        """Called when the view is mounted to the page"""
+        await self.load_data()
+    
+    def update_display(self):
+        """Update the appointments list display"""
+        if hasattr(self, 'appointments_list') and hasattr(self, 'appointments'):
+            self.appointments_list.controls.clear()
+            
+            for appointment in self.appointments:
+                # Handle time field
+                time_field = appointment.get('start_time') or appointment.get('date_time') or appointment.get('time')
+                if isinstance(time_field, str):
+                    try:
+                        appt_time = datetime.fromisoformat(time_field.replace('Z', '+00:00'))
+                    except:
+                        appt_time = datetime.now()
+                elif isinstance(time_field, datetime):
+                    appt_time = time_field
+                else:
+                    appt_time = datetime.now()
+                
+                # Determine status color
+                status = appointment.get('status', 'scheduled')
+                if status == 'completed':
+                    status_color = ft.Colors.GREEN
+                elif status == 'cancelled':
+                    status_color = ft.Colors.RED
+                else:
+                    status_color = ft.Colors.BLUE
+                
+                # Create appointment card
+                appointment_card = ft.Card(
+                    content=ft.Container(
+                        content=ft.Column(
+                            [
+                                ft.Row(
+                                    [
+                                        ft.Text(
+                                            appointment.get('title', 'No Title'),
+                                            size=16,
+                                            weight=ft.FontWeight.BOLD,
+                                            expand=True,
+                                        ),
+                                        ft.Container(
+                                            content=ft.Text(
+                                                status,
+                                                size=12,
+                                                color=ft.Colors.WHITE,
+                                            ),
+                                            bgcolor=status_color,
+                                            padding=ft.padding.symmetric(5, 10),
+                                            border_radius=5,
+                                        ),
+                                    ]
+                                ),
+                                ft.Text(appointment.get('description', '')),
+                                ft.Row(
+                                    [
+                                        ft.Icon("schedule", size=16),
+                                        ft.Text(appt_time.strftime("%I:%M %p")),
+                                        ft.Icon("calendar_today", size=16),
+                                        ft.Text(appt_time.strftime("%b %d, %Y")),
+                                    ],
+                                ),
+                            ],
+                            spacing=5,
+                        ),
+                        padding=15,
+                    ),
+                    elevation=2,
+                )
+                
+                self.appointments_list.controls.append(appointment_card)
+            
+            # Update the view
+            if hasattr(self, 'page') and self.page:
+                self.page.update()
+    
+    def _search_appointments(self, e):
+        # TODO: Implement search logic
+        print(f"Searching for: {e.control.value}")

@@ -1,6 +1,9 @@
 import flet as ft
 from flet_core import UserControl
 from typing import Callable, Awaitable
+import logging
+
+logger = logging.getLogger(__name__)
 
 # Color constants
 PRIMARY_COLOR = "#1976d2"
@@ -24,8 +27,8 @@ class LoginForm(UserControl):
         
         # Form fields
         self.username = ft.TextField(
-            label="Username",
-            hint_text="Enter your username",
+            label="Email",
+            hint_text="Enter your email",
             width=400,
             border_radius=5,
             border_color="#e0e0e0",
@@ -53,12 +56,42 @@ class LoginForm(UserControl):
         )
         
     async def validate_credentials(self, username: str, password: str) -> bool:
-        """Validate user credentials"""
-        # TODO: Implement actual credential validation
-        # This is a placeholder for demonstration
+        """Validate user credentials with API"""
         if not username or not password:
-            raise LoginError("Username and password are required")
-        return True
+            raise LoginError("Email and password are required")
+        
+        try:
+            from src.services.api_client import api_client
+            
+            # Call the API login endpoint
+            response = await api_client.login(username, password)
+            
+            if response and "access" in response:
+                # Store the token
+                api_client.set_auth_token(response["access"])
+                
+                # Store in app's storage
+                if hasattr(self.app, 'storage'):
+                    self.app.storage.set("access_token", response["access"])
+                    self.app.storage.set("refresh_token", response.get("refresh", ""))
+                
+                # Set app's access token
+                self.app.access_token = response["access"]
+                
+                return True
+            else:
+                raise LoginError("Invalid credentials")
+                
+        except Exception as e:
+            logger.error(f"Login error: {str(e)}")
+            if "401" in str(e) or "Unauthorized" in str(e):
+                raise LoginError("Invalid email or password")
+            elif "400" in str(e):
+                raise LoginError("Invalid request format")
+            elif "500" in str(e):
+                raise LoginError("Server error. Please try again later.")
+            else:
+                raise LoginError(f"Login failed: {str(e)}")
     
     async def login_click(self, e):
         """Handle login button click"""

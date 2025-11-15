@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Client, ClientDocument, ClientNote
+from .models import Client, ClientNote
 
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
@@ -12,18 +12,6 @@ class ClientAdmin(admin.ModelAdmin):
     list_per_page = 20
     date_hierarchy = 'created_at'
     ordering = ('last_name', 'first_name')
-
-@admin.register(ClientDocument)
-class ClientDocumentAdmin(admin.ModelAdmin):
-    """
-    Admin interface for the ClientDocument model.
-    """
-    list_display = ('title', 'client', 'document_type', 'uploaded_by', 'uploaded_at')
-    list_filter = ('document_type', 'uploaded_at')
-    search_fields = ('title', 'client__first_name', 'client__last_name')
-    list_per_page = 20
-    date_hierarchy = 'uploaded_at'
-    raw_id_fields = ('client', 'uploaded_by')
 
 @admin.register(ClientNote)
 class ClientNoteAdmin(admin.ModelAdmin):

@@ -221,14 +221,15 @@ shadow_color="#E0E0E0",
     
     def _build_appointment_card(self, appt: dict) -> ft.Card:
         # Handle time - could be datetime object or string
-        if isinstance(appt.get("time"), str):
+        time_field = appt.get('start_time') or appt.get('date_time') or appt.get('time')
+        if isinstance(time_field, str):
             # Parse string time
             try:
-                appt_time = datetime.fromisoformat(appt["time"].replace('Z', '+00:00'))
+                appt_time = datetime.fromisoformat(time_field.replace('Z', '+00:00'))
             except:
                 appt_time = datetime.now()
-        elif isinstance(appt.get("time"), datetime):
-            appt_time = appt["time"]
+        elif isinstance(time_field, datetime):
+            appt_time = time_field
         else:
             appt_time = datetime.now()
             
@@ -265,11 +266,11 @@ shadow_color="#E0E0E0",
                                     weight=ft.FontWeight.BOLD,
                                 ),
                                 ft.Text(
-                                    f"With: {appt['client']}",
+                                    appt.get("description", "No description"),
                                     style=ft.TextThemeStyle.BODY_MEDIUM,
                                 ),
                                 ft.Text(
-                                    f"Type: {appt['type']}",
+                                    f"Status: {appt.get('status', 'Unknown')}",
                                     style=ft.TextThemeStyle.BODY_SMALL,
                                     color=GREY_600,
                                 ),
@@ -297,6 +298,7 @@ shadow_color="#E0E0E0",
 
 async def _retry_load(self, e):
     """Retry loading data"""
+    self._retrying = True  # Set flag to allow retry
     self.error = None
     self.loading = True
     await self.load_data()
@@ -306,16 +308,40 @@ async def _retry_load(self, e):
     if self.app and hasattr(self.app, 'content'):
         self.app.content.content = new_view
         self.app.page.update()
+    self._retrying = False  # Clear flag
 
 async def load_data(self):
     """Load dashboard data from API"""
+    # Skip if already loading or has an error
+    if self.loading or (self.error and not hasattr(self, '_retrying')):
+        logger.info(f"Skipping load - loading: {self.loading}, error: {self.error is not None}")
+        return
+        
     try:
         logger.info("Loading dashboard data...")
         self.loading = True
         self.error = None
         
-        # Load appointments data
-        appointments = await api_client.get_appointments()
+        # Add timeout for API calls
+        import asyncio
+        try:
+            # Load appointments data with timeout
+            appointments_response = await asyncio.wait_for(
+                api_client.get_appointments(), 
+                timeout=10.0  # 10 second timeout
+            )
+        except asyncio.TimeoutError:
+            logger.error("API request timed out")
+            raise Exception("API request timed out. Please check your connection.")
+                
+        # Handle both dict with 'results' and direct list responses
+        if isinstance(appointments_response, dict) and 'results' in appointments_response:
+            appointments = appointments_response['results']
+        elif isinstance(appointments_response, list):
+            appointments = appointments_response
+        else:
+            appointments = []
+            
         appointments_count = len(appointments)
         # Filter upcoming appointments (next 7 days)
         now = datetime.now()
@@ -323,7 +349,7 @@ async def load_data(self):
         for appt in appointments:
             try:
                 # Handle different time formats
-                appt_time_str = appt.get('date_time', appt.get('time', ''))
+                appt_time_str = appt.get('start_time', appt.get('date_time', appt.get('time', '')))
                 if isinstance(appt_time_str, str):
                     appt_time = datetime.fromisoformat(appt_time_str.replace('Z', '+00:00'))
                 elif isinstance(appt_time_str, datetime):
@@ -364,6 +390,17 @@ async def load_data(self):
         self.data_loaded = True
         logger.info("Dashboard data loaded successfully")
         
+        # Refresh the view after loading
+        if self.app and hasattr(self.app, 'content'):
+            self.controls.clear()
+            new_view = self.build()
+            self.app.content.content = new_view
+            if hasattr(self.app, 'page') and self.app.page:
+                try:
+                    await self.app.page.update_async()
+                except:
+                    self.app.page.update()
+        
     except Exception as e:
         logger.error(f"Error loading dashboard data: {str(e)}")
         self.error = str(e)
@@ -371,6 +408,11 @@ async def load_data(self):
     
     async def did_mount_async(self):
         """Called when the view is mounted to the page"""
+        # Prevent multiple loads
+        if self.data_loaded:
+            logger.info("Dashboard data already loaded, skipping...")
+            return
+        
         await self.load_data()
     
     async def _view_appointment(self, e):

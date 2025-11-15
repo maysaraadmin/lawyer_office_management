@@ -22,7 +22,6 @@ try:
     from .views.dashboard import DashboardView
     from .views.appointments import AppointmentsView
     from .views.clients import ClientsView
-    from .views.profile.profile_view import ProfileView
     from .login import LoginForm, LoginError
     from src.services.storage import Storage
     from src.services.api_client import api_client
@@ -110,9 +109,6 @@ class LawyerOfficeApp:
         self.dashboard_view = DashboardView(self).build()
         self.appointments_view = AppointmentsView(self).build()
         self.clients_view = ClientsView(self).build()
-        # Initialize profile view
-        self.profile_view = None
-        self.profile_instance = None
         
         # Set up navigation
         self.nav_items = [
@@ -127,14 +123,9 @@ class LawyerOfficeApp:
                 label="Appointments"
             ),
             ft.NavigationRailDestination(
-                icon="people_alt",
-                selected_icon="groups",
+                icon="people_outline",
+                selected_icon="people",
                 label="Clients"
-            ),
-            ft.NavigationRailDestination(
-                icon="person_outline",
-                selected_icon="person",
-                label="Profile"
             ),
         ]
         
@@ -192,27 +183,25 @@ class LawyerOfficeApp:
                         logger.warning(f"Dashboard did_mount_async failed: {str(ex)}")
                 self.page.route = "/dashboard"
             elif index == 1:
-                self.content.content = self.appointments_view
+                appointments_instance = AppointmentsView(self)
+                self.content.content = appointments_instance.build()
+                # Call did_mount_async to load data
+                if hasattr(appointments_instance, 'did_mount_async'):
+                    try:
+                        await appointments_instance.did_mount_async()
+                    except Exception as ex:
+                        logger.warning(f"Appointments did_mount_async failed: {str(ex)}")
                 self.page.route = "/appointments"
             elif index == 2:
-                self.content.content = self.clients_view
+                clients_instance = ClientsView(self)
+                self.content.content = clients_instance.build()
+                # Call did_mount_async to load data
+                if hasattr(clients_instance, 'did_mount_async'):
+                    try:
+                        await clients_instance.did_mount_async()
+                    except Exception as ex:
+                        logger.warning(f"Clients did_mount_async failed: {str(ex)}")
                 self.page.route = "/clients"
-            elif index == 3:  # Profile
-                if not self.profile_view:
-                    # Create the instance
-                    profile_instance = ProfileView(self.page)
-                    # Build the view
-                    self.profile_view = profile_instance.build()
-                    # Store the instance for later use
-                    self.profile_instance = profile_instance
-                    # Call did_mount_async on the instance
-                    if hasattr(profile_instance, 'did_mount_async'):
-                        try:
-                            await profile_instance.did_mount_async()
-                        except Exception as e:
-                            logger.warning(f"Profile view did_mount_async failed: {str(e)}")
-                self.content.content = self.profile_view
-                self.page.route = "/profile"
             
             # Update the page
             await safe_page_update(self.page)
@@ -241,39 +230,26 @@ class LawyerOfficeApp:
     async def on_login_success(self):
         """Handle successful login"""
         try:
-            if not hasattr(self, 'page') or self.page is None:
-                logger.error("Page object is not available in on_login_success")
-                return
-                
-            self.is_authenticated = True
-            # Store authentication token (in a real app, this would come from your auth service)
-            self.storage.set("access_token", "dummy_token")
-            self.access_token = "dummy_token"
+            logger.info("Login successful")
             
-            # Set the API client token
-            api_client.set_auth_token(self.access_token)
+            # Mark as authenticated
+            self.is_authenticated = True
             
             # Initialize views after successful login
             if hasattr(self, 'initialize_views'):
                 await self.initialize_views()
             
-            logger.info("User logged in successfully")
-            
             # Clear any existing views
             if hasattr(self.page, 'views'):
                 self.page.views.clear()
             
-            # Navigate to dashboard
-            if hasattr(self.page, 'go'):
-                self.page.go("/dashboard")
-            else:
-                self.page.route = "/dashboard"
-                await safe_page_update(self.page)
+            # Show dashboard
+            await self.show_dashboard()
             
         except Exception as e:
-            error_msg = f"Login success handler error: {str(e)}"
-            logger.error(error_msg)
+            logger.error(f"Error in on_login_success: {str(e)}")
             logger.error(traceback.format_exc())
+            await self.show_error(f"Failed to complete login: {str(e)}")
             self.is_authenticated = False
             self.storage.remove("access_token")
             if hasattr(self, 'page') and self.page is not None:
@@ -322,6 +298,27 @@ class LawyerOfficeApp:
                 return
                 
             # Create login view
+            self.username_field = ft.TextField(
+                label="Email",
+                hint_text="Enter your email",
+                width=400,
+                border_radius=5,
+                border_color="#e0e0e0",
+                bgcolor="#ffffff",
+                text_size=14,
+            )
+            self.password_field = ft.TextField(
+                label="Password",
+                hint_text="Enter your password",
+                width=400,
+                password=True,
+                can_reveal_password=True,
+                border_radius=5,
+                border_color="#e0e0e0",
+                bgcolor="#ffffff",
+                text_size=14,
+            )
+            
             login_view = ft.View(
                 "/login",
                 [
@@ -340,28 +337,10 @@ class LawyerOfficeApp:
                                     size=14
                                 ),
                                 ft.Container(height=20),
-                                ft.TextField(
-                                    label="Username",
-                                    hint_text="Enter your username",
-                                    width=400,
-                                    border_radius=5,
-                                    border_color="#e0e0e0",
-                                    bgcolor="#ffffff",
-                                    text_size=14,
-                                ),
+                                self.username_field,
                                 ft.Container(height=15),
-                                ft.TextField(
-                                    label="Password",
-                                    hint_text="Enter your password",
-                                    width=400,
-                                    password=True,
-                                    can_reveal_password=True,
-                                    border_radius=5,
-                                    border_color="#e0e0e0",
-                                    bgcolor="#ffffff",
-                                    text_size=14,
-                                ),
-                                ft.Container(height=15),
+                                self.password_field,
+                                ft.Container(height=25),
                                 ft.ElevatedButton(
                                     "Login",
                                     on_click=self.login_click,
@@ -411,12 +390,51 @@ class LawyerOfficeApp:
     async def login_click(self, e):
         """Handle login button click"""
         try:
-            # For now, just simulate successful login
+            # Get values from stored fields
+            email = self.username_field.value
+            password = self.password_field.value
+            
+            if not email or not password:
+                await self.show_error("Please enter both email and password")
+                return
+            
+            # Call API to authenticate (send email as username)
+            login_data = await api_client.login(email, password)
+            
+            # Store the access token
+            self.access_token = login_data.get('access')
+            self.refresh_token = login_data.get('refresh', '')
+            
+            # Store in persistent storage
+            self.storage.set("access_token", self.access_token)
+            self.storage.set("refresh_token", self.refresh_token)
+            
+            # Set the API client token
+            api_client.set_auth_token(self.access_token)
+            
+            # Mark as authenticated
+            self.is_authenticated = True
+            
+            # Store user data if available
+            if 'user' in login_data:
+                self.user_data = login_data['user']
+            
+            # Show success message
+            self.page.snack_bar = ft.SnackBar(
+                content=ft.Text("Login successful!"),
+                bgcolor=ft.Colors.GREEN
+            )
+            self.page.snack_bar.open = True
+            await safe_page_update(self.page)
+            
+            # Navigate to dashboard
             await self.on_login_success()
-        except Exception as ex:
-            logger.error(f"Login error: {str(ex)}")
-            await self.show_error("Login failed. Please try again.")
-
+            
+        except Exception as login_error:
+            logger.error(f"Login failed: {str(login_error)}")
+            await self.show_error("Invalid email or password")
+            await safe_page_update(self.page)
+    
     async def show_dashboard(self):
         """Show dashboard view"""
         try:
@@ -490,81 +508,6 @@ class LawyerOfficeApp:
             self.page.snack_bar.open = True
             await safe_page_update(self.page)
     
-    async def show_profile(self):
-        """Show profile view"""
-        try:
-            logger.info("Showing profile")
-            logger.info(f"Current page route before show_profile: {getattr(self.page, 'route', 'None')}")
-            
-            if not hasattr(self, 'page') or not self.page:
-                logger.error("Page not available in show_profile")
-                return
-                
-            # Clean up the page
-            self.page.views.clear()
-            
-            # Reset navigation to profile
-            self.nav_rail.selected_index = 3
-            logger.info("Navigation rail set to profile index 3")
-            
-            # Create profile view instance if not exists
-            profile_instance = None
-            if not self.profile_view:
-                try:
-                    # Create the instance
-                    profile_instance = ProfileView(self.page)
-                    # Build the view
-                    self.profile_view = profile_instance.build()
-                    # Store the instance for later use
-                    self.profile_instance = profile_instance
-                    logger.info("Profile view built successfully")
-                except Exception as e:
-                    logger.error(f"Error creating profile view: {str(e)}")
-                    logger.error(traceback.format_exc())
-                    # Show error and return to dashboard
-                    await self.show_error("Failed to load profile view")
-                    return
-            else:
-                # Use existing instance if available
-                profile_instance = getattr(self, 'profile_instance', None)
-                logger.info("Using existing profile view")
-            
-            # Update content
-            self.content.content = self.profile_view
-            logger.info("Content updated with profile view")
-            
-            # Update main layout
-            self.main.controls = [self.nav_rail, ft.VerticalDivider(width=1), self.content]
-            
-            # Create and add the profile view
-            profile_view_full = ft.View(
-                "/profile",
-                [self.main],
-                padding=ft.padding.all(0),
-                bgcolor=ft.Colors.with_opacity(0.95, ft.Colors.GREY_50)
-            )
-            self.page.views.append(profile_view_full)
-            
-            # Update the page
-            try:
-                self.page.update()
-                logger.info("Page updated successfully with profile view")
-                
-                # Call did_mount_async after the view is added to the page
-                if profile_instance and hasattr(profile_instance, 'did_mount_async'):
-                    try:
-                        await profile_instance.did_mount_async()
-                        logger.info("Profile did_mount_async called successfully")
-                    except Exception as e:
-                        logger.warning(f"Profile view did_mount_async failed: {str(e)}")
-            except Exception as e:
-                logger.error(f"Error updating page: {str(e)}")
-                
-        except Exception as e:
-            logger.error(f"Error in show_profile: {str(e)}")
-            logger.error(traceback.format_exc())
-            await self.show_error("Failed to load profile")
-    
     async def show_appointments(self):
         """Show appointments view"""
         try:
@@ -580,8 +523,16 @@ class LawyerOfficeApp:
             # Reset navigation to appointments
             self.nav_rail.selected_index = 1
             
-            # Use the pre-built appointments view
-            self.content.content = self.appointments_view
+            # Create fresh appointments instance
+            appointments_instance = AppointmentsView(self)
+            self.content.content = appointments_instance.build()
+            
+            # Call did_mount_async to load data
+            if hasattr(appointments_instance, 'did_mount_async'):
+                try:
+                    await appointments_instance.did_mount_async()
+                except Exception as ex:
+                    logger.warning(f"Appointments did_mount_async failed: {str(ex)}")
             
             # Update main layout
             self.main.controls = [self.nav_rail, ft.VerticalDivider(width=1), self.content]
@@ -622,8 +573,16 @@ class LawyerOfficeApp:
             # Reset navigation to clients
             self.nav_rail.selected_index = 2
             
-            # Use the pre-built clients view
-            self.content.content = self.clients_view
+            # Create a fresh clients view instance
+            clients_instance = ClientsView(self)
+            self.content.content = clients_instance.build()
+            
+            # Call did_mount_async to load data
+            if hasattr(clients_instance, 'did_mount_async'):
+                try:
+                    await clients_instance.did_mount_async()
+                except Exception as ex:
+                    logger.warning(f"Clients did_mount_async failed: {str(ex)}")
             
             # Update main layout
             self.main.controls = [self.nav_rail, ft.VerticalDivider(width=1), self.content]
@@ -694,15 +653,6 @@ class LawyerOfficeApp:
                     self.page.go("/login")
                 else:
                     await self.show_clients()
-            elif route == "/profile":
-                logger.info(f"Profile route accessed. is_authenticated: {self.is_authenticated}")
-                logger.info(f"Access token exists: {self.access_token is not None}")
-                if not self.is_authenticated:
-                    logger.info("User not authenticated, redirecting to login")
-                    # Use page.go to navigate to login without triggering route_change again
-                    self.page.go("/login")
-                else:
-                    await self.show_profile()
             else:
                 # Default to login for unknown routes
                 await self.show_login()

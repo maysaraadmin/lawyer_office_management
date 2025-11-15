@@ -9,6 +9,11 @@ class ClientsView:
         self.app = app
         self.page = app.page
     
+    async def did_mount_async(self):
+        """Called when the view is mounted to the page"""
+        await self._load_clients()
+        self.page.update()
+    
     def build(self):
         # Header with title and add button
         header = ft.Container(
@@ -67,7 +72,6 @@ class ClientsView:
         
         # Clients list
         self.clients_list = ft.ListView(expand=True, spacing=10)
-        self._load_clients()
         
         # Main content column
         return ft.Column(
@@ -81,12 +85,13 @@ class ClientsView:
             scroll=ft.ScrollMode.AUTO,
         )
     
-    def _load_clients(self):
+    async def _load_clients(self):
+        """Load clients from API"""
         # Clear existing items
         self.clients_list.controls.clear()
         
-        # Get clients (mock data)
-        clients = self._get_clients()
+        # Get clients from API
+        clients = await self._get_clients()
         
         if clients:
             for client in clients:
@@ -129,8 +134,14 @@ class ClientsView:
         self.page.update()
     
     def _build_client_card(self, client):
+        # Handle both combined name field and separate first/last name fields
+        if 'name' in client:
+            client_name = client['name']
+        else:
+            client_name = f"{client.get('first_name', '')} {client.get('last_name', '')}".strip()
+        
         # Determine status color
-        status_color = "#4CAF50" if client["status"] == "Active" else "#9E9E9E"
+        status_color = "#4CAF50" if client.get("is_active", True) else "#9E9E9E"
         
         return ft.Card(
             content=ft.Container(
@@ -139,7 +150,7 @@ class ClientsView:
                         # Client avatar
                         ft.Container(
                             content=ft.Text(
-                                client["name"][0].upper(),
+                                client_name[0].upper() if client_name else "C",
                                 style=ft.TextThemeStyle.HEADLINE_MEDIUM,
                                 color="#FFFFFF",
                                 weight=ft.FontWeight.BOLD,
@@ -157,13 +168,13 @@ class ClientsView:
                                 ft.Row(
                                     [
                                         ft.Text(
-                                            client["name"],
+                                            client_name,
                                             style=ft.TextThemeStyle.BODY_LARGE,
                                             weight=ft.FontWeight.BOLD,
                                         ),
                                         ft.Container(
                                             content=ft.Text(
-                                                client["type"],
+                                                client.get("user_type", "client"),
                                                 size=12,
                                                 color="#FFFFFF",
                                             ),
@@ -171,7 +182,7 @@ class ClientsView:
                                             border_radius=10,
                                             bgcolor=(
                                                 "#2196F3" 
-                                                if client["type"] == "Business" 
+                                                if client.get("user_type") == "lawyer" 
                                                 else "#9C27B0"
                                             ),
                                         ),
@@ -179,7 +190,7 @@ class ClientsView:
                                     spacing=8,
                                 ),
                                 ft.Text(
-                                    client["email"],
+                                    client.get("email", ""),
                                     style=ft.TextThemeStyle.BODY_MEDIUM,
                                 ),
                                 ft.Row(
@@ -190,7 +201,7 @@ class ClientsView:
                                             color="#757575",
                                         ),
                                         ft.Text(
-                                            client["phone"],
+                                            client.get("phone", ""),
                                             style=ft.TextThemeStyle.BODY_SMALL,
                                             color="#757575",
                                         ),
@@ -201,7 +212,7 @@ class ClientsView:
                                             color=status_color,
                                         ),
                                         ft.Text(
-                                            client["status"],
+                                            "Active" if client.get("is_active", True) else "Inactive",
                                             style=ft.TextThemeStyle.BODY_SMALL,
                                             color="#757575",
                                         ),
@@ -250,55 +261,22 @@ class ClientsView:
             shape=ft.RoundedRectangleBorder(radius=8),
         )
     
-    def _get_clients(self):
-        # Mock data - replace with actual API calls
-        return [
-            {
-                "id": 1,
-                "name": "John Smith",
-                "email": "john.smith@example.com",
-                "phone": "(555) 123-4567",
-                "type": "Individual",
-                "status": "Active",
-                "join_date": "2023-01-15",
-            },
-            {
-                "id": 2,
-                "name": "Acme Corporation",
-                "email": "legal@acmecorp.com",
-                "phone": "(555) 987-6543",
-                "type": "Business",
-                "status": "Active",
-                "join_date": "2023-02-20",
-            },
-            {
-                "id": 3,
-                "name": "Jane Doe",
-                "email": "jane.doe@example.com",
-                "phone": "(555) 456-7890",
-                "type": "Individual",
-                "status": "Inactive",
-                "join_date": "2023-03-10",
-            },
-            {
-                "id": 4,
-                "name": "Tech Solutions Inc.",
-                "email": "legal@techsolutions.com",
-                "phone": "(555) 234-5678",
-                "type": "Business",
-                "status": "Active",
-                "join_date": "2023-04-05",
-            },
-            {
-                "id": 5,
-                "name": "Robert Johnson",
-                "email": "robert.j@example.com",
-                "phone": "(555) 876-5432",
-                "type": "Individual",
-                "status": "Active",
-                "join_date": "2023-05-12",
-            },
-        ]
+    async def _get_clients(self):
+        """Get clients from API"""
+        try:
+            from src.services.api_client import api_client
+            clients_response = await api_client.get_clients()
+            
+            # Handle both dict with 'results' and direct list responses
+            if isinstance(clients_response, dict) and 'results' in clients_response:
+                return clients_response['results']
+            elif isinstance(clients_response, list):
+                return clients_response
+            else:
+                return []
+        except Exception as e:
+            logger.error(f"Error loading clients: {str(e)}")
+            return []
     
     def _search_clients(self, e):
         # TODO: Implement search functionality
@@ -378,66 +356,73 @@ class ClientsView:
             self.page.dialog.open = False
             self.page.update()
         
-        def save_client(e):
+        async def save_client(e):
             """Save the new client"""
-            import asyncio
-            
-            async def _save():
-                try:
-                    # Validate required fields
-                    if not first_name_field.value or not last_name_field.value or not email_field.value:
-                        self.page.snack_bar = ft.SnackBar(
-                            content=ft.Text("Please fill in all required fields"),
-                            bgcolor=ft.Colors.RED
-                        )
-                        self.page.snack_bar.open = True
-                        await self.page.update_async()
-                        return
-                    
-                    # Prepare client data
-                    client_data = {
-                        "first_name": first_name_field.value,
-                        "last_name": last_name_field.value,
-                        "email": email_field.value,
-                        "phone": phone_field.value or "",
-                        "address": address_field.value or "",
-                        "city": city_field.value or "",
-                        "state": state_field.value or "",
-                        "postal_code": postal_code_field.value or "",
-                        "country": country_field.value or "",
-                        "date_of_birth": date_of_birth_field.value or None,
-                        "occupation": occupation_field.value or "",
-                        "company": company_field.value or "",
-                        "is_active": is_active_field.value
-                    }
-                    
-                    # Create client via API
-                    from src.services.api_client import api_client
-                    result = await api_client.create_client(client_data)
-                    
-                    # Show success message
+            try:
+                # Validate required fields
+                if not first_name_field.value or not last_name_field.value or not email_field.value:
                     self.page.snack_bar = ft.SnackBar(
-                        content=ft.Text("Client created successfully!"),
-                        bgcolor=ft.Colors.GREEN
-                    )
-                    self.page.snack_bar.open = True
-                    
-                    # Close dialog and refresh data
-                    close_dialog(e)
-                    await self.load_data()
-                    await self.page.update_async()
-                    
-                except Exception as ex:
-                    logger.error(f"Error creating client: {str(ex)}")
-                    self.page.snack_bar = ft.SnackBar(
-                        content=ft.Text(f"Error creating client: {str(ex)}"),
+                        content=ft.Text("Please fill in all required fields"),
                         bgcolor=ft.Colors.RED
                     )
                     self.page.snack_bar.open = True
                     await self.page.update_async()
-            
-            # Run the async function
-            asyncio.create_task(_save())
+                    return
+                
+                # Prepare client data
+                client_data = {
+                    "first_name": first_name_field.value,
+                    "last_name": last_name_field.value,
+                    "email": email_field.value,
+                    "phone": phone_field.value or "",
+                    "address": address_field.value or "",
+                    "city": city_field.value or "",
+                    "state": state_field.value or "",
+                    "postal_code": postal_code_field.value or "",
+                    "country": country_field.value or "",
+                    "occupation": occupation_field.value or "",
+                    "company": company_field.value or "",
+                    "is_active": is_active_field.value
+                }
+                
+                # Only include date_of_birth if it's provided
+                if date_of_birth_field.value:
+                    try:
+                        # Try to parse the date and format it as YYYY-MM-DD
+                        from datetime import datetime
+                        dob = datetime.strptime(date_of_birth_field.value, "%Y-%m-%d")
+                        client_data["date_of_birth"] = dob.strftime("%Y-%m-%d")
+                    except:
+                        # If parsing fails, don't include the field
+                        pass
+                
+                # Create client via API
+                from src.services.api_client import api_client
+                result = await api_client.create_client(client_data)
+                
+                # Show success message
+                self.page.snack_bar = ft.SnackBar(
+                    content=ft.Text("Client created successfully!"),
+                    bgcolor=ft.Colors.GREEN
+                )
+                self.page.snack_bar.open = True
+                
+                # Close dialog
+                self.page.dialog.open = False
+                
+                # Refresh the clients list
+                await self.did_mount_async()
+                
+                await self.page.update_async()
+                
+            except Exception as ex:
+                logger.error(f"Error creating client: {str(ex)}")
+                self.page.snack_bar = ft.SnackBar(
+                    content=ft.Text(f"Failed to create client: {str(ex)}"),
+                    bgcolor=ft.Colors.RED
+                )
+                self.page.snack_bar.open = True
+                await self.page.update_async()
         
         # Create dialog with tabs for better organization
         tabs = ft.Tabs(
@@ -509,16 +494,36 @@ class ClientsView:
     
     def _view_client(self, client):
         # TODO: Implement client detail view
-        print(f"Viewing client: {client['name']}")
+        # Handle both combined name field and separate first/last name fields
+        if 'name' in client:
+            client_name = client['name']
+        else:
+            client_name = f"{client.get('first_name', '')} {client.get('last_name', '')}".strip()
+        print(f"Viewing client: {client_name}")
     
     def _edit_client(self, client):
         # TODO: Implement edit client
-        print(f"Editing client: {client['name']}")
+        # Handle both combined name field and separate first/last name fields
+        if 'name' in client:
+            client_name = client['name']
+        else:
+            client_name = f"{client.get('first_name', '')} {client.get('last_name', '')}".strip()
+        print(f"Editing client: {client_name}")
     
     def _new_appointment(self, client):
         # TODO: Implement new appointment for client
-        print(f"New appointment for: {client['name']}")
+        # Handle both combined name field and separate first/last name fields
+        if 'name' in client:
+            client_name = client['name']
+        else:
+            client_name = f"{client.get('first_name', '')} {client.get('last_name', '')}".strip()
+        print(f"New appointment for: {client_name}")
     
     def _send_message(self, client):
         # TODO: Implement send message to client
-        print(f"Sending message to: {client['name']}")
+        # Handle both combined name field and separate first/last name fields
+        if 'name' in client:
+            client_name = client['name']
+        else:
+            client_name = f"{client.get('first_name', '')} {client.get('last_name', '')}".strip()
+        print(f"Sending message to: {client_name}")

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Client, ClientDocument, ClientNote
+from .models import Client, ClientNote
 from apps.users.serializers import UserSerializer
 
 class ClientSerializer(serializers.ModelSerializer):
@@ -15,23 +15,6 @@ class ClientSerializer(serializers.ModelSerializer):
             'created_at', 'updated_at'
         ]
         read_only_fields = ['id', 'created_at', 'updated_at']
-
-class ClientDocumentSerializer(serializers.ModelSerializer):
-    """
-    Serializer for the ClientDocument model.
-    """
-    uploaded_by = UserSerializer(read_only=True)
-    
-    class Meta:
-        model = ClientDocument
-        fields = [
-            'id', 'client', 'title', 'description', 'document',
-            'document_type', 'uploaded_by', 'uploaded_at'
-        ]
-        read_only_fields = ['id', 'client', 'uploaded_by', 'uploaded_at']
-        extra_kwargs = {
-            'document': {'required': True}
-        }
 
 class ClientNoteSerializer(serializers.ModelSerializer):
     """

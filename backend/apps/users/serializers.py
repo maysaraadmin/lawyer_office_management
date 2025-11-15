@@ -10,7 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'email', 'first_name', 'last_name', 'user_type', 
-                 'phone', 'address', 'date_of_birth', 'profile_picture')
+                 'phone', 'address', 'date_of_birth')
         read_only_fields = ('id',)
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -49,6 +49,12 @@ class RegisterSerializer(serializers.ModelSerializer):
         return user
 
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Replace username field with email
+        self.fields.pop('username', None)
+        self.fields['email'] = serializers.EmailField()
+    
     @classmethod
     def get_token(cls, user):
         token = super().get_token(user)
@@ -60,6 +66,8 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
         return token
 
     def validate(self, attrs):
+        # Use email as username for authentication
+        attrs['username'] = attrs.get('email')
         data = super().validate(attrs)
         refresh = self.get_token(self.user)
         data['refresh'] = str(refresh)

@@ -1,14 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.conf import settings
-import os
-
-def client_document_upload_path(instance, filename):
-    """
-    Returns the file path for client documents.
-    Format: clients/{client_id}/documents/{filename}
-    """
-    return os.path.join('clients', str(instance.client.id), 'documents', filename)
 
 class Client(models.Model):
     """Client model for storing client information."""
@@ -54,58 +46,6 @@ class Client(models.Model):
         """Returns the client's full name."""
         return f"{self.first_name} {self.last_name}"
 
-
-class ClientDocument(models.Model):
-    """Model for storing client documents."""
-    
-    DOCUMENT_TYPES = (
-        ('id_proof', _('ID Proof')),
-        ('address_proof', _('Address Proof')),
-        ('contract', _('Contract')),
-        ('court_document', _('Court Document')),
-        ('other', _('Other')),
-    )
-    
-    client = models.ForeignKey(
-        Client,
-        on_delete=models.CASCADE,
-        related_name='documents',
-        verbose_name=_('client')
-    )
-    title = models.CharField(_('title'), max_length=255)
-    description = models.TextField(_('description'), blank=True)
-    document = models.FileField(
-        _('document'),
-        upload_to=client_document_upload_path,
-        max_length=500
-    )
-    document_type = models.CharField(
-        _('document type'),
-        max_length=50,
-        choices=DOCUMENT_TYPES,
-        default='other'
-    )
-    uploaded_by = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.SET_NULL,
-        null=True,
-        related_name='uploaded_documents',
-        verbose_name=_('uploaded by')
-    )
-    uploaded_at = models.DateTimeField(_('uploaded at'), auto_now_add=True)
-    
-    class Meta:
-        verbose_name = _('client document')
-        verbose_name_plural = _('client documents')
-        ordering = ['-uploaded_at']
-    
-    def __str__(self):
-        return f"{self.title} - {self.client.full_name}"
-    
-    def get_file_extension(self):
-        """Returns the file extension in lowercase."""
-        name, extension = os.path.splitext(self.document.name)
-        return extension.lower()
 
 
 class ClientNote(models.Model):

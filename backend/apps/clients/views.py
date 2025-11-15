@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
 
 from .models import Client
-from .serializers import ClientSerializer, ClientDocumentSerializer, ClientNoteSerializer
+from .serializers import ClientSerializer, ClientNoteSerializer
 
 class ClientListView(generics.ListCreateAPIView):
     """
@@ -37,36 +37,6 @@ class ClientStatsView(APIView):
             'total_clients': total_clients,
             'active_clients': active_clients,
         })
-
-class ClientDocumentListView(generics.ListCreateAPIView):
-    """
-    View for listing and creating client documents.
-    """
-    serializer_class = ClientDocumentSerializer
-    permission_classes = [permissions.IsAuthenticated]
-    
-    def get_queryset(self):
-        client_id = self.kwargs.get('client_id')
-        return ClientDocument.objects.filter(client_id=client_id)
-    
-    def perform_create(self, serializer):
-        client = get_object_or_404(Client, id=self.kwargs.get('client_id'))
-        serializer.save(client=client, uploaded_by=self.request.user)
-
-class ClientDocumentDetailView(generics.RetrieveUpdateDestroyAPIView):
-    """
-    View for retrieving, updating, and deleting a client document.
-    """
-    serializer_class = ClientDocumentSerializer
-    permission_classes = [permissions.IsAuthenticated]
-    
-    def get_queryset(self):
-        return ClientDocument.objects.filter(client_id=self.kwargs.get('client_id'))
-    
-    def get_object(self):
-        queryset = self.get_queryset()
-        obj = get_object_or_404(queryset, pk=self.kwargs.get('pk'))
-        return obj
 
 class ClientNoteListView(generics.ListCreateAPIView):
     """

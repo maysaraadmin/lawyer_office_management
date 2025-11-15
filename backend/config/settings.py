@@ -34,10 +34,7 @@ INSTALLED_APPS = [
     # Local apps
     'apps.users.apps.UsersConfig',
     'apps.clients.apps.ClientsConfig',
-    'apps.cases.apps.CasesConfig',
     'apps.appointments.apps.AppointmentsConfig',
-    'apps.documents.apps.DocumentsConfig',
-    'apps.billing.apps.BillingConfig',
     'apps.core.apps.CoreConfig',
 ]
 

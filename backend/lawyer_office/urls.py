@@ -35,8 +35,6 @@ api_patterns = [
     # App-specific endpoints
     path('appointments/', include('apps.appointments.urls')),  # Appointments endpoints
     path('clients/', include('apps.clients.urls')),  # Clients endpoints
-    path('cases/', include('apps.cases.urls')),  # Cases endpoints
-    path('billing/', include('apps.billing.urls')),  # Billing endpoints
     
     # API Documentation
     path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
