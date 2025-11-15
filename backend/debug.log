@@ -1807,3 +1807,280 @@ D:\lawyer_office_management\backend\lawyer_office\urls.py changed, reloading.
 Watching for file changes with StatReloader
 D:\lawyer_office_management\backend\apps\users\urls.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"POST /api/v1/auth/login/ HTTP/1.1" 200 872
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"POST /api/v1/auth/login/ HTTP/1.1" 200 872
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"POST /api/v1/auth/login/ HTTP/1.1" 200 872
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"POST /api/v1/auth/login/ HTTP/1.1" 200 872
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"POST /api/v1/auth/login/ HTTP/1.1" 200 872
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"POST /api/v1/auth/login/ HTTP/1.1" 200 872
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"POST /api/v1/auth/login/ HTTP/1.1" 200 872
+Request received
+Request received
+Response sent
+"GET /api/v1/clients/ HTTP/1.1" 200 59
+Response sent
+"GET /api/v1/appointments/ HTTP/1.1" 200 1071
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"POST /api/v1/auth/login/ HTTP/1.1" 200 872
+Request received
+Request received
+Response sent
+"GET /api/v1/clients/ HTTP/1.1" 200 59
+Response sent
+"GET /api/v1/appointments/ HTTP/1.1" 200 1071
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"POST /api/v1/auth/login/ HTTP/1.1" 200 872
+Request received
+Request received
+Response sent
+"GET /api/v1/appointments/ HTTP/1.1" 200 1071
+Response sent
+"GET /api/v1/clients/ HTTP/1.1" 200 59
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"POST /api/v1/auth/login/ HTTP/1.1" 200 872
+Request received
+Request received
+Response sent
+"GET /api/v1/clients/ HTTP/1.1" 200 59
+Response sent
+"GET /api/v1/appointments/ HTTP/1.1" 200 1071
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"POST /api/v1/auth/login/ HTTP/1.1" 200 872
+Request received
+Request received
+Response sent
+"GET /api/v1/appointments/ HTTP/1.1" 200 1071
+Response sent
+"GET /api/v1/clients/ HTTP/1.1" 200 59
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"POST /api/v1/auth/login/ HTTP/1.1" 200 872
+Request received
+Request received
+Response sent
+"GET /api/v1/clients/ HTTP/1.1" 200 59
+Response sent
+"GET /api/v1/appointments/ HTTP/1.1" 200 1071
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"POST /api/v1/auth/login/ HTTP/1.1" 200 872
+Request received
+Request received
+Response sent
+"GET /api/v1/appointments/ HTTP/1.1" 200 1071
+Response sent
+"GET /api/v1/clients/ HTTP/1.1" 200 59
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"POST /api/v1/auth/login/ HTTP/1.1" 200 872
+Request received
+Request received
+Response sent
+"GET /api/v1/clients/ HTTP/1.1" 200 59
+Response sent
+"GET /api/v1/appointments/ HTTP/1.1" 200 1071
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"POST /api/v1/auth/login/ HTTP/1.1" 200 872
+Request received
+Request received
+Response sent
+"GET /api/v1/clients/ HTTP/1.1" 200 59
+Response sent
+"GET /api/v1/appointments/ HTTP/1.1" 200 1071
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"POST /api/v1/auth/login/ HTTP/1.1" 200 872
+Request received
+Request received
+Response sent
+"GET /api/v1/clients/ HTTP/1.1" 200 59
+Response sent
+"GET /api/v1/appointments/ HTTP/1.1" 200 1071
+Request received
+Response sent
+"GET /api/v1/appointments/ HTTP/1.1" 200 1071
+Request received
+Response sent
+"GET /api/v1/appointments/ HTTP/1.1" 200 1071
+Request received
+Request received
+Response sent
+"GET /api/v1/appointments/ HTTP/1.1" 200 1071
+Response sent
+"GET /api/v1/clients/ HTTP/1.1" 200 59
+Request received
+Response sent
+"GET /api/v1/clients/ HTTP/1.1" 200 59
+Request received
+Response sent
+"GET /api/v1/clients/ HTTP/1.1" 200 59
+Request received
+Request received
+Response sent
+"GET /api/v1/clients/ HTTP/1.1" 200 59
+Response sent
+"GET /api/v1/appointments/ HTTP/1.1" 200 1071
+Request received
+Request received
+Response sent
+"GET /api/v1/clients/ HTTP/1.1" 200 59
+Response sent
+"GET /api/v1/appointments/ HTTP/1.1" 200 1071
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"POST /api/v1/auth/login/ HTTP/1.1" 200 872
+Request received
+Response sent
+"GET / HTTP/1.1" 302 0
+Request received
+Response sent
+"GET /api/v1/health/ HTTP/1.1" 200 79
+Request received
+Response sent
+"POST /api/v1/auth/login/ HTTP/1.1" 200 872

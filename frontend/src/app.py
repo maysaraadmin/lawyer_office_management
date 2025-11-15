@@ -4,6 +4,7 @@ import os
 import asyncio
 import logging
 import traceback
+import httpx
 from pathlib import Path
 from typing import Optional, Dict, Any, Union
 
@@ -22,6 +23,7 @@ try:
     from .views.dashboard import DashboardView
     from .views.appointments import AppointmentsView
     from .views.clients import ClientsView
+    from .views.profile import ProfileView
     from .login import LoginForm, LoginError
     from src.services.storage import Storage
     from src.services.api_client import api_client
@@ -79,6 +81,7 @@ class LawyerOfficeApp:
         self.text_color = "#000000"
         
         # Initialize authentication state
+        self.api_base_url = "http://127.0.0.1:8000"
         self.storage = Storage()
         self.is_authenticated = False
         self.access_token = None
@@ -106,9 +109,11 @@ class LawyerOfficeApp:
         logger.info("App initialized")
         
         # Initialize views
-        self.dashboard_view = DashboardView(self).build()
+        self.dashboard_view_instance = DashboardView(self)
+        self.dashboard_view = self.dashboard_view_instance.build()
         self.appointments_view = AppointmentsView(self).build()
         self.clients_view = ClientsView(self).build()
+        self.profile_view = ProfileView(self.page, None).build()  # Initialize with None, will be updated after login
         
         # Set up navigation
         self.nav_items = [
@@ -126,6 +131,11 @@ class LawyerOfficeApp:
                 icon="people_outline",
                 selected_icon="people",
                 label="Clients"
+            ),
+            ft.NavigationRailDestination(
+                icon="person_outline",
+                selected_icon="person",
+                label="Profile"
             ),
         ]
         
@@ -145,9 +155,6 @@ class LawyerOfficeApp:
             padding=20
         )
         
-        # Set initial view based on authentication
-        self.content.content = self.dashboard_view if self.is_authenticated else ft.Container()
-        
         # Main layout
         self.main = ft.Row(
             [
@@ -158,29 +165,53 @@ class LawyerOfficeApp:
             expand=True,
         )
         
-        # Set the initial view
+        # Set initial view based on authentication
+        logger.info("=== INIT START ===")
+        logger.info(f"Is authenticated: {self.is_authenticated}")
+        logger.info(f"Has dashboard_view: {hasattr(self, 'dashboard_view')}")
+        logger.info(f"Has main: {hasattr(self, 'main')}")
+        logger.info(f"Has content: {hasattr(self, 'content')}")
+        
+        if self.is_authenticated:
+            self.content.content = self.dashboard_view
+            # Restore full main layout with navigation rail
+            self.main.controls = [self.nav_rail, ft.VerticalDivider(width=1), self.content]
+            logger.info("Initial: Set dashboard view for authenticated user")
+        else:
+            # For unauthenticated users, show empty content initially
+            # Login will be shown via route_change
+            self.content.content = ft.Container()
+            logger.info("Initial: Set empty container for unauthenticated user")
+        
+        # Always add the main layout
+        logger.info(f"Adding main layout to page (has {len(self.main.controls)} controls)")
+        # Clear any existing controls first
+        self.page.clean()
         self.page.add(self.main)
+        logger.info(f"Page now has {len(self.page.controls)} controls after adding main")
         try:
             self.page.update()
+            logger.info("Page updated successfully after init")
         except Exception as e:
             logger.error(f"Error updating page: {str(e)}")
+            logger.error(traceback.format_exc())
         
         # Initialize login
         self.login_form = None
+        logger.info("=== INIT END ===")
     
     async def navigate(self, e):
         try:
             index = e.control.selected_index
             if index == 0:
-                # Create fresh dashboard view
-                dashboard_instance = DashboardView(self)
-                self.content.content = dashboard_instance.build()
-                # Call did_mount_async to load data
-                if hasattr(dashboard_instance, 'did_mount_async'):
-                    try:
-                        await dashboard_instance.did_mount_async()
-                    except Exception as ex:
-                        logger.warning(f"Dashboard did_mount_async failed: {str(ex)}")
+                # Use the pre-initialized dashboard view
+                self.content.content = self.dashboard_view
+                self.content.bgcolor = ft.Colors.GREY_50  # Set visible background
+                # Reset dashboard data loading state
+                if hasattr(self.dashboard_view_instance, 'data_loaded'):
+                    self.dashboard_view_instance.data_loaded = False
+                    self.dashboard_view_instance.loading = False
+                    logger.info("Reset dashboard data_loaded flag for fresh load")
                 self.page.route = "/dashboard"
             elif index == 1:
                 appointments_instance = AppointmentsView(self)
@@ -202,6 +233,10 @@ class LawyerOfficeApp:
                     except Exception as ex:
                         logger.warning(f"Clients did_mount_async failed: {str(ex)}")
                 self.page.route = "/clients"
+            elif index == 3:
+                profile_instance = ProfileView(self.page, self.auth_token if hasattr(self, 'auth_token') else None)
+                self.content.content = profile_instance.build()
+                self.page.route = "/profile"
             
             # Update the page
             await safe_page_update(self.page)
@@ -286,18 +321,91 @@ class LawyerOfficeApp:
             logger.error(f"Error showing error dialog: {str(e)}")
             logger.error(traceback.format_exc())
             
+    async def handle_login(self, e):
+        """Handle login button click"""
+        try:
+            logger.info("=== HANDLE_LOGIN START ===")
+            email = self.email_field.value
+            password = self.password_field.value
+            
+            logger.info(f"Login attempt with email: {email}")
+            
+            # Disable login button during authentication
+            self.login_button.disabled = True
+            self.login_button.text = "Signing in..."
+            self.page.update()
+            
+            # Call API for authentication
+            async with httpx.AsyncClient() as client:
+                response = await client.post(
+                    f"{self.api_base_url}/api/v1/auth/login/",
+                    json={"email": email, "password": password}
+                )
+                
+                if response.status_code == 200:
+                    data = response.json()
+                    access_token = data.get("access")
+                    
+                    if access_token:
+                        # Store token
+                        self.access_token = access_token
+                        self.is_authenticated = True
+                        await self.page.client_storage.set_async("auth_token", access_token)
+                        
+                        # Set token in API client
+                        api_client.set_auth_token(access_token)
+                        logger.info("API client token set")
+                        
+                        logger.info("Login successful!")
+                        
+                        # Navigate to dashboard - route change will handle showing it
+                        self.page.go("/dashboard")
+                    else:
+                        logger.error("No access token in response")
+                        self._show_error("Invalid response from server")
+                else:
+                    logger.error(f"Login failed with status {response.status_code}")
+                    self._show_error("Invalid email or password")
+                    
+        except Exception as ex:
+            logger.error(f"Login error: {str(ex)}")
+            self._show_error("An error occurred during login")
+        finally:
+            # Re-enable login button
+            self.login_button.disabled = False
+            self.login_button.text = "Sign In"
+            self.page.update()
+            logger.info("=== HANDLE_LOGIN END ===")
+    
+    def _show_error(self, message):
+        """Show error message to user"""
+        self.page.snack_bar = ft.SnackBar(
+            content=ft.Text(message, color=ft.Colors.WHITE),
+            bgcolor=ft.Colors.RED_600,
+            duration=3000
+        )
+        self.page.snack_bar.open = True
+        self.page.update()
+    
     async def show_login(self, e=None):
         """Show login form"""
         try:
+            logger.info("=== SHOW_LOGIN START ===")
             logger.info("Showing login form")
             logger.info(f"Page object in show_login: {self.page}")
             logger.info(f"Page id in show_login: {id(self.page) if self.page else 'None'}")
+            logger.info(f"Main layout exists: {hasattr(self, 'main')}")
+            logger.info(f"Content exists: {hasattr(self, 'content')}")
+            logger.info(f"Main controls count: {len(self.main.controls) if hasattr(self, 'main') else 'N/A'}")
             
             if not hasattr(self, 'page') or not self.page:
                 logger.error("Page not available in show_login")
                 return
                 
-            # Create login view
+            # Clear the main layout content
+            self.content.content = ft.Container()
+            
+            # Create login view content directly in the main layout
             self.username_field = ft.TextField(
                 label="Email",
                 hint_text="Enter your email",
@@ -319,67 +427,194 @@ class LawyerOfficeApp:
                 text_size=14,
             )
             
-            login_view = ft.View(
-                "/login",
-                [
-                    ft.Container(
-                        content=ft.Column(
-                            [
-                                ft.Text(
-                                    "Welcome Back!", 
-                                    size=28, 
-                                    weight=ft.FontWeight.BOLD, 
-                                    color="#1976d2"
-                                ),
-                                ft.Text(
-                                    "Please sign in to continue", 
-                                    color="#757575", 
-                                    size=14
-                                ),
-                                ft.Container(height=20),
-                                self.username_field,
-                                ft.Container(height=15),
-                                self.password_field,
-                                ft.Container(height=25),
-                                ft.ElevatedButton(
-                                    "Login",
-                                    on_click=self.login_click,
-                                    width=400,
-                                    height=45,
-                                    color="#ffffff",
-                                    bgcolor="#1976d2",
-                                ),
-                            ],
-                            spacing=0,
-                            width=400,
-                            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            # Create login container
+            login_container = ft.Container(
+                content=ft.Column(
+                    [
+                        ft.Text(
+                            "Welcome Back!", 
+                            size=28, 
+                            weight=ft.FontWeight.BOLD, 
+                            color="#1976d2"
                         ),
-                        bgcolor="#ffffff",
-                        border_radius=10,
-                        padding=20,
-                        alignment=ft.alignment.center,
-                    )
-                ],
-                bgcolor="#f5f5f5",
-                vertical_alignment=ft.MainAxisAlignment.CENTER,
-                horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                spacing=0,
+                        ft.Text(
+                            "Please sign in to continue", 
+                            color="#757575", 
+                            size=14
+                        ),
+                        ft.Container(height=20),
+                        self.username_field,
+                        ft.Container(height=15),
+                        self.password_field,
+                        ft.Container(height=25),
+                        ft.ElevatedButton(
+                            "Login",
+                            on_click=self.login_click,
+                            width=400,
+                            height=45,
+                            color="#ffffff",
+                            bgcolor="#1976d2",
+                        ),
+                    ],
+                    spacing=0,
+                    width=400,
+                    horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                ),
+                bgcolor="#ffffff",
+                border_radius=10,
+                padding=20,
+                alignment=ft.alignment.center,
+                width=400,
+                height=300,
+                border=ft.border.all(2, "#1976d2"),
+            )
+            logger.info(f"Login container dimensions: width={login_container.width}, height={login_container.height}")
+            logger.info(f"Login container bgcolor: {login_container.bgcolor}")
+            logger.info(f"Login container border: {login_container.border}")
+            
+            # Set the login container as content
+            self.content.content = login_container
+            logger.info(f"Login container set as content: {type(login_container)}")
+            logger.info(f"Login container has children: {hasattr(login_container, 'content')}")
+            
+            # Add a test container to verify visibility
+            test_container = ft.Container(
+                content=ft.Text("TEST - If you see this, content is working!", size=20, color=ft.Colors.RED),
+                bgcolor=ft.Colors.GREEN,
+                width=200,
+                height=50,
+                alignment=ft.alignment.center,
             )
             
-            logger.info("Login view created")
+            # For debugging, add both test and login
+            debug_column = ft.Column(
+                [test_container, login_container],
+                spacing=20,
+                alignment=ft.MainAxisAlignment.CENTER,
+                horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            )
+            self.content.content = debug_column
+            logger.info("Debug column with test container set as content")
             
-            # Clear all views and add login view
-            self.page.views.clear()
-            self.page.views.append(login_view)
-            logger.info(f"Login view added. Views count: {len(self.page.views)}")
+            # Make content expand to center the login form
+            self.content.expand = True
+            self.content.alignment = ft.alignment.center
+            self.content.bgcolor = ft.Colors.YELLOW_50
+            logger.info(f"Content expand set to: {self.content.expand}")
+            logger.info(f"Content alignment set to: {self.content.alignment}")
+            logger.info(f"Content bgcolor set to: {self.content.bgcolor}")
+            
+            # Hide navigation rail for login and center the content
+            self.main.controls = [self.content]
+            logger.info(f"Main controls updated: {[type(c).__name__ for c in self.main.controls]}")
+            # Set a visible background for the main area during login
+            self.main.bgcolor = ft.Colors.BLUE_50
+            logger.info(f"Main bgcolor set to: {self.main.bgcolor}")
+            
+            logger.info("Login view created in main layout")
+            
+            # Try direct approach - add login form directly to page
+            self.page.clean()
+            
+            # Create email and password fields
+            email_field = ft.TextField(
+                label="Email",
+                value="admin@example.com",
+                width=300,
+                autofocus=True
+            )
+            password_field = ft.TextField(
+                label="Password",
+                password=True,
+                value="admin123",
+                can_reveal_password=True,
+                width=300
+            )
+            
+            # Create login button
+            login_button = ft.ElevatedButton(
+                "Sign In",
+                bgcolor=ft.Colors.BLUE_600,
+                color=ft.Colors.WHITE,
+                width=300,
+                height=50,
+                on_click=self.handle_login
+            )
+            
+            # Create a centered column for login
+            login_column = ft.Column(
+                [
+                    ft.Text("Lawyer Office Login", size=32, weight=ft.FontWeight.BOLD),
+                    ft.Text("Please sign in to continue", size=16, color=ft.Colors.GREY_600),
+                    ft.Divider(height=20),
+                    email_field,
+                    password_field,
+                    ft.Divider(height=20),
+                    login_button
+                ],
+                spacing=10,
+                alignment=ft.MainAxisAlignment.CENTER,
+                horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            )
+            
+            # Store references for login handler
+            self.email_field = email_field
+            self.password_field = password_field
+            self.login_button = login_button
+            
+            # Wrap in a container for better styling
+            login_container = ft.Container(
+                content=login_column,
+                width=400,
+                height=400,
+                padding=30,
+                bgcolor=ft.Colors.WHITE,
+                border_radius=15,
+                shadow=ft.BoxShadow(
+                    spread_radius=1,
+                    blur_radius=15,
+                    color=ft.Colors.BLACK26,
+                    offset=ft.Offset(0, 5),
+                ),
+            )
+            
+            # Center everything
+            centered_container = ft.Container(
+                content=login_container,
+                expand=True,
+                alignment=ft.alignment.center,
+                bgcolor=ft.Colors.GREY_100,
+            )
+            
+            self.page.add(centered_container)
+            logger.info("Login form added directly to page")
             
             # Update the page
             try:
                 logger.info("Updating page with login view...")
+                logger.info(f"Page has {len(self.page.controls)} controls before update")
+                for i, control in enumerate(self.page.controls):
+                    logger.info(f"  Control {i}: {type(control).__name__} - {control}")
+                
+                # Check content details
+                logger.info(f"Content type: {type(self.content)}")
+                logger.info(f"Content expand: {self.content.expand}")
+                logger.info(f"Content alignment: {self.content.alignment}")
+                logger.info(f"Content bgcolor: {self.content.bgcolor}")
+                logger.info(f"Content content type: {type(self.content.content)}")
+                if hasattr(self.content.content, 'controls'):
+                    logger.info(f"Content content has {len(self.content.content.controls)} controls")
+                
                 self.page.update()
+                
+                logger.info(f"Page has {len(self.page.controls)} controls after update")
+                for i, control in enumerate(self.page.controls):
+                    logger.info(f"  Control {i}: {type(control).__name__} - {control}")
                 logger.info("Page updated successfully")
+                logger.info("=== SHOW_LOGIN END ===")
             except Exception as update_error:
                 logger.error(f"Error updating page: {str(update_error)}")
+                logger.error(traceback.format_exc())
                 
         except Exception as e:
             error_msg = f"Error in show_login: {str(e)}"
@@ -443,53 +678,63 @@ class LawyerOfficeApp:
             if not hasattr(self, 'page') or not self.page:
                 logger.error("Page not available in show_dashboard")
                 return
-                
-            # Clean up the page
-            self.page.views.clear()
             
-            # Reset navigation to dashboard
+            # Clear page and restore main layout
+            self.page.clean()
+            
+            # Restore full main layout with navigation rail
+            self.main.controls = [self.nav_rail, ft.VerticalDivider(width=1), self.content]
+            self.main.bgcolor = None  # Reset background color
+            
+            # Add the main layout to the page
+            self.page.add(self.main)
+            logger.info(f"Main layout added to page. Page controls: {len(self.page.controls)}")
+            
+            # Set dashboard content
+            self.content.content = self.dashboard_view
+            self.content.expand = True  # Should expand to fill available space
+            self.content.bgcolor = ft.Colors.GREY_50  # Set visible background
+            logger.info(f"Dashboard content set. Content type: {type(self.dashboard_view)}")
+            logger.info(f"Content has children: {hasattr(self.dashboard_view, 'content')}")
+            
+            # Reset dashboard data loading state to force refresh
+            if hasattr(self.dashboard_view_instance, 'data_loaded'):
+                self.dashboard_view_instance.data_loaded = False
+                self.dashboard_view_instance.loading = False
+                logger.info("Reset dashboard data_loaded flag for fresh load")
+            
+            # Update navigation rail selection
             self.nav_rail.selected_index = 0
             
-            # Create the dashboard view
-            dashboard_instance = DashboardView(self)
-            dashboard_view = dashboard_instance.build()
-            logger.info(f"Dashboard view created: {type(dashboard_view)}")
-            
-            # Update content
-            self.content.content = dashboard_view
-            logger.info("Content updated with dashboard view")
-            
-            # Update main layout
-            self.main.controls = [self.nav_rail, ft.VerticalDivider(width=1), self.content]
-            
-            # Create and add the dashboard view
-            dashboard_view_full = ft.View(
-                "/dashboard",
-                [self.main],
-                padding=ft.padding.all(0),
-                bgcolor=ft.Colors.with_opacity(0.95, ft.Colors.GREY_50)
-            )
-            self.page.views.append(dashboard_view_full)
+            logger.info("Dashboard view displayed with main layout")
+            logger.info(f"Main controls count: {len(self.main.controls)}")
+            logger.info(f"Page controls before update: {len(self.page.controls)}")
             
             # Update the page
             try:
                 self.page.update()
-                logger.info("Page updated successfully")
+                logger.info(f"Page controls after update: {len(self.page.controls)}")
+                logger.info("Page updated successfully with dashboard")
                 
-                # Call did_mount_async after the view is added to the page
-                if hasattr(dashboard_instance, 'did_mount_async'):
-                    try:
-                        await dashboard_instance.did_mount_async()
-                        logger.info("Dashboard did_mount_async called successfully")
-                    except Exception as e:
-                        logger.warning(f"Dashboard view did_mount_async failed: {str(e)}")
+                # Trigger dashboard data loading
+                logger.info("Checking if dashboard has did_mount_async method...")
+                logger.info(f"Dashboard instance type: {type(self.dashboard_view_instance)}")
+                logger.info(f"Dashboard instance methods: {[m for m in dir(self.dashboard_view_instance) if not m.startswith('_')]}")
+                if hasattr(self.dashboard_view_instance, 'did_mount_async'):
+                    logger.info("Calling did_mount_async to load dashboard data...")
+                    await self.dashboard_view_instance.did_mount_async()
+                    logger.info("did_mount_async completed")
+                else:
+                    logger.error("Dashboard view instance does not have did_mount_async method!")
             except Exception as e:
                 logger.error(f"Error updating page: {str(e)}")
+                logger.error(traceback.format_exc())
                 
         except Exception as e:
-            logger.error(f"Error in show_dashboard: {str(e)}")
+            error_msg = f"Error in show_dashboard: {str(e)}"
+            logger.error(error_msg)
             logger.error(traceback.format_exc())
-            await self.show_error("Failed to load dashboard")
+            await self.show_error(f"Failed to show dashboard: {str(e)}")
     
     async def on_logout(self):
         """Handle user logout"""
@@ -517,9 +762,6 @@ class LawyerOfficeApp:
                 logger.error("Page not available in show_appointments")
                 return
                 
-            # Clean up the page
-            self.page.views.clear()
-            
             # Reset navigation to appointments
             self.nav_rail.selected_index = 1
             
@@ -536,15 +778,6 @@ class LawyerOfficeApp:
             
             # Update main layout
             self.main.controls = [self.nav_rail, ft.VerticalDivider(width=1), self.content]
-            
-            # Create and add the appointments view
-            appointments_view_full = ft.View(
-                "/appointments",
-                [self.main],
-                padding=ft.padding.all(0),
-                bgcolor=ft.Colors.with_opacity(0.95, ft.Colors.GREY_50)
-            )
-            self.page.views.append(appointments_view_full)
             
             # Update the page
             try:
@@ -567,9 +800,6 @@ class LawyerOfficeApp:
                 logger.error("Page not available in show_clients")
                 return
                 
-            # Clean up the page
-            self.page.views.clear()
-            
             # Reset navigation to clients
             self.nav_rail.selected_index = 2
             
@@ -587,15 +817,6 @@ class LawyerOfficeApp:
             # Update main layout
             self.main.controls = [self.nav_rail, ft.VerticalDivider(width=1), self.content]
             
-            # Create and add the clients view
-            clients_view_full = ft.View(
-                "/clients",
-                [self.main],
-                padding=ft.padding.all(0),
-                bgcolor=ft.Colors.with_opacity(0.95, ft.Colors.GREY_50)
-            )
-            self.page.views.append(clients_view_full)
-            
             # Update the page
             try:
                 self.page.update()
@@ -608,30 +829,72 @@ class LawyerOfficeApp:
             logger.error(traceback.format_exc())
             await self.show_error("Failed to load clients")
     
-    async def route_change(self, route):
+    async def show_profile(self):
+        """Show profile view"""
+        try:
+            logger.info("Showing profile")
+            
+            if not hasattr(self, 'page') or not self.page:
+                logger.error("Page not available in show_profile")
+                return
+                
+            # Reset navigation to profile
+            self.nav_rail.selected_index = 3
+            
+            # Create a fresh profile view instance
+            profile_instance = ProfileView(self)
+            self.content.content = profile_instance.build()
+            
+            # Call did_mount_async to load data
+            if hasattr(profile_instance, 'did_mount_async'):
+                try:
+                    await profile_instance.did_mount_async()
+                except Exception as ex:
+                    logger.warning(f"Profile did_mount_async failed: {str(ex)}")
+            
+            # Update main layout
+            self.main.controls = [self.nav_rail, ft.VerticalDivider(width=1), self.content]
+            
+            # Update the page
+            try:
+                self.page.update()
+                logger.info("Page updated successfully with profile view")
+            except Exception as e:
+                logger.error(f"Error updating page: {str(e)}")
+                
+        except Exception as e:
+            logger.error(f"Error in show_profile: {str(e)}")
+            logger.error(traceback.format_exc())
+            await self.show_error("Failed to load profile")
+    
+    async def route_change(self, route: str):
         """Handle route changes"""
         try:
+            logger.info("=== ROUTE_CHANGE START ===")
             logger.info(f"Route changed to: {route}")
+            logger.info(f"Is authenticated: {self.is_authenticated}")
+            logger.info(f"Access token exists: {self.access_token is not None}")
+            logger.info(f"Page has {len(self.page.controls)} controls")
             
-            # Clear existing views
-            if hasattr(self.page, 'views'):
-                self.page.views.clear()
+            # Don't clear views anymore since we're using main layout approach
             
             if route == "/login":
+                logger.info("Route is /login - showing login form")
                 await self.show_login()
             elif route == "/":
                 logger.info(f"Root route accessed. is_authenticated: {self.is_authenticated}")
                 logger.info(f"Access token exists: {self.access_token is not None}")
                 if not self.is_authenticated:
+                    logger.info("User not authenticated, showing login form")
                     await self.show_login()
                 else:
-                    await self.show_dashboard()
+                    logger.info("User authenticated, redirecting to dashboard")
+                    self.page.go("/dashboard")
             elif route == "/dashboard":
                 logger.info(f"Dashboard route accessed. is_authenticated: {self.is_authenticated}")
                 logger.info(f"Access token exists: {self.access_token is not None}")
                 if not self.is_authenticated:
                     logger.info("User not authenticated, showing login form")
-                    # Use page.go to navigate to login without triggering route_change again
                     self.page.go("/login")
                 else:
                     await self.show_dashboard()
@@ -640,7 +903,6 @@ class LawyerOfficeApp:
                 logger.info(f"Access token exists: {self.access_token is not None}")
                 if not self.is_authenticated:
                     logger.info("User not authenticated, redirecting to login")
-                    # Use page.go to navigate to login without triggering route_change again
                     self.page.go("/login")
                 else:
                     await self.show_appointments()
@@ -649,18 +911,31 @@ class LawyerOfficeApp:
                 logger.info(f"Access token exists: {self.access_token is not None}")
                 if not self.is_authenticated:
                     logger.info("User not authenticated, redirecting to login")
-                    # Use page.go to navigate to login without triggering route_change again
                     self.page.go("/login")
                 else:
                     await self.show_clients()
+            elif route == "/profile":
+                logger.info(f"Profile route accessed. is_authenticated: {self.is_authenticated}")
+                logger.info(f"Access token exists: {self.access_token is not None}")
+                if not self.is_authenticated:
+                    logger.info("User not authenticated, showing login form")
+                    self.page.go("/login")
+                else:
+                    await self.show_profile()
             else:
-                # Default to login for unknown routes
-                await self.show_login()
+                logger.warning(f"Unknown route: {route}")
+                # For unknown routes, redirect to login or dashboard based on auth status
+                if not self.is_authenticated:
+                    self.page.go("/login")
+                else:
+                    self.page.go("/dashboard")
 
         except Exception as e:
             logger.error(f"Error in route_change: {str(e)}")
             logger.error(traceback.format_exc())
             await self.show_error(f"Failed to navigate to {route}")
+        finally:
+            logger.info("=== ROUTE_CHANGE END ===")
 
 async def main(page: ft.Page):
     # Set up logging
@@ -680,6 +955,7 @@ async def main(page: ft.Page):
         page.window_width = 1280
         page.window_height = 800
         page.window_resizable = True
+        page.bgcolor = ft.Colors.GREY_100
         
         # Set page theme
         page.theme = ft.Theme(
@@ -740,7 +1016,7 @@ async def main(page: ft.Page):
         page.on_view_pop = view_pop
         
         # Set initial route
-        initial_route = "/login"
+        initial_route = "/"
         if hasattr(page, 'route') and page.route:
             initial_route = page.route
             

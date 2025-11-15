@@ -214,8 +214,9 @@ class DashboardView:
                                 ft.Row(
                                     controls=[
                                         ft.CircleAvatar(
-                                            background_image_url=f"https://picsum.photos/seed/user123/100/100",
+                                            content=ft.Text("A", size=20),
                                             radius=20,
+                                            bgcolor=BLUE_500,
                                         ),
                                         ft.Column(
                                             controls=[

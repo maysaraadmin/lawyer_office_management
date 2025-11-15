@@ -29,7 +29,9 @@ class EmojiSafeHandler(logging.StreamHandler):
                 '🔄': '[REFRESH]',
                 '🖥️': '[FRONTEND]',
                 '🧹': '[CLEANUP]',
-                '👋': ''
+                '👋': '[BYE]',
+                '🚀': '[START]',
+                '🛑': '[STOP]',
             }
             for emoji, text in emoji_map.items():
                 msg = msg.replace(emoji, text)
@@ -45,15 +47,24 @@ def setup_logging():
     for handler in logging.root.handlers[:]:
         logging.root.removeHandler(handler)
     
-    # Create formatter
+    # Clear the log file at startup
+    log_file_path = 'app.log'
+    if os.path.exists(log_file_path):
+        try:
+            with open(log_file_path, 'w', encoding='utf-8') as f:
+                f.write(f"=== Log cleared at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ===\n")
+        except Exception as e:
+            print(f"Warning: Could not clear log file: {e}")
+    
+    # Create formatter with cleaner format
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     
     # Create console handler with emoji-safe formatter
     console_handler = EmojiSafeHandler()
     console_handler.setFormatter(formatter)
     
-    # Create file handler
-    file_handler = logging.FileHandler('app.log', encoding='utf-8')
+    # Create file handler with append mode (but file was cleared above)
+    file_handler = logging.FileHandler(log_file_path, encoding='utf-8')
     file_handler.setFormatter(formatter)
     
     # Configure root logger
@@ -333,61 +344,8 @@ def run_flet_app():
     import flet as ft
     from src.app import main as flet_main
     
-    async def on_page_init(page: ft.Page):
-        try:
-            # Ensure page is properly initialized
-            if not hasattr(page, 'views'):
-                page.views = []
-            
-            # Set page properties
-            page.title = "Lawyer Office Management"
-            page.theme_mode = ft.ThemeMode.LIGHT
-            page.padding = 0
-            page.window_width = 1280
-            page.window_height = 800
-            page.window_resizable = True
-            
-            # Initialize the app with the page
-            try:
-                await flet_main(page)
-                
-                # Ensure app is properly initialized
-                if not hasattr(page, 'app'):
-                    from src.app import LawyerOfficeApp
-                    page.app = LawyerOfficeApp(page)
-                
-                # Show login if not authenticated
-                if not getattr(page.app, 'is_authenticated', True):
-                    await page.app.show_login()
-                    
-            except Exception as e:
-                logger.error(f"❌ Error in flet_main: {str(e)}")
-                logger.error(traceback.format_exc())
-                
-                # Show error to user
-                error_dialog = ft.AlertDialog(
-                    title=ft.Text("Error"),
-                    content=ft.Text("An error occurred while initializing the application."),
-                    actions=[
-                        ft.TextButton("OK", on_click=lambda _: page.close_dialog())
-                    ]
-                )
-                page.dialog = error_dialog
-                try:
-                    page.update()
-                except:
-                    # If sync update fails, try async if available
-                    if hasattr(page, 'update_async'):
-                        await page.update_async()
-                
-        except Exception as e:
-            logger.error(f"❌ Error initializing page: {str(e)}")
-            logger.error(traceback.format_exc())
-            raise
-    
-    # Enable hot reload
     ft.app(
-        target=on_page_init,
+        target=flet_main,
         view=ft.WEB_BROWSER,
         port=8503,
         host="127.0.0.1",
@@ -400,11 +358,14 @@ def main():
     backend_process = None
     
     try:
-        # Set up logging
+        # Set up logging (this will clear the log file)
         logger = setup_logging()
         
         logger.info("=" * 80)
-        logger.info(f"🚀 Starting Lawyer Office Management System - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        logger.info(f"Starting Lawyer Office Management System")
+        logger.info(f"Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        logger.info(f"Working Directory: {os.getcwd()}")
+        logger.info("=" * 80)
         
         # Get the directory of the current script
         script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -421,7 +382,7 @@ def main():
                     raise RuntimeError("Failed to initialize backend API")
                 
                 # Start backend server
-                logger.info("\n🔄 Starting backend server...")
+                logger.info("\nStarting backend server...")
                 backend_process = run_backend_in_thread()
                 
                 # Give the backend some time to start
@@ -431,29 +392,29 @@ def main():
                 if backend_process.poll() is not None:
                     raise RuntimeError("Backend server failed to start")
             
-            # Start frontend
-            logger.info("\n🖥️  Starting frontend application...")
+            # Start frontend (this will block until the app is closed)
+            logger.info("\nStarting frontend application...")
             run_flet_app()
             
-            logger.info("\n✅ Application started successfully!")
+            logger.info("\nFrontend application closed!")
             return 0
             
             
         except KeyboardInterrupt:
-            logger.info("\n🛑 Shutdown signal received...")
+            logger.info("\nShutdown signal received...")
             return 0
         except Exception as e:
-            logger.error(f"❌ Error in main: {str(e)}")
+            logger.error(f"Error in main: {str(e)}")
             logger.error(traceback.format_exc())
             return 1
         finally:
-            logger.info("\n🧹 Cleaning up resources...")
+            logger.info("\nCleaning up resources...")
             if backend_process and backend_process.poll() is None:
                 backend_process.terminate()
-            logger.info("✅ Cleanup complete. Goodbye! 👋")
+            logger.info("Cleanup complete. Goodbye!")
             
     except Exception as e:
-        logger.error(f"❌ Fatal error: {str(e)}")
+        logger.error(f"Fatal error: {str(e)}")
         logger.error(traceback.format_exc())
         return 1
 
